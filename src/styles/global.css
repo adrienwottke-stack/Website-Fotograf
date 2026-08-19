@@ -1,0 +1,530 @@
+/* =========================================================
+   Sandro Mondini — Designsystem mit fünf Richtungen
+
+   Alle Themes laufen über dieselben Token. Das Theme wird per
+   data-theme am <html> gesetzt; ohne Attribut gilt „werkstatt".
+   Struktur, Inhalt und Komponenten bleiben identisch — es
+   ändern sich nur Farbe, Schrift, Rundung und Rhythmus.
+
+   Farbpaare sind auf Kontrast geprüft (WCAG AA, 4.5:1 Text).
+   ========================================================= */
+
+:root {
+  /* ---- 1 · WERKSTATT (Standard) --------------------------
+     Warm, hell, farbenfroh. Offen und herzlich.              */
+
+  --creme:  #FFF7ED;
+  --sand:   #FCEBD5;
+  --weiss:  #FFFFFF;
+
+  --ink:      #241A12;   /* 16.06:1 auf Creme */
+  --ink-soft: #6B5544;   /*  6.58:1 auf Creme */
+
+  --orange:      #E8501F;
+  --orange-tief: #C23C0C;
+  --teal:        #0D6E7A;
+  --pink:        #C4246B;
+  --gruen:       #2F7A3E;
+  --gelb:        #F5A524;
+
+  --orange-weich: #FDE3D6;
+  --teal-weich:   #D6EBEE;
+  --pink-weich:   #FBDCE9;
+
+  --linie:       #E7D5BD;
+  --linie-stark: #D3B896;
+
+  /* Farbflächen ganzer Sektionen — eigene Token, damit sie
+     nicht mit den Schriftfarben kollidieren */
+  --flaeche-ink:  #241A12;
+  --auf-ink:      #FFF7ED;
+  --auf-ink-soft: #C6B4A4;
+  --flaeche-bunt: #0D6E7A;
+  --auf-bunt:     #FFF7ED;
+  --auf-bunt-soft:#C9E4E8;
+
+  --marker: var(--gelb);
+
+  /* ---- Schrift ------------------------------------------- */
+  --font-display: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+  --font-sans:    'Plus Jakarta Sans Variable', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono Variable', ui-monospace, monospace;
+
+  --display-weight: 800;
+  --display-track:  -0.038em;
+  --display-leading: 0.94;
+  --h-track:        -0.025em;
+  --h-weight:       700;
+
+  /* Struktur — hier entstehen die echten Unterschiede zwischen den
+     Richtungen, nicht in der Farbe. */
+  --display-size:   clamp(2.75rem, 1.3rem + 6.4vw, 7rem);   /* ~112px */
+  --raster-min:     310px;   /* steuert die Spaltenzahl im Projektraster */
+  --streifen-cols:  4;       /* Bilder im Kopfstreifen */
+  --karte-ratio:    3 / 2;   /* Bildformat der Projektkacheln */
+
+  --t-label:   0.75rem;
+  --t-sm:      0.9375rem;
+  --t-base:    clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --t-lg:      clamp(1.1875rem, 1.1rem + 0.4vw, 1.4375rem);
+  --t-xl:      clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+  --t-2xl:     clamp(2rem, 1.5rem + 2.4vw, 3.5rem);
+  --t-display: clamp(2.75rem, 1.3rem + 6.4vw, 7rem);
+
+  /* ---- Raum ---------------------------------------------- */
+  --s-1: 0.5rem;  --s-2: 1rem;   --s-3: 1.5rem;  --s-4: 2rem;
+  --s-6: 3rem;    --s-8: 4rem;   --s-12: 6rem;   --s-16: 8rem;
+  --section: clamp(5rem, 10vw, 9.5rem);
+  --gutter:  clamp(1.25rem, 4vw, 3.5rem);
+  --max:     1440px;
+
+  /* ---- Rundung ------------------------------------------- */
+  --r-s:  8px;
+  --r:    16px;
+  --r-l:  28px;
+  --r-pill: 999px;
+
+  /* ---- Bewegung ------------------------------------------ */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur:  650ms;
+  --dur-img: 800ms;
+
+  /* Höhe der Design-Vergleichsleiste. Beim Launch auf 0px setzen und
+     das Bauteil entfernen — dann rutscht alles automatisch hoch. */
+  --dw-h: 46px;
+
+  color-scheme: light;
+}
+
+/* =========================================================
+   2 · POSTKARTE — laut, bunt, verspielt.
+   Sattes Rot, Blau und Gelb, große Rundungen, dicke Schrift.
+   ========================================================= */
+[data-theme='postkarte'] {
+  --creme: #FFFDF5;
+  --sand:  #FFE066;
+  --weiss: #FFFFFF;
+
+  --ink:      #141428;   /* 17.77:1 */
+  --ink-soft: #4A4A63;   /*  8.41:1 */
+
+  --orange:      #D92B20;
+  --orange-tief: #B01F16;
+  --teal:        #1B3FD8;
+  --pink:        #C4177A;
+  --gruen:       #0A7F52;
+  --gelb:        #FFD93D;
+
+  --orange-weich: #FFE0DD;
+  --teal-weich:   #DEE5FF;
+  --pink-weich:   #FCDCEE;
+
+  --linie:       #E4E0D0;
+  --linie-stark: #141428;
+
+  --flaeche-ink:  #1B3FD8;
+  --auf-ink:      #FFFFFF;
+  --auf-ink-soft: #C9D4FF;
+  --flaeche-bunt: #D92B20;
+  --auf-bunt:     #FFFFFF;
+  --auf-bunt-soft:#FFD7D4;
+
+  --marker: #FFD93D;
+
+  --font-display: 'Archivo Variable', system-ui, sans-serif;
+  --display-weight: 800;
+  --display-track: -0.045em;
+  --display-leading: 0.84;
+  --h-track: -0.035em;
+  --h-weight: 800;
+
+  /* Typografie dominiert: Schlagzeile fast doppelt so groß,
+     dafür weniger und größere Kacheln, dichterer Rhythmus. */
+  --display-size:  clamp(3.25rem, 0.8rem + 10.4vw, 10rem);
+  --raster-min:    440px;
+  --streifen-cols: 3;
+  --karte-ratio:   4 / 5;
+  --section: clamp(4rem, 7vw, 6.5rem);
+
+  --r-s: 12px;
+  --r:   26px;
+  --r-l: 40px;
+}
+
+/* =========================================================
+   3 · SONNTAGSLICHT — weich, ruhig, editorial.
+   Warme Serifen, Terrakotta und Salbei, viel Luft.
+   ========================================================= */
+[data-theme='sonntagslicht'] {
+  --creme: #FBF7F2;
+  --sand:  #F0E7DC;
+  --weiss: #FFFFFF;
+
+  --ink:      #2B2622;   /* 14.03:1 */
+  --ink-soft: #6E6259;   /*  5.54:1 */
+
+  --orange:      #A8543A;
+  --orange-tief: #8C4530;
+  --teal:        #4F6650;
+  --pink:        #9E4A5C;
+  --gruen:       #4F6650;
+  --gelb:        #E8C79A;
+
+  --orange-weich: #F2E2D9;
+  --teal-weich:   #E1E8DF;
+  --pink-weich:   #F1E1E4;
+
+  --linie:       #E3D9CC;
+  --linie-stark: #C9BBA9;
+
+  --flaeche-ink:  #2B2622;
+  --auf-ink:      #FBF7F2;
+  --auf-ink-soft: #BFB4A8;
+  --flaeche-bunt: #4F6650;
+  --auf-bunt:     #FBF7F2;
+  --auf-bunt-soft:#CBD6C9;
+
+  --marker: #E8C79A;
+
+  --font-display: 'Fraunces Variable', Georgia, serif;
+  --display-weight: 400;
+  --display-track: -0.015em;
+  --display-leading: 1.06;
+  --h-track: -0.01em;
+  --h-weight: 500;
+
+  /* Das Gegenteil von Postkarte: kleine, leichte Schrift, zwei große
+     Kacheln, sehr viel Luft. Ruhe entsteht durch Weglassen. */
+  --display-size:  clamp(2.25rem, 1.4rem + 3.4vw, 4.5rem);
+  --raster-min:    470px;
+  --streifen-cols: 2;
+  --karte-ratio:   4 / 5;
+  --section: clamp(7rem, 14vw, 15rem);
+
+  --r-s: 4px;
+  --r:   6px;
+  --r-l: 10px;
+}
+
+/* =========================================================
+   4 · ABENDWERKSTATT — warmes Dunkel, kein kaltes Schwarz.
+   Bernstein und Kupfer auf gebranntem Braun.
+   ========================================================= */
+[data-theme='abendwerkstatt'] {
+  --creme: #1A1512;
+  --sand:  #251E19;
+  --weiss: #2C2420;
+
+  --ink:      #F5EDE3;   /* 15.61:1 */
+  --ink-soft: #C0AC99;   /*  8.28:1 */
+
+  --orange:      #E8703A;
+  --orange-tief: #F0A73C;
+  --teal:        #4FB3A8;
+  --pink:        #E08AA8;
+  --gruen:       #8CC57A;
+  --gelb:        #F0A73C;
+
+  --orange-weich: #3A251B;
+  --teal-weich:   #16332F;
+  --pink-weich:   #38222A;
+
+  --linie:       #3A2E27;
+  --linie-stark: #55443A;
+
+  --flaeche-ink:  #0F0B09;
+  --auf-ink:      #F5EDE3;
+  --auf-ink-soft: #B7A28F;
+  --flaeche-bunt: #1F4F4A;
+  --auf-bunt:     #F5EDE3;
+  --auf-bunt-soft:#A9CFC9;
+
+  --marker: #7A4A1E;
+
+  /* Kino: breite Bilder im 16:9-Format, Schrift etwas leichter,
+     damit die Aufnahmen die Fläche bekommen. */
+  --display-weight: 700;
+  --display-leading: 0.96;
+  --h-weight: 700;
+  --karte-ratio:   16 / 9;
+  --raster-min:    360px;
+  --streifen-cols: 4;
+
+  color-scheme: dark;
+}
+
+/* =========================================================
+   5 · ZEITUNG — Magazin auf Papier.
+   Serifen-Schlagzeilen, harte Linien, ein Signalrot.
+   ========================================================= */
+[data-theme='zeitung'] {
+  --creme: #F7F4EE;
+  --sand:  #EAE5DA;
+  --weiss: #FFFFFF;
+
+  --ink:      #16130F;   /* 16.87:1 */
+  --ink-soft: #5A5248;   /*  6.99:1 */
+
+  --orange:      #C4241C;
+  --orange-tief: #A11B14;
+  --teal:        #1F3A6E;
+  --pink:        #8C2050;
+  --gruen:       #2C5F3A;
+  --gelb:        #E5B93C;
+
+  --orange-weich: #F4E2DF;
+  --teal-weich:   #E0E5EF;
+  --pink-weich:   #F2E1E8;
+
+  --linie:       #D6D0C4;
+  --linie-stark: #16130F;
+
+  --flaeche-ink:  #16130F;
+  --auf-ink:      #F7F4EE;
+  --auf-ink-soft: #B3AC9F;
+  --flaeche-bunt: #1F3A6E;
+  --auf-bunt:     #F7F4EE;
+  --auf-bunt-soft:#B9C4D9;
+
+  --marker: #E5B93C;
+
+  --font-display: 'Newsreader Variable', Georgia, serif;
+  --font-sans:    'Archivo Variable', system-ui, sans-serif;
+  --display-weight: 700;
+  --display-track: -0.022em;
+  --display-leading: 0.98;
+  --h-track: -0.015em;
+  --h-weight: 700;
+
+  /* Zeitung: viele schmale Spalten, dichter Satz, harte Trennlinien
+     zwischen den Ressorts. */
+  --display-size:  clamp(2.5rem, 1.2rem + 5.4vw, 5.75rem);
+  --raster-min:    250px;
+  --streifen-cols: 5;
+  --karte-ratio:   3 / 2;
+  --section: clamp(3.5rem, 6vw, 5.5rem);
+
+  --r-s: 0px;
+  --r:   2px;
+  --r-l: 2px;
+  --r-pill: 2px;
+}
+
+/* Ressort-Trennlinien nur in der Zeitungs-Richtung */
+[data-theme='zeitung'] .section + .section,
+[data-theme='zeitung'] .section--sand { border-top: 2px solid var(--linie-stark); }
+
+/* =========================================================
+   Grundlagen
+   ========================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  /* Platz für die Vergleichsleiste ganz oben */
+  padding-top: var(--dw-h);
+  background: var(--creme);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--t-base);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, video, svg { display: block; max-width: 100%; height: auto; }
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--h-weight);
+  line-height: 1.06;
+  letter-spacing: var(--h-track);
+  text-wrap: balance;
+}
+
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: var(--r-s);
+}
+
+/* =========================================================
+   Layout
+   ========================================================= */
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: var(--section); }
+
+.section--sand { background: var(--sand); }
+
+/* Farbige Vollflächen. Eigene Flächen-Token, damit die
+   Schriftfarben darin neu gesetzt werden können, ohne dass
+   der Hintergrund mitwandert. */
+.section--teal {
+  background: var(--flaeche-bunt);
+  color: var(--auf-bunt);
+  --ink: var(--auf-bunt);
+  --ink-soft: var(--auf-bunt-soft);
+  --linie: rgba(255, 255, 255, 0.26);
+  --linie-stark: rgba(255, 255, 255, 0.48);
+  --weiss: rgba(255, 255, 255, 0.1);
+}
+
+.section--ink {
+  background: var(--flaeche-ink);
+  color: var(--auf-ink);
+  --ink: var(--auf-ink);
+  --ink-soft: var(--auf-ink-soft);
+  --linie: rgba(255, 255, 255, 0.2);
+  --linie-stark: rgba(255, 255, 255, 0.38);
+  --weiss: rgba(255, 255, 255, 0.07);
+}
+
+/* =========================================================
+   Textbausteine
+   ========================================================= */
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-family: var(--font-mono);
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: var(--teal-weich);
+  border-radius: var(--r-pill);
+  padding: 0.4em 1em;
+  margin-bottom: var(--s-4);
+}
+
+.section--teal .label,
+.section--ink .label {
+  color: var(--auf-bunt);
+  background: rgba(255, 255, 255, 0.16);
+}
+.section--ink .label { color: var(--auf-ink); }
+
+.label--orange { color: var(--orange-tief); background: var(--orange-weich); }
+.label--pink   { color: var(--pink);        background: var(--pink-weich); }
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.lead {
+  font-size: var(--t-lg);
+  color: var(--ink-soft);
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.h-section { font-size: var(--t-2xl); }
+
+.prose { max-width: 66ch; }
+.prose p + p { margin-top: var(--s-3); }
+
+.mark {
+  background: linear-gradient(180deg, transparent 58%, var(--marker) 58%);
+  padding-inline: 0.08em;
+}
+
+/* =========================================================
+   Knöpfe und Links
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  min-height: 48px;
+  padding: 0.8em 1.6em;
+  border: none;
+  border-radius: var(--r-pill);
+  background: var(--orange);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: var(--t-sm);
+  font-weight: 700;
+  transition: transform 260ms var(--ease), background-color 260ms var(--ease);
+}
+
+.btn:hover { background: var(--orange-tief); transform: translateY(-2px); }
+.btn .arw { transition: transform 300ms var(--ease); }
+.btn:hover .arw { transform: translateX(4px); }
+
+/* Im dunklen Theme ist Orange hell — dann dunkle Schrift darauf */
+[data-theme='abendwerkstatt'] .btn { color: #1A1512; }
+[data-theme='abendwerkstatt'] .btn:hover { color: #1A1512; }
+
+.btn--linie {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--linie-stark);
+}
+.btn--linie:hover { background: var(--weiss); border-color: var(--ink); color: var(--ink); }
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 700;
+  font-size: var(--t-sm);
+  color: var(--teal);
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.15em;
+  transition: color 240ms var(--ease);
+}
+
+.section--teal .link, .section--ink .link { color: inherit; }
+.link:hover { color: var(--orange-tief); }
+.section--teal .link:hover, .section--ink .link:hover { color: var(--gelb); }
+.link .arw { transition: transform 300ms var(--ease); }
+.link:hover .arw { transform: translateX(4px); }
+
+/* =========================================================
+   Scroll-Reveal
+   Nur aktiv, wenn JS läuft. Ohne JS bleibt alles sichtbar —
+   Inhalt darf nie an einem Skript hängen.
+   ========================================================= */
+
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js [data-reveal].is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js [data-reveal] { opacity: 1 !important; transform: none !important; }
+}

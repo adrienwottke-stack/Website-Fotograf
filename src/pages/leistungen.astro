@@ -1,0 +1,289 @@
+---
+import Base from '../layouts/Base.astro';
+
+/** PLATZHALTER-PREISE — müssen von Sandro festgelegt werden (LIEFERLISTE.md, A5) */
+const pakete = [
+  {
+    nr: '01',
+    titel: 'Imagebilder & Portraits',
+    text: 'Team-, Mitarbeiter- und Betriebsbilder für Website, Stellenanzeigen und Social Media. Der Betrieb läuft weiter, niemand muss posieren.',
+    drin: ['15–25 bearbeitete Aufnahmen', 'Vorabgespräch zur Bildsprache', 'Web- und Druckauflösung'],
+    aufwand: 'halber Tag',
+    lieferzeit: '10 Tage',
+    preis: 'ab 890 €',
+  },
+  {
+    nr: '02',
+    titel: 'Unternehmensfilm',
+    text: 'Ein Film, der zeigt, was ihr macht und wie ihr arbeitet. Von der Idee über den Dreh bis zum fertigen Schnitt.',
+    drin: ['Konzept und Drehplan', '1–2 Drehtage', 'Fertiger Film, 1–2 Minuten', 'Schnittfassung zur Abnahme'],
+    aufwand: '1–2 Tage',
+    lieferzeit: '3–4 Wochen',
+    preis: 'ab 3.200 €',
+  },
+  {
+    nr: '03',
+    titel: 'Social-Content-Paket',
+    text: 'Ein Drehtag, aus dem Material für mehrere Wochen entsteht. Hochformat, geschnitten für Reels und Shorts.',
+    drin: ['5–8 Kurzvideos im Hochformat', '20 Bilder', 'Untertitel eingebrannt'],
+    aufwand: '1 Tag',
+    lieferzeit: '2 Wochen',
+    preis: 'ab 1.600 €',
+  },
+  {
+    nr: '04',
+    titel: 'Event-Dokumentation',
+    text: 'Treffen, Rennen, Firmenfeier, Turnier. Foto, Film oder beides — je nachdem, wofür ihr es braucht.',
+    drin: ['Begleitung vor Ort', 'Bildauswahl bearbeitet', 'Optional Aftermovie'],
+    aufwand: 'nach Absprache',
+    lieferzeit: '2 Wochen',
+    preis: 'ab 750 €',
+  },
+  {
+    nr: '05',
+    titel: 'Luftaufnahmen',
+    text: 'Drohnenaufnahmen als eigenständiges Format oder als Ergänzung zu einem der anderen Pakete.',
+    drin: ['Foto und Video aus der Luft', 'Prüfung der Genehmigungslage', 'Bearbeitete Auswahl'],
+    aufwand: 'halber Tag',
+    lieferzeit: '10 Tage',
+    preis: 'ab 450 €',
+  },
+];
+---
+
+<Base
+  title="Leistungen & Preise"
+  description="Pakete, Preise und Lieferzeiten für Foto- und Filmprojekte — transparent, damit wir beide wissen, woran wir sind."
+>
+  <section class="kopf">
+    <div class="wrap">
+      <p class="label">Leistungen</p>
+      <h1 class="kopf__h">Preise stehen hier,<br />nicht im Postfach.</h1>
+      <p class="lead kopf__lead">
+        Damit du vorher weißt, ob das passt — und nicht nach drei E-Mails.
+        Alle Preise sind Einstiegspreise; der genaue Umfang kommt aus dem Gespräch.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--top">
+    <div class="wrap">
+      <ol class="pakete">
+        {pakete.map((p, i) => (
+          <li class="pkt" data-reveal style={`--reveal-delay:${(i % 2) * 90}ms`}>
+            <div class="pkt__head">
+              <span class="pkt__nr">{p.nr}</span>
+              <h2 class="pkt__h">{p.titel}</h2>
+              <span class="pkt__preis">{p.preis}</span>
+            </div>
+
+            <div class="pkt__body">
+              <p class="pkt__t">{p.text}</p>
+
+              <ul class="pkt__drin">
+                {p.drin.map((d) => (
+                  <li>
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+                      <path d="M3 8.5l3.2 3.2L13 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" />
+                    </svg>
+                    {d}
+                  </li>
+                ))}
+              </ul>
+
+              <dl class="pkt__daten">
+                <div><dt class="mono">Aufwand</dt><dd>{p.aufwand}</dd></div>
+                <div><dt class="mono">Lieferzeit</dt><dd>{p.lieferzeit}</dd></div>
+              </dl>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <p class="ust">
+        Alle Preise zzgl. Umsatzsteuer und Fahrtkosten ab 40 km.
+        <span class="ust__todo">Platzhalter — Steuerstatus und Fahrtkostenregel noch offen.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section nichts">
+    <div class="wrap nichts__in">
+      <div data-reveal>
+        <p class="label">Ehrlich gesagt</p>
+        <h2 class="h-section">Für wen das<br />nichts ist.</h2>
+      </div>
+
+      <div class="prose nichts__txt" data-reveal style="--reveal-delay:110ms">
+        <p>
+          Ich nehme ein paar Projekte im Jahr an. Wenn du dreißig bearbeitete Bilder für
+          150 € suchst oder es übermorgen brauchst, bin ich der Falsche — und sage dir das
+          lieber jetzt als nach drei E-Mails.
+        </p>
+        <p>
+          Genauso bin ich der Falsche, wenn dir egal ist, wie das Ergebnis aussieht,
+          Hauptsache es ist irgendwas da. Dafür gibt es günstigere Wege, und die sind
+          völlig in Ordnung.
+        </p>
+        <p>
+          Wenn du dagegen etwas hast, das dir wichtig ist, und Zeit für einen ordentlichen
+          Plan: dann passt das.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="infos">
+        <article data-reveal>
+          <h3 class="infos__h">Nutzungsrechte</h3>
+          <p class="infos__t">
+            Du bekommst die zeitlich und räumlich unbegrenzten Nutzungsrechte für den
+            vereinbarten Zweck — Website, Social Media, Print. Weiterverkauf und Weitergabe
+            an Dritte sind ausgenommen, das klären wir vorher.
+          </p>
+        </article>
+
+        <article data-reveal style="--reveal-delay:90ms">
+          <h3 class="infos__h">Reisegebiet</h3>
+          <p class="infos__t">
+            Oberlausitz und Umgebung ohne Aufschlag. Darüber hinaus gerne — dann kommen
+            Fahrtkosten dazu, die vorher im Angebot stehen.
+          </p>
+        </article>
+
+        <article data-reveal style="--reveal-delay:180ms">
+          <h3 class="infos__h">Bearbeitung</h3>
+          <p class="infos__t">
+            Farbe, Licht und Bildschnitt gehören dazu. Was ich nicht mache: Menschen
+            verändern, Dinge wegretuschieren, die im Bild waren. Wenn etwas raus soll,
+            besprechen wir das vorher.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .kopf { padding-block: calc(var(--section) + 3.5rem) 0; }
+  .kopf__h { font-size: var(--t-2xl); }
+  .kopf__lead { margin-top: var(--s-4); }
+  .section--top { padding-top: var(--s-8); }
+
+  .pakete { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-3); }
+
+  .pkt {
+    background: var(--weiss);
+    border-radius: var(--r);
+    overflow: hidden;
+    transition: box-shadow 300ms var(--ease), transform 300ms var(--ease);
+  }
+  .pkt:hover { box-shadow: 0 14px 34px rgba(36, 26, 18, 0.1); transform: translateY(-2px); }
+
+  .pkt__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--s-2) var(--s-3);
+    padding: var(--s-4);
+    background: var(--sand);
+  }
+
+  .pkt__nr {
+    font-family: var(--font-mono);
+    font-size: var(--t-label);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+  }
+
+  .pkt__h {
+    font-size: var(--t-xl);
+    margin-right: auto;
+  }
+
+  .pkt__preis {
+    font-family: var(--font-display);
+    font-size: var(--t-xl);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--orange-tief);
+    white-space: nowrap;
+  }
+
+  .pkt__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) auto;
+    gap: var(--s-6);
+    padding: var(--s-4);
+  }
+
+  @media (max-width: 900px) {
+    .pkt__body { grid-template-columns: 1fr; gap: var(--s-4); }
+  }
+
+  .pkt__t { color: var(--ink-soft); font-size: var(--t-sm); max-width: 44ch; }
+
+  .pkt__drin { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+
+  .pkt__drin li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65em;
+    font-size: var(--t-sm);
+  }
+
+  .pkt__drin svg { flex: none; margin-top: 0.4em; color: var(--gruen); }
+
+  .pkt__daten { display: grid; gap: var(--s-3); margin: 0; align-content: start; }
+  .pkt__daten div { display: grid; gap: 0.25rem; }
+  .pkt__daten dt { margin: 0; }
+  .pkt__daten dd { margin: 0; font-size: var(--t-sm); font-weight: 700; white-space: nowrap; }
+
+  .ust {
+    margin-top: var(--s-6);
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+  }
+
+  .ust__todo {
+    display: block;
+    margin-top: 0.4rem;
+    font-weight: 700;
+    color: var(--orange-tief);
+  }
+
+  /* --- Für wen das nichts ist --- */
+  .nichts { background: var(--sand); }
+
+  .nichts__in {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--s-8);
+    align-items: start;
+  }
+
+  @media (max-width: 860px) { .nichts__in { grid-template-columns: 1fr; } }
+
+  .nichts__txt p { color: var(--ink-soft); }
+  .nichts__txt p:first-child { color: var(--ink); font-size: var(--t-lg); font-weight: 600; }
+
+  /* --- Infoblöcke --- */
+  .infos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--s-3);
+  }
+
+  .infos article {
+    padding: var(--s-4);
+    border-radius: var(--r);
+    background: var(--teal-weich);
+  }
+  .infos article:nth-child(2) { background: var(--orange-weich); }
+  .infos article:nth-child(3) { background: var(--pink-weich); }
+
+  .infos__h { font-family: var(--font-display); font-size: var(--t-lg); letter-spacing: -0.02em; }
+  .infos__t { margin-top: var(--s-2); font-size: var(--t-sm); color: var(--ink-soft); }
+</style>

@@ -1,0 +1,81 @@
+---
+/** Platzhalterseite: zeigt, was hier hinkommt, statt einer leeren Route. */
+interface Props {
+  label: string;
+  titel: string;
+  lead: string;
+  punkte: string[];
+  quelle?: string;
+}
+
+const { label, titel, lead, punkte, quelle } = Astro.props;
+---
+
+<section class="stub">
+  <div class="wrap">
+    <p class="label">{label}</p>
+    <h1 class="stub__h" set:html={titel}></h1>
+    <p class="lead stub__lead">{lead}</p>
+
+    <p class="mono stub__lbl">Kommt auf diese Seite</p>
+    <ul class="stub__list">
+      {punkte.map((t, i) => (
+        <li data-reveal style={`--reveal-delay:${i * 60}ms`}>
+          <span class="stub__nr">{String(i + 1).padStart(2, '0')}</span>
+          {t}
+        </li>
+      ))}
+    </ul>
+
+    {quelle && <p class="stub__q">{quelle}</p>}
+
+    <a href="/arbeiten" class="link stub__back">Zu den Arbeiten <span class="arw" aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>
+
+<style>
+  .stub { padding-block: calc(var(--section) + 3.5rem) var(--section); }
+  .stub__h { font-size: var(--t-2xl); }
+  .stub__lead { margin-top: var(--s-4); }
+  .stub__lbl { display: block; margin: var(--s-12) 0 var(--s-3); }
+
+  .stub__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 72ch;
+    display: grid;
+    gap: var(--s-1);
+  }
+
+  .stub__list li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--s-2);
+    padding: var(--s-2) var(--s-3);
+    border-radius: var(--r-s);
+    background: var(--weiss);
+    color: var(--ink-soft);
+    font-size: var(--t-sm);
+  }
+
+  .stub__nr {
+    font-family: var(--font-mono);
+    font-size: var(--t-label);
+    letter-spacing: 0.1em;
+    color: var(--teal);
+    flex: none;
+  }
+
+  .stub__q {
+    margin-top: var(--s-4);
+    padding: var(--s-3) var(--s-4);
+    border-radius: var(--r);
+    background: var(--orange-weich);
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+    max-width: 66ch;
+  }
+
+  .stub__back { margin-top: var(--s-8); }
+</style>

@@ -1,0 +1,426 @@
+---
+import Frame from './Frame.astro';
+import Bild from './Bild.astro';
+import ProjektKarte from './ProjektKarte.astro';
+import { featured, signature } from '../data/projekte';
+import { bilder } from '../data/bilder';
+import { site, leistungen, ablaufKurz, verfuegbarkeit } from '../data/site';
+
+const arbeiten = featured.slice(0, 6);
+
+// Beat „Verstehen" — das Signature-Projekt in drei Akten
+const akte = [
+  { nr: '01', akt: 'Die Aufgabe', bild: bilder.carmeetLuecke, text: 'Der Veranstalter wollte Bilder, auf denen man die Stimmung sieht — nicht nur die Autos.' },
+  { nr: '02', akt: 'Die Umsetzung', bild: bilder.heckSchraeg, text: 'Den ganzen Tag mitgelaufen, geredet, gewartet — und irgendwann lag ich auf dem Asphalt.' },
+  { nr: '03', akt: 'Das Ergebnis', bild: bilder.heckHimmel, text: '85 Bilder, zwölf Tage später geliefert. Die Ankündigung fürs Folgejahr stand.' },
+];
+
+const farben = ['orange', 'teal', 'pink'] as const;
+---
+
+  <!-- ============ HALLO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="hallo">
+        <span class="hallo__winke" aria-hidden="true">👋</span>
+        Hallo! Ich bin Sandro — die meisten sagen Monte.
+      </p>
+
+      <h1 class="hero__h">
+        Foto und Film<br />aus der <span class="mark">Oberlausitz</span>.
+      </h1>
+
+      <p class="lead hero__lead">
+        Autos, Events, Betriebe und Menschen. Seit {site.seit} Jahren, mit ziemlich viel
+        Freude an der Sache — und einem Hang dazu, auf das gute Licht zu warten.
+      </p>
+
+      <div class="hero__btns">
+        <a href="/arbeiten" class="btn">Arbeiten ansehen <span class="arw" aria-hidden="true">&rarr;</span></a>
+        <a href="/leistungen" class="btn btn--linie">Was das kostet</a>
+      </div>
+
+      <p class="hero__stat">
+        <span class="hero__dot" aria-hidden="true"></span>
+        {verfuegbarkeit.lang}
+      </p>
+    </div>
+
+    <!-- Farbstreifen: zeigt sofort die Bandbreite -->
+    <div class="streifen">
+      <div class="streifen__i streifen__i--a" data-reveal>
+        <Bild bild={bilder.haubeBlitz} ratio="4 / 5" eager sizes="(max-width: 760px) 50vw, 25vw" />
+      </div>
+      <div class="streifen__i streifen__i--b" data-reveal style="--reveal-delay:110ms">
+        <Bild bild={bilder.radSeite} ratio="1 / 1" eager sizes="(max-width: 760px) 50vw, 25vw" />
+      </div>
+      <div class="streifen__i streifen__i--c" data-reveal style="--reveal-delay:220ms">
+        <Bild bild={bilder.heckHimmel} ratio="4 / 5" sizes="(max-width: 760px) 50vw, 25vw" />
+      </div>
+      <div class="streifen__i streifen__i--d" data-reveal style="--reveal-delay:330ms">
+        <Bild bild={bilder.scheinwerfer} ratio="1 / 1" sizes="(max-width: 760px) 50vw, 25vw" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARBEITEN ============ -->
+  <section class="section" aria-labelledby="h-arbeiten">
+    <div class="wrap">
+      <p class="label">Ausgewählte Arbeiten</p>
+
+      <div class="head" data-reveal>
+        <h2 class="h-section" id="h-arbeiten">Sechs Projekte,<br />die zeigen, was ich mache.</h2>
+        <a href="/arbeiten" class="link">Alle Arbeiten <span class="arw" aria-hidden="true">&rarr;</span></a>
+      </div>
+
+      <div class="raster">
+        {arbeiten.map((p, i) => <ProjektKarte p={p} delay={(i % 3) * 90} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VERSTEHEN ============ -->
+  <section class="section section--sand" aria-labelledby="h-verstehen">
+    <div class="wrap">
+      <p class="label label--orange">Wie so etwas entsteht</p>
+
+      <div class="head" data-reveal>
+        <h2 class="h-section" id="h-verstehen">{signature.titel}</h2>
+        <p class="mono">{signature.jahr} · {signature.leistung.join(' & ')}</p>
+      </div>
+
+      <p class="lead verstehen__lead" data-reveal>
+        Die meisten zeigen nur das Ergebnis. Das Schöne passiert davor.
+      </p>
+
+      <ol class="akte">
+        {akte.map((a, i) => (
+          <li class="akt" data-reveal style={`--reveal-delay:${i * 110}ms`}>
+            <Bild bild={a.bild} ratio="4 / 5" sizes="(max-width: 760px) 100vw, 33vw" />
+            <p class="akt__nr">{a.nr} · {a.akt}</p>
+            <p class="akt__text">{a.text}</p>
+          </li>
+        ))}
+      </ol>
+
+      <div class="eck" data-reveal>
+        {signature.eckdaten && (
+          <>
+            <div><span class="mono">Aufwand</span><b>{signature.eckdaten.drehtage}</b></div>
+            <div><span class="mono">Umfang</span><b>{signature.eckdaten.umfang}</b></div>
+            <div><span class="mono">Lieferzeit</span><b>{signature.eckdaten.lieferzeit}</b></div>
+          </>
+        )}
+        <a href={`/arbeiten/${signature.slug}`} class="link">Ganze Geschichte <span class="arw" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WAS ICH MACHE ============ -->
+  <section class="section" aria-labelledby="h-leistungen">
+    <div class="wrap">
+      <p class="label label--pink">Was ich mache</p>
+      <h2 class="h-section head" id="h-leistungen" data-reveal>Drei Dinge,<br />die ich richtig gern mache.</h2>
+
+      <div class="drei">
+        {leistungen.map((l, i) => (
+          <article class:list={['lst', `lst--${farben[i % 3]}`]} data-reveal style={`--reveal-delay:${i * 90}ms`}>
+            <span class="lst__nr">{l.nr}</span>
+            <h3 class="lst__h">{l.titel}</h3>
+            <p class="lst__t">{l.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <a href="/leistungen" class="link" data-reveal>Leistungen und Preise <span class="arw" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </section>
+
+  <!-- ============ VERTRAUEN ============ -->
+  <section class="section section--teal" aria-labelledby="h-person">
+    <div class="wrap vert__in">
+      <div class="vert__media" data-reveal>
+        <Frame grade="sonne" ratio="4 / 5" label="Portrait — von jemand anderem fotografiert" />
+      </div>
+
+      <div class="vert__txt" data-reveal style="--reveal-delay:120ms">
+        <p class="label">Wer das macht</p>
+        <blockquote class="zitat">
+          Ich habe die Firma auf Instagram gefunden. Zwei Jahre später habe ich ihre Filme gedreht.
+        </blockquote>
+        <div class="prose vert__p">
+          <p>
+            Angefangen hat das als Hobby. Irgendwann habe ich den Beruf gewechselt — weil ich
+            lieber Projekte umsetze, als zuzusehen, wie andere es tun.
+          </p>
+          <p>
+            Ich nehme ein paar Projekte im Jahr an. Dafür bin ich dann auch wirklich dabei.
+          </p>
+        </div>
+
+        <dl class="zahlen">
+          <div><dt class="mono">In der Branche</dt><dd>{site.seit} Jahre</dd></div>
+          <div><dt class="mono">Zuhause</dt><dd>{site.region}</dd></div>
+          <div><dt class="mono">Antwort in</dt><dd>3 Werktagen</dd></div>
+        </dl>
+
+        <a href="/ueber-mich" class="link">Mehr über mich <span class="arw" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JETZT GERADE ============ -->
+  <section class="section jetzt" aria-labelledby="h-jetzt">
+    <div class="wrap jetzt__in">
+      <div class="jetzt__media" data-reveal>
+        <Bild bild={bilder.haubeBlitz} ratio="3 / 2" sizes="(max-width: 880px) 100vw, 55vw" />
+      </div>
+      <div data-reveal style="--reveal-delay:110ms">
+        <p class="label label--orange">Jetzt gerade</p>
+        <p class="jetzt__t" id="h-jetzt">
+          {bilder.haubeBlitz.bu} Manchmal steht das beste Detail einfach daneben
+          und wartet, dass man hinguckt.
+        </p>
+        <p class="mono">Kalenderwoche 33 · 2026</p>
+        <a href="/journal" class="link jetzt__lnk">Mehr im Journal <span class="arw" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABLAUF ============ -->
+  <section class="section section--sand" aria-labelledby="h-ablauf">
+    <div class="wrap">
+      <p class="label">So läuft&rsquo;s ab</p>
+
+      <div class="head" data-reveal>
+        <h2 class="h-section" id="h-ablauf">Drei Schritte,<br />keine Überraschungen.</h2>
+        <a href="/ablauf" class="link">Ablauf und FAQ <span class="arw" aria-hidden="true">&rarr;</span></a>
+      </div>
+
+      <ol class="drei schritte">
+        {ablaufKurz.map((s, i) => (
+          <li class:list={['lst', 'lst--weiss', `lst--${farben[i % 3]}`]} data-reveal style={`--reveal-delay:${i * 90}ms`}>
+            <span class="lst__nr">{s.nr}</span>
+            <h3 class="lst__h lst__h--sm">{s.titel}</h3>
+            <p class="lst__t">{s.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+<style>
+  /* ---------- Hallo ---------- */
+  .hero { padding-block: calc(var(--section) + 3.5rem) 0; }
+
+  .hallo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    font-size: var(--t-sm);
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--weiss);
+    border: 2px solid var(--linie);
+    border-radius: var(--r-pill);
+    padding: 0.5em 1.2em;
+    margin-bottom: var(--s-4);
+  }
+
+  .hallo__winke { font-size: 1.1em; }
+
+  .hero__h {
+    font-size: var(--display-size);
+    font-weight: var(--display-weight);
+    letter-spacing: var(--display-track);
+    line-height: var(--display-leading);
+  }
+
+  .hero__lead { margin-top: var(--s-4); }
+
+  .hero__btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    margin-top: var(--s-6);
+  }
+
+  .hero__stat {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    margin-top: var(--s-4);
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+  }
+
+  .hero__dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gruen);
+    box-shadow: 0 0 0 3px rgba(47, 122, 62, 0.18);
+    flex: none;
+  }
+
+  /* Farbstreifen unter dem Hallo */
+  .streifen {
+    display: grid;
+    grid-template-columns: repeat(var(--streifen-cols), 1fr);
+    align-items: end;
+    gap: var(--s-2);
+    margin-top: var(--s-12);
+    padding-inline: var(--gutter);
+    max-width: var(--max);
+    margin-inline: auto;
+  }
+
+  .streifen__i--b, .streifen__i--d { margin-bottom: var(--s-6); }
+
+  @media (max-width: 760px) {
+    .streifen { grid-template-columns: repeat(2, 1fr); gap: var(--s-1); }
+    .streifen__i--b, .streifen__i--d { margin-bottom: var(--s-3); }
+  }
+
+  /* ---------- Gemeinsame Kopfzeile ---------- */
+  .head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--s-4);
+    margin-bottom: var(--s-8);
+  }
+
+  /* ---------- Raster ---------- */
+  .raster {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--raster-min)), 1fr));
+    gap: var(--s-6) var(--s-4);
+  }
+
+  /* ---------- Verstehen ---------- */
+  .verstehen__lead { margin-bottom: var(--s-8); }
+
+  .akte {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--s-6) var(--s-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .akt__nr {
+    margin-top: var(--s-3);
+    font-family: var(--font-mono);
+    font-size: var(--t-label);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange-tief);
+  }
+
+  .akt__text { margin-top: 0.4rem; font-size: var(--t-sm); color: var(--ink-soft); }
+
+  .eck {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: var(--s-6);
+    margin-top: var(--s-8);
+    padding-top: var(--s-4);
+    border-top: 2px solid var(--linie);
+  }
+
+  .eck > div { display: grid; gap: 0.25rem; }
+  .eck b { font-family: var(--font-display); font-size: var(--t-lg); letter-spacing: -0.02em; }
+  .eck .link { margin-left: auto; }
+
+  /* ---------- Dreierblöcke ---------- */
+  .drei {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--s-4);
+    list-style: none;
+    margin: 0 0 var(--s-8);
+    padding: 0;
+  }
+
+  .lst {
+    border-radius: var(--r);
+    padding: var(--s-4);
+    background: var(--orange-weich);
+  }
+  .lst--teal { background: var(--teal-weich); }
+  .lst--pink { background: var(--pink-weich); }
+  .lst--weiss { background: var(--weiss); }
+
+  .lst__nr {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--t-label);
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-bottom: var(--s-3);
+  }
+
+  .lst__h { font-size: var(--t-xl); }
+  .lst__h--sm { font-size: var(--t-lg); }
+  .lst__t { margin-top: var(--s-2); font-size: var(--t-sm); color: var(--ink-soft); max-width: 38ch; }
+
+  /* ---------- Vertrauen (Teal-Block) ---------- */
+  .vert__in {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--s-8);
+    align-items: center;
+  }
+
+  @media (max-width: 880px) { .vert__in { grid-template-columns: 1fr; } }
+
+  .zitat {
+    margin: 0 0 var(--s-4);
+    font-family: var(--font-display);
+    font-size: var(--t-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  .vert__p p { color: var(--ink-soft); }
+
+  .zahlen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-6);
+    margin: var(--s-6) 0;
+    padding-top: var(--s-4);
+    border-top: 1px solid var(--linie);
+  }
+
+  .zahlen div { display: grid; gap: 0.2rem; }
+  .zahlen dt { margin: 0; }
+  .zahlen dd { margin: 0; font-family: var(--font-display); font-size: var(--t-lg); letter-spacing: -0.02em; }
+
+  /* ---------- Jetzt gerade ---------- */
+  .jetzt__in {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: var(--s-8);
+    align-items: center;
+  }
+
+  @media (max-width: 880px) { .jetzt__in { grid-template-columns: 1fr; } }
+
+  .jetzt__t {
+    font-family: var(--font-display);
+    font-size: var(--t-xl);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.16;
+    text-wrap: balance;
+    margin-bottom: var(--s-2);
+  }
+
+  .jetzt__lnk { margin-top: var(--s-4); }
+</style>

@@ -1,0 +1,136 @@
+---
+/**
+ * Frame — Platzhalter für ein Bild.
+ *
+ * Bis die Originaldateien da sind (LIEFERLISTE.md, C4), steht hier ein Farbfeld
+ * aus seiner Bildwelt: Kirschblüte, goldene Stunde, Petrol, Neon, Wald, Sonne.
+ * Zeigt Format, Rhythmus und Farbigkeit — nicht das Motiv.
+ *
+ * Austausch später: <Frame> durch <Image> ersetzen, Seitenverhältnis bleibt.
+ */
+interface Props {
+  grade?: 'bluete' | 'gold' | 'petrol' | 'neon' | 'wald' | 'sonne';
+  ratio?: string;
+  label?: string;
+  zoom?: boolean;
+  radius?: boolean;
+  class?: string;
+}
+
+const {
+  grade = 'gold',
+  ratio = '3 / 2',
+  label,
+  zoom = false,
+  radius = true,
+  class: className = '',
+} = Astro.props;
+---
+
+<div
+  class:list={['frame', radius && 'frame--r', className]}
+  style={`--ratio:${ratio}`}
+  data-grade={grade}
+>
+  <div class:list={['frame__fill', zoom && 'frame__fill--zoom']}></div>
+  <div class="frame__grain" aria-hidden="true"></div>
+  {label && <span class="frame__label">{label}</span>}
+</div>
+
+<style>
+  .frame {
+    position: relative;
+    aspect-ratio: var(--ratio);
+    overflow: hidden;
+    background: #E9DCC8;
+    isolation: isolate;
+  }
+
+  .frame--r { border-radius: var(--r); }
+
+  .frame__fill {
+    position: absolute;
+    inset: 0;
+    transition: transform var(--dur-img) var(--ease);
+  }
+
+  /* Farbwelten aus seinem Feed — hell, satt, warm ------------- */
+
+  [data-grade='bluete'] .frame__fill {
+    background:
+      radial-gradient(85% 70% at 26% 22%, #FFC2DA 0%, transparent 62%),
+      radial-gradient(80% 75% at 82% 78%, #8FCF9B 0%, transparent 60%),
+      linear-gradient(150deg, #FFE3EE 0%, #F6D9C2 55%, #CFE6CE 100%);
+  }
+
+  [data-grade='gold'] .frame__fill {
+    background:
+      radial-gradient(80% 68% at 74% 20%, #FFD37A 0%, transparent 62%),
+      radial-gradient(85% 80% at 16% 86%, #E8703A 0%, transparent 58%),
+      linear-gradient(155deg, #FFE9BE 0%, #F2A65A 52%, #9C5A32 100%);
+  }
+
+  [data-grade='petrol'] .frame__fill {
+    background:
+      radial-gradient(78% 66% at 30% 26%, #6FD3DC 0%, transparent 60%),
+      radial-gradient(72% 64% at 84% 80%, #F5A524 0%, transparent 58%),
+      linear-gradient(160deg, #BEEAEE 0%, #2E9AA8 58%, #0D5B66 100%);
+  }
+
+  [data-grade='neon'] .frame__fill {
+    background:
+      radial-gradient(66% 58% at 24% 30%, #FF57B0 0%, transparent 60%),
+      radial-gradient(70% 62% at 80% 70%, #35C9E8 0%, transparent 60%),
+      linear-gradient(145deg, #F7C9E4 0%, #9B4FC4 55%, #2B2060 100%);
+  }
+
+  [data-grade='wald'] .frame__fill {
+    background:
+      radial-gradient(80% 70% at 66% 22%, #D7E86F 0%, transparent 60%),
+      radial-gradient(78% 74% at 18% 84%, #2F7A3E 0%, transparent 62%),
+      linear-gradient(158deg, #E4F0C4 0%, #6FA24C 52%, #24552C 100%);
+  }
+
+  [data-grade='sonne'] .frame__fill {
+    background:
+      radial-gradient(74% 64% at 50% 24%, #FFE066 0%, transparent 62%),
+      radial-gradient(70% 66% at 84% 84%, #E8501F 0%, transparent 58%),
+      linear-gradient(150deg, #FFF3C4 0%, #F5B324 56%, #C96A17 100%);
+  }
+
+  /* Feines Korn nimmt dem Verlauf das Digitale ----------------- */
+  .frame__grain {
+    position: absolute;
+    inset: -50%;
+    opacity: 0.1;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Ganz leichte Kante, damit helle Bilder auf Creme nicht ausfransen */
+  .frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(36, 26, 18, 0.09);
+  }
+
+  .frame__label {
+    position: absolute;
+    left: var(--s-2);
+    bottom: var(--s-2);
+    z-index: 2;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #241A12;
+    background: rgba(255, 247, 237, 0.86);
+    border-radius: var(--r-pill);
+    padding: 0.35em 0.9em;
+    backdrop-filter: blur(6px);
+  }
+</style>

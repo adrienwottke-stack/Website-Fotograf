@@ -1,0 +1,174 @@
+---
+// Alle Schriften werden selbst gehostet — kein Google-CDN (DSGVO).
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource-variable/plus-jakarta-sans';
+import '@fontsource-variable/jetbrains-mono';
+import '@fontsource-variable/archivo';
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/newsreader';
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import DesignWahl from '../components/DesignWahl.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const fullTitle = `${title} — ${site.name}`;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#FFF7ED" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <ClientRouter />
+    <!-- Markiert, dass JS läuft. Ohne diese Klasse bleiben alle
+         [data-reveal]-Elemente sichtbar — Inhalt hängt nie an einem Skript.
+         Setzt außerdem die gewählte Designrichtung, bevor gezeichnet wird,
+         damit beim Seitenwechsel nichts aufblitzt. -->
+    <script is:inline>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add('js');
+
+        function theme() {
+          try {
+            var t = localStorage.getItem('sm-design');
+            if (t && t !== 'werkstatt') d.dataset.theme = t;
+            else delete d.dataset.theme;
+          } catch (e) {}
+        }
+        theme();
+        // Nach einer View-Transition wird der Kopf nicht neu ausgeführt —
+        // hier greift der Hook, bevor die neue Seite gezeichnet wird.
+        document.addEventListener('astro:after-swap', theme);
+
+        // Reißleine: Sollte das Hauptskript je ausfallen, darf der Inhalt
+        // nicht unsichtbar bleiben. Dann wird .js wieder entfernt und alles
+        // steht sofort im Endzustand.
+        setTimeout(function () {
+          if (!window.__smBereit) d.classList.remove('js');
+        }, 1500);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <DesignWahl />
+
+    <script>
+      // Kein define:vars — das würde das Skript inline stellen, wodurch
+      // TypeScript-Syntax zum Syntaxfehler wird. Alles Nötige steht im DOM.
+      const init = () => {
+        window.__smBereit = true;
+        /* --- Header wird beim Scrollen fest ------------------- */
+        const hd = document.getElementById('hd');
+        if (hd) {
+          const onScroll = () => hd.classList.toggle('is-stuck', window.scrollY > 24);
+          onScroll();
+          window.addEventListener('scroll', onScroll, { passive: true });
+        }
+
+        /* --- Mobiles Menü ------------------------------------- */
+        const burger = document.getElementById('burger');
+        const menu = document.getElementById('menu');
+
+        const setMenu = (open: boolean) => {
+          if (!burger || !menu) return;
+          menu.hidden = !open;
+          burger.setAttribute('aria-expanded', String(open));
+          burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+          document.body.style.overflow = open ? 'hidden' : '';
+          if (open) menu.querySelector<HTMLAnchorElement>('a')?.focus();
+        };
+
+        burger?.addEventListener('click', () =>
+          setMenu(burger.getAttribute('aria-expanded') !== 'true'),
+        );
+        menu?.querySelectorAll('a').forEach((a) =>
+          a.addEventListener('click', () => setMenu(false)),
+        );
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && burger?.getAttribute('aria-expanded') === 'true') {
+            setMenu(false);
+            burger.focus();
+          }
+        });
+
+        /* --- Scroll-Reveal ------------------------------------
+           Bei reduzierter Bewegung wird gar nicht erst beobachtet,
+           die Elemente stehen dann per CSS sofort im Endzustand.  */
+        const targets = document.querySelectorAll('[data-reveal]');
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          targets.forEach((el) => el.classList.add('is-in'));
+        } else {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-in');
+                io.unobserve(entry.target);
+              });
+            },
+            { rootMargin: '0px 0px -12% 0px', threshold: 0.05 },
+          );
+          targets.forEach((el) => io.observe(el));
+        }
+
+        /* --- Designwahl (temporäres Vergleichswerkzeug) --------- */
+        const dwBtns = document.querySelectorAll<HTMLButtonElement>('[data-theme-id]');
+        const dwKurz = document.getElementById('dw-kurz');
+
+        const setzeTheme = (id: string) => {
+          const knopf =
+            [...dwBtns].find((b) => b.dataset.themeId === id) ?? dwBtns[0];
+          if (!knopf) return;
+          const gewaehlt = knopf.dataset.themeId!;
+
+          if (gewaehlt === 'werkstatt') delete document.documentElement.dataset.theme;
+          else document.documentElement.dataset.theme = gewaehlt;
+
+          dwBtns.forEach((b) =>
+            b.setAttribute('aria-pressed', String(b === knopf)),
+          );
+          if (dwKurz) dwKurz.textContent = knopf.dataset.kurz ?? '';
+          try { localStorage.setItem('sm-design', gewaehlt); } catch {}
+        };
+
+        dwBtns.forEach((b) =>
+          b.addEventListener('click', () => setzeTheme(b.dataset.themeId!)),
+        );
+
+        if (dwBtns.length) {
+          let gespeichert = 'werkstatt';
+          try {
+            gespeichert = localStorage.getItem('sm-design') || gespeichert;
+          } catch {}
+          setzeTheme(gespeichert);
+        }
+      };
+
+      init();
+      document.addEventListener('astro:page-load', init);
+    </script>
+  </body>
+</html>

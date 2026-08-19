@@ -1,0 +1,87 @@
+---
+import Frame from './Frame.astro';
+import Bild from './Bild.astro';
+import type { Projekt } from '../data/projekte';
+
+interface Props {
+  p: Projekt;
+  ratio?: string;
+  delay?: number;
+}
+
+// Bildformat kommt aus der Designrichtung — Kino-16:9, Postkarte-4:5 usw.
+const { p, ratio = 'var(--karte-ratio)', delay = 0 } = Astro.props;
+---
+
+<a class="karte" href={`/arbeiten/${p.slug}`} data-reveal style={`--reveal-delay:${delay}ms`}>
+  {p.bild
+    ? <Bild bild={p.bild} ratio={ratio} zoom class="karte__media" />
+    : <Frame grade={p.grade} ratio={ratio} zoom label={`Bild — ${p.titel}`} class="karte__media" />}
+
+  <div class="karte__body">
+    <h3 class="karte__titel">{p.titel}</h3>
+    <p class="karte__anriss">{p.anriss}</p>
+    <p class="karte__meta">
+      <span class="karte__chip">{p.kategorie}</span>
+      <span class="karte__klein">{p.leistung.join(' & ')} · {p.jahr}</span>
+    </p>
+  </div>
+</a>
+
+<style>
+  .karte { display: block; }
+
+  .karte__media { transition: box-shadow 350ms var(--ease); }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .karte:hover :global(.frame__fill--zoom),
+    .karte:focus-visible :global(.frame__fill--zoom),
+    .karte:hover :global(.bild__img--zoom),
+    .karte:focus-visible :global(.bild__img--zoom) { transform: scale(1.05); }
+  }
+
+  .karte:hover .karte__media,
+  .karte:focus-visible .karte__media {
+    box-shadow: 0 14px 34px rgba(36, 26, 18, 0.14);
+  }
+
+  .karte__body { padding-top: var(--s-3); }
+
+  .karte__titel {
+    font-size: var(--t-lg);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    transition: color 240ms var(--ease);
+  }
+
+  .karte:hover .karte__titel { color: var(--orange-tief); }
+
+  .karte__anriss {
+    margin-top: 0.3rem;
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+    max-width: 44ch;
+  }
+
+  /* Titel und Meta immer sichtbar — kein Hover-Only, sonst mobil weg */
+  .karte__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6em;
+    margin-top: var(--s-2);
+  }
+
+  .karte__chip {
+    font-family: var(--font-mono);
+    font-size: var(--t-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-weich);
+    border-radius: var(--r-pill);
+    padding: 0.3em 0.85em;
+  }
+
+  .karte__klein { font-size: 0.8125rem; color: var(--ink-soft); }
+</style>

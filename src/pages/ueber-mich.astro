@@ -1,0 +1,319 @@
+---
+import Base from '../layouts/Base.astro';
+import Frame from '../components/Frame.astro';
+import Bild from '../components/Bild.astro';
+import { bilder } from '../data/bilder';
+import { site } from '../data/site';
+
+/**
+ * Inhalt aus Sandros eigenem Instagram-Beitrag („Klingt so italienisch?").
+ * Seine Sätze, nur neu gesetzt statt als Bild mit eingebranntem Text —
+ * lesbar für Screenreader, Suchmaschinen und auf jedem Bildschirm.
+ *
+ * ACHTUNG: Die persönlichsten Stellen (Nachtschicht, Autounfall) sind hier
+ * bewusst zurückhaltend gefasst. Wie viel davon öffentlich stehen soll,
+ * entscheidet er — siehe Hinweis am Seitenende.
+ */
+
+const technik = [
+  {
+    jahr: '2015',
+    geraet: 'Sony Xperia M4 Aqua',
+    text: 'Mein drittes Smartphone. Für Fotos damals völlig ausreichend — und der Anfang von allem.',
+  },
+  {
+    jahr: '2018',
+    geraet: 'DJI Osmo Pocket',
+    text: 'Kam ganz neu auf den Markt. Ich wusste sofort: diesen kompakten Gimbal brauche ich für Videos.',
+  },
+  {
+    jahr: '2020',
+    geraet: 'Canon EOS 70D',
+    text: 'Gebraucht bei eBay geschossen, mit sehr viel Zubehör. Beste Entscheidung meines Lebens.',
+  },
+  {
+    jahr: '2023',
+    geraet: 'Sony A7 IV',
+    text: 'Unzählige Tests gelesen und geschaut. Hat sich gelohnt — endlich Branchenstandard in der Hand.',
+  },
+];
+---
+
+<Base
+  title="Über mich"
+  description="Sandro Mondini — seit sechs Jahren Foto und Film. Vom Smartphone zum Beruf, aus der Oberlausitz."
+>
+  <!-- Hallo -->
+  <section class="kopf">
+    <div class="wrap kopf__in">
+      <div>
+        <p class="label label--orange">Klingt so italienisch?</p>
+        <h1 class="kopf__h">Hi, <span class="mark">Monte</span> hier.</h1>
+        <p class="lead kopf__lead">
+          Ja, das ist eigentlich mein Spitzname — nur eine Handvoll Leute wissen das.
+          Und nein, ich habe nichts mit dem Graffiti sprühenden Lambo-Streamer zu tun.
+        </p>
+        <p class="prose kopf__p">
+          Ich bin Sandro Mondini, seit {site.seit} Jahren in der Foto- und Videobranche.
+          Content Creator für mittelständische Unternehmen und Events aller Art,
+          zuhause in der {site.region}.
+        </p>
+      </div>
+
+      <div class="kopf__bild" data-reveal>
+        <Frame grade="sonne" ratio="4 / 5" label="Portrait — fehlt noch (Lieferliste C6)" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Die Geschichte -->
+  <section class="section" aria-labelledby="h-weg">
+    <div class="wrap weg">
+      <div>
+        <p class="label">Wie ich hier gelandet bin</p>
+        <h2 class="h-section" id="h-weg">Erst Konsument,<br />dann Macher.</h2>
+      </div>
+
+      <div class="prose weg__txt" data-reveal>
+        <p>
+          Ich bin mit dem Internet, YouTube und besonders Games aufgewachsen. Wie viele
+          damals war ich technikbegeistert — aber eben eher typischer Konsument, statt die
+          Technik für mich zu nutzen.
+        </p>
+        <p>
+          Es hat ein paar Jahre gedauert, bis ich wirklich Sachen ausprobiert habe:
+          zeichnen, filmen, schneiden. Erst mit 20 konnte ich mich voll für Foto und
+          Videografie begeistern. Startschuss gesetzt.
+        </p>
+        <p>
+          Rückblickend hat sich eigentlich nur meine Einstellung gegenüber meiner
+          „Freizeit" geändert. Ich habe gearbeitet, als hätte ich längst große Aufträge.
+          Habe mich neuen Menschen und Chancen geöffnet. Und sehr viel kam dann über
+          Mundpropaganda zu mir.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zitat -->
+  <section class="section section--teal">
+    <div class="wrap zitat__in">
+      <blockquote class="zitat">
+        <p>Hobby zum Beruf gemacht. Egal wann — den perfekten Zeitpunkt gibt es nicht.</p>
+      </blockquote>
+      <p class="zitat__nach">
+        Ich bin noch jung, finde aber trotzdem, dass ich ziemlich spät gestartet bin.
+        Das Feuer, etwas Kreatives mit Medien zu machen, hat schon länger gebrannt.
+        Aber so ist es nun mal — und ich bin ziemlich stolz auf mich.
+      </p>
+    </div>
+  </section>
+
+  <!-- Technik-Weg -->
+  <section class="section section--sand" aria-labelledby="h-technik">
+    <div class="wrap">
+      <p class="label label--orange">Womit das angefangen hat</p>
+
+      <div class="head" data-reveal>
+        <h2 class="h-section" id="h-technik">Vom Smartphone<br />zum Branchenstandard.</h2>
+        <p class="lead technik__lead">
+          Man braucht keine teure Ausrüstung, um anzufangen. Man braucht nur eine.
+        </p>
+      </div>
+
+      <ol class="zeit">
+        {technik.map((t, i) => (
+          <li class="zeit__i" data-reveal style={`--reveal-delay:${i * 90}ms`}>
+            <span class="zeit__jahr">{t.jahr}</span>
+            <div class="zeit__body">
+              <h3 class="zeit__h">{t.geraet}</h3>
+              <p class="zeit__t">{t.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Haltung + Bild -->
+  <section class="section" aria-labelledby="h-haltung">
+    <div class="wrap haltung">
+      <div class="haltung__bild" data-reveal>
+        <Bild bild={bilder.scheinwerfer} ratio="4 / 5" sizes="(max-width: 880px) 100vw, 40vw" />
+      </div>
+
+      <div data-reveal style="--reveal-delay:110ms">
+        <p class="label label--pink">Wie ich arbeite</p>
+        <h2 class="h-section" id="h-haltung">Ich geb hier nicht an.</h2>
+        <div class="prose haltung__txt">
+          <p>
+            Ich erzähle dir einfach, wie ich arbeite — und du entscheidest, ob das zu dir passt.
+          </p>
+          <p>
+            Ich nehme ein paar Projekte im Jahr an. Dafür bin ich dann auch wirklich dabei:
+            vorher reden, vor Ort mitlaufen, hinterher sauber liefern. Ich stelle niemanden
+            hin und lasse ihn posieren, wenn er das nicht will. Und ich warte lieber eine
+            Stunde auf das richtige Licht, als zwanzig Bilder zu machen, die alle gleich
+            aussehen.
+          </p>
+          <p>
+            Ohne andere Menschen kommt man nicht weit. Das meiste, was ich kann, habe ich mir
+            von Leuten abgeschaut, die es vorgemacht haben.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Region und Kanäle -->
+  <section class="section section--sand">
+    <div class="wrap">
+      <div class="infos">
+        <article data-reveal>
+          <h3 class="infos__h">Wo ich unterwegs bin</h3>
+          <p class="infos__t">
+            {site.region} und Umgebung ohne Aufschlag. Darüber hinaus gerne — Fahrtkosten
+            stehen dann vorher im Angebot.
+          </p>
+        </article>
+
+        <article data-reveal style="--reveal-delay:90ms">
+          <h3 class="infos__h">Auf Instagram</h3>
+          <p class="infos__t">
+            Dort liegt der größte Teil meiner Arbeit — und ab und zu erzähle ich, wie
+            etwas entstanden ist.
+          </p>
+          <a href={site.instagram} class="link infos__lnk" rel="me noopener" target="_blank">
+            @sandro_mondini <span class="arw" aria-hidden="true">&rarr;</span>
+          </a>
+        </article>
+
+        <article data-reveal style="--reveal-delay:180ms">
+          <h3 class="infos__h">Auf YouTube</h3>
+          <p class="infos__t">
+            Technik, Tests und was ich beim Filmen gelernt habe. Nichts, was du für eine
+            Anfrage brauchst — aber du siehst, dass ich weiß, was ich tue.
+          </p>
+          <a href={site.youtube} class="link infos__lnk" rel="me noopener" target="_blank">
+            Kanal ansehen <span class="arw" aria-hidden="true">&rarr;</span>
+          </a>
+        </article>
+      </div>
+
+      <p class="redaktion">
+        <b>Redaktionshinweis (nicht für die Live-Seite):</b> Alle Texte auf dieser Seite
+        stammen aus Sandros eigenem Instagram-Beitrag und sind nur neu gesetzt. Zwei sehr
+        persönliche Stellen aus dem Original — die Nachtschicht und der Autounfall — sind
+        hier bewusst nicht übernommen. Sie sind stark und würden Vertrauen schaffen, gehören
+        aber nur auf die Seite, wenn er das ausdrücklich will.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .kopf { padding-block: calc(var(--section) + 3.5rem) 0; }
+
+  .kopf__in {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: var(--s-8);
+    align-items: center;
+  }
+  @media (max-width: 880px) { .kopf__in { grid-template-columns: 1fr; } }
+
+  .kopf__h { font-size: var(--t-display); line-height: 0.98; }
+  .kopf__lead { margin-top: var(--s-4); }
+  .kopf__p { margin-top: var(--s-3); color: var(--ink-soft); }
+
+  .weg, .haltung {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--s-8);
+    align-items: start;
+  }
+  @media (max-width: 880px) { .weg, .haltung { grid-template-columns: 1fr; } }
+
+  .weg__txt p { color: var(--ink-soft); }
+
+  .zitat__in { max-width: 62ch; }
+  .zitat { margin: 0; }
+  .zitat p {
+    font-family: var(--font-display);
+    font-size: var(--t-2xl);
+    font-weight: 700;
+    letter-spacing: var(--h-track);
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+  .zitat__nach { margin-top: var(--s-4); color: var(--ink-soft); }
+
+  .head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--s-4);
+    margin-bottom: var(--s-8);
+  }
+  .technik__lead { max-width: 34ch; }
+
+  .zeit { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-2); }
+
+  .zeit__i {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: var(--s-3);
+    align-items: baseline;
+    padding: var(--s-3) var(--s-4);
+    background: var(--weiss);
+    border-radius: var(--r);
+  }
+  @media (max-width: 560px) {
+    .zeit__i { grid-template-columns: 1fr; gap: 0.25rem; }
+  }
+
+  .zeit__jahr {
+    font-family: var(--font-mono);
+    font-size: var(--t-sm);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--orange-tief);
+  }
+
+  .zeit__h { font-size: var(--t-lg); }
+  .zeit__t { margin-top: 0.3rem; font-size: var(--t-sm); color: var(--ink-soft); max-width: 58ch; }
+
+  .haltung__txt p { color: var(--ink-soft); }
+  .haltung__txt p:first-child {
+    color: var(--ink);
+    font-size: var(--t-lg);
+    font-weight: 600;
+  }
+
+  .infos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--s-3);
+  }
+  .infos article {
+    padding: var(--s-4);
+    border-radius: var(--r);
+    background: var(--teal-weich);
+  }
+  .infos article:nth-child(2) { background: var(--orange-weich); }
+  .infos article:nth-child(3) { background: var(--pink-weich); }
+  .infos__h { font-family: var(--font-display); font-size: var(--t-lg); letter-spacing: -0.02em; }
+  .infos__t { margin-top: var(--s-2); font-size: var(--t-sm); color: var(--ink-soft); }
+  .infos__lnk { margin-top: var(--s-3); }
+
+  .redaktion {
+    margin-top: var(--s-8);
+    padding: var(--s-3) var(--s-4);
+    border-radius: var(--r);
+    border: 2px dashed var(--linie-stark);
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+    max-width: 80ch;
+  }
+</style>

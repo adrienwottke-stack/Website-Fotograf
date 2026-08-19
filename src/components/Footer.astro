@@ -1,0 +1,138 @@
+---
+import { site, verfuegbarkeit } from '../data/site';
+
+const jahr = new Date().getFullYear();
+---
+
+<footer class="ft">
+  <section class="ft__cta">
+    <div class="wrap ft__cta-in">
+      <div>
+        <p class="label label--orange">Projekt im Kopf?</p>
+        <h2 class="ft__h">Erzähl mir einfach,<br />worum es geht.</h2>
+        <p class="ft__stat">
+          <span class="ft__dot" aria-hidden="true"></span>
+          {verfuegbarkeit.lang} {verfuegbarkeit.antwortzeit}.
+        </p>
+      </div>
+      <a href="/kontakt" class="btn ft__btn">
+        Schreib mir <span class="arw" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="ft__grid">
+      <div class="ft__col">
+        <p class="ft__lbl">Seiten</p>
+        <a href="/arbeiten">Arbeiten</a>
+        <a href="/leistungen">Leistungen</a>
+        <a href="/ablauf">Ablauf &amp; FAQ</a>
+        <a href="/ueber-mich">Über mich</a>
+        <a href="/journal">Journal</a>
+      </div>
+
+      <div class="ft__col">
+        <p class="ft__lbl">Kontakt</p>
+        <a href={`mailto:${site.mail}`}>{site.mail}</a>
+        <a href={site.instagram} rel="me noopener" target="_blank">Instagram</a>
+        <a href={site.youtube} rel="me noopener" target="_blank">YouTube</a>
+      </div>
+
+      <div class="ft__col">
+        <p class="ft__lbl">Rechtliches</p>
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+      </div>
+
+      <div class="ft__col">
+        <p class="ft__lbl">Wo</p>
+        <p class="ft__muted">{site.region}<br />und Umgebung</p>
+      </div>
+    </div>
+
+    <p class="ft__base">
+      <span>&copy; {jahr} {site.name}</span>
+      <span>Gemacht in der {site.region}.</span>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .ft { background: var(--creme); }
+
+  .ft__cta {
+    background: var(--sand);
+    border-radius: var(--r-l) var(--r-l) 0 0;
+    padding-block: var(--section);
+  }
+
+  .ft__cta-in {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--s-6);
+  }
+
+  .ft__h { font-size: var(--t-2xl); }
+
+  .ft__stat {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    margin-top: var(--s-3);
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+  }
+
+  .ft__dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gruen);
+    box-shadow: 0 0 0 3px rgba(47, 122, 62, 0.18);
+    flex: none;
+  }
+
+  .ft__btn { font-size: var(--t-base); padding: 1em 2em; }
+
+  .ft__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--s-6);
+    padding-block: var(--s-12) var(--s-8);
+  }
+
+  .ft__col { display: grid; gap: 0.55rem; align-content: start; }
+
+  .ft__lbl {
+    font-family: var(--font-mono);
+    font-size: var(--t-label);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.35rem;
+  }
+
+  .ft__col a {
+    font-size: var(--t-sm);
+    font-weight: 600;
+    color: var(--ink-soft);
+    justify-self: start;
+    transition: color 220ms var(--ease);
+  }
+  .ft__col a:hover { color: var(--orange-tief); }
+
+  .ft__muted { font-size: var(--t-sm); color: var(--ink-soft); }
+
+  .ft__base {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2) var(--s-4);
+    justify-content: space-between;
+    padding: var(--s-4) 0 var(--s-6);
+    border-top: 1px solid var(--linie);
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+  }
+</style>
