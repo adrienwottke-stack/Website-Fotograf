@@ -409,7 +409,7 @@ Dazu auf der Seite:
 
 > **Stand 18.08.2026 — überholt.** Der Abschnitt unten war auf Verdacht geschrieben, bevor Bildmaterial vorlag. Der tatsächliche Instagram-Feed zeigt etwas anderes: Automotive, Motorsport, Events, Kirschblüte, Neon — **hell, satt, farbig und sehr persönlich**, dazu ein humorvoller, offener Ton („Klingt so italienisch? Hi Monte hier!"). Eine schwarze Galeriewand wäre kühl und distanziert und damit das Gegenteil von ihm.
 >
-> Deshalb liegen jetzt **fünf Richtungen zum Vergleich** im Entwurf vor, alle unter `/designs` durchschaltbar:
+> Deshalb liegen jetzt **sieben Richtungen zum Vergleich** im Entwurf vor, alle unter `/designs` durchschaltbar:
 >
 > | | Richtung | Charakter |
 > |---|---|---|
@@ -418,8 +418,10 @@ Dazu auf der Seite:
 > | 3 | **Sonntagslicht** | Weich und editorial. Warme Serifen, Terrakotta und Salbei, viel Luft. |
 > | 4 | **Abendwerkstatt** | Warmes Dunkel statt kaltem Schwarz. Bernstein und Kupfer. |
 > | 5 | **Zeitung** | Magazin auf Papier. Serifen-Schlagzeilen, harte Linien, Signalrot. |
+> | 6 | **Nachtschicht** | Tiefes Blauschwarz, elektrisches Cyan und Orange, Technik-Raster, quadratische Bilder. |
+> | 7 | **Neonnacht** | Violettes Dunkel, Neonpink und Cyan — die Clubnacht-Seite seines Feeds. |
 >
-> Alle fünf nutzen dieselben Token, dieselbe Struktur und denselben Inhalt. Sobald eine Richtung gewählt ist, wird dieser Abschnitt darauf umgeschrieben.
+> Alle sieben nutzen dieselben Token, dieselbe Struktur und denselben Inhalt. Sobald eine Richtung gewählt ist, wird dieser Abschnitt darauf umgeschrieben.
 >
 > **Nachtrag: Er hat bereits eine eigene Bildsprache.** Seine Instagram-Beiträge sind konsequent gestaltet — fette, schmal laufende Versalien, **Gelb als Leitfarbe**, dazu Weiß und punktuell Grün und Rot, Text direkt über dem Foto mit hartem Schlagschatten. Das ist keine Zufallsoptik, das zieht sich über Dutzende Beiträge durch.
 >

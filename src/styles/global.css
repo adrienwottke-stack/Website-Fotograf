@@ -20,8 +20,8 @@
   --ink:      #241A12;   /* 16.06:1 auf Creme */
   --ink-soft: #6B5544;   /*  6.58:1 auf Creme */
 
-  --orange:      #E8501F;
-  --orange-tief: #C23C0C;
+  --orange:      #D13F0E;   /* 4.74:1 mit weißer Schrift — Knopffläche */
+  --orange-tief: #A8340C;
   --teal:        #0D6E7A;
   --pink:        #C4246B;
   --gruen:       #2F7A3E;
@@ -44,6 +44,13 @@
   --auf-bunt-soft:#C9E4E8;
 
   --marker: var(--gelb);
+
+  /* Knöpfe: Schrift auf der gefüllten Fläche und Rahmen der
+     Outline-Variante. Eigene Token, weil beide je Richtung andere
+     Kontrastanforderungen haben (heller Knopf auf dunklem Grund
+     braucht dunkle Schrift, der Rahmen mindestens 3:1 zum Hintergrund). */
+  --btn-fg: #FFFFFF;      /* 4.74:1 auf --orange */
+  --btn-linie: #8A6C52;   /* 4.55:1 auf Creme */
 
   /* ---- Schrift ------------------------------------------- */
   --font-display: 'Bricolage Grotesque Variable', system-ui, sans-serif;
@@ -131,6 +138,8 @@
 
   --marker: #FFD93D;
 
+  --btn-linie: #141428;
+
   --font-display: 'Archivo Variable', system-ui, sans-serif;
   --display-weight: 800;
   --display-track: -0.045em;
@@ -186,6 +195,8 @@
 
   --marker: #E8C79A;
 
+  --btn-linie: #8C7862;   /* 3.96:1 auf dem Papierton */
+
   --font-display: 'Fraunces Variable', Georgia, serif;
   --display-weight: 400;
   --display-track: -0.015em;
@@ -208,38 +219,42 @@
 
 /* =========================================================
    4 · ABENDWERKSTATT — warmes Dunkel, kein kaltes Schwarz.
-   Bernstein und Kupfer auf gebranntem Braun.
+   Bernstein und Kupfer auf gebranntem Braun. Bewusst hart im
+   Kontrast: dunklerer Grund, hellere Flächen, leuchtende Akzente.
    ========================================================= */
 [data-theme='abendwerkstatt'] {
-  --creme: #1A1512;
-  --sand:  #251E19;
-  --weiss: #2C2420;
+  --creme: #150F0A;
+  --sand:  #231A12;
+  --weiss: #2D231A;
 
-  --ink:      #F5EDE3;   /* 15.61:1 */
-  --ink-soft: #C0AC99;   /*  8.28:1 */
+  --ink:      #F8F1E6;   /* 16.94:1 */
+  --ink-soft: #CDB89F;   /*  9.92:1 */
 
-  --orange:      #E8703A;
-  --orange-tief: #F0A73C;
-  --teal:        #4FB3A8;
-  --pink:        #E08AA8;
-  --gruen:       #8CC57A;
-  --gelb:        #F0A73C;
+  --orange:      #FF7C2E;
+  --orange-tief: #FFA94D;   /* auf Dunkel wird der Hover heller, nicht dunkler */
+  --teal:        #5FD9C9;
+  --pink:        #FF9CBE;
+  --gruen:       #9ADD7E;
+  --gelb:        #FFB846;
 
-  --orange-weich: #3A251B;
-  --teal-weich:   #16332F;
-  --pink-weich:   #38222A;
+  --orange-weich: #4A2A14;
+  --teal-weich:   #11382F;
+  --pink-weich:   #44202E;
 
-  --linie:       #3A2E27;
-  --linie-stark: #55443A;
+  --linie:       #463626;
+  --linie-stark: #6E5840;
 
-  --flaeche-ink:  #0F0B09;
-  --auf-ink:      #F5EDE3;
-  --auf-ink-soft: #B7A28F;
-  --flaeche-bunt: #1F4F4A;
-  --auf-bunt:     #F5EDE3;
-  --auf-bunt-soft:#A9CFC9;
+  --flaeche-ink:  #0A0603;
+  --auf-ink:      #F8F1E6;
+  --auf-ink-soft: #BCA78E;
+  --flaeche-bunt: #155A50;
+  --auf-bunt:     #EDFAF6;
+  --auf-bunt-soft:#A8DACE;
 
-  --marker: #7A4A1E;
+  --marker: #7A4A10;
+
+  --btn-fg: #1A1006;      /* 7.29:1 auf dem hellen Orange */
+  --btn-linie: #B08F65;   /* 6.30:1 auf dem Grund */
 
   /* Kino: breite Bilder im 16:9-Format, Schrift etwas leichter,
      damit die Aufnahmen die Fläche bekommen. */
@@ -249,6 +264,122 @@
   --karte-ratio:   16 / 9;
   --raster-min:    360px;
   --streifen-cols: 4;
+
+  color-scheme: dark;
+}
+
+/* =========================================================
+   6 · NACHTSCHICHT — tiefes Blauschwarz, elektrische Akzente.
+   Der technische Look: Raster, Cyan, quadratische Bilder wie
+   im Feed. Name aus seiner eigenen Geschichte.
+   ========================================================= */
+[data-theme='nachtschicht'] {
+  --creme: #0B0D11;
+  --sand:  #151A22;
+  --weiss: #1C222C;
+
+  --ink:      #F0F4F9;   /* 17.61:1 */
+  --ink-soft: #A9B7C6;   /*  9.52:1 */
+
+  --orange:      #FF6A3D;
+  --orange-tief: #FF9066;
+  --teal:        #57D1E8;
+  --pink:        #FF85B3;
+  --gruen:       #82DC9E;
+  --gelb:        #FFC44D;
+
+  --orange-weich: #3D1E12;
+  --teal-weich:   #0F323C;
+  --pink-weich:   #3B1B2A;
+
+  --linie:       #27303D;
+  --linie-stark: #46556C;
+
+  --flaeche-ink:  #04060A;
+  --auf-ink:      #F0F4F9;
+  --auf-ink-soft: #96A5B8;
+  --flaeche-bunt: #123E5C;
+  --auf-bunt:     #EAF3FB;
+  --auf-bunt-soft:#ABC8E0;
+
+  --marker: #0F4A56;
+
+  --btn-fg: #160806;
+  --btn-linie: #7288A6;
+
+  --font-display: 'Archivo Variable', system-ui, sans-serif;
+  --display-weight: 800;
+  --display-track: -0.04em;
+  --display-leading: 0.88;
+  --h-weight: 800;
+
+  /* Quadratische Kacheln (wie sein Instagram-Raster), straffer Takt */
+  --display-size:  clamp(3rem, 1rem + 8vw, 8.5rem);
+  --raster-min:    330px;
+  --streifen-cols: 4;
+  --karte-ratio:   1 / 1;
+  --section: clamp(4.5rem, 8vw, 7.5rem);
+
+  --r-s: 6px;
+  --r:   10px;
+  --r-l: 16px;
+
+  color-scheme: dark;
+}
+
+/* =========================================================
+   7 · NEONNACHT — violettes Dunkel, Neonpink und Cyan.
+   Die Clubnacht-Seite seines Feeds als Website.
+   ========================================================= */
+[data-theme='neonnacht'] {
+  --creme: #130D1D;
+  --sand:  #1D142E;
+  --weiss: #261A3A;
+
+  --ink:      #F6F0FD;   /* 17.05:1 */
+  --ink-soft: #C3B0E0;   /*  9.62:1 */
+
+  --orange:      #FF4D8D;   /* die CTA-Rolle übernimmt hier Neonpink */
+  --orange-tief: #FF80B0;
+  --teal:        #59DFFF;
+  --pink:        #FF6BE0;
+  --gruen:       #8BE87C;
+  --gelb:        #FFD54A;
+
+  --orange-weich: #43152B;
+  --teal-weich:   #0E3A47;
+  --pink-weich:   #3F1638;
+
+  --linie:       #332547;
+  --linie-stark: #5C4578;
+
+  --flaeche-ink:  #080510;
+  --auf-ink:      #F6F0FD;
+  --auf-ink-soft: #B5A2D2;
+  --flaeche-bunt: #3A1660;
+  --auf-bunt:     #F3EBFF;
+  --auf-bunt-soft:#CFB9F0;
+
+  --marker: #5C1F45;
+
+  --btn-fg: #1D0712;
+  --btn-linie: #9678BE;
+
+  --font-display: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
+  --display-weight: 800;
+  --display-track: -0.03em;
+  --display-leading: 0.92;
+  --h-weight: 800;
+
+  --display-size:  clamp(2.75rem, 1.1rem + 6.8vw, 7.25rem);
+  --raster-min:    380px;
+  --streifen-cols: 3;
+  --karte-ratio:   4 / 5;
+  --section: clamp(4rem, 7vw, 6.75rem);
+
+  --r-s: 10px;
+  --r:   20px;
+  --r-l: 32px;
 
   color-scheme: dark;
 }
@@ -287,6 +418,8 @@
   --auf-bunt-soft:#B9C4D9;
 
   --marker: #E5B93C;
+
+  --btn-linie: #16130F;
 
   --font-display: 'Newsreader Variable', Georgia, serif;
   --font-sans:    'Archivo Variable', system-ui, sans-serif;
@@ -365,6 +498,138 @@ button { font: inherit; cursor: pointer; }
   max-width: var(--max);
   margin-inline: auto;
   padding-inline: var(--gutter);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================================
+   Hintergrund-Ebene (.deko)
+   Eine feste Fläche hinter dem Inhalt, pro Richtung anders
+   bespielt: Farbwäschen, Splines, Ringe, Raster, Spaltenlinien.
+   Alles rein dekorativ (aria-hidden), Deckkraft so niedrig,
+   dass Textkontraste unberührt bleiben. Sektionen mit eigener
+   Farbe (--sand, Farbflächen, Karten) decken sie ab.
+   ========================================================= */
+
+.deko {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Inhalt liegt über der Deko-Ebene */
+main, footer { position: relative; z-index: 1; }
+
+.deko::before,
+.deko::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+/* --- 1 · Werkstatt: warme Farbwäschen + zwei Splines ---------- */
+.deko::before {
+  background:
+    radial-gradient(44rem 32rem at 10% 6%, rgba(232, 80, 31, 0.09), transparent 62%),
+    radial-gradient(52rem 38rem at 90% 28%, rgba(13, 110, 122, 0.09), transparent 65%),
+    radial-gradient(38rem 30rem at 68% 94%, rgba(196, 36, 107, 0.06), transparent 62%);
+}
+
+.deko::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='980' viewBox='0 0 1400 980' fill='none'%3E%3Cpath d='M-80 760 C 280 580, 470 900, 800 690 S 1290 430, 1480 540' stroke='%23E8501F' stroke-opacity='0.12' stroke-width='2'/%3E%3Cpath d='M-60 220 C 260 70, 560 290, 840 150 S 1240 40, 1460 170' stroke='%230D6E7A' stroke-opacity='0.10' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: max(1400px, 100vw) auto;
+}
+
+/* --- 2 · Postkarte: Ringe + Punktraster in der Ecke ----------- */
+[data-theme='postkarte'] .deko::before {
+  background:
+    radial-gradient(circle at 86% 12%, transparent 138px, rgba(27, 63, 216, 0.13) 139px, rgba(27, 63, 216, 0.13) 147px, transparent 148px),
+    radial-gradient(circle at 6% 78%, transparent 190px, rgba(196, 23, 122, 0.11) 191px, rgba(196, 23, 122, 0.11) 200px, transparent 201px),
+    radial-gradient(30rem 24rem at 30% 12%, rgba(255, 217, 61, 0.16), transparent 60%);
+}
+
+[data-theme='postkarte'] .deko::after {
+  background-image: radial-gradient(rgba(20, 20, 40, 0.16) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(520px 420px at 88% 10%, #000 35%, transparent 72%);
+  mask-image: radial-gradient(520px 420px at 88% 10%, #000 35%, transparent 72%);
+}
+
+/* --- 3 · Sonntagslicht: weiches Licht von oben + feines Korn -- */
+[data-theme='sonntagslicht'] .deko::before {
+  background:
+    radial-gradient(60rem 34rem at 50% -8%, rgba(232, 199, 154, 0.22), transparent 68%),
+    radial-gradient(44rem 36rem at 96% 88%, rgba(79, 102, 80, 0.07), transparent 62%);
+}
+
+[data-theme='sonntagslicht'] .deko::after {
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* --- 4 · Abendwerkstatt: Werkstattlampe + Lichtstreif + Korn -- */
+[data-theme='abendwerkstatt'] .deko::before {
+  background:
+    radial-gradient(46rem 34rem at 16% -6%, rgba(255, 169, 77, 0.17), transparent 62%),
+    radial-gradient(40rem 32rem at 94% 90%, rgba(95, 217, 201, 0.08), transparent 62%),
+    linear-gradient(118deg, transparent 42%, rgba(255, 169, 77, 0.05) 52%, transparent 62%);
+}
+
+[data-theme='abendwerkstatt'] .deko::after {
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* --- 5 · Zeitung: Spaltenlinien wie im Satzspiegel ------------ */
+[data-theme='zeitung'] .deko::before {
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(22, 19, 15, 0.055) 0 1px,
+    transparent 1px 218px
+  );
+}
+
+[data-theme='zeitung'] .deko::after {
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* --- 6 · Nachtschicht: technisches Raster + Cyan-Glühen ------- */
+[data-theme='nachtschicht'] .deko::before {
+  background:
+    radial-gradient(52rem 34rem at 78% -10%, rgba(87, 209, 232, 0.10), transparent 64%),
+    radial-gradient(40rem 34rem at 4% 96%, rgba(255, 106, 61, 0.08), transparent 60%);
+}
+
+[data-theme='nachtschicht'] .deko::after {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(87, 209, 232, 0.045) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(90deg, rgba(87, 209, 232, 0.045) 0 1px, transparent 1px 64px);
+}
+
+/* --- 7 · Neonnacht: Neon-Glühen + ein Ring -------------------- */
+[data-theme='neonnacht'] .deko::before {
+  background:
+    radial-gradient(46rem 36rem at 8% 0%, rgba(255, 77, 141, 0.16), transparent 62%),
+    radial-gradient(50rem 40rem at 96% 92%, rgba(89, 223, 255, 0.12), transparent 64%),
+    radial-gradient(circle at 82% 22%, transparent 158px, rgba(255, 107, 224, 0.12) 159px, rgba(255, 107, 224, 0.12) 166px, transparent 167px);
+}
+
+[data-theme='neonnacht'] .deko::after {
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .section { padding-block: var(--section); }
@@ -462,7 +727,7 @@ button { font: inherit; cursor: pointer; }
   border: none;
   border-radius: var(--r-pill);
   background: var(--orange);
-  color: #FFFFFF;
+  color: var(--btn-fg);
   font-family: var(--font-sans);
   font-size: var(--t-sm);
   font-weight: 700;
@@ -473,14 +738,10 @@ button { font: inherit; cursor: pointer; }
 .btn .arw { transition: transform 300ms var(--ease); }
 .btn:hover .arw { transform: translateX(4px); }
 
-/* Im dunklen Theme ist Orange hell — dann dunkle Schrift darauf */
-[data-theme='abendwerkstatt'] .btn { color: #1A1512; }
-[data-theme='abendwerkstatt'] .btn:hover { color: #1A1512; }
-
 .btn--linie {
   background: transparent;
   color: var(--ink);
-  border: 2px solid var(--linie-stark);
+  border: 2px solid var(--btn-linie);
 }
 .btn--linie:hover { background: var(--weiss); border-color: var(--ink); color: var(--ink); }
 
@@ -498,7 +759,14 @@ button { font: inherit; cursor: pointer; }
 
 .section--teal .link, .section--ink .link { color: inherit; }
 .link:hover { color: var(--orange-tief); }
-.section--teal .link:hover, .section--ink .link:hover { color: var(--gelb); }
+/* Auf Farbflächen bleibt die Schriftfarbe stehen (Gelb schafft dort nicht
+   überall 4.5:1) — der Hover zeigt sich über die dickere Unterstreichung
+   und den wandernden Pfeil. */
+.section--teal .link:hover, .section--ink .link:hover {
+  color: inherit;
+  border-bottom-width: 4px;
+  padding-bottom: calc(0.15em - 2px);
+}
 .link .arw { transition: transform 300ms var(--ease); }
 .link:hover .arw { transform: translateX(4px); }
 

@@ -1,6 +1,7 @@
 ---
 import Frame from './Frame.astro';
 import Bild from './Bild.astro';
+import VideoRahmen from './VideoRahmen.astro';
 import ProjektKarte from './ProjektKarte.astro';
 import { featured, signature } from '../data/projekte';
 import { bilder } from '../data/bilder';
@@ -60,6 +61,14 @@ const farben = ['orange', 'teal', 'pink'] as const;
       <div class="streifen__i streifen__i--d" data-reveal style="--reveal-delay:330ms">
         <Bild bild={bilder.scheinwerfer} ratio="1 / 1" sizes="(max-width: 760px) 50vw, 25vw" />
       </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOWREEL (Platzhalter) ============ -->
+  <section class="reel" aria-labelledby="h-reel">
+    <div class="wrap">
+      <h2 class="sr-only" id="h-reel">Showreel</h2>
+      <VideoRahmen poster={bilder.heckHimmel} />
     </div>
   </section>
 
@@ -280,6 +289,9 @@ const farben = ['orange', 'teal', 'pink'] as const;
     .streifen { grid-template-columns: repeat(2, 1fr); gap: var(--s-1); }
     .streifen__i--b, .streifen__i--d { margin-bottom: var(--s-3); }
   }
+
+  /* ---------- Showreel ---------- */
+  .reel { padding-block: calc(var(--section) * 0.55) calc(var(--section) * 0.7); }
 
   /* ---------- Gemeinsame Kopfzeile ---------- */
   .head {

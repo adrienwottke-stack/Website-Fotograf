@@ -1,6 +1,6 @@
 # Website Sandro Mondini
 
-Foto & Film aus der Oberlausitz. Astro-Website, aktuell im **Entwurfsstadium** — fünf Designrichtungen stehen zur Auswahl.
+Foto & Film aus der Oberlausitz. Astro-Website, aktuell im **Entwurfsstadium** — sieben Designrichtungen stehen zur Auswahl.
 
 ## Starten
 
@@ -16,7 +16,7 @@ Läuft dann auf `http://localhost:4321`.
 
 ## Designrichtungen vergleichen
 
-Oben auf jeder Seite liegt eine Leiste mit fünf Richtungen. Die Wahl gilt seitenübergreifend und wird im Browser gespeichert.
+Oben auf jeder Seite liegt eine Leiste mit sieben Richtungen. Die Wahl gilt seitenübergreifend und wird im Browser gespeichert.
 
 | Nr | Richtung | Charakter |
 |---|---|---|
@@ -25,6 +25,8 @@ Oben auf jeder Seite liegt eine Leiste mit fünf Richtungen. Die Wahl gilt seite
 | 3 | Sonntagslicht | Leise, viel Luft, Serifen |
 | 4 | Abendwerkstatt | Warmes Dunkel, Kinoformate |
 | 5 | Zeitung | Dicht, viele Spalten, harte Linien |
+| 6 | Nachtschicht | Tiefes Blauschwarz, elektrisches Cyan, quadratische Bilder |
+| 7 | Neonnacht | Violettes Dunkel, Neonpink und Cyan |
 
 Die Richtungen unterscheiden sich nicht nur in der Farbe, sondern strukturell: Schriftgröße und -gewicht, Rasterspalten, Bildformate und Sektionsrhythmus.
 
@@ -51,6 +53,8 @@ referenz/       Quellmaterial (Instagram-Slides), nicht Teil der Website
 
 - Fertig gestaltet: Startseite, Arbeiten, Projektseite, Leistungen, Über mich
 - Platzhalter: Ablauf, Journal, Kontakt, Impressum, Datenschutz
+- Showreel-Platzhalter unter dem Hero (gerahmt, Sucher-Look) — das echte Video kommt von Sandro
+- Jede Richtung hat eine eigene Hintergrund-Ebene (Verläufe, Splines, Punktraster, Spaltenlinien)
 - Echte Fotos nur beim Projekt „Carmeet Oberlausitz"; sonst Farbflächen als Platzhalter
 - Alle Preise, Kundennamen und Eckdaten sind Platzhalter
 - Rohvideos liegen lokal unter `public/video/` und sind bewusst nicht eingecheckt (50 MB, müssen neu exportiert werden)

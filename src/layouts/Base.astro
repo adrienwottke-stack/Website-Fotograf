@@ -68,6 +68,9 @@ const fullTitle = `${title} — ${site.name}`;
   </head>
 
   <body>
+    <!-- Dekorative Hintergrund-Ebene, pro Designrichtung anders bespielt.
+         Rein visuell, liegt hinter dem Inhalt (siehe global.css, .deko). -->
+    <div class="deko" aria-hidden="true"></div>
     <Header />
     <main id="main">
       <slot />

@@ -148,7 +148,9 @@ Für jedes Projekt mit Text:
 
 > Instagram komprimiert stark und beschneidet auf feste Formate. Für Vollbild-Darstellung auf großen Monitoren reicht das nicht.
 
-### C5 · Hero-Bewegtbild
+### C5 · Hero-Bewegtbild & Showreel
+
+Unter dem Hero ist jetzt ein gerahmter Platz für ein Showreel eingebaut — darauf legt die Seite sichtbar Wert. Es kann derselbe Clip sein wie das Hero-Bewegtbild oder ein eigener Zusammenschnitt (30–60 s).
 
 - [ ] **10–15 Sekunden**, ohne Ton, nahtlos loopbar
 - [ ] **Zwei Schnitte:** quer (16:9) für Desktop, hoch (9:16) für Mobil

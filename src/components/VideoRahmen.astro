@@ -1,0 +1,192 @@
+---
+import { Image } from 'astro:assets';
+import type { Bild } from '../data/bilder';
+
+/**
+ * Gerahmter Platz für das Showreel.
+ *
+ * Das Video kommt später von Sandro (LIEFERLISTE.md, C5). Bis dahin hält
+ * ein abgedunkeltes Standbild den Platz — im Sucher-Look: Eckklammern,
+ * REC-Markierung, Zeitstempel. Der Rahmen ist eine Passepartout-Fläche
+ * auf Kartengrund, damit das Video in jeder Designrichtung gefasst wirkt.
+ *
+ * Einbau des echten Videos später: das <Image>-Element durch ein stummes,
+ * loopendes <video> ersetzen — Rahmen, Ecken und Unterschrift bleiben.
+ * Der Play-Kreis ist bewusst KEIN Button: er würde noch nichts tun.
+ */
+interface Props {
+  poster: Bild;
+}
+
+const { poster } = Astro.props;
+---
+
+<figure class="vr" data-reveal>
+  <div class="vr__matte">
+    <div class="vr__media">
+      <Image
+        src={poster.src}
+        alt=""
+        widths={[700, 1100, 1600]}
+        sizes="(max-width: 960px) 100vw, 960px"
+        format="avif"
+        quality={55}
+        loading="lazy"
+        class="vr__poster"
+      />
+      <div class="vr__scrim" aria-hidden="true"></div>
+
+      <span class="vr__ecke vr__ecke--tl" aria-hidden="true"></span>
+      <span class="vr__ecke vr__ecke--tr" aria-hidden="true"></span>
+      <span class="vr__ecke vr__ecke--bl" aria-hidden="true"></span>
+      <span class="vr__ecke vr__ecke--br" aria-hidden="true"></span>
+
+      <span class="vr__rec" aria-hidden="true">
+        <span class="vr__punkt"></span>REC
+      </span>
+      <span class="vr__zeit" aria-hidden="true">Showreel · 00:47</span>
+
+      <div class="vr__play" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26" focusable="false">
+          <path d="M8 5.2v13.6L19 12z" fill="currentColor" />
+        </svg>
+      </div>
+
+      <p class="vr__hinweis">Video folgt</p>
+    </div>
+  </div>
+
+  <figcaption class="vr__unter">
+    <span class="vr__cap-mono">Bewegtbild</span>
+    <span class="vr__cap-text">
+      Hier kommt sein Showreel hin — bis dahin hält ein Standbild den Platz.
+    </span>
+  </figcaption>
+</figure>
+
+<style>
+  .vr { margin: 0; }
+
+  /* Passepartout: Kartenfläche als Rahmen, feine Linie, weicher Schatten */
+  .vr__matte {
+    background: var(--weiss);
+    border: 1px solid var(--linie);
+    border-radius: var(--r-l);
+    padding: clamp(0.5rem, 1.6vw, 1rem);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.08),
+      0 24px 60px rgba(0, 0, 0, 0.16);
+  }
+
+  .vr__media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: var(--r);
+    background: #14100D;
+    isolation: isolate;
+  }
+
+  .vr__poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Abdunklung, damit alle Auflagen (weiße Schrift) überall sitzen */
+  .vr__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8, 6, 4, 0.30) 0%, rgba(8, 6, 4, 0.14) 42%, rgba(8, 6, 4, 0.52) 100%);
+  }
+
+  /* Sucher-Ecken */
+  .vr__ecke {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 0 solid rgba(255, 255, 255, 0.85);
+  }
+  .vr__ecke--tl { top: 14px; left: 14px;   border-top-width: 2px; border-left-width: 2px; }
+  .vr__ecke--tr { top: 14px; right: 14px;  border-top-width: 2px; border-right-width: 2px; }
+  .vr__ecke--bl { bottom: 14px; left: 14px;  border-bottom-width: 2px; border-left-width: 2px; }
+  .vr__ecke--br { bottom: 14px; right: 14px; border-bottom-width: 2px; border-right-width: 2px; }
+
+  .vr__rec,
+  .vr__zeit,
+  .vr__hinweis {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: rgba(8, 6, 4, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    padding: 0.35em 0.9em;
+    backdrop-filter: blur(6px);
+  }
+
+  .vr__rec  { top: 26px; left: 26px; }
+  .vr__zeit { top: 26px; right: 26px; }
+  .vr__hinweis { bottom: 26px; left: 26px; }
+
+  .vr__punkt {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #FF4B3E;
+    animation: vr-blink 1.6s steps(2, start) infinite;
+  }
+
+  @keyframes vr-blink { to { visibility: hidden; } }
+
+  /* Play-Kreis, mittig — dekorativ, solange kein Video da ist */
+  .vr__play {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: clamp(56px, 8vw, 78px);
+    height: clamp(56px, 8vw, 78px);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #FFFFFF;
+    background: rgba(8, 6, 4, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+  }
+
+  .vr__play svg { margin-left: 3px; }
+
+  .vr__unter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem 1rem;
+    margin-top: var(--s-2);
+    padding-inline: 0.25rem;
+  }
+
+  .vr__cap-mono {
+    font-family: var(--font-mono);
+    font-size: var(--t-label);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  .vr__cap-text {
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .vr__punkt { animation: none; }
+  }
+</style>
