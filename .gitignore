@@ -6,3 +6,9 @@ dist/
 # (Hero-Video sollte unter 3 MB liegen). Liegen lokal unter public/video/
 # und werden neu exportiert — siehe LIEFERLISTE.md, C5.
 public/video/
+
+# Sanity: Abhaengigkeiten und Zugangsdaten des Studios
+sanity/node_modules/
+sanity/dist/
+sanity/.env
+sanity/.sanity/
