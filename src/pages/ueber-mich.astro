@@ -5,10 +5,12 @@ import ContactBanner from '../components/ContactBanner.astro';
 import {first,collection,biography} from '../data/portfolio';
 ---
 <Base title="Über mich" description="Sandro Mondini über seinen Weg von Technik und kreativen Projekten zu Fotografie, Film und einem eigenen Gewerbe. Seine Geschichte in seinen eigenen Worten.">
-  <header class="wrap about-head"><div><p class="page-kicker">Der Mensch hinter der Kamera.</p><h1>Hey.<br />Sandro hier.</h1><p class="lead">Ich habe mich schon immer für Technik und Medien interessiert. Und irgendwann wollte ich mehr daraus machen.</p></div><div class="about-head__portrait"><MediaImage image={first('sandro')} eager priority role="display" sizes="(max-width: 700px) 85vw, 40vw" /></div></header>
-  <section class="wrap biography"><h2>Wie aus einer Idee<br />mein Weg wurde.</h2><div class="biography-text">{biography.slice(0,6).map(p=><p>{p}</p>)}</div></section>
-  <div class="wrap"><div class="work-image"><MediaImage image={collection('sandro')[1]} role="display" sizes="90vw" /></div></div>
-  <section class="wrap biography"><h2>Dranbleiben.<br />Ausprobieren.<br />Weiterkommen.</h2><div class="biography-text">{biography.slice(6).map(p=><p>{p}</p>)}<p class="bio-note">Dieser Text stammt von mir. Rechtschreibung und Satzbau wurden mit KI geglättet.</p></div></section>
-  <section class="section--butter about-quote"><div class="wrap"><blockquote>„Meine Kreativität und schnelles Umdenken sind meine größte Waffe.“</blockquote></div></section>
+  <div class="editorial-page editorial-page--about">
+  <header class="wrap about-head window-about-head"><div class="window-about-head__copy window-dark window-contour"><p class="page-kicker">Der Mensch hinter der Kamera.</p><h1>Hey.<br />Sandro hier.</h1><p class="lead">Ich habe mich schon immer für Technik und Medien interessiert. Und irgendwann wollte ich mehr daraus machen.</p></div><div class="about-head__portrait"><MediaImage image={first('sandro')} eager priority role="display" sizes="(max-width: 700px) 85vw, 40vw" /></div></header>
+  <section class="wrap biography window-biography"><h2>Wie aus einer Idee<br />mein Weg wurde.</h2><div class="biography-text window-sheet">{biography.slice(0,6).map(p=><p>{p}</p>)}</div></section>
+  <div class="wrap"><div class="work-image window-work-image"><MediaImage image={collection('sandro')[1]} role="display" sizes="90vw" /></div></div>
+  <section class="wrap biography window-biography"><h2>Dranbleiben.<br />Ausprobieren.<br />Weiterkommen.</h2><div class="biography-text window-sheet">{biography.slice(6).map(p=><p>{p}</p>)}<p class="bio-note">Dieser Text stammt von mir. Rechtschreibung und Satzbau wurden mit KI geglättet.</p></div></section>
+  <section class="wrap window-quote"><blockquote>„Meine Kreativität und schnelles Umdenken sind meine größte Waffe.“</blockquote></section>
   <ContactBanner />
+  </div>
 </Base>

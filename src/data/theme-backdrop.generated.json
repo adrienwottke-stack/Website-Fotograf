@@ -1,0 +1,49 @@
+{
+  "sourceId": "1AHXw2T2oqhW7XXNJcV10Q8oTUG0jYiEj",
+  "sourceName": "7IV02821.jpg",
+  "description": "Sonnenlicht über einer nebligen Wald- und Hügellandschaft",
+  "format": "webp",
+  "quality": 74,
+  "crops": {
+    "landscape": {
+      "left": 0,
+      "top": 946,
+      "width": 4504,
+      "height": 3003
+    },
+    "portrait": {
+      "left": 0,
+      "top": 0,
+      "width": 4504,
+      "height": 6756
+    }
+  },
+  "landscape": [
+    {
+      "src": "/media/sandro-nebellandschaft-978169412d13-landscape-1200.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 105960
+    },
+    {
+      "src": "/media/sandro-nebellandschaft-978169412d13-landscape-2000.webp",
+      "width": 2000,
+      "height": 1333,
+      "bytes": 278066
+    }
+  ],
+  "portrait": [
+    {
+      "src": "/media/sandro-nebellandschaft-978169412d13-portrait-480.webp",
+      "width": 480,
+      "height": 720,
+      "bytes": 38932
+    },
+    {
+      "src": "/media/sandro-nebellandschaft-978169412d13-portrait-720.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 76060
+    }
+  ]
+}

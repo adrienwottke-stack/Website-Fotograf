@@ -7,10 +7,10 @@ import {films} from '../../data/portfolio';
 ---
 <Base title="Arbeiten" description="Foto- und Filmarbeiten von Sandro Mondini: Entdecke sieben Themenwelten und vier Filme.">
   <header class="wrap page-head page-head--split"><h1>Eigene Augen.<br />Viele Welten.</h1><p class="lead">Ein Blick auf das, was ich mache.<br />Nach Thema oder in Bewegung.</p></header>
-  <div class="wrap work-panels">
-    <nav class="work-tabs" aria-label="Arbeiten auswählen"><a href="?ansicht=themen" data-work-tab="themen" aria-controls="work-themen" aria-current="true">Themen <span>7</span></a><a href="?ansicht=filme" data-work-tab="filme" aria-controls="work-filme">Filme <span>4</span></a></nav>
+  <div class="work-panels">
+    <nav class="wrap work-tabs" aria-label="Arbeiten auswählen"><a href="?ansicht=themen" data-work-tab="themen" aria-controls="work-themen" aria-current="true">Themen <span>7</span></a><a href="?ansicht=filme" data-work-tab="filme" aria-controls="work-filme">Filme <span>4</span></a></nav>
     <section id="work-themen" data-work-panel="themen" aria-label="Fotografische Themen"><ThemeWindows compact /></section>
-    <section id="work-filme" class="work-films" data-work-panel="filme" aria-label="Filmarbeiten" hidden><div class="film-stage">{films.map(f=><FilmCard film={f} />)}</div></section>
+    <section id="work-filme" class="wrap work-films" data-work-panel="filme" aria-label="Filmarbeiten" hidden><div class="film-stage">{films.map(f=><FilmCard film={f} />)}</div></section>
     <noscript><style>[data-work-panel][hidden]{display:block!important;margin-top:60px}</style></noscript>
   </div>
   <ContactBanner />

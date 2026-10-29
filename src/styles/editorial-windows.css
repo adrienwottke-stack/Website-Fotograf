@@ -1,0 +1,106 @@
+/* Sandro's second reference: rounded planes, fine offset contours, large type.
+   Kept local to these editorial sections; photo galleries and the hero keep
+   their separate composition. */
+.editorial-page,.window-personal { --window-radius:42px; --window-pad:clamp(28px,3.5vw,56px); background:var(--butter); }
+.window-dark { background:var(--ink); color:var(--paper); border-radius:var(--window-radius,42px); padding:var(--window-pad,48px); }
+.window-dark .page-kicker { color:var(--paper); opacity:.8; }
+.window-dark .text-link { color:var(--paper); }
+.window-contour { position:relative; }
+.window-contour::after { content:''; position:absolute; inset:-10px; border:1px solid rgba(42,47,51,.35); border-radius:calc(var(--window-radius,42px) + 10px); pointer-events:none; }
+.window-sheet { background:var(--paper); border-radius:var(--window-radius,42px); padding:var(--window-pad,48px); }
+.window-personal { padding-block:130px; overflow:clip; }
+.window-personal::before { display:none; }
+.window-personal .about-teaser__inner { grid-template-columns:.95fr 1.05fr; gap:clamp(50px,6vw,100px); }
+.window-personal .about-images { padding:0 18% 110px 0; }
+.window-personal .about-portrait { height:auto; aspect-ratio:2/3; transform:none; border-radius:var(--window-radius); }
+.window-personal .about-portrait .media-image { height:100%; }
+.window-personal .about-work { width:78%; right:-10px; bottom:0; transform:none; border:0; border-radius:32px; }
+.window-personal .about-work .media-image { height:100%; }
+.window-personal .about-teaser__copy h2 { font-size:clamp(64px,7.3vw,116px); line-height:.94; letter-spacing:-.055em; }
+.window-personal .about-teaser__copy>p { font-size:16px; line-height:1.7; max-width:38ch; margin-block:30px; }
+.editorial-page { padding-bottom:100px; }
+.window-about-head { grid-template-columns:1.1fr .9fr; gap:5vw; padding-block:80px 110px; }
+.window-about-head__copy { z-index:1; margin-right:-54px; }
+.window-about-head h1 { font-size:clamp(68px,8.3vw,128px); line-height:.95; }
+.window-about-head .lead { font-size:18px; }
+.window-about-head .about-head__portrait { height:clamp(500px,47vw,710px); transform:none; margin:50px 0 0; border-radius:var(--window-radius); }
+.window-biography { grid-template-columns:.85fr 1.15fr; gap:6vw; padding-block:30px 90px; align-items:start; }
+.window-biography h2 { font-size:clamp(38px,4.4vw,68px); padding-top:36px; }
+.window-biography .biography-text { font-size:17px; line-height:1.85; }
+.window-work-image { border-radius:var(--window-radius); margin-bottom:62px; }
+.window-quote { background:var(--ink); color:var(--paper); border-radius:var(--window-radius); padding:clamp(34px,6vw,90px); }
+.window-quote blockquote { margin:0; font-family:var(--display); font-size:clamp(36px,5.5vw,80px); font-weight:550; line-height:1.1; letter-spacing:-.045em; }
+.window-services-head { padding-block:75px 65px; }
+.window-services-head h1 { font-size:clamp(65px,8.6vw,132px); line-height:.97; }
+.window-service { gap:0; border-top:0; padding-block:48px; }
+.window-service .service-detail__image { height:clamp(390px,38vw,560px); border-radius:var(--window-radius); }
+.window-service__copy { position:relative; z-index:1; margin:45px 0 0 -32px; box-shadow:0 0 0 1px rgba(42,47,51,.13); }
+.window-service:nth-child(even) .window-service__copy { margin:45px -32px 0 0; }
+.window-service h2 { font-size:clamp(36px,4.25vw,64px); overflow-wrap:break-word; }
+.editorial-page--services .faq-layout { gap:6vw; }
+.editorial-page--services .price-note { padding-bottom:20px; }
+.window-contact-head { gap:6vw; align-items:end; }
+.window-contact-head h1 { font-size:clamp(58px,8.3vw,128px); line-height:.96; }
+.window-contact-head .lead { font-size:18px; max-width:38ch; }
+.window-contact-layout { grid-template-columns:.85fr 1.15fr; gap:6vw; padding-bottom:10px; }
+.window-contact-layout .contact-aside { padding-top:10px; }
+.window-contact-layout .contact-aside__photo { height:auto; aspect-ratio:3/2; border-radius:var(--window-radius); margin-top:38px; }
+.window-contact-layout .enquiry { background:var(--paper); padding:var(--window-pad); border-radius:var(--window-radius); gap:24px; min-width:0; }
+.window-contact-layout .enquiry .field { min-width:0; }
+.window-contact-layout .enquiry .button { justify-self:start; }
+@media(max-width:1000px) {
+  .window-personal .about-teaser__inner { gap:45px; }
+  .window-personal .about-teaser__copy h2 { font-size:clamp(57px,7vw,78px); }
+  .window-about-head h1 { font-size:clamp(62px,8vw,85px); }
+  .window-services-head { grid-template-columns:1.1fr .9fr; gap:35px; }
+  .window-service h2 { font-size:clamp(32px,4.4vw,43px); }
+  .window-service__copy { padding:28px; }
+}
+@media(max-width:900px) {
+  .window-personal { padding-block:90px; }
+  .window-personal .about-teaser__inner { grid-template-columns:1fr; gap:58px; }
+  .window-personal .about-images { width:min(100%,590px); margin:auto; }
+  .window-personal .about-teaser__copy h2 { font-size:clamp(66px,11vw,105px); }
+  .window-about-head { grid-template-columns:1fr; gap:35px; }
+  .window-about-head__copy { margin-right:0; }
+  .window-about-head .about-head__portrait { margin:0 0 0 auto; width:80%; height:auto; aspect-ratio:2/3; }
+  .window-biography { grid-template-columns:1fr; gap:30px; }
+  .window-biography h2 { padding-top:0; }
+  .window-services-head { grid-template-columns:1fr; gap:30px; }
+  .window-contact-head { grid-template-columns:1fr; gap:28px; }
+  .window-contact-layout { grid-template-columns:1fr; gap:40px; }
+  .window-contact-layout .contact-aside { display:grid; grid-template-columns:1fr 1fr; align-content:start; column-gap:26px; }
+  .window-contact-layout .contact-aside__photo { grid-column:2; grid-row:1/4; margin-top:0; }
+  .window-contact-layout .contact-aside button { justify-self:start; }
+}
+@media(max-width:700px) {
+  .editorial-page,.window-personal { --window-radius:24px; --window-pad:26px; }
+  .editorial-page { padding-bottom:64px; }
+  .window-personal { padding-block:72px; }
+  .window-personal .about-images { padding-right:14%; padding-bottom:65px; }
+  .window-personal .about-work { right:0; border-radius:24px; width:76%; }
+  .window-personal .about-teaser__copy h2 { font-size:clamp(63px,14vw,91px); }
+  .window-personal .about-teaser__copy>p { font-size:16px; }
+  .window-contour::after { inset:-7px; border-radius:31px; }
+  .window-about-head { padding-block:48px 65px; }
+  .window-about-head h1 { font-size:clamp(58px,12vw,82px); }
+  .window-about-head .lead { font-size:16px; }
+  .window-about-head .about-head__portrait { width:88%; }
+  .window-biography { padding-block:0 54px; }
+  .window-biography h2 { font-size:clamp(35px,8.4vw,52px); }
+  .window-biography .biography-text { font-size:16px; }
+  .window-work-image { margin-bottom:48px; }
+  .window-services-head { padding-block:44px 20px; }
+  .window-services-head h1 { font-size:clamp(58px,12vw,82px); }
+  .window-service { grid-template-columns:1fr; padding-block:32px; }
+  .window-service .service-detail__image { order:0!important; height:auto; aspect-ratio:4/3; }
+  .window-service:nth-child(n) .window-service__copy { margin:-24px 0 0 16px; padding:26px; }
+  .window-service h2 { font-size:clamp(32px,8.2vw,45px); }
+  .window-contact-head { padding-block:44px 38px; }
+  .window-contact-head h1 { font-size:clamp(53px,11.8vw,78px); }
+  .window-contact-head .lead { font-size:17px; }
+  .window-contact-layout .contact-aside { display:block; }
+  .window-contact-layout .contact-aside__photo { margin-top:28px; }
+  .window-contact-layout .enquiry { gap:23px; padding:25px; }
+  .window-contact-layout .field { grid-column:1/-1; }
+}
