@@ -1,0 +1,10 @@
+---
+import type { Film } from '../data/portfolio';
+interface Props { film:Film; featured?:boolean }
+const { film,featured=false }=Astro.props;
+const duration=`${Math.floor(film.duration/60)}:${String(Math.floor(film.duration%60)).padStart(2,'0')}`;
+---
+<button type="button" class:list={['film-card',{'film-card--wide':film.width>film.height,'film-card--featured':featured}]} data-film data-src={film.src} data-title={film.title} data-poster={film.poster} data-width={film.width} data-height={film.height} aria-label={`${film.title} abspielen, ${duration}`}>
+  <span class="film-card__poster" style={`--film-ratio:${film.width}/${film.height}`}><img src={film.poster} alt={film.description} loading="lazy" width={film.width} height={film.height} /><span class="play-icon" aria-hidden="true">▶</span><span class="film-duration">{duration}</span></span>
+  <span class="film-card__caption"><strong>{film.title}</strong><span>{film.description}</span></span>
+</button>

@@ -1,0 +1,15 @@
+.contact-honeypot { display: none; }
+.enquiry > .button { grid-column: 1 / -1; }
+.enquiry .button:disabled { cursor: wait; opacity: .65; }
+.form-status {
+  grid-column: 1 / -1;
+  padding: 25px;
+  background: var(--butter);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.form-status[hidden] { display: none; }
+.form-status h3 { font-size: clamp(23px, 3vw, 30px); }
+.form-status p { font-size: 14px; margin-top: 12px; max-width: 56ch; }
+.form-status[data-state="error"] { border-left: 4px solid var(--ink); }
+.form-status:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }

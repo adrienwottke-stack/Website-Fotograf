@@ -1,0 +1,16 @@
+{
+  "zixspeed": [
+    {
+      "src": "/media/poster-zixspeed-45s-800.webp",
+      "width": 800,
+      "height": 338,
+      "bytes": 24508
+    },
+    {
+      "src": "/media/poster-zixspeed-45s-1200.webp",
+      "width": 1200,
+      "height": 506,
+      "bytes": 39974
+    }
+  ]
+}

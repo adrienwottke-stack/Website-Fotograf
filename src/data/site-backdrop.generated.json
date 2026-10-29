@@ -1,0 +1,47 @@
+{
+  "sourceId": "171xak3oe2QLpcW5He397Q7UDrxQD4l4X",
+  "sourceName": "7IV05521.jpg",
+  "description": "Warme Lichter und Baumkronen, dekorativer Detailausschnitt",
+  "crops": {
+    "landscape": {
+      "left": 0,
+      "top": 0,
+      "width": 4555,
+      "height": 1775
+    },
+    "portrait": {
+      "left": 0,
+      "top": 0,
+      "width": 1822,
+      "height": 3037
+    }
+  },
+  "landscape": [
+    {
+      "src": "/media/sandro-lichter-8c5ab15e7044-landscape-1200.webp",
+      "width": 1200,
+      "height": 468,
+      "bytes": 62266
+    },
+    {
+      "src": "/media/sandro-lichter-8c5ab15e7044-landscape-2000.webp",
+      "width": 2000,
+      "height": 779,
+      "bytes": 123992
+    }
+  ],
+  "portrait": [
+    {
+      "src": "/media/sandro-lichter-8c5ab15e7044-portrait-480.webp",
+      "width": 480,
+      "height": 800,
+      "bytes": 26388
+    },
+    {
+      "src": "/media/sandro-lichter-8c5ab15e7044-portrait-720.webp",
+      "width": 720,
+      "height": 1200,
+      "bytes": 45504
+    }
+  ]
+}

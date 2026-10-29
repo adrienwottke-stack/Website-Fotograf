@@ -1,0 +1,77 @@
+---
+import { films } from '../data/portfolio';
+import posters from '../data/film-section.generated.json';
+import background from '../data/site-backdrop.generated.json';
+import '../styles/film-section.css';
+
+// Give the landscape film room; keep the three vertical films in their native formats.
+const orderedFilms = ['zixspeed', 'kxxma', 'kekila', 'hochzeit']
+  .map(key => films.find(film => film.key === key)!)
+  .filter(Boolean);
+const duration = (seconds: number) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+const poster = (film: typeof films[number]) => film.key === 'zixspeed' ? posters.zixspeed.at(-1)!.src : film.poster;
+const backgroundSet = (variants: typeof background.landscape) => variants.map(image => `${image.src} ${image.width}w`).join(', ');
+---
+<section id="filme" class="section section--dark film-section film-section--space" data-film-space aria-labelledby="film-section-title">
+  <div class="film-room__backdrop" aria-hidden="true">
+    <div class="film-room__scene">
+      <picture>
+        <source media="(max-width: 700px)" srcset={backgroundSet(background.portrait)} sizes="100vw" width={background.portrait[0].width} height={background.portrait[0].height} />
+        <img src={background.landscape[0].src} srcset={backgroundSet(background.landscape)} sizes="100vw" width={background.landscape[0].width} height={background.landscape[0].height} alt="" loading="lazy" decoding="async" />
+      </picture>
+    </div>
+  </div>
+  <div class="film-room__floor" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="film-section__heading">
+      <h2 id="film-section-title">Film.</h2>
+      <div class="film-section__intro">
+        <p>Vier Filme. Vier unterschiedliche Welten.<br />Events, Motorsport, Social Content und Hochzeiten.</p>
+        <button class="film-room__motion" type="button" data-film-motion aria-pressed="false" hidden>
+          <svg data-film-pause-icon viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M5 4h3v12H5zm7 0h3v12h-3z" /></svg>
+          <svg data-film-resume-icon viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true" hidden><path d="M6 3.5v13L16 10z" /></svg>
+          <span data-film-motion-label>Bewegung pausieren</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="film-showcase">
+      {orderedFilms.map(film => (
+        <div class:list={['film-showcase__object', `film-showcase__object--${film.key}`]}>
+          <div class="film-showcase__parallax">
+            <div class="film-showcase__float">
+        <button
+          type="button"
+          class:list={['film-showcase__film', `film-showcase__film--${film.key}`]}
+          data-film
+          data-src={film.src}
+          data-title={film.title}
+          data-poster={poster(film)}
+          data-width={film.width}
+          data-height={film.height}
+          aria-label={`${film.title} abspielen, ${duration(film.duration)}`}
+        >
+          <span class="film-showcase__frame" style={`--film-aspect:${film.width} / ${film.height}`}>
+            <img src={poster(film)} srcset={film.key === 'zixspeed' ? posters.zixspeed.map(variant => `${variant.src} ${variant.width}w`).join(', ') : undefined} sizes={film.key === 'zixspeed' ? '(max-width: 700px) calc(100vw - 44px), 62vw' : undefined} alt="" width={film.width} height={film.height} loading="lazy" decoding="async" />
+            <span class="film-showcase__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M8 5.5v13l10-6.5z" /></svg>
+            </span>
+          </span>
+          <span class="film-showcase__caption">
+            <strong>{film.title}</strong>
+            <span class="film-showcase__duration">{duration(film.duration)}</span>
+          </span>
+          <span class="film-showcase__description">{film.description}</span>
+        </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <footer class="film-section__footer">
+      <p>Kurze Formate. Längere Geschichten.</p>
+    </footer>
+  </div>
+</section>
+<script>import '../scripts/film-space';</script>

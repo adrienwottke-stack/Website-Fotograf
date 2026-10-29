@@ -1,0 +1,6046 @@
+{
+  "photos": {
+    "1XpXigQVcsMNC2XFNH8ZbzLsSDWJ4iBkh": {
+      "id": "1XpXigQVcsMNC2XFNH8ZbzLsSDWJ4iBkh",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Porträt einer jungen Frau im warmen Gegenlicht zwischen grünen Blättern",
+      "color": "#936344",
+      "preview": [
+        {
+          "src": "/media/8c77f147ed7dd8-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 15786
+        },
+        {
+          "src": "/media/8c77f147ed7dd8-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 31750
+        },
+        {
+          "src": "/media/8c77f147ed7dd8-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 54974
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/8c77f147ed7dd8-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 31750
+        },
+        {
+          "src": "/media/8c77f147ed7dd8-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 54974
+        },
+        {
+          "src": "/media/8c77f147ed7dd8-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 83616
+        },
+        {
+          "src": "/media/8c77f147ed7dd8-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 126684
+        }
+      ],
+      "large": {
+        "src": "/media/8c77f147ed7dd8-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 126684
+      },
+      "avif": [
+        {
+          "src": "/media/8c77f147ed7dd8-360.avif",
+          "width": 360,
+          "height": 540,
+          "bytes": 9808
+        },
+        {
+          "src": "/media/8c77f147ed7dd8-600.avif",
+          "width": 600,
+          "height": 900,
+          "bytes": 17988
+        },
+        {
+          "src": "/media/8c77f147ed7dd8-900.avif",
+          "width": 900,
+          "height": 1350,
+          "bytes": 28516
+        }
+      ]
+    },
+    "1tPDp_ApPGxb-2h1gehEXf55fqZ1oSJ0_": {
+      "id": "1tPDp_ApPGxb-2h1gehEXf55fqZ1oSJ0_",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Porträt einer Frau vor blühenden Sträuchern im Gegenlicht",
+      "color": "#705648",
+      "preview": [
+        {
+          "src": "/media/a2be5bc6f9ca95-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 28070
+        },
+        {
+          "src": "/media/a2be5bc6f9ca95-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 64954
+        },
+        {
+          "src": "/media/a2be5bc6f9ca95-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 124174
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/a2be5bc6f9ca95-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 64954
+        },
+        {
+          "src": "/media/a2be5bc6f9ca95-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 124174
+        },
+        {
+          "src": "/media/a2be5bc6f9ca95-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 208790
+        },
+        {
+          "src": "/media/a2be5bc6f9ca95-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 344140
+        }
+      ],
+      "large": {
+        "src": "/media/a2be5bc6f9ca95-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 344140
+      }
+    },
+    "1AAb9_JvA1poP6LQ8ktshIdkPDyXQPSgI": {
+      "id": "1AAb9_JvA1poP6LQ8ktshIdkPDyXQPSgI",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Frau sitzt in einer Lichtung, eingerahmt von Bäumen",
+      "color": "#21180c",
+      "preview": [
+        {
+          "src": "/media/0833e1ab31312f-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 39466
+        },
+        {
+          "src": "/media/0833e1ab31312f-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 91568
+        },
+        {
+          "src": "/media/0833e1ab31312f-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 167104
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/0833e1ab31312f-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 91568
+        },
+        {
+          "src": "/media/0833e1ab31312f-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 167104
+        },
+        {
+          "src": "/media/0833e1ab31312f-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 261370
+        },
+        {
+          "src": "/media/0833e1ab31312f-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 399132
+        }
+      ],
+      "large": {
+        "src": "/media/0833e1ab31312f-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 399132
+      }
+    },
+    "1-HMPKCz6ZvFVPOSZl5L6UOZ9nSPs3xTy": {
+      "id": "1-HMPKCz6ZvFVPOSZl5L6UOZ9nSPs3xTy",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Frau im geblümten Oberteil steht zwischen grünen Sträuchern",
+      "color": "#424324",
+      "preview": [
+        {
+          "src": "/media/e7082d63a0700d-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 29596
+        },
+        {
+          "src": "/media/e7082d63a0700d-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 56816
+        },
+        {
+          "src": "/media/e7082d63a0700d-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 95104
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/e7082d63a0700d-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 56816
+        },
+        {
+          "src": "/media/e7082d63a0700d-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 95104
+        },
+        {
+          "src": "/media/e7082d63a0700d-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 137662
+        },
+        {
+          "src": "/media/e7082d63a0700d-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 198478
+        }
+      ],
+      "large": {
+        "src": "/media/e7082d63a0700d-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 198478
+      }
+    },
+    "12m-dv9jGQxJsNu3RDJRUYlwMkgknpMZ_": {
+      "id": "12m-dv9jGQxJsNu3RDJRUYlwMkgknpMZ_",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Frau balanciert auf einem liegenden Baumstamm im Grünen",
+      "color": "#534b24",
+      "preview": [
+        {
+          "src": "/media/60b832d708fa1d-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 48788
+        },
+        {
+          "src": "/media/60b832d708fa1d-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 113858
+        },
+        {
+          "src": "/media/60b832d708fa1d-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 207758
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/60b832d708fa1d-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 113858
+        },
+        {
+          "src": "/media/60b832d708fa1d-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 207758
+        },
+        {
+          "src": "/media/60b832d708fa1d-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 322694
+        },
+        {
+          "src": "/media/60b832d708fa1d-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 500078
+        }
+      ],
+      "large": {
+        "src": "/media/60b832d708fa1d-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 500078
+      }
+    },
+    "1fQu9PFB46S96rXpq2RakOzYz7XGfp4f7": {
+      "id": "1fQu9PFB46S96rXpq2RakOzYz7XGfp4f7",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Person bearbeitet glühendes Metall am Amboss",
+      "color": "#562d18",
+      "preview": [
+        {
+          "src": "/media/969d5d2cca1209-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 23570
+        },
+        {
+          "src": "/media/969d5d2cca1209-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 58486
+        },
+        {
+          "src": "/media/969d5d2cca1209-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 108920
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/969d5d2cca1209-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 58486
+        },
+        {
+          "src": "/media/969d5d2cca1209-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 108920
+        },
+        {
+          "src": "/media/969d5d2cca1209-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 177238
+        },
+        {
+          "src": "/media/969d5d2cca1209-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 296124
+        }
+      ],
+      "large": {
+        "src": "/media/969d5d2cca1209-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 296124
+      }
+    },
+    "1Ui9727tgBtiN9FFoyQs8rmIPw0r6B3-v": {
+      "id": "1Ui9727tgBtiN9FFoyQs8rmIPw0r6B3-v",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Porträt einer Frau mit Sonnenbrille zwischen Blüten",
+      "color": "#755c3e",
+      "preview": [
+        {
+          "src": "/media/ff9d4eaabd1dbc-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 26284
+        },
+        {
+          "src": "/media/ff9d4eaabd1dbc-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 51722
+        },
+        {
+          "src": "/media/ff9d4eaabd1dbc-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 87950
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/ff9d4eaabd1dbc-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 51722
+        },
+        {
+          "src": "/media/ff9d4eaabd1dbc-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 87950
+        },
+        {
+          "src": "/media/ff9d4eaabd1dbc-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 132628
+        },
+        {
+          "src": "/media/ff9d4eaabd1dbc-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 202988
+        }
+      ],
+      "large": {
+        "src": "/media/ff9d4eaabd1dbc-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 202988
+      }
+    },
+    "1mQeziG3XKC3MkJ5_VlROedeBD6f_qERg": {
+      "id": "1mQeziG3XKC3MkJ5_VlROedeBD6f_qERg",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Porträt einer Frau in einer roten Jacke in einer Veranstaltungshalle",
+      "color": "#3e3435",
+      "preview": [
+        {
+          "src": "/media/dd66fbc621a1d8-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 26558
+        },
+        {
+          "src": "/media/dd66fbc621a1d8-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 53820
+        },
+        {
+          "src": "/media/dd66fbc621a1d8-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 92218
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/dd66fbc621a1d8-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 53820
+        },
+        {
+          "src": "/media/dd66fbc621a1d8-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 92218
+        },
+        {
+          "src": "/media/dd66fbc621a1d8-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 140466
+        },
+        {
+          "src": "/media/dd66fbc621a1d8-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 221786
+        }
+      ],
+      "large": {
+        "src": "/media/dd66fbc621a1d8-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 221786
+      }
+    },
+    "1cIhKnr4m7rg4p_VHGHVvNzvu-_0RTEtb": {
+      "id": "1cIhKnr4m7rg4p_VHGHVvNzvu-_0RTEtb",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Gelber Kleinwagen vor einem Industriegebäude, gespiegelt in einer Pfütze",
+      "color": "#373631",
+      "preview": [
+        {
+          "src": "/media/49f618a671c372-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 25914
+        },
+        {
+          "src": "/media/49f618a671c372-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 57524
+        },
+        {
+          "src": "/media/49f618a671c372-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 104862
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/49f618a671c372-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 57524
+        },
+        {
+          "src": "/media/49f618a671c372-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 104862
+        },
+        {
+          "src": "/media/49f618a671c372-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 162528
+        },
+        {
+          "src": "/media/49f618a671c372-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 246128
+        }
+      ],
+      "large": {
+        "src": "/media/49f618a671c372-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 246128
+      },
+      "avif": [
+        {
+          "src": "/media/49f618a671c372-360.avif",
+          "width": 360,
+          "height": 540,
+          "bytes": 16743
+        },
+        {
+          "src": "/media/49f618a671c372-600.avif",
+          "width": 600,
+          "height": 900,
+          "bytes": 36425
+        },
+        {
+          "src": "/media/49f618a671c372-900.avif",
+          "width": 900,
+          "height": 1350,
+          "bytes": 63634
+        }
+      ]
+    },
+    "1-9r5yY2yguR26UqKtD7CRSBfONGs1kiN": {
+      "id": "1-9r5yY2yguR26UqKtD7CRSBfONGs1kiN",
+      "width": 6866,
+      "height": 4577,
+      "alt": "Fahrzeug auf einem Waldweg im warmen Herbstlicht",
+      "color": "#392e1a",
+      "preview": [
+        {
+          "src": "/media/32f462fcaab87a-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 20492
+        },
+        {
+          "src": "/media/32f462fcaab87a-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 50882
+        },
+        {
+          "src": "/media/32f462fcaab87a-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 106752
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/32f462fcaab87a-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 50882
+        },
+        {
+          "src": "/media/32f462fcaab87a-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 106752
+        },
+        {
+          "src": "/media/32f462fcaab87a-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 174200
+        },
+        {
+          "src": "/media/32f462fcaab87a-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "bytes": 290452
+        },
+        {
+          "src": "/media/32f462fcaab87a-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 416178
+        }
+      ],
+      "large": {
+        "src": "/media/32f462fcaab87a-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 416178
+      }
+    },
+    "1frQGeaATgq103n7iWN_8MYTnD8vBUE6O": {
+      "id": "1frQGeaATgq103n7iWN_8MYTnD8vBUE6O",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Dunkles Fahrzeug zwischen Flugzeugen auf einem Flugplatz",
+      "color": "#888a82",
+      "preview": [
+        {
+          "src": "/media/1fd8fbf5a68fbf-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 12528
+        },
+        {
+          "src": "/media/1fd8fbf5a68fbf-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 27876
+        },
+        {
+          "src": "/media/1fd8fbf5a68fbf-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 55450
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/1fd8fbf5a68fbf-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 27876
+        },
+        {
+          "src": "/media/1fd8fbf5a68fbf-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 55450
+        },
+        {
+          "src": "/media/1fd8fbf5a68fbf-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 87566
+        },
+        {
+          "src": "/media/1fd8fbf5a68fbf-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 144512
+        },
+        {
+          "src": "/media/1fd8fbf5a68fbf-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 209074
+        }
+      ],
+      "large": {
+        "src": "/media/1fd8fbf5a68fbf-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 209074
+      }
+    },
+    "1YAKBdP1eC6JUYB36bkpg1rwqzlgc58Fq": {
+      "id": "1YAKBdP1eC6JUYB36bkpg1rwqzlgc58Fq",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Motorrad im Licht einer Parkgarage",
+      "color": "#22282a",
+      "preview": [
+        {
+          "src": "/media/7c2adff732542a-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 25850
+        },
+        {
+          "src": "/media/7c2adff732542a-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 61672
+        },
+        {
+          "src": "/media/7c2adff732542a-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 118118
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/7c2adff732542a-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 61672
+        },
+        {
+          "src": "/media/7c2adff732542a-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 118118
+        },
+        {
+          "src": "/media/7c2adff732542a-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 197586
+        },
+        {
+          "src": "/media/7c2adff732542a-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 321292
+        }
+      ],
+      "large": {
+        "src": "/media/7c2adff732542a-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 321292
+      }
+    },
+    "1Ifb5WT9M1KY3P-R0BASNPyAAOoSZc-Hv": {
+      "id": "1Ifb5WT9M1KY3P-R0BASNPyAAOoSZc-Hv",
+      "width": 4431,
+      "height": 6647,
+      "alt": "Geländewagen hinter einem Holzzaun auf einer Wiese",
+      "color": "#6c4e22",
+      "preview": [
+        {
+          "src": "/media/927d2626630b9a-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 30332
+        },
+        {
+          "src": "/media/927d2626630b9a-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 72648
+        },
+        {
+          "src": "/media/927d2626630b9a-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 142526
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/927d2626630b9a-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 72648
+        },
+        {
+          "src": "/media/927d2626630b9a-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 142526
+        },
+        {
+          "src": "/media/927d2626630b9a-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 224394
+        },
+        {
+          "src": "/media/927d2626630b9a-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 356260
+        }
+      ],
+      "large": {
+        "src": "/media/927d2626630b9a-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 356260
+      }
+    },
+    "171xak3oe2QLpcW5He397Q7UDrxQD4l4X": {
+      "id": "171xak3oe2QLpcW5He397Q7UDrxQD4l4X",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Weißes Fahrzeug unter Lichterketten am Abend",
+      "color": "#362f1a",
+      "preview": [
+        {
+          "src": "/media/a7913f8ed472a0-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 14180
+        },
+        {
+          "src": "/media/a7913f8ed472a0-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 34724
+        },
+        {
+          "src": "/media/a7913f8ed472a0-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 73026
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/a7913f8ed472a0-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 34724
+        },
+        {
+          "src": "/media/a7913f8ed472a0-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 73026
+        },
+        {
+          "src": "/media/a7913f8ed472a0-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 114774
+        },
+        {
+          "src": "/media/a7913f8ed472a0-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 189148
+        },
+        {
+          "src": "/media/a7913f8ed472a0-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 268498
+        }
+      ],
+      "large": {
+        "src": "/media/a7913f8ed472a0-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 268498
+      }
+    },
+    "17BP8_hnwXcj3v-R6JMiPA4xdJQr-cvE0": {
+      "id": "17BP8_hnwXcj3v-R6JMiPA4xdJQr-cvE0",
+      "width": 4384,
+      "height": 6576,
+      "alt": "Frau steht neben einem gelben Audi an einer Landstraße",
+      "color": "#342f1e",
+      "preview": [
+        {
+          "src": "/media/f7f5751cd58708-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 15634
+        },
+        {
+          "src": "/media/f7f5751cd58708-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 34420
+        },
+        {
+          "src": "/media/f7f5751cd58708-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 64542
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/f7f5751cd58708-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 34420
+        },
+        {
+          "src": "/media/f7f5751cd58708-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 64542
+        },
+        {
+          "src": "/media/f7f5751cd58708-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 99554
+        },
+        {
+          "src": "/media/f7f5751cd58708-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 155934
+        }
+      ],
+      "large": {
+        "src": "/media/f7f5751cd58708-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 155934
+      }
+    },
+    "10BvkL_3MxSBKQndqDz1Jb0xAp30id2M_": {
+      "id": "10BvkL_3MxSBKQndqDz1Jb0xAp30id2M_",
+      "width": 3732,
+      "height": 4672,
+      "alt": "Weißer Ford Raptor auf einer Anhöhe vor blauem Himmel",
+      "color": "#718681",
+      "preview": [
+        {
+          "src": "/media/f00b8619a683b8-360.webp",
+          "width": 360,
+          "height": 451,
+          "bytes": 26210
+        },
+        {
+          "src": "/media/f00b8619a683b8-600.webp",
+          "width": 600,
+          "height": 751,
+          "bytes": 67244
+        },
+        {
+          "src": "/media/f00b8619a683b8-900.webp",
+          "width": 900,
+          "height": 1127,
+          "bytes": 143768
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/f00b8619a683b8-600.webp",
+          "width": 600,
+          "height": 751,
+          "bytes": 67244
+        },
+        {
+          "src": "/media/f00b8619a683b8-900.webp",
+          "width": 900,
+          "height": 1127,
+          "bytes": 143768
+        },
+        {
+          "src": "/media/f00b8619a683b8-1200.webp",
+          "width": 1200,
+          "height": 1502,
+          "bytes": 238074
+        },
+        {
+          "src": "/media/f00b8619a683b8-1600.webp",
+          "width": 1600,
+          "height": 2003,
+          "bytes": 414922
+        },
+        {
+          "src": "/media/f00b8619a683b8-2000.webp",
+          "width": 1917,
+          "height": 2400,
+          "bytes": 574196
+        }
+      ],
+      "large": {
+        "src": "/media/f00b8619a683b8-2000.webp",
+        "width": 1917,
+        "height": 2400,
+        "bytes": 574196
+      }
+    },
+    "1Ci2FWaFOrnrSf3ySpxn8BUSJAk9LdwyI": {
+      "id": "1Ci2FWaFOrnrSf3ySpxn8BUSJAk9LdwyI",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Frau lehnt an einem schwarzen Fahrzeug vor einem Abendhimmel",
+      "color": "#373530",
+      "preview": [
+        {
+          "src": "/media/c77a0f68843688-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 16590
+        },
+        {
+          "src": "/media/c77a0f68843688-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 37148
+        },
+        {
+          "src": "/media/c77a0f68843688-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 67716
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/c77a0f68843688-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 37148
+        },
+        {
+          "src": "/media/c77a0f68843688-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 67716
+        },
+        {
+          "src": "/media/c77a0f68843688-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 108614
+        },
+        {
+          "src": "/media/c77a0f68843688-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 169692
+        }
+      ],
+      "large": {
+        "src": "/media/c77a0f68843688-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 169692
+      }
+    },
+    "1NgJrpmu7egoQQ3wqFNEz4vC9H1MvV1fW": {
+      "id": "1NgJrpmu7egoQQ3wqFNEz4vC9H1MvV1fW",
+      "width": 6817,
+      "height": 4545,
+      "alt": "Schwarzes Fahrzeug in Fahrt, Umgebung mit Bewegungsunschärfe",
+      "color": "#82989f",
+      "preview": [
+        {
+          "src": "/media/cc3183a7fec786-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 9268
+        },
+        {
+          "src": "/media/cc3183a7fec786-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 18716
+        },
+        {
+          "src": "/media/cc3183a7fec786-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 33356
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/cc3183a7fec786-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 18716
+        },
+        {
+          "src": "/media/cc3183a7fec786-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 33356
+        },
+        {
+          "src": "/media/cc3183a7fec786-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 48752
+        },
+        {
+          "src": "/media/cc3183a7fec786-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 74764
+        },
+        {
+          "src": "/media/cc3183a7fec786-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 102174
+        }
+      ],
+      "large": {
+        "src": "/media/cc3183a7fec786-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 102174
+      }
+    },
+    "1t-cZCSsIs2BtliD1Yat6F_YLotP8Yv-G": {
+      "id": "1t-cZCSsIs2BtliD1Yat6F_YLotP8Yv-G",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Kameramann filmt vor einer vollen Bühne mit Feuerfontänen",
+      "color": "#613f33",
+      "preview": [
+        {
+          "src": "/media/065e25de9dc39f-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 11646
+        },
+        {
+          "src": "/media/065e25de9dc39f-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 21588
+        },
+        {
+          "src": "/media/065e25de9dc39f-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 35666
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/065e25de9dc39f-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 21588
+        },
+        {
+          "src": "/media/065e25de9dc39f-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 35666
+        },
+        {
+          "src": "/media/065e25de9dc39f-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 49148
+        },
+        {
+          "src": "/media/065e25de9dc39f-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 71746
+        },
+        {
+          "src": "/media/065e25de9dc39f-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 95642
+        }
+      ],
+      "large": {
+        "src": "/media/065e25de9dc39f-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 95642
+      },
+      "avif": [
+        {
+          "src": "/media/065e25de9dc39f-360.avif",
+          "width": 360,
+          "height": 240,
+          "bytes": 9293
+        },
+        {
+          "src": "/media/065e25de9dc39f-600.avif",
+          "width": 600,
+          "height": 400,
+          "bytes": 15122
+        },
+        {
+          "src": "/media/065e25de9dc39f-900.avif",
+          "width": 900,
+          "height": 600,
+          "bytes": 23133
+        }
+      ]
+    },
+    "1CdJTWdYO0XXxNENiqaPXk_IPFwfQxPzq": {
+      "id": "1CdJTWdYO0XXxNENiqaPXk_IPFwfQxPzq",
+      "width": 4672,
+      "height": 7008,
+      "alt": "KXXMA am DJ-Pult, eine Hand im farbigen Bühnenlicht erhoben",
+      "color": "#331f43",
+      "preview": [
+        {
+          "src": "/media/12e6f03006a55c-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 15480
+        },
+        {
+          "src": "/media/12e6f03006a55c-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 28684
+        },
+        {
+          "src": "/media/12e6f03006a55c-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 46378
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/12e6f03006a55c-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 28684
+        },
+        {
+          "src": "/media/12e6f03006a55c-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 46378
+        },
+        {
+          "src": "/media/12e6f03006a55c-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 67408
+        },
+        {
+          "src": "/media/12e6f03006a55c-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 100030
+        }
+      ],
+      "large": {
+        "src": "/media/12e6f03006a55c-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 100030
+      }
+    },
+    "1EMtoIySfR8xK_7dVe7lviailwuMh8bNm": {
+      "id": "1EMtoIySfR8xK_7dVe7lviailwuMh8bNm",
+      "width": 7008,
+      "height": 4672,
+      "alt": "DJ am Pult vor einer rot-weiß leuchtenden LED-Wand",
+      "color": "#694046",
+      "preview": [
+        {
+          "src": "/media/67240451bec96f-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 6608
+        },
+        {
+          "src": "/media/67240451bec96f-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 12212
+        },
+        {
+          "src": "/media/67240451bec96f-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 20856
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/67240451bec96f-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 12212
+        },
+        {
+          "src": "/media/67240451bec96f-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 20856
+        },
+        {
+          "src": "/media/67240451bec96f-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 29520
+        },
+        {
+          "src": "/media/67240451bec96f-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 43466
+        },
+        {
+          "src": "/media/67240451bec96f-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 58704
+        }
+      ],
+      "large": {
+        "src": "/media/67240451bec96f-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 58704
+      }
+    },
+    "1Ax7hrMMviGLE6wZiYxUxTHEDW10e0fiR": {
+      "id": "1Ax7hrMMviGLE6wZiYxUxTHEDW10e0fiR",
+      "width": 6376,
+      "height": 4251,
+      "alt": "DJ am Pult vor einer hell beleuchteten Bühne",
+      "color": "#7d7f8a",
+      "preview": [
+        {
+          "src": "/media/24d655d3796055-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 9614
+        },
+        {
+          "src": "/media/24d655d3796055-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 19744
+        },
+        {
+          "src": "/media/24d655d3796055-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 36074
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/24d655d3796055-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 19744
+        },
+        {
+          "src": "/media/24d655d3796055-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 36074
+        },
+        {
+          "src": "/media/24d655d3796055-1200.webp",
+          "width": 1200,
+          "height": 799,
+          "bytes": 51808
+        },
+        {
+          "src": "/media/24d655d3796055-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "bytes": 77668
+        },
+        {
+          "src": "/media/24d655d3796055-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 105954
+        }
+      ],
+      "large": {
+        "src": "/media/24d655d3796055-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 105954
+      }
+    },
+    "1x7LDINWn8Z5uhiLy6soWjZp66_sRwQx-": {
+      "id": "1x7LDINWn8Z5uhiLy6soWjZp66_sRwQx-",
+      "width": 3072,
+      "height": 4608,
+      "alt": "Gitarrist im grünen Shirt bei einem Konzert",
+      "color": "#382d2b",
+      "preview": [
+        {
+          "src": "/media/9f0c7f475991ce-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 25936
+        },
+        {
+          "src": "/media/9f0c7f475991ce-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 51180
+        },
+        {
+          "src": "/media/9f0c7f475991ce-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 89060
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/9f0c7f475991ce-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 51180
+        },
+        {
+          "src": "/media/9f0c7f475991ce-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 89060
+        },
+        {
+          "src": "/media/9f0c7f475991ce-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 134116
+        },
+        {
+          "src": "/media/9f0c7f475991ce-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 202606
+        }
+      ],
+      "large": {
+        "src": "/media/9f0c7f475991ce-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 202606
+      }
+    },
+    "1XluqZCgJbKlHIEcV_C8t7KXJUMqm3KCU": {
+      "id": "1XluqZCgJbKlHIEcV_C8t7KXJUMqm3KCU",
+      "width": 4608,
+      "height": 3072,
+      "alt": "Sänger am Keyboard mit weiteren Musikern auf der Bühne",
+      "color": "#2b2a2e",
+      "preview": [
+        {
+          "src": "/media/7f35f78412f4dc-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 17950
+        },
+        {
+          "src": "/media/7f35f78412f4dc-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 36640
+        },
+        {
+          "src": "/media/7f35f78412f4dc-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 62852
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/7f35f78412f4dc-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 36640
+        },
+        {
+          "src": "/media/7f35f78412f4dc-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 62852
+        },
+        {
+          "src": "/media/7f35f78412f4dc-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 92564
+        },
+        {
+          "src": "/media/7f35f78412f4dc-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 138968
+        },
+        {
+          "src": "/media/7f35f78412f4dc-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 188900
+        }
+      ],
+      "large": {
+        "src": "/media/7f35f78412f4dc-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 188900
+      }
+    },
+    "1GSRJPc3b6Lv58wEWqDpee1Ok8V48EzyE": {
+      "id": "1GSRJPc3b6Lv58wEWqDpee1Ok8V48EzyE",
+      "width": 4608,
+      "height": 3072,
+      "alt": "Liveband spielt vor einem sitzenden Publikum",
+      "color": "#574c45",
+      "preview": [
+        {
+          "src": "/media/a0d9a014543f54-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 18524
+        },
+        {
+          "src": "/media/a0d9a014543f54-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 40754
+        },
+        {
+          "src": "/media/a0d9a014543f54-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 72418
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/a0d9a014543f54-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 40754
+        },
+        {
+          "src": "/media/a0d9a014543f54-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 72418
+        },
+        {
+          "src": "/media/a0d9a014543f54-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 110070
+        },
+        {
+          "src": "/media/a0d9a014543f54-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 161762
+        },
+        {
+          "src": "/media/a0d9a014543f54-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 216664
+        }
+      ],
+      "large": {
+        "src": "/media/a0d9a014543f54-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 216664
+      }
+    },
+    "1zOKDel7l2H7e59KquaUS5gsH5kqif0LL": {
+      "id": "1zOKDel7l2H7e59KquaUS5gsH5kqif0LL",
+      "width": 3072,
+      "height": 4608,
+      "alt": "Musiker am Keyboard bei einer Veranstaltung",
+      "color": "#2c2118",
+      "preview": [
+        {
+          "src": "/media/8e5322173bf633-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 17706
+        },
+        {
+          "src": "/media/8e5322173bf633-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 36536
+        },
+        {
+          "src": "/media/8e5322173bf633-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 67630
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/8e5322173bf633-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 36536
+        },
+        {
+          "src": "/media/8e5322173bf633-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 67630
+        },
+        {
+          "src": "/media/8e5322173bf633-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 106158
+        },
+        {
+          "src": "/media/8e5322173bf633-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 184638
+        }
+      ],
+      "large": {
+        "src": "/media/8e5322173bf633-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 184638
+      }
+    },
+    "1ey1BxVqHVadS0SdQBpwYA_HDm2TlkKyC": {
+      "id": "1ey1BxVqHVadS0SdQBpwYA_HDm2TlkKyC",
+      "width": 4608,
+      "height": 3072,
+      "alt": "Gäste unterhalten sich in einem farbig beleuchteten Veranstaltungsraum",
+      "color": "#51433e",
+      "preview": [
+        {
+          "src": "/media/d2c04fa6326bdc-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 13452
+        },
+        {
+          "src": "/media/d2c04fa6326bdc-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 26848
+        },
+        {
+          "src": "/media/d2c04fa6326bdc-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 45802
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/d2c04fa6326bdc-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 26848
+        },
+        {
+          "src": "/media/d2c04fa6326bdc-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 45802
+        },
+        {
+          "src": "/media/d2c04fa6326bdc-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 67784
+        },
+        {
+          "src": "/media/d2c04fa6326bdc-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 105858
+        },
+        {
+          "src": "/media/d2c04fa6326bdc-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 144770
+        }
+      ],
+      "large": {
+        "src": "/media/d2c04fa6326bdc-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 144770
+      }
+    },
+    "1G8prdJLND3q5ptaZ2ablrXRsROSMyGo0": {
+      "id": "1G8prdJLND3q5ptaZ2ablrXRsROSMyGo0",
+      "width": 4608,
+      "height": 3072,
+      "alt": "Besucher auf der Tanzfläche einer Veranstaltung",
+      "color": "#463e2e",
+      "preview": [
+        {
+          "src": "/media/bad2a74abf20b7-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 12036
+        },
+        {
+          "src": "/media/bad2a74abf20b7-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 24612
+        },
+        {
+          "src": "/media/bad2a74abf20b7-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 43044
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/bad2a74abf20b7-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 24612
+        },
+        {
+          "src": "/media/bad2a74abf20b7-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 43044
+        },
+        {
+          "src": "/media/bad2a74abf20b7-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 64332
+        },
+        {
+          "src": "/media/bad2a74abf20b7-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 96174
+        },
+        {
+          "src": "/media/bad2a74abf20b7-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 129256
+        }
+      ],
+      "large": {
+        "src": "/media/bad2a74abf20b7-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 129256
+      }
+    },
+    "1um66Saf2tu0BfSTe43d7BqFp7D3xXU5W": {
+      "id": "1um66Saf2tu0BfSTe43d7BqFp7D3xXU5W",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Brautpaar sieht sich unter dem Brautschleier an",
+      "color": "#9c8b7b",
+      "preview": [
+        {
+          "src": "/media/8af9d489a05907-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 18064
+        },
+        {
+          "src": "/media/8af9d489a05907-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 41104
+        },
+        {
+          "src": "/media/8af9d489a05907-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 82238
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/8af9d489a05907-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 41104
+        },
+        {
+          "src": "/media/8af9d489a05907-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 82238
+        },
+        {
+          "src": "/media/8af9d489a05907-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 140328
+        },
+        {
+          "src": "/media/8af9d489a05907-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 268946
+        }
+      ],
+      "large": {
+        "src": "/media/8af9d489a05907-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 268946
+      },
+      "avif": [
+        {
+          "src": "/media/8af9d489a05907-360.avif",
+          "width": 360,
+          "height": 540,
+          "bytes": 11569
+        },
+        {
+          "src": "/media/8af9d489a05907-600.avif",
+          "width": 600,
+          "height": 900,
+          "bytes": 24489
+        },
+        {
+          "src": "/media/8af9d489a05907-900.avif",
+          "width": 900,
+          "height": 1350,
+          "bytes": 45249
+        }
+      ]
+    },
+    "1vcrwIwklmWsZRKYq8FHbamcjFV4_oChN": {
+      "id": "1vcrwIwklmWsZRKYq8FHbamcjFV4_oChN",
+      "width": 6774,
+      "height": 4516,
+      "alt": "Brautpaar im Freien unter einem wehenden langen Schleier",
+      "color": "#74633c",
+      "preview": [
+        {
+          "src": "/media/32b83e7fa56f23-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 25136
+        },
+        {
+          "src": "/media/32b83e7fa56f23-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 62204
+        },
+        {
+          "src": "/media/32b83e7fa56f23-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 128152
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/32b83e7fa56f23-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 62204
+        },
+        {
+          "src": "/media/32b83e7fa56f23-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 128152
+        },
+        {
+          "src": "/media/32b83e7fa56f23-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 202684
+        },
+        {
+          "src": "/media/32b83e7fa56f23-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 332490
+        },
+        {
+          "src": "/media/32b83e7fa56f23-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 470200
+        }
+      ],
+      "large": {
+        "src": "/media/32b83e7fa56f23-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 470200
+      }
+    },
+    "1bA97VIiZVrRyiVoelKtFdP0qmheMIJd6": {
+      "id": "1bA97VIiZVrRyiVoelKtFdP0qmheMIJd6",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Zwei Hochzeitsgäste umarmen sich während der Feier",
+      "color": "#8d9082",
+      "preview": [
+        {
+          "src": "/media/cc87aea733e831-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 14806
+        },
+        {
+          "src": "/media/cc87aea733e831-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 27952
+        },
+        {
+          "src": "/media/cc87aea733e831-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 47038
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/cc87aea733e831-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 27952
+        },
+        {
+          "src": "/media/cc87aea733e831-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 47038
+        },
+        {
+          "src": "/media/cc87aea733e831-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 65512
+        },
+        {
+          "src": "/media/cc87aea733e831-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 96068
+        },
+        {
+          "src": "/media/cc87aea733e831-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 134970
+        }
+      ],
+      "large": {
+        "src": "/media/cc87aea733e831-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 134970
+      }
+    },
+    "1RyXPeYtCjRflFTmxtYkHxjuKNlQQlMmq": {
+      "id": "1RyXPeYtCjRflFTmxtYkHxjuKNlQQlMmq",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Hochzeitsgäste tragen die Braut gemeinsam auf einer Wiese",
+      "color": "#9f9e7b",
+      "preview": [
+        {
+          "src": "/media/503ac59f5d9c25-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 17882
+        },
+        {
+          "src": "/media/503ac59f5d9c25-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 44684
+        },
+        {
+          "src": "/media/503ac59f5d9c25-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 95250
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/503ac59f5d9c25-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 44684
+        },
+        {
+          "src": "/media/503ac59f5d9c25-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 95250
+        },
+        {
+          "src": "/media/503ac59f5d9c25-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 153868
+        },
+        {
+          "src": "/media/503ac59f5d9c25-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 262328
+        },
+        {
+          "src": "/media/503ac59f5d9c25-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 382400
+        }
+      ],
+      "large": {
+        "src": "/media/503ac59f5d9c25-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 382400
+      }
+    },
+    "1KzuDfK9EoLveedL2KTHUr8GgaBJYkH5G": {
+      "id": "1KzuDfK9EoLveedL2KTHUr8GgaBJYkH5G",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Brautpaar steht auf einer Holztreppe im Grünen",
+      "color": "#6c5c46",
+      "preview": [
+        {
+          "src": "/media/6e5994db17483a-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 44816
+        },
+        {
+          "src": "/media/6e5994db17483a-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 115724
+        },
+        {
+          "src": "/media/6e5994db17483a-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 228832
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/6e5994db17483a-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 115724
+        },
+        {
+          "src": "/media/6e5994db17483a-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 228832
+        },
+        {
+          "src": "/media/6e5994db17483a-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 376714
+        },
+        {
+          "src": "/media/6e5994db17483a-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 611998
+        }
+      ],
+      "large": {
+        "src": "/media/6e5994db17483a-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 611998
+      }
+    },
+    "1r_nGXituS9zCbTZbyFbXGOWKDaF981N0": {
+      "id": "1r_nGXituS9zCbTZbyFbXGOWKDaF981N0",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Bräutigam und Begleiter stehen lächelnd nebeneinander",
+      "color": "#818d8a",
+      "preview": [
+        {
+          "src": "/media/e450b56314f4eb-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 20808
+        },
+        {
+          "src": "/media/e450b56314f4eb-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 39834
+        },
+        {
+          "src": "/media/e450b56314f4eb-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 65578
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/e450b56314f4eb-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 39834
+        },
+        {
+          "src": "/media/e450b56314f4eb-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 65578
+        },
+        {
+          "src": "/media/e450b56314f4eb-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 96364
+        },
+        {
+          "src": "/media/e450b56314f4eb-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 159510
+        }
+      ],
+      "large": {
+        "src": "/media/e450b56314f4eb-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 159510
+      }
+    },
+    "1HiG9XM07LRygkP8x68VonPIGhKxg7YfN": {
+      "id": "1HiG9XM07LRygkP8x68VonPIGhKxg7YfN",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Festlich gedeckter Hochzeitstisch vor einer Fensterfront mit Landschaftsblick",
+      "color": "#685541",
+      "preview": [
+        {
+          "src": "/media/5393b5b7df40b4-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 14572
+        },
+        {
+          "src": "/media/5393b5b7df40b4-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 28142
+        },
+        {
+          "src": "/media/5393b5b7df40b4-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 46666
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/5393b5b7df40b4-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 28142
+        },
+        {
+          "src": "/media/5393b5b7df40b4-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 46666
+        },
+        {
+          "src": "/media/5393b5b7df40b4-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 71106
+        },
+        {
+          "src": "/media/5393b5b7df40b4-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 108898
+        }
+      ],
+      "large": {
+        "src": "/media/5393b5b7df40b4-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 108898
+      }
+    },
+    "1OX7OPlT1JhaftDvtWj7cnWf9aPj3d-ck": {
+      "id": "1OX7OPlT1JhaftDvtWj7cnWf9aPj3d-ck",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Brautpaar im Abendlicht vor warm leuchtenden Lichterketten",
+      "color": "#b0907e",
+      "preview": [
+        {
+          "src": "/media/a46078d3fc9a42-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 23448
+        },
+        {
+          "src": "/media/a46078d3fc9a42-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 49428
+        },
+        {
+          "src": "/media/a46078d3fc9a42-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 89586
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/a46078d3fc9a42-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 49428
+        },
+        {
+          "src": "/media/a46078d3fc9a42-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 89586
+        },
+        {
+          "src": "/media/a46078d3fc9a42-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 146622
+        },
+        {
+          "src": "/media/a46078d3fc9a42-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 265266
+        }
+      ],
+      "large": {
+        "src": "/media/a46078d3fc9a42-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 265266
+      }
+    },
+    "1RcCVW3MRXwdNChsYeKJJnjw0510cU5eR": {
+      "id": "1RcCVW3MRXwdNChsYeKJJnjw0510cU5eR",
+      "width": 4565,
+      "height": 6848,
+      "alt": "Brautpaar steht eng beieinander unter Bäumen",
+      "color": "#9ea59a",
+      "preview": [
+        {
+          "src": "/media/cee2af74a7c48a-360.webp",
+          "width": 360,
+          "height": 541,
+          "bytes": 27310
+        },
+        {
+          "src": "/media/cee2af74a7c48a-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 56536
+        },
+        {
+          "src": "/media/cee2af74a7c48a-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 100012
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/cee2af74a7c48a-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 56536
+        },
+        {
+          "src": "/media/cee2af74a7c48a-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 100012
+        },
+        {
+          "src": "/media/cee2af74a7c48a-1200.webp",
+          "width": 1200,
+          "height": 1801,
+          "bytes": 154150
+        },
+        {
+          "src": "/media/cee2af74a7c48a-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 245536
+        }
+      ],
+      "large": {
+        "src": "/media/cee2af74a7c48a-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 245536
+      }
+    },
+    "12GpWCoJIGS0txlOPZUCNfBTLBxPKJjdE": {
+      "id": "12GpWCoJIGS0txlOPZUCNfBTLBxPKJjdE",
+      "width": 6982,
+      "height": 4655,
+      "alt": "Hochzeitsgesellschaft als Gruppenfoto vor einem Haus im Grünen",
+      "color": "#55452b",
+      "preview": [
+        {
+          "src": "/media/710c31b5634cbc-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 22828
+        },
+        {
+          "src": "/media/710c31b5634cbc-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 57618
+        },
+        {
+          "src": "/media/710c31b5634cbc-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 121340
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/710c31b5634cbc-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 57618
+        },
+        {
+          "src": "/media/710c31b5634cbc-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 121340
+        },
+        {
+          "src": "/media/710c31b5634cbc-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 191706
+        },
+        {
+          "src": "/media/710c31b5634cbc-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 319248
+        },
+        {
+          "src": "/media/710c31b5634cbc-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 453166
+        }
+      ],
+      "large": {
+        "src": "/media/710c31b5634cbc-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 453166
+      }
+    },
+    "1OURXVO9nWOfjbS-3H5HFEQOqJxgEp7HS": {
+      "id": "1OURXVO9nWOfjbS-3H5HFEQOqJxgEp7HS",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Klassisches Fahrzeug auf einer Wiese im warmen Gegenlicht",
+      "color": "#291f0f",
+      "preview": [
+        {
+          "src": "/media/558c5aef4aec98-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 51246
+        },
+        {
+          "src": "/media/558c5aef4aec98-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 134636
+        },
+        {
+          "src": "/media/558c5aef4aec98-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 270780
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/558c5aef4aec98-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 134636
+        },
+        {
+          "src": "/media/558c5aef4aec98-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 270780
+        },
+        {
+          "src": "/media/558c5aef4aec98-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 456916
+        },
+        {
+          "src": "/media/558c5aef4aec98-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 745974
+        }
+      ],
+      "large": {
+        "src": "/media/558c5aef4aec98-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 745974
+      }
+    },
+    "1eWshE6ejxPlNobCtQZkmsfBjLO311tuY": {
+      "id": "1eWshE6ejxPlNobCtQZkmsfBjLO311tuY",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Blick zwischen den Vordersitzen auf das Cockpit eines klassischen Fahrzeugs",
+      "color": "#383b36",
+      "preview": [
+        {
+          "src": "/media/d0c49335c06fcd-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 16468
+        },
+        {
+          "src": "/media/d0c49335c06fcd-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 36030
+        },
+        {
+          "src": "/media/d0c49335c06fcd-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 68856
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/d0c49335c06fcd-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 36030
+        },
+        {
+          "src": "/media/d0c49335c06fcd-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 68856
+        },
+        {
+          "src": "/media/d0c49335c06fcd-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 102466
+        },
+        {
+          "src": "/media/d0c49335c06fcd-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 160040
+        },
+        {
+          "src": "/media/d0c49335c06fcd-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 224952
+        }
+      ],
+      "large": {
+        "src": "/media/d0c49335c06fcd-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 224952
+      }
+    },
+    "1ixUHq1M0zy9clGc8IM0TlEQ5SJW7Dw7r": {
+      "id": "1ixUHq1M0zy9clGc8IM0TlEQ5SJW7Dw7r",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Mehrere Fahrzeuge bei einem Autotreffen im Grünen",
+      "color": "#24241e",
+      "preview": [
+        {
+          "src": "/media/d4f59b2fcfb88c-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 34732
+        },
+        {
+          "src": "/media/d4f59b2fcfb88c-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 85524
+        },
+        {
+          "src": "/media/d4f59b2fcfb88c-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 168740
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/d4f59b2fcfb88c-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 85524
+        },
+        {
+          "src": "/media/d4f59b2fcfb88c-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 168740
+        },
+        {
+          "src": "/media/d4f59b2fcfb88c-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 282596
+        },
+        {
+          "src": "/media/d4f59b2fcfb88c-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 458436
+        }
+      ],
+      "large": {
+        "src": "/media/d4f59b2fcfb88c-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 458436
+      }
+    },
+    "1r2NsV7CljC1Y9llTXT5rwzjnFVVZfXxJ": {
+      "id": "1r2NsV7CljC1Y9llTXT5rwzjnFVVZfXxJ",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Klassische BMW bei einem Autotreffen auf einer Wiese",
+      "color": "#795229",
+      "preview": [
+        {
+          "src": "/media/3ecc8bc4c7669e-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 42916
+        },
+        {
+          "src": "/media/3ecc8bc4c7669e-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 102618
+        },
+        {
+          "src": "/media/3ecc8bc4c7669e-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 192468
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/3ecc8bc4c7669e-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 102618
+        },
+        {
+          "src": "/media/3ecc8bc4c7669e-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 192468
+        },
+        {
+          "src": "/media/3ecc8bc4c7669e-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 308760
+        },
+        {
+          "src": "/media/3ecc8bc4c7669e-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 479674
+        }
+      ],
+      "large": {
+        "src": "/media/3ecc8bc4c7669e-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 479674
+      }
+    },
+    "1GVvXdWwJa_BHwtfBNV_Vtz9W-fkmr0XT": {
+      "id": "1GVvXdWwJa_BHwtfBNV_Vtz9W-fkmr0XT",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Grüner Fahrzeuginnenraum mit Überrollkäfig",
+      "color": "#252b22",
+      "preview": [
+        {
+          "src": "/media/c2fe80e81e06c2-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 29680
+        },
+        {
+          "src": "/media/c2fe80e81e06c2-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 62200
+        },
+        {
+          "src": "/media/c2fe80e81e06c2-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 107480
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/c2fe80e81e06c2-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 62200
+        },
+        {
+          "src": "/media/c2fe80e81e06c2-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 107480
+        },
+        {
+          "src": "/media/c2fe80e81e06c2-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 164152
+        },
+        {
+          "src": "/media/c2fe80e81e06c2-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 251038
+        }
+      ],
+      "large": {
+        "src": "/media/c2fe80e81e06c2-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 251038
+      }
+    },
+    "1TOo7RUAju2DBfsPIrLreVj1uBTeLwvTB": {
+      "id": "1TOo7RUAju2DBfsPIrLreVj1uBTeLwvTB",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Goldfarbenes Fahrzeug bei einem abendlichen Autotreffen unter Lichterketten",
+      "color": "#694108",
+      "preview": [
+        {
+          "src": "/media/fd27b25621e66c-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 40960
+        },
+        {
+          "src": "/media/fd27b25621e66c-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 94320
+        },
+        {
+          "src": "/media/fd27b25621e66c-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 172574
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/fd27b25621e66c-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 94320
+        },
+        {
+          "src": "/media/fd27b25621e66c-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 172574
+        },
+        {
+          "src": "/media/fd27b25621e66c-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 268144
+        },
+        {
+          "src": "/media/fd27b25621e66c-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 405212
+        }
+      ],
+      "large": {
+        "src": "/media/fd27b25621e66c-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 405212
+      }
+    },
+    "113p5KKZ0t9GyGAAS6MmPxqcKItLq6rGC": {
+      "id": "113p5KKZ0t9GyGAAS6MmPxqcKItLq6rGC",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Silbernes Sportcoupé zwischen weiteren Fahrzeugen auf einem Treffen",
+      "color": "#4d423b",
+      "preview": [
+        {
+          "src": "/media/47174827e5cbb1-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 35578
+        },
+        {
+          "src": "/media/47174827e5cbb1-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 90858
+        },
+        {
+          "src": "/media/47174827e5cbb1-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 173800
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/47174827e5cbb1-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 90858
+        },
+        {
+          "src": "/media/47174827e5cbb1-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 173800
+        },
+        {
+          "src": "/media/47174827e5cbb1-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 289174
+        },
+        {
+          "src": "/media/47174827e5cbb1-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 463980
+        }
+      ],
+      "large": {
+        "src": "/media/47174827e5cbb1-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 463980
+      }
+    },
+    "13x4WlzoJpqakbgcyQjhOuDs8EGLp04h-": {
+      "id": "13x4WlzoJpqakbgcyQjhOuDs8EGLp04h-",
+      "width": 4672,
+      "height": 5840,
+      "alt": "Tätowierter Mann sitzt neben der geöffneten Tür seines weißen Fahrzeugs",
+      "color": "#6c6f6b",
+      "preview": [
+        {
+          "src": "/media/4995030fb979db-360.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 31924
+        },
+        {
+          "src": "/media/4995030fb979db-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 75262
+        },
+        {
+          "src": "/media/4995030fb979db-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 145678
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/4995030fb979db-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 75262
+        },
+        {
+          "src": "/media/4995030fb979db-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 145678
+        },
+        {
+          "src": "/media/4995030fb979db-1200.webp",
+          "width": 1200,
+          "height": 1500,
+          "bytes": 239900
+        },
+        {
+          "src": "/media/4995030fb979db-1600.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 395802
+        },
+        {
+          "src": "/media/4995030fb979db-2000.webp",
+          "width": 1920,
+          "height": 2400,
+          "bytes": 538484
+        }
+      ],
+      "large": {
+        "src": "/media/4995030fb979db-2000.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 538484
+      }
+    },
+    "16FRzPDaHcg5ZoQGs5EhmfhO28FGZ0SeV": {
+      "id": "16FRzPDaHcg5ZoQGs5EhmfhO28FGZ0SeV",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Frau mit Pferd auf einer Wiese im warmen Gegenlicht",
+      "color": "#62440c",
+      "preview": [
+        {
+          "src": "/media/d8eb93b6043c2f-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 15574
+        },
+        {
+          "src": "/media/d8eb93b6043c2f-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 34112
+        },
+        {
+          "src": "/media/d8eb93b6043c2f-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 61554
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/d8eb93b6043c2f-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 34112
+        },
+        {
+          "src": "/media/d8eb93b6043c2f-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 61554
+        },
+        {
+          "src": "/media/d8eb93b6043c2f-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 96078
+        },
+        {
+          "src": "/media/d8eb93b6043c2f-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 149592
+        }
+      ],
+      "large": {
+        "src": "/media/d8eb93b6043c2f-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 149592
+      }
+    },
+    "1ATk7PWFrsfBkhBj8LA6efG4Q1Ea1jKxU": {
+      "id": "1ATk7PWFrsfBkhBj8LA6efG4Q1Ea1jKxU",
+      "width": 4522,
+      "height": 6783,
+      "alt": "Junger Schäferhund sitzt vor einer niedrigen Steinmauer",
+      "color": "#738064",
+      "preview": [
+        {
+          "src": "/media/a4a98a2da55203-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 26228
+        },
+        {
+          "src": "/media/a4a98a2da55203-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 59468
+        },
+        {
+          "src": "/media/a4a98a2da55203-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 110030
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/a4a98a2da55203-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 59468
+        },
+        {
+          "src": "/media/a4a98a2da55203-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 110030
+        },
+        {
+          "src": "/media/a4a98a2da55203-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 174948
+        },
+        {
+          "src": "/media/a4a98a2da55203-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 272050
+        }
+      ],
+      "large": {
+        "src": "/media/a4a98a2da55203-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 272050
+      }
+    },
+    "1UI85atQM3gtsPTn1Y6xK5atAQM8-ym6W": {
+      "id": "1UI85atQM3gtsPTn1Y6xK5atAQM8-ym6W",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Frau steht neben einem Pferd im tiefen Sonnenlicht",
+      "color": "#595139",
+      "preview": [
+        {
+          "src": "/media/17b380950140bf-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 17142
+        },
+        {
+          "src": "/media/17b380950140bf-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 35554
+        },
+        {
+          "src": "/media/17b380950140bf-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 63238
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/17b380950140bf-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 35554
+        },
+        {
+          "src": "/media/17b380950140bf-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 63238
+        },
+        {
+          "src": "/media/17b380950140bf-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 100500
+        },
+        {
+          "src": "/media/17b380950140bf-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 173258
+        }
+      ],
+      "large": {
+        "src": "/media/17b380950140bf-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 173258
+      }
+    },
+    "1AorsqPNBaIjYfez8WHl6bDF4KEI3IuqQ": {
+      "id": "1AorsqPNBaIjYfez8WHl6bDF4KEI3IuqQ",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Pferd und Mensch zwischen violetten Blüten auf einer Wiese",
+      "color": "#573114",
+      "preview": [
+        {
+          "src": "/media/35c671de46cf6a-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 21694
+        },
+        {
+          "src": "/media/35c671de46cf6a-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 48656
+        },
+        {
+          "src": "/media/35c671de46cf6a-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 89190
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/35c671de46cf6a-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 48656
+        },
+        {
+          "src": "/media/35c671de46cf6a-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 89190
+        },
+        {
+          "src": "/media/35c671de46cf6a-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 141844
+        },
+        {
+          "src": "/media/35c671de46cf6a-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 220806
+        }
+      ],
+      "large": {
+        "src": "/media/35c671de46cf6a-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 220806
+      }
+    },
+    "1IyJwIg6YxNaStzjLoGjKCcyBdu8nVbMI": {
+      "id": "1IyJwIg6YxNaStzjLoGjKCcyBdu8nVbMI",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Frau mit Pferd in einer sonnenbeschienenen Wiese",
+      "color": "#5a4707",
+      "preview": [
+        {
+          "src": "/media/599f366890ceaf-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 24840
+        },
+        {
+          "src": "/media/599f366890ceaf-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 54154
+        },
+        {
+          "src": "/media/599f366890ceaf-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 93778
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/599f366890ceaf-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 54154
+        },
+        {
+          "src": "/media/599f366890ceaf-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 93778
+        },
+        {
+          "src": "/media/599f366890ceaf-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 141514
+        },
+        {
+          "src": "/media/599f366890ceaf-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 211220
+        }
+      ],
+      "large": {
+        "src": "/media/599f366890ceaf-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 211220
+      }
+    },
+    "179K_ns9HYAcHpYTb0Z66HcBe-SOeNlw2": {
+      "id": "179K_ns9HYAcHpYTb0Z66HcBe-SOeNlw2",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Frau kniet bei ihrem Pferd zwischen hohen Gräsern",
+      "color": "#6d5305",
+      "preview": [
+        {
+          "src": "/media/cde9bab9c6586b-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 32934
+        },
+        {
+          "src": "/media/cde9bab9c6586b-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 72440
+        },
+        {
+          "src": "/media/cde9bab9c6586b-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 133022
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/cde9bab9c6586b-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 72440
+        },
+        {
+          "src": "/media/cde9bab9c6586b-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 133022
+        },
+        {
+          "src": "/media/cde9bab9c6586b-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 201722
+        },
+        {
+          "src": "/media/cde9bab9c6586b-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 309686
+        }
+      ],
+      "large": {
+        "src": "/media/cde9bab9c6586b-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 309686
+      }
+    },
+    "1RLNfCGDdsVl4CUOrPA3qTpSNtP4UPT79": {
+      "id": "1RLNfCGDdsVl4CUOrPA3qTpSNtP4UPT79",
+      "width": 4416,
+      "height": 6624,
+      "alt": "Reiter und Pferd in Bewegung bei einer Veranstaltung im Freien",
+      "color": "#5e4734",
+      "preview": [
+        {
+          "src": "/media/5bc8e9661c296f-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 32382
+        },
+        {
+          "src": "/media/5bc8e9661c296f-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 72712
+        },
+        {
+          "src": "/media/5bc8e9661c296f-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 136382
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/5bc8e9661c296f-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 72712
+        },
+        {
+          "src": "/media/5bc8e9661c296f-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 136382
+        },
+        {
+          "src": "/media/5bc8e9661c296f-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 212816
+        },
+        {
+          "src": "/media/5bc8e9661c296f-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 338354
+        }
+      ],
+      "large": {
+        "src": "/media/5bc8e9661c296f-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 338354
+      }
+    },
+    "11hkUY-yh77FTNxEFoMlt0S2aC1kiYjwg": {
+      "id": "11hkUY-yh77FTNxEFoMlt0S2aC1kiYjwg",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Schäferhund liegt auf einem gefliesten Boden im warmen Innenlicht",
+      "color": "#ae6b39",
+      "preview": [
+        {
+          "src": "/media/09a65ed5f924cd-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 12634
+        },
+        {
+          "src": "/media/09a65ed5f924cd-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 24850
+        },
+        {
+          "src": "/media/09a65ed5f924cd-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 45346
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/09a65ed5f924cd-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 24850
+        },
+        {
+          "src": "/media/09a65ed5f924cd-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 45346
+        },
+        {
+          "src": "/media/09a65ed5f924cd-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 81612
+        },
+        {
+          "src": "/media/09a65ed5f924cd-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 194764
+        }
+      ],
+      "large": {
+        "src": "/media/09a65ed5f924cd-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 194764
+      }
+    },
+    "1AHXw2T2oqhW7XXNJcV10Q8oTUG0jYiEj": {
+      "id": "1AHXw2T2oqhW7XXNJcV10Q8oTUG0jYiEj",
+      "width": 4504,
+      "height": 6756,
+      "alt": "Sonnenlicht über einer nebligen Wald- und Hügellandschaft",
+      "color": "#726a5c",
+      "preview": [
+        {
+          "src": "/media/74ef39070fa886-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 27280
+        },
+        {
+          "src": "/media/74ef39070fa886-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 65168
+        },
+        {
+          "src": "/media/74ef39070fa886-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 122364
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/74ef39070fa886-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 65168
+        },
+        {
+          "src": "/media/74ef39070fa886-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 122364
+        },
+        {
+          "src": "/media/74ef39070fa886-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 201672
+        },
+        {
+          "src": "/media/74ef39070fa886-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 332666
+        }
+      ],
+      "large": {
+        "src": "/media/74ef39070fa886-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 332666
+      }
+    },
+    "1QYVEc87LRlJvHeACxB_Eiut2LHm_pNUP": {
+      "id": "1QYVEc87LRlJvHeACxB_Eiut2LHm_pNUP",
+      "width": 4645,
+      "height": 5806,
+      "alt": "Innenraum eines Cafés mit Pflanzen, Holz und warmen Lampen",
+      "color": "#483626",
+      "preview": [
+        {
+          "src": "/media/c70015c8c0da07-360.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 30120
+        },
+        {
+          "src": "/media/c70015c8c0da07-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 67898
+        },
+        {
+          "src": "/media/c70015c8c0da07-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 123590
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/c70015c8c0da07-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 67898
+        },
+        {
+          "src": "/media/c70015c8c0da07-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 123590
+        },
+        {
+          "src": "/media/c70015c8c0da07-1200.webp",
+          "width": 1200,
+          "height": 1500,
+          "bytes": 187586
+        },
+        {
+          "src": "/media/c70015c8c0da07-1600.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 288012
+        },
+        {
+          "src": "/media/c70015c8c0da07-2000.webp",
+          "width": 1920,
+          "height": 2400,
+          "bytes": 374372
+        }
+      ],
+      "large": {
+        "src": "/media/c70015c8c0da07-2000.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 374372
+      }
+    },
+    "1bQLmiIEVcjuocvr-O_5zpIZlbFYSt1Dr": {
+      "id": "1bQLmiIEVcjuocvr-O_5zpIZlbFYSt1Dr",
+      "width": 4666,
+      "height": 5832,
+      "alt": "Straßenszene mit Backsteinhäusern und darüber gespannten Lichterketten",
+      "color": "#545352",
+      "preview": [
+        {
+          "src": "/media/bd44bd9f21d13a-360.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 20612
+        },
+        {
+          "src": "/media/bd44bd9f21d13a-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 49170
+        },
+        {
+          "src": "/media/bd44bd9f21d13a-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 96334
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/bd44bd9f21d13a-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 49170
+        },
+        {
+          "src": "/media/bd44bd9f21d13a-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 96334
+        },
+        {
+          "src": "/media/bd44bd9f21d13a-1200.webp",
+          "width": 1200,
+          "height": 1500,
+          "bytes": 161898
+        },
+        {
+          "src": "/media/bd44bd9f21d13a-1600.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 266728
+        },
+        {
+          "src": "/media/bd44bd9f21d13a-2000.webp",
+          "width": 1920,
+          "height": 2400,
+          "bytes": 361942
+        }
+      ],
+      "large": {
+        "src": "/media/bd44bd9f21d13a-2000.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 361942
+      }
+    },
+    "1557Mxmtu6rwSdSSmDgW8n5NSnDxfkoGg": {
+      "id": "1557Mxmtu6rwSdSSmDgW8n5NSnDxfkoGg",
+      "width": 4425,
+      "height": 6638,
+      "alt": "Helle Fassade eines Eckgebäudes vor tiefblauem Himmel",
+      "color": "#3b5065",
+      "preview": [
+        {
+          "src": "/media/7eee68d14fe29e-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 15858
+        },
+        {
+          "src": "/media/7eee68d14fe29e-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 35086
+        },
+        {
+          "src": "/media/7eee68d14fe29e-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 63952
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/7eee68d14fe29e-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 35086
+        },
+        {
+          "src": "/media/7eee68d14fe29e-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 63952
+        },
+        {
+          "src": "/media/7eee68d14fe29e-1200.webp",
+          "width": 1200,
+          "height": 1801,
+          "bytes": 94376
+        },
+        {
+          "src": "/media/7eee68d14fe29e-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 145170
+        }
+      ],
+      "large": {
+        "src": "/media/7eee68d14fe29e-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 145170
+      }
+    },
+    "1Prd1p0AERS7iezhPx5wWgDt8o8ACcXgC": {
+      "id": "1Prd1p0AERS7iezhPx5wWgDt8o8ACcXgC",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Farbige pyramidenförmige Installation unter Bäumen",
+      "color": "#392617",
+      "preview": [
+        {
+          "src": "/media/ef6105859e45fd-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 33818
+        },
+        {
+          "src": "/media/ef6105859e45fd-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 86758
+        },
+        {
+          "src": "/media/ef6105859e45fd-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 170412
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/ef6105859e45fd-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 86758
+        },
+        {
+          "src": "/media/ef6105859e45fd-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 170412
+        },
+        {
+          "src": "/media/ef6105859e45fd-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 287208
+        },
+        {
+          "src": "/media/ef6105859e45fd-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 456526
+        }
+      ],
+      "large": {
+        "src": "/media/ef6105859e45fd-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 456526
+      }
+    },
+    "1Jp7NCCTQi9BjEU8-LCZOYwiBSV-ajA78": {
+      "id": "1Jp7NCCTQi9BjEU8-LCZOYwiBSV-ajA78",
+      "width": 4645,
+      "height": 5806,
+      "alt": "Eingang eines Restaurants mit Pflanzen und leuchtendem Schriftzug",
+      "color": "#332c25",
+      "preview": [
+        {
+          "src": "/media/e22231b7eb291d-360.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 32544
+        },
+        {
+          "src": "/media/e22231b7eb291d-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 78096
+        },
+        {
+          "src": "/media/e22231b7eb291d-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 144788
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/e22231b7eb291d-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 78096
+        },
+        {
+          "src": "/media/e22231b7eb291d-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 144788
+        },
+        {
+          "src": "/media/e22231b7eb291d-1200.webp",
+          "width": 1200,
+          "height": 1500,
+          "bytes": 233398
+        },
+        {
+          "src": "/media/e22231b7eb291d-1600.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 370390
+        },
+        {
+          "src": "/media/e22231b7eb291d-2000.webp",
+          "width": 1920,
+          "height": 2400,
+          "bytes": 490176
+        }
+      ],
+      "large": {
+        "src": "/media/e22231b7eb291d-2000.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 490176
+      }
+    },
+    "16XCgmtQxEN-wABgEqiB-bYXl_qvj_lF2": {
+      "id": "16XCgmtQxEN-wABgEqiB-bYXl_qvj_lF2",
+      "width": 4646,
+      "height": 5807,
+      "alt": "Blick über das Wasser auf eine Stadt bei bewölktem Himmel",
+      "color": "#565e64",
+      "preview": [
+        {
+          "src": "/media/d1d09c90d29f56-360.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 13232
+        },
+        {
+          "src": "/media/d1d09c90d29f56-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 29168
+        },
+        {
+          "src": "/media/d1d09c90d29f56-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 52804
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/d1d09c90d29f56-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 29168
+        },
+        {
+          "src": "/media/d1d09c90d29f56-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 52804
+        },
+        {
+          "src": "/media/d1d09c90d29f56-1200.webp",
+          "width": 1200,
+          "height": 1500,
+          "bytes": 84350
+        },
+        {
+          "src": "/media/d1d09c90d29f56-1600.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 160032
+        },
+        {
+          "src": "/media/d1d09c90d29f56-2000.webp",
+          "width": 1920,
+          "height": 2400,
+          "bytes": 296402
+        }
+      ],
+      "large": {
+        "src": "/media/d1d09c90d29f56-2000.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 296402
+      }
+    },
+    "1ll3_UL-FUQaeeWPki8NPpAwQGcrVL2Zf": {
+      "id": "1ll3_UL-FUQaeeWPki8NPpAwQGcrVL2Zf",
+      "width": 4622,
+      "height": 5777,
+      "alt": "Mit Aufklebern bedeckter Kasten an einer Hausfassade",
+      "color": "#4c423f",
+      "preview": [
+        {
+          "src": "/media/904cbe21e6ee4b-360.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 23826
+        },
+        {
+          "src": "/media/904cbe21e6ee4b-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 55186
+        },
+        {
+          "src": "/media/904cbe21e6ee4b-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 104806
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/904cbe21e6ee4b-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 55186
+        },
+        {
+          "src": "/media/904cbe21e6ee4b-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 104806
+        },
+        {
+          "src": "/media/904cbe21e6ee4b-1200.webp",
+          "width": 1200,
+          "height": 1500,
+          "bytes": 174208
+        },
+        {
+          "src": "/media/904cbe21e6ee4b-1600.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 289730
+        },
+        {
+          "src": "/media/904cbe21e6ee4b-2000.webp",
+          "width": 1920,
+          "height": 2400,
+          "bytes": 422748
+        }
+      ],
+      "large": {
+        "src": "/media/904cbe21e6ee4b-2000.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 422748
+      }
+    },
+    "1VJ6x5MbaIIOaGMRbk5qNcCCjybTfccX5": {
+      "id": "1VJ6x5MbaIIOaGMRbk5qNcCCjybTfccX5",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Roter Opel aus erhöhter Perspektive auf einem Parkplatz",
+      "color": "#554545",
+      "preview": [
+        {
+          "src": "/media/ac936b940152f4-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 13760
+        },
+        {
+          "src": "/media/ac936b940152f4-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 34330
+        },
+        {
+          "src": "/media/ac936b940152f4-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 79738
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/ac936b940152f4-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 34330
+        },
+        {
+          "src": "/media/ac936b940152f4-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 79738
+        },
+        {
+          "src": "/media/ac936b940152f4-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 139458
+        },
+        {
+          "src": "/media/ac936b940152f4-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 249966
+        },
+        {
+          "src": "/media/ac936b940152f4-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 372620
+        }
+      ],
+      "large": {
+        "src": "/media/ac936b940152f4-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 372620
+      }
+    },
+    "1IBX_0p4jjxTZSPmbzhhpJjSNQ7Q_CIjC": {
+      "id": "1IBX_0p4jjxTZSPmbzhhpJjSNQ7Q_CIjC",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Weißer Pickup vor einer weiten Landschaft im Morgenlicht",
+      "color": "#99977e",
+      "preview": [
+        {
+          "src": "/media/2568e75ed179a8-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 11440
+        },
+        {
+          "src": "/media/2568e75ed179a8-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 29516
+        },
+        {
+          "src": "/media/2568e75ed179a8-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 69924
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/2568e75ed179a8-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 29516
+        },
+        {
+          "src": "/media/2568e75ed179a8-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 69924
+        },
+        {
+          "src": "/media/2568e75ed179a8-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 120282
+        },
+        {
+          "src": "/media/2568e75ed179a8-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 220782
+        },
+        {
+          "src": "/media/2568e75ed179a8-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 337606
+        }
+      ],
+      "large": {
+        "src": "/media/2568e75ed179a8-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 337606
+      }
+    },
+    "19OdGC3YBIyOYcqLKmW5_COp51r0yJtnb": {
+      "id": "19OdGC3YBIyOYcqLKmW5_COp51r0yJtnb",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Orangefarbenes Fahrzeug an einer Tankstelle",
+      "color": "#8f969a",
+      "preview": [
+        {
+          "src": "/media/445486e91c0928-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 16018
+        },
+        {
+          "src": "/media/445486e91c0928-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 35966
+        },
+        {
+          "src": "/media/445486e91c0928-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 70210
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/445486e91c0928-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 35966
+        },
+        {
+          "src": "/media/445486e91c0928-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 70210
+        },
+        {
+          "src": "/media/445486e91c0928-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 110342
+        },
+        {
+          "src": "/media/445486e91c0928-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 182776
+        },
+        {
+          "src": "/media/445486e91c0928-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 261288
+        }
+      ],
+      "large": {
+        "src": "/media/445486e91c0928-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 261288
+      }
+    },
+    "1i2wjngFVtFD5JmgmKgBKaz7tipV8_eDh": {
+      "id": "1i2wjngFVtFD5JmgmKgBKaz7tipV8_eDh",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Klassischer weißer Opel in einer offenen Landschaft",
+      "color": "#81908f",
+      "preview": [
+        {
+          "src": "/media/5ff4dca6865e02-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 11118
+        },
+        {
+          "src": "/media/5ff4dca6865e02-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 26486
+        },
+        {
+          "src": "/media/5ff4dca6865e02-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 55704
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/5ff4dca6865e02-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 26486
+        },
+        {
+          "src": "/media/5ff4dca6865e02-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 55704
+        },
+        {
+          "src": "/media/5ff4dca6865e02-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 90766
+        },
+        {
+          "src": "/media/5ff4dca6865e02-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 153660
+        },
+        {
+          "src": "/media/5ff4dca6865e02-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 223822
+        }
+      ],
+      "large": {
+        "src": "/media/5ff4dca6865e02-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 223822
+      }
+    },
+    "1ENlzLasWTYmgKU4e-pRp-4M08AljHCNI": {
+      "id": "1-9r5yY2yguR26UqKtD7CRSBfONGs1kiN",
+      "width": 6866,
+      "height": 4577,
+      "alt": "Fahrzeug auf einem Waldweg im warmen Herbstlicht",
+      "color": "#392e1a",
+      "preview": [
+        {
+          "src": "/media/32f462fcaab87a-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 20492
+        },
+        {
+          "src": "/media/32f462fcaab87a-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 50882
+        },
+        {
+          "src": "/media/32f462fcaab87a-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 106752
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/32f462fcaab87a-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 50882
+        },
+        {
+          "src": "/media/32f462fcaab87a-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 106752
+        },
+        {
+          "src": "/media/32f462fcaab87a-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 174200
+        },
+        {
+          "src": "/media/32f462fcaab87a-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "bytes": 290452
+        },
+        {
+          "src": "/media/32f462fcaab87a-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 416178
+        }
+      ],
+      "large": {
+        "src": "/media/32f462fcaab87a-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 416178
+      }
+    },
+    "1L97inIm6RscxtaTfGwHy44_BFwKijEQq": {
+      "id": "1L97inIm6RscxtaTfGwHy44_BFwKijEQq",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Weißes Fahrzeug unter markanter moderner Architektur",
+      "color": "#959a98",
+      "preview": [
+        {
+          "src": "/media/2dcf5544fa0144-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 14524
+        },
+        {
+          "src": "/media/2dcf5544fa0144-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 33864
+        },
+        {
+          "src": "/media/2dcf5544fa0144-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 72356
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/2dcf5544fa0144-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 33864
+        },
+        {
+          "src": "/media/2dcf5544fa0144-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 72356
+        },
+        {
+          "src": "/media/2dcf5544fa0144-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 118120
+        },
+        {
+          "src": "/media/2dcf5544fa0144-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 204210
+        },
+        {
+          "src": "/media/2dcf5544fa0144-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 291144
+        }
+      ],
+      "large": {
+        "src": "/media/2dcf5544fa0144-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 291144
+      }
+    },
+    "1Rg-kVsb-UKuu7COTkR3MspqXt7LtCKSs": {
+      "id": "1Rg-kVsb-UKuu7COTkR3MspqXt7LtCKSs",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Schwarzes Fahrzeug vor einer mit Graffiti bemalten Wand",
+      "color": "#6e714f",
+      "preview": [
+        {
+          "src": "/media/251307b9dbc463-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 20356
+        },
+        {
+          "src": "/media/251307b9dbc463-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 46640
+        },
+        {
+          "src": "/media/251307b9dbc463-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 88730
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/251307b9dbc463-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 46640
+        },
+        {
+          "src": "/media/251307b9dbc463-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 88730
+        },
+        {
+          "src": "/media/251307b9dbc463-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 136048
+        },
+        {
+          "src": "/media/251307b9dbc463-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 211116
+        },
+        {
+          "src": "/media/251307b9dbc463-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 285400
+        }
+      ],
+      "large": {
+        "src": "/media/251307b9dbc463-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 285400
+      }
+    },
+    "1C1hHhyD68cSDuOShnoIFrpVwQO3XJRh6": {
+      "id": "1C1hHhyD68cSDuOShnoIFrpVwQO3XJRh6",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Zweifarbiger Kleinbus vor einer Berglandschaft",
+      "color": "#798281",
+      "preview": [
+        {
+          "src": "/media/2c85061627c806-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 10806
+        },
+        {
+          "src": "/media/2c85061627c806-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 27504
+        },
+        {
+          "src": "/media/2c85061627c806-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 62876
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/2c85061627c806-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 27504
+        },
+        {
+          "src": "/media/2c85061627c806-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 62876
+        },
+        {
+          "src": "/media/2c85061627c806-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 108414
+        },
+        {
+          "src": "/media/2c85061627c806-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 200136
+        },
+        {
+          "src": "/media/2c85061627c806-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 304276
+        }
+      ],
+      "large": {
+        "src": "/media/2c85061627c806-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 304276
+      }
+    },
+    "1B5628P7Jjct1StdJrUzzYDtiONZqyj04": {
+      "id": "1B5628P7Jjct1StdJrUzzYDtiONZqyj04",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Vier Personen vor einer Hallenfassade mit Kekila-Schriftzug",
+      "color": "#5e6e26",
+      "preview": [
+        {
+          "src": "/media/e35258ffd4cc5b-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 39060
+        },
+        {
+          "src": "/media/e35258ffd4cc5b-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 98546
+        },
+        {
+          "src": "/media/e35258ffd4cc5b-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 194014
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/e35258ffd4cc5b-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 98546
+        },
+        {
+          "src": "/media/e35258ffd4cc5b-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 194014
+        },
+        {
+          "src": "/media/e35258ffd4cc5b-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 330452
+        },
+        {
+          "src": "/media/e35258ffd4cc5b-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 560678
+        }
+      ],
+      "large": {
+        "src": "/media/e35258ffd4cc5b-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 560678
+      }
+    },
+    "1hOX1_r2tdxTXLOK_JdCn7bLXjrt8Drnl": {
+      "id": "1hOX1_r2tdxTXLOK_JdCn7bLXjrt8Drnl",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Getränkeflaschen zwischen grünen Blättern",
+      "color": "#434b34",
+      "preview": [
+        {
+          "src": "/media/a066267a5003ad-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 40372
+        },
+        {
+          "src": "/media/a066267a5003ad-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 83810
+        },
+        {
+          "src": "/media/a066267a5003ad-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 142616
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/a066267a5003ad-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 83810
+        },
+        {
+          "src": "/media/a066267a5003ad-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 142616
+        },
+        {
+          "src": "/media/a066267a5003ad-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 216190
+        },
+        {
+          "src": "/media/a066267a5003ad-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 318748
+        }
+      ],
+      "large": {
+        "src": "/media/a066267a5003ad-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 318748
+      }
+    },
+    "1kVhSDrVNNUDVNEWFAazaS95o36zDWzYb": {
+      "id": "1kVhSDrVNNUDVNEWFAazaS95o36zDWzYb",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Besucher bei einer Veranstaltung in einer Betriebshalle",
+      "color": "#2d2825",
+      "preview": [
+        {
+          "src": "/media/92672baa3e4788-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 30434
+        },
+        {
+          "src": "/media/92672baa3e4788-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 66394
+        },
+        {
+          "src": "/media/92672baa3e4788-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 119728
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/92672baa3e4788-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 66394
+        },
+        {
+          "src": "/media/92672baa3e4788-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 119728
+        },
+        {
+          "src": "/media/92672baa3e4788-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 199286
+        },
+        {
+          "src": "/media/92672baa3e4788-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 362022
+        }
+      ],
+      "large": {
+        "src": "/media/92672baa3e4788-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 362022
+      }
+    },
+    "13rcmXXtqPI4YW_qRnVXvleFX6IdmdwEM": {
+      "id": "13rcmXXtqPI4YW_qRnVXvleFX6IdmdwEM",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Frau mit Getränkeflaschen in einem Getränkemarkt",
+      "color": "#989786",
+      "preview": [
+        {
+          "src": "/media/5e231795b687db-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 34516
+        },
+        {
+          "src": "/media/5e231795b687db-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 65768
+        },
+        {
+          "src": "/media/5e231795b687db-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 106858
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/5e231795b687db-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 65768
+        },
+        {
+          "src": "/media/5e231795b687db-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 106858
+        },
+        {
+          "src": "/media/5e231795b687db-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 154596
+        },
+        {
+          "src": "/media/5e231795b687db-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 221854
+        }
+      ],
+      "large": {
+        "src": "/media/5e231795b687db-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 221854
+      }
+    },
+    "1aOs0MQbPbcFDxxncdVhffprVnkmkOrW6": {
+      "id": "1aOs0MQbPbcFDxxncdVhffprVnkmkOrW6",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Getränkeflasche in einer Baumgabel im Sonnenlicht",
+      "color": "#786949",
+      "preview": [
+        {
+          "src": "/media/0a217f859b6b4d-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 31654
+        },
+        {
+          "src": "/media/0a217f859b6b4d-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 63758
+        },
+        {
+          "src": "/media/0a217f859b6b4d-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 108064
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/0a217f859b6b4d-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 63758
+        },
+        {
+          "src": "/media/0a217f859b6b4d-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 108064
+        },
+        {
+          "src": "/media/0a217f859b6b4d-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 157212
+        },
+        {
+          "src": "/media/0a217f859b6b4d-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 231930
+        }
+      ],
+      "large": {
+        "src": "/media/0a217f859b6b4d-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 231930
+      }
+    },
+    "1RzOWkkWvFfqUcF26XGfXBCCNQvBs3mTj": {
+      "id": "1RzOWkkWvFfqUcF26XGfXBCCNQvBs3mTj",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Drei Personen mit Getränken auf einer Wiese",
+      "color": "#504c11",
+      "preview": [
+        {
+          "src": "/media/2cb351cef2b3aa-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 57406
+        },
+        {
+          "src": "/media/2cb351cef2b3aa-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 150034
+        },
+        {
+          "src": "/media/2cb351cef2b3aa-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 297668
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/2cb351cef2b3aa-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 150034
+        },
+        {
+          "src": "/media/2cb351cef2b3aa-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 297668
+        },
+        {
+          "src": "/media/2cb351cef2b3aa-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 495576
+        },
+        {
+          "src": "/media/2cb351cef2b3aa-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 811676
+        }
+      ],
+      "large": {
+        "src": "/media/2cb351cef2b3aa-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 811676
+      }
+    },
+    "1nNZt-t82eYj1X1fdQ_dyqUEw-fLrJCUG": {
+      "id": "1nNZt-t82eYj1X1fdQ_dyqUEw-fLrJCUG",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Person transportiert Getränkekisten mit einer Sackkarre",
+      "color": "#545848",
+      "preview": [
+        {
+          "src": "/media/fbc9fd65b7f407-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 27294
+        },
+        {
+          "src": "/media/fbc9fd65b7f407-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 55344
+        },
+        {
+          "src": "/media/fbc9fd65b7f407-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 90962
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/fbc9fd65b7f407-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 55344
+        },
+        {
+          "src": "/media/fbc9fd65b7f407-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 90962
+        },
+        {
+          "src": "/media/fbc9fd65b7f407-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 131014
+        },
+        {
+          "src": "/media/fbc9fd65b7f407-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 190082
+        }
+      ],
+      "large": {
+        "src": "/media/fbc9fd65b7f407-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 190082
+      }
+    },
+    "11_KoLd3WiItPnoHvSx7PG4nWPC0uMQdY": {
+      "id": "11_KoLd3WiItPnoHvSx7PG4nWPC0uMQdY",
+      "width": 6323,
+      "height": 4215,
+      "alt": "Rennkart in Fahrt, die Strecke im Hintergrund verwischt",
+      "color": "#555143",
+      "preview": [
+        {
+          "src": "/media/8322db97b39ad5-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 7528
+        },
+        {
+          "src": "/media/8322db97b39ad5-600.webp",
+          "width": 600,
+          "height": 399,
+          "bytes": 15338
+        },
+        {
+          "src": "/media/8322db97b39ad5-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 27130
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/8322db97b39ad5-600.webp",
+          "width": 600,
+          "height": 399,
+          "bytes": 15338
+        },
+        {
+          "src": "/media/8322db97b39ad5-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 27130
+        },
+        {
+          "src": "/media/8322db97b39ad5-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 38220
+        },
+        {
+          "src": "/media/8322db97b39ad5-1600.webp",
+          "width": 1600,
+          "height": 1066,
+          "bytes": 56884
+        },
+        {
+          "src": "/media/8322db97b39ad5-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 75928
+        }
+      ],
+      "large": {
+        "src": "/media/8322db97b39ad5-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 75928
+      }
+    },
+    "13SfBz0vGNrhA4w2b-K_IZBa7INTS1pJZ": {
+      "id": "13SfBz0vGNrhA4w2b-K_IZBa7INTS1pJZ",
+      "width": 7008,
+      "height": 4672,
+      "alt": "Rennfahrer im roten Kart in der Boxengasse",
+      "color": "#726c61",
+      "preview": [
+        {
+          "src": "/media/7109458ab0c747-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 15292
+        },
+        {
+          "src": "/media/7109458ab0c747-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 32734
+        },
+        {
+          "src": "/media/7109458ab0c747-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 60660
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/7109458ab0c747-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 32734
+        },
+        {
+          "src": "/media/7109458ab0c747-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 60660
+        },
+        {
+          "src": "/media/7109458ab0c747-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 90422
+        },
+        {
+          "src": "/media/7109458ab0c747-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 138932
+        },
+        {
+          "src": "/media/7109458ab0c747-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 190138
+        }
+      ],
+      "large": {
+        "src": "/media/7109458ab0c747-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 190138
+      }
+    },
+    "1rQPNqQUyiA8wx6qdy9nd8VyC1fuZa2hU": {
+      "id": "1rQPNqQUyiA8wx6qdy9nd8VyC1fuZa2hU",
+      "width": 6979,
+      "height": 4653,
+      "alt": "Zwei rote Rennkarts stehen nebeneinander an der Rennstrecke",
+      "color": "#706457",
+      "preview": [
+        {
+          "src": "/media/f652a4b452c214-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 18080
+        },
+        {
+          "src": "/media/f652a4b452c214-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 39022
+        },
+        {
+          "src": "/media/f652a4b452c214-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 74660
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/f652a4b452c214-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 39022
+        },
+        {
+          "src": "/media/f652a4b452c214-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 74660
+        },
+        {
+          "src": "/media/f652a4b452c214-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 110914
+        },
+        {
+          "src": "/media/f652a4b452c214-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 166832
+        },
+        {
+          "src": "/media/f652a4b452c214-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 229788
+        }
+      ],
+      "large": {
+        "src": "/media/f652a4b452c214-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 229788
+      }
+    },
+    "1aiZxd0s9r97LYZ5M3Pf-YowINv0GGsae": {
+      "id": "1aiZxd0s9r97LYZ5M3Pf-YowINv0GGsae",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Teammitglieder und Fahrer bereiten Karts vor",
+      "color": "#332e25",
+      "preview": [
+        {
+          "src": "/media/c1f924c7236df8-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 26352
+        },
+        {
+          "src": "/media/c1f924c7236df8-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 54672
+        },
+        {
+          "src": "/media/c1f924c7236df8-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 92802
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/c1f924c7236df8-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 54672
+        },
+        {
+          "src": "/media/c1f924c7236df8-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 92802
+        },
+        {
+          "src": "/media/c1f924c7236df8-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 134744
+        },
+        {
+          "src": "/media/c1f924c7236df8-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 197882
+        }
+      ],
+      "large": {
+        "src": "/media/c1f924c7236df8-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 197882
+      }
+    },
+    "1OWNgC9Y-M7WC3z_Ijji4cCtinsw3TZXP": {
+      "id": "1OWNgC9Y-M7WC3z_Ijji4cCtinsw3TZXP",
+      "width": 3113,
+      "height": 4672,
+      "alt": "Kart fährt vor rot-weißer Streckenbegrenzung vorbei",
+      "color": "#444b3a",
+      "preview": [
+        {
+          "src": "/media/a1630ad1a16a30-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 16794
+        },
+        {
+          "src": "/media/a1630ad1a16a30-600.webp",
+          "width": 600,
+          "height": 901,
+          "bytes": 33096
+        },
+        {
+          "src": "/media/a1630ad1a16a30-900.webp",
+          "width": 900,
+          "height": 1351,
+          "bytes": 58412
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/a1630ad1a16a30-600.webp",
+          "width": 600,
+          "height": 901,
+          "bytes": 33096
+        },
+        {
+          "src": "/media/a1630ad1a16a30-900.webp",
+          "width": 900,
+          "height": 1351,
+          "bytes": 58412
+        },
+        {
+          "src": "/media/a1630ad1a16a30-1200.webp",
+          "width": 1200,
+          "height": 1801,
+          "bytes": 86104
+        },
+        {
+          "src": "/media/a1630ad1a16a30-1600.webp",
+          "width": 1599,
+          "height": 2400,
+          "bytes": 126826
+        }
+      ],
+      "large": {
+        "src": "/media/a1630ad1a16a30-1600.webp",
+        "width": 1599,
+        "height": 2400,
+        "bytes": 126826
+      }
+    },
+    "1cLdX07uJ7T14puXvVVZQgEDl7Gdnv_7G": {
+      "id": "1cLdX07uJ7T14puXvVVZQgEDl7Gdnv_7G",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Fahrer und Begleiter unterhalten sich neben einem Kart",
+      "color": "#505657",
+      "preview": [
+        {
+          "src": "/media/21595c31a9321b-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 20724
+        },
+        {
+          "src": "/media/21595c31a9321b-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 46572
+        },
+        {
+          "src": "/media/21595c31a9321b-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 82506
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/21595c31a9321b-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 46572
+        },
+        {
+          "src": "/media/21595c31a9321b-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 82506
+        },
+        {
+          "src": "/media/21595c31a9321b-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 128518
+        },
+        {
+          "src": "/media/21595c31a9321b-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 199182
+        }
+      ],
+      "large": {
+        "src": "/media/21595c31a9321b-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 199182
+      }
+    },
+    "1VOxHGf6d_pPbjMilwkOS8miFYPgoSuKo": {
+      "id": "1VOxHGf6d_pPbjMilwkOS8miFYPgoSuKo",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Rennfahrer mit orangefarbenem Helm beugt sich über sein Kart",
+      "color": "#0b1115",
+      "preview": [
+        {
+          "src": "/media/76c02ba827f40d-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 22004
+        },
+        {
+          "src": "/media/76c02ba827f40d-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 47874
+        },
+        {
+          "src": "/media/76c02ba827f40d-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 82286
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/76c02ba827f40d-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 47874
+        },
+        {
+          "src": "/media/76c02ba827f40d-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 82286
+        },
+        {
+          "src": "/media/76c02ba827f40d-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 124034
+        },
+        {
+          "src": "/media/76c02ba827f40d-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 183496
+        }
+      ],
+      "large": {
+        "src": "/media/76c02ba827f40d-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 183496
+      }
+    },
+    "1109FRdhqA3ptCqsBMYAEgGke0NOJqC1V": {
+      "id": "1109FRdhqA3ptCqsBMYAEgGke0NOJqC1V",
+      "width": 4672,
+      "height": 5840,
+      "alt": "Rennfahrer im schwarz-orangefarbenen Anzug hält seinen Helm",
+      "color": "#887f79",
+      "preview": [
+        {
+          "src": "/media/d9876019717c5a-360.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 17612
+        },
+        {
+          "src": "/media/d9876019717c5a-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 36462
+        },
+        {
+          "src": "/media/d9876019717c5a-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 64574
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/d9876019717c5a-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 36462
+        },
+        {
+          "src": "/media/d9876019717c5a-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 64574
+        },
+        {
+          "src": "/media/d9876019717c5a-1200.webp",
+          "width": 1200,
+          "height": 1500,
+          "bytes": 99666
+        },
+        {
+          "src": "/media/d9876019717c5a-1600.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 151706
+        },
+        {
+          "src": "/media/d9876019717c5a-2000.webp",
+          "width": 1920,
+          "height": 2400,
+          "bytes": 198332
+        }
+      ],
+      "large": {
+        "src": "/media/d9876019717c5a-2000.webp",
+        "width": 1920,
+        "height": 2400,
+        "bytes": 198332
+      }
+    },
+    "1qs4VP0pYp3jmRUDdS88m1hrpNAkjK0vp": {
+      "id": "1CdJTWdYO0XXxNENiqaPXk_IPFwfQxPzq",
+      "width": 4672,
+      "height": 7008,
+      "alt": "KXXMA am DJ-Pult, eine Hand im farbigen Bühnenlicht erhoben",
+      "color": "#331f43",
+      "preview": [
+        {
+          "src": "/media/12e6f03006a55c-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 15480
+        },
+        {
+          "src": "/media/12e6f03006a55c-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 28684
+        },
+        {
+          "src": "/media/12e6f03006a55c-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 46378
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/12e6f03006a55c-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 28684
+        },
+        {
+          "src": "/media/12e6f03006a55c-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 46378
+        },
+        {
+          "src": "/media/12e6f03006a55c-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 67408
+        },
+        {
+          "src": "/media/12e6f03006a55c-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 100030
+        }
+      ],
+      "large": {
+        "src": "/media/12e6f03006a55c-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 100030
+      }
+    },
+    "16nchWfyd6UKHgmYxV3evnd46kBqMNKrj": {
+      "id": "16nchWfyd6UKHgmYxV3evnd46kBqMNKrj",
+      "width": 3736,
+      "height": 4672,
+      "alt": "Vermummter DJ steht vor einer dichten Zuschauermenge",
+      "color": "#212d34",
+      "preview": [
+        {
+          "src": "/media/bc5a93901ddd37-360.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 11196
+        },
+        {
+          "src": "/media/bc5a93901ddd37-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 21692
+        },
+        {
+          "src": "/media/bc5a93901ddd37-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 40608
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/bc5a93901ddd37-600.webp",
+          "width": 600,
+          "height": 750,
+          "bytes": 21692
+        },
+        {
+          "src": "/media/bc5a93901ddd37-900.webp",
+          "width": 900,
+          "height": 1125,
+          "bytes": 40608
+        },
+        {
+          "src": "/media/bc5a93901ddd37-1200.webp",
+          "width": 1200,
+          "height": 1501,
+          "bytes": 65276
+        },
+        {
+          "src": "/media/bc5a93901ddd37-1600.webp",
+          "width": 1600,
+          "height": 2001,
+          "bytes": 109774
+        },
+        {
+          "src": "/media/bc5a93901ddd37-2000.webp",
+          "width": 1919,
+          "height": 2400,
+          "bytes": 150682
+        }
+      ],
+      "large": {
+        "src": "/media/bc5a93901ddd37-2000.webp",
+        "width": 1919,
+        "height": 2400,
+        "bytes": 150682
+      }
+    },
+    "1hQ_PdTFp_08OF7JzA88RER6R6xnA6xIg": {
+      "id": "1hQ_PdTFp_08OF7JzA88RER6R6xnA6xIg",
+      "width": 4672,
+      "height": 7008,
+      "alt": "DJ in dunkler Kleidung vor blau-roter Bühnenbeleuchtung",
+      "color": "#361d2a",
+      "preview": [
+        {
+          "src": "/media/6e1b602f28d262-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 11166
+        },
+        {
+          "src": "/media/6e1b602f28d262-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 20728
+        },
+        {
+          "src": "/media/6e1b602f28d262-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 34560
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/6e1b602f28d262-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 20728
+        },
+        {
+          "src": "/media/6e1b602f28d262-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 34560
+        },
+        {
+          "src": "/media/6e1b602f28d262-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 51034
+        },
+        {
+          "src": "/media/6e1b602f28d262-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 78512
+        }
+      ],
+      "large": {
+        "src": "/media/6e1b602f28d262-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 78512
+      }
+    },
+    "1MQFPcm8H2wJp9cP3F7anysiHYHHe7YGG": {
+      "id": "1MQFPcm8H2wJp9cP3F7anysiHYHHe7YGG",
+      "width": 7008,
+      "height": 4672,
+      "alt": "DJ mit Gesichtsmaske am Pult vor einer hellen LED-Wand",
+      "color": "#57282a",
+      "preview": [
+        {
+          "src": "/media/afcc0ea63011ab-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 5972
+        },
+        {
+          "src": "/media/afcc0ea63011ab-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 11472
+        },
+        {
+          "src": "/media/afcc0ea63011ab-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 19082
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/afcc0ea63011ab-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 11472
+        },
+        {
+          "src": "/media/afcc0ea63011ab-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 19082
+        },
+        {
+          "src": "/media/afcc0ea63011ab-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 27068
+        },
+        {
+          "src": "/media/afcc0ea63011ab-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 39384
+        },
+        {
+          "src": "/media/afcc0ea63011ab-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 53238
+        }
+      ],
+      "large": {
+        "src": "/media/afcc0ea63011ab-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 53238
+      }
+    },
+    "1SBoEXNSc_-VyDO9X70ZXfSXfv_ulpHR9": {
+      "id": "1EMtoIySfR8xK_7dVe7lviailwuMh8bNm",
+      "width": 7008,
+      "height": 4672,
+      "alt": "DJ am Pult vor einer rot-weiß leuchtenden LED-Wand",
+      "color": "#694046",
+      "preview": [
+        {
+          "src": "/media/67240451bec96f-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 6608
+        },
+        {
+          "src": "/media/67240451bec96f-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 12212
+        },
+        {
+          "src": "/media/67240451bec96f-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 20856
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/67240451bec96f-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 12212
+        },
+        {
+          "src": "/media/67240451bec96f-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 20856
+        },
+        {
+          "src": "/media/67240451bec96f-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 29520
+        },
+        {
+          "src": "/media/67240451bec96f-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 43466
+        },
+        {
+          "src": "/media/67240451bec96f-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 58704
+        }
+      ],
+      "large": {
+        "src": "/media/67240451bec96f-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 58704
+      }
+    },
+    "1GCxsZ9quAcwuVP9rbc9_HGWeN2k4UTKm": {
+      "id": "1GCxsZ9quAcwuVP9rbc9_HGWeN2k4UTKm",
+      "width": 7008,
+      "height": 4672,
+      "alt": "DJ-Pult und Künstler im blauen Scheinwerferlicht",
+      "color": "#060c28",
+      "preview": [
+        {
+          "src": "/media/e44971b4ad0616-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 7292
+        },
+        {
+          "src": "/media/e44971b4ad0616-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 13564
+        },
+        {
+          "src": "/media/e44971b4ad0616-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 22570
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/e44971b4ad0616-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 13564
+        },
+        {
+          "src": "/media/e44971b4ad0616-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 22570
+        },
+        {
+          "src": "/media/e44971b4ad0616-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 32496
+        },
+        {
+          "src": "/media/e44971b4ad0616-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 49972
+        },
+        {
+          "src": "/media/e44971b4ad0616-2000.webp",
+          "width": 2000,
+          "height": 1333,
+          "bytes": 71596
+        }
+      ],
+      "large": {
+        "src": "/media/e44971b4ad0616-2000.webp",
+        "width": 2000,
+        "height": 1333,
+        "bytes": 71596
+      }
+    },
+    "1aQFlo4zRBXToKvYNYchwbYzoCYhUN7xO": {
+      "id": "1aQFlo4zRBXToKvYNYchwbYzoCYhUN7xO",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Sandro Mondini im türkisfarbenen Hemd vor grünen Bäumen",
+      "color": "#2a3227",
+      "preview": [
+        {
+          "src": "/media/d02aa542c75da1-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 29072
+        },
+        {
+          "src": "/media/d02aa542c75da1-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 66980
+        },
+        {
+          "src": "/media/d02aa542c75da1-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 125736
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/d02aa542c75da1-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 66980
+        },
+        {
+          "src": "/media/d02aa542c75da1-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 125736
+        },
+        {
+          "src": "/media/d02aa542c75da1-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 198018
+        },
+        {
+          "src": "/media/d02aa542c75da1-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 305268
+        }
+      ],
+      "large": {
+        "src": "/media/d02aa542c75da1-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 305268
+      }
+    },
+    "1qVLMjnLzN7mbLZ6czelqz2nm5pzPS5fC": {
+      "id": "1qVLMjnLzN7mbLZ6czelqz2nm5pzPS5fC",
+      "width": 7035,
+      "height": 4690,
+      "alt": "Sandro Mondini arbeitet mit einer Kamera auf einem Gimbal",
+      "color": "#4b3e20",
+      "preview": [
+        {
+          "src": "/media/6de6b31459f83e-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 9120
+        },
+        {
+          "src": "/media/6de6b31459f83e-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 17142
+        },
+        {
+          "src": "/media/6de6b31459f83e-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 28900
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/6de6b31459f83e-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 17142
+        },
+        {
+          "src": "/media/6de6b31459f83e-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 28900
+        },
+        {
+          "src": "/media/6de6b31459f83e-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 41036
+        },
+        {
+          "src": "/media/6de6b31459f83e-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 62438
+        },
+        {
+          "src": "/media/6de6b31459f83e-2000.webp",
+          "width": 2000,
+          "height": 1334,
+          "bytes": 88570
+        }
+      ],
+      "large": {
+        "src": "/media/6de6b31459f83e-2000.webp",
+        "width": 2000,
+        "height": 1334,
+        "bytes": 88570
+      }
+    },
+    "1q2eCiWT-iaE2F1yYZQ7uBuXS28daZb0Q": {
+      "id": "1q2eCiWT-iaE2F1yYZQ7uBuXS28daZb0Q",
+      "width": 7035,
+      "height": 4690,
+      "alt": "Sandro Mondini filmt in einem warm beleuchteten Innenraum",
+      "color": "#341e0d",
+      "preview": [
+        {
+          "src": "/media/62315f68e8f09c-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 10972
+        },
+        {
+          "src": "/media/62315f68e8f09c-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 20010
+        },
+        {
+          "src": "/media/62315f68e8f09c-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 32848
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/62315f68e8f09c-600.webp",
+          "width": 600,
+          "height": 400,
+          "bytes": 20010
+        },
+        {
+          "src": "/media/62315f68e8f09c-900.webp",
+          "width": 900,
+          "height": 600,
+          "bytes": 32848
+        },
+        {
+          "src": "/media/62315f68e8f09c-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 45938
+        },
+        {
+          "src": "/media/62315f68e8f09c-1600.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 66358
+        },
+        {
+          "src": "/media/62315f68e8f09c-2000.webp",
+          "width": 2000,
+          "height": 1334,
+          "bytes": 91012
+        }
+      ],
+      "large": {
+        "src": "/media/62315f68e8f09c-2000.webp",
+        "width": 2000,
+        "height": 1334,
+        "bytes": 91012
+      }
+    }
+  },
+  "collections": {
+    "people": [
+      "1XpXigQVcsMNC2XFNH8ZbzLsSDWJ4iBkh",
+      "1tPDp_ApPGxb-2h1gehEXf55fqZ1oSJ0_",
+      "1AAb9_JvA1poP6LQ8ktshIdkPDyXQPSgI",
+      "1-HMPKCz6ZvFVPOSZl5L6UOZ9nSPs3xTy",
+      "12m-dv9jGQxJsNu3RDJRUYlwMkgknpMZ_",
+      "1fQu9PFB46S96rXpq2RakOzYz7XGfp4f7",
+      "1Ui9727tgBtiN9FFoyQs8rmIPw0r6B3-v",
+      "1mQeziG3XKC3MkJ5_VlROedeBD6f_qERg"
+    ],
+    "fahrzeuge": [
+      "1cIhKnr4m7rg4p_VHGHVvNzvu-_0RTEtb",
+      "1-9r5yY2yguR26UqKtD7CRSBfONGs1kiN",
+      "1frQGeaATgq103n7iWN_8MYTnD8vBUE6O",
+      "1YAKBdP1eC6JUYB36bkpg1rwqzlgc58Fq",
+      "1Ifb5WT9M1KY3P-R0BASNPyAAOoSZc-Hv",
+      "171xak3oe2QLpcW5He397Q7UDrxQD4l4X",
+      "17BP8_hnwXcj3v-R6JMiPA4xdJQr-cvE0",
+      "10BvkL_3MxSBKQndqDz1Jb0xAp30id2M_",
+      "1Ci2FWaFOrnrSf3ySpxn8BUSJAk9LdwyI",
+      "1NgJrpmu7egoQQ3wqFNEz4vC9H1MvV1fW"
+    ],
+    "events": [
+      "1t-cZCSsIs2BtliD1Yat6F_YLotP8Yv-G",
+      "1CdJTWdYO0XXxNENiqaPXk_IPFwfQxPzq",
+      "1EMtoIySfR8xK_7dVe7lviailwuMh8bNm",
+      "1Ax7hrMMviGLE6wZiYxUxTHEDW10e0fiR",
+      "1x7LDINWn8Z5uhiLy6soWjZp66_sRwQx-",
+      "1XluqZCgJbKlHIEcV_C8t7KXJUMqm3KCU",
+      "1GSRJPc3b6Lv58wEWqDpee1Ok8V48EzyE",
+      "1zOKDel7l2H7e59KquaUS5gsH5kqif0LL",
+      "1ey1BxVqHVadS0SdQBpwYA_HDm2TlkKyC",
+      "1G8prdJLND3q5ptaZ2ablrXRsROSMyGo0"
+    ],
+    "hochzeiten": [
+      "1um66Saf2tu0BfSTe43d7BqFp7D3xXU5W",
+      "1vcrwIwklmWsZRKYq8FHbamcjFV4_oChN",
+      "1bA97VIiZVrRyiVoelKtFdP0qmheMIJd6",
+      "1RyXPeYtCjRflFTmxtYkHxjuKNlQQlMmq",
+      "1KzuDfK9EoLveedL2KTHUr8GgaBJYkH5G",
+      "1r_nGXituS9zCbTZbyFbXGOWKDaF981N0",
+      "1HiG9XM07LRygkP8x68VonPIGhKxg7YfN",
+      "1OX7OPlT1JhaftDvtWj7cnWf9aPj3d-ck",
+      "1RcCVW3MRXwdNChsYeKJJnjw0510cU5eR",
+      "12GpWCoJIGS0txlOPZUCNfBTLBxPKJjdE"
+    ],
+    "autotreffen": [
+      "1OURXVO9nWOfjbS-3H5HFEQOqJxgEp7HS",
+      "1eWshE6ejxPlNobCtQZkmsfBjLO311tuY",
+      "1ixUHq1M0zy9clGc8IM0TlEQ5SJW7Dw7r",
+      "1r2NsV7CljC1Y9llTXT5rwzjnFVVZfXxJ",
+      "1GVvXdWwJa_BHwtfBNV_Vtz9W-fkmr0XT",
+      "1TOo7RUAju2DBfsPIrLreVj1uBTeLwvTB",
+      "113p5KKZ0t9GyGAAS6MmPxqcKItLq6rGC",
+      "13x4WlzoJpqakbgcyQjhOuDs8EGLp04h-"
+    ],
+    "tiere": [
+      "16FRzPDaHcg5ZoQGs5EhmfhO28FGZ0SeV",
+      "1ATk7PWFrsfBkhBj8LA6efG4Q1Ea1jKxU",
+      "1UI85atQM3gtsPTn1Y6xK5atAQM8-ym6W",
+      "1AorsqPNBaIjYfez8WHl6bDF4KEI3IuqQ",
+      "1IyJwIg6YxNaStzjLoGjKCcyBdu8nVbMI",
+      "179K_ns9HYAcHpYTb0Z66HcBe-SOeNlw2",
+      "1RLNfCGDdsVl4CUOrPA3qTpSNtP4UPT79",
+      "11hkUY-yh77FTNxEFoMlt0S2aC1kiYjwg"
+    ],
+    "reisen": [
+      "1AHXw2T2oqhW7XXNJcV10Q8oTUG0jYiEj",
+      "1QYVEc87LRlJvHeACxB_Eiut2LHm_pNUP",
+      "1bQLmiIEVcjuocvr-O_5zpIZlbFYSt1Dr",
+      "1557Mxmtu6rwSdSSmDgW8n5NSnDxfkoGg",
+      "1Prd1p0AERS7iezhPx5wWgDt8o8ACcXgC",
+      "1Jp7NCCTQi9BjEU8-LCZOYwiBSV-ajA78",
+      "16XCgmtQxEN-wABgEqiB-bYXl_qvj_lF2",
+      "1ll3_UL-FUQaeeWPki8NPpAwQGcrVL2Zf"
+    ],
+    "heidrich": [
+      "1VJ6x5MbaIIOaGMRbk5qNcCCjybTfccX5",
+      "1IBX_0p4jjxTZSPmbzhhpJjSNQ7Q_CIjC",
+      "19OdGC3YBIyOYcqLKmW5_COp51r0yJtnb",
+      "1i2wjngFVtFD5JmgmKgBKaz7tipV8_eDh",
+      "1-9r5yY2yguR26UqKtD7CRSBfONGs1kiN",
+      "1L97inIm6RscxtaTfGwHy44_BFwKijEQq",
+      "1Rg-kVsb-UKuu7COTkR3MspqXt7LtCKSs",
+      "1C1hHhyD68cSDuOShnoIFrpVwQO3XJRh6"
+    ],
+    "kekila": [
+      "1B5628P7Jjct1StdJrUzzYDtiONZqyj04",
+      "1hOX1_r2tdxTXLOK_JdCn7bLXjrt8Drnl",
+      "1kVhSDrVNNUDVNEWFAazaS95o36zDWzYb",
+      "13rcmXXtqPI4YW_qRnVXvleFX6IdmdwEM",
+      "1aOs0MQbPbcFDxxncdVhffprVnkmkOrW6",
+      "1RzOWkkWvFfqUcF26XGfXBCCNQvBs3mTj",
+      "1nNZt-t82eYj1X1fdQ_dyqUEw-fLrJCUG"
+    ],
+    "zixspeed": [
+      "11_KoLd3WiItPnoHvSx7PG4nWPC0uMQdY",
+      "13SfBz0vGNrhA4w2b-K_IZBa7INTS1pJZ",
+      "1rQPNqQUyiA8wx6qdy9nd8VyC1fuZa2hU",
+      "1aiZxd0s9r97LYZ5M3Pf-YowINv0GGsae",
+      "1OWNgC9Y-M7WC3z_Ijji4cCtinsw3TZXP",
+      "1cLdX07uJ7T14puXvVVZQgEDl7Gdnv_7G",
+      "1VOxHGf6d_pPbjMilwkOS8miFYPgoSuKo",
+      "1109FRdhqA3ptCqsBMYAEgGke0NOJqC1V"
+    ],
+    "kxxma": [
+      "1CdJTWdYO0XXxNENiqaPXk_IPFwfQxPzq",
+      "16nchWfyd6UKHgmYxV3evnd46kBqMNKrj",
+      "1hQ_PdTFp_08OF7JzA88RER6R6xnA6xIg",
+      "1MQFPcm8H2wJp9cP3F7anysiHYHHe7YGG",
+      "1EMtoIySfR8xK_7dVe7lviailwuMh8bNm",
+      "1GCxsZ9quAcwuVP9rbc9_HGWeN2k4UTKm"
+    ],
+    "sandro": [
+      "1aQFlo4zRBXToKvYNYchwbYzoCYhUN7xO",
+      "1qVLMjnLzN7mbLZ6czelqz2nm5pzPS5fC",
+      "1q2eCiWT-iaE2F1yYZQ7uBuXS28daZb0Q"
+    ]
+  },
+  "films": [
+    {
+      "id": "1hzrKt1i-TrQq3o3JWbAaR1fterj7apg-",
+      "key": "kxxma",
+      "title": "KXXMA",
+      "description": "Taktgefühl 2024 · Stage-Edit",
+      "duration": 25.557333,
+      "width": 2160,
+      "height": 3840,
+      "src": "/media/film-kxxma.mp4",
+      "poster": "/media/poster-kxxma.webp",
+      "bytes": 8734369
+    },
+    {
+      "id": "1La1I-Smk0KHiesN85A_CfFLHL47VvBZR",
+      "key": "kekila",
+      "title": "Kekila",
+      "description": "Social Content · ein Teebeutel im Großformat",
+      "duration": 37.674667,
+      "width": 1080,
+      "height": 1920,
+      "src": "/media/film-kekila.mp4",
+      "poster": "/media/poster-kekila.webp",
+      "bytes": 8487199
+    },
+    {
+      "id": "1tFyxGO07brxTGIa5zMeyhyKhm4zvTB8b",
+      "key": "zixspeed",
+      "title": "Zixspeedracing",
+      "description": "Mülsen 2024 · Kurzfilm",
+      "duration": 247.530667,
+      "width": 2560,
+      "height": 1080,
+      "src": "/media/film-zixspeed.mp4",
+      "poster": "/media/poster-zixspeed.webp",
+      "bytes": 54026778
+    },
+    {
+      "id": "19kKgl8RPJHDFN2qlIhbHijb9nufOX4pc",
+      "key": "hochzeit",
+      "title": "Marie & Wenzel",
+      "description": "Hochzeit · kurze Cinematics",
+      "duration": 36.629333,
+      "width": 1080,
+      "height": 1920,
+      "src": "/media/film-hochzeit.mp4",
+      "poster": "/media/poster-hochzeit.webp",
+      "bytes": 4437704
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+---
+const second = Astro.url.pathname.startsWith('/hero-2');
+---
+<nav class="hero-switch" aria-label="Hero-Variante wählen">
+  <a href="/" aria-current={!second ? 'page' : undefined} data-astro-reload>Hero 1</a>
+  <a href="/hero-2" aria-current={second ? 'page' : undefined} data-astro-reload>Hero 2</a>
+</nav>
+<a class="hero-scroll" href="#entdecken" aria-label="Weiter zu Sandros Arbeiten">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+</a>
+<style is:global>
+  .hero-switch{position:absolute;z-index:50;top:max(24px,env(safe-area-inset-top));right:max(28px,env(safe-area-inset-right));display:flex;padding:4px;border:1px solid rgba(42,47,51,.15);border-radius:40px;background:var(--paper);box-shadow:0 3px 16px #0000000a}
+  .hero-switch a{display:grid;place-items:center;min-height:44px;min-width:77px;padding:0 16px;border-radius:32px;font-size:12px;font-weight:600}
+  .hero-switch a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+  .hero-scroll{position:absolute;z-index:40;bottom:max(24px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--paper);color:var(--ink);box-shadow:0 3px 16px #0000000a}
+  .hero-accessible-title{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}
+  @media(max-width:700px){.hero-switch{top:max(16px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right))}.hero-switch a{min-width:68px;padding-inline:13px}.hero-scroll{bottom:max(20px,env(safe-area-inset-bottom))}}
+</style>

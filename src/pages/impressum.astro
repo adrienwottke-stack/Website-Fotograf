@@ -1,14 +1,5 @@
 ---
-import Base from "../layouts/Base.astro";
-import Stub from "../components/Stub.astro";
+import Base from '../layouts/Base.astro';
+import {contactEmail} from '../data/portfolio';
 ---
-
-<Base title="Impressum" description="Pflichtangaben nach §5 DDG.">
-  <Stub
-    label="Rechtliches"
-    titel="Impressum."
-    lead="Pflichtangaben nach §5 DDG."
-    punkte={["Vollständige Anschrift","Kontaktdaten","Umsatzsteuer-ID oder Steuernummer","Verantwortlich für den Inhalt"]}
-    quelle="Wird erstellt, sobald die Daten vorliegen — Lieferliste C8."
-  />
-</Base>
+<Base title="Impressum – Entwurf" description="Entwurfsstand der Anbieterinformationen für die Website von Sandro Mondini."><article class="wrap legal"><h1>Impressum.</h1><p class="status-note">Lokaler Gestaltungsentwurf. Die vollständigen Anbieterangaben werden vor einer Veröffentlichung bestätigt und ergänzt.</p><h2>Kontakt</h2><p>Sandro Mondini<br /><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p><h2>Noch zu vervollständigen</h2><p>Die für den tatsächlichen Betrieb erforderlichen Anbieter- und gegebenenfalls Registerangaben werden anhand der bestätigten Daten eingetragen.</p><p><a href="/kontakt">Zum Kontakt</a></p></article></Base>

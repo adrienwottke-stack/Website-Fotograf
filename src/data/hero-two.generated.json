@@ -1,0 +1,58 @@
+{
+  "sourceId": "1AHXw2T2oqhW7XXNJcV10Q8oTUG0jYiEj",
+  "alt": "Sonnenlicht über einer nebligen Wald- und Hügellandschaft",
+  "crops": {
+    "landscape": {
+      "left": 0,
+      "top": 473,
+      "width": 4504,
+      "height": 2815
+    },
+    "portrait": {
+      "left": 225,
+      "top": 0,
+      "width": 4054,
+      "height": 6756
+    }
+  },
+  "landscape": [
+    {
+      "src": "/media/hero-two-aa921c133e07-landscape-720.webp",
+      "width": 720,
+      "height": 450,
+      "bytes": 26122
+    },
+    {
+      "src": "/media/hero-two-aa921c133e07-landscape-1200.webp",
+      "width": 1200,
+      "height": 750,
+      "bytes": 68442
+    },
+    {
+      "src": "/media/hero-two-aa921c133e07-landscape-1600.webp",
+      "width": 1600,
+      "height": 1000,
+      "bytes": 120144
+    },
+    {
+      "src": "/media/hero-two-aa921c133e07-landscape-2000.webp",
+      "width": 2000,
+      "height": 1250,
+      "bytes": 184196
+    }
+  ],
+  "portrait": [
+    {
+      "src": "/media/hero-two-aa921c133e07-portrait-480.webp",
+      "width": 480,
+      "height": 800,
+      "bytes": 48942
+    },
+    {
+      "src": "/media/hero-two-aa921c133e07-portrait-720.webp",
+      "width": 720,
+      "height": 1200,
+      "bytes": 95242
+    }
+  ]
+}

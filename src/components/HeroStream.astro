@@ -1,0 +1,98 @@
+---
+import { ImageStreamHero } from './ui/image-stream-hero';
+import { heroPhotos } from '../data/hero-photos';
+import HeroControls from './HeroControls.astro';
+
+// Existing web exports from Sandro's supplied Drive originals; no stock assets.
+const selected = heroPhotos;
+const images = selected.map(image => ({
+  src: image.preview[1].src, alt: image.alt, width: image.width, height: image.height,
+  srcSet: image.preview.map(v => `${v.src} ${v.width}w`).join(', '),
+  avifSrcSet: image.avif?.map(v => `${v.src} ${v.width}w`).join(', '),
+}));
+---
+<section class="stream-hero" aria-labelledby="stream-name" data-stream-hero>
+  <ImageStreamHero images={images} cards={4} speed={22} axis={50} path={{cardWidth:22,cardHeight:30,birthHeight:7,exitHeight:85,railBirth:6,railExit:30,turnBirth:0,turnExit:10,fan:1.6}} className="stream-hero__corridor" />
+  <h1 id="stream-name" class="hero-accessible-title">Sandro Mondini – Foto und Film</h1>
+  <HeroControls />
+  <div class="stream-hero__tools">
+    <button type="button" data-stream-toggle aria-label="Bewegung pausieren" title="Bewegung pausieren" aria-pressed="false">
+      <svg class="stream-pause" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2" /></svg>
+      <svg class="stream-play" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="m8 5 11 7-11 7z" /></svg>
+    </button>
+  </div>
+</section>
+
+<style is:global>
+  .stream-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--paper);height:100svh;min-height:420px}
+  .stream-hero__corridor{position:absolute;width:max(100%,110svh);height:100%;left:50%;transform:translateX(-50%);inset-block:0;z-index:-1}
+  .stream-hero__tools{position:absolute;z-index:40;bottom:max(24px,env(safe-area-inset-bottom));right:28px;display:flex}
+  .stream-hero__tools button{display:grid!important;place-items:center;width:48px;height:48px;padding:0!important}
+  .stream-play{display:none}
+  .stream-hero[data-paused] .stream-play{display:block}
+  .stream-hero[data-paused] .stream-pause{display:none}
+  .stream-hero__tools a,.stream-hero__tools button{display:inline-flex;align-items:center;min-height:44px;background:var(--paper);padding:0 12px;border-radius:22px}
+  .stream-hero__tools button{border:1px solid var(--line)}
+  .stream-hero__tools button:disabled{cursor:default}
+  @media(max-width:700px){
+    .stream-hero{height:100svh;min-height:420px}
+    .stream-hero__corridor{width:100%;left:0;transform:none}
+    .stream-hero .image-stream__projection{perspective:none!important;pointer-events:auto}
+    .stream-hero .image-stream__space{display:flex;align-items:center;gap:20px;padding-inline:9vw;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-inline:9vw;scrollbar-width:none;transform-style:flat}
+    .stream-hero .image-stream__space::-webkit-scrollbar{display:none}
+    .stream-hero .image-stream__card{display:block;position:relative;flex:0 0 82vw;width:82vw!important;height:76svh!important;left:auto!important;top:auto!important;margin:0!important;transform:none!important;animation:none!important;border-radius:8px!important;scroll-snap-align:center}
+    .stream-hero__tools{display:none!important}
+    .stream-hero__tools{right:16px;bottom:max(20px,env(safe-area-inset-bottom))}
+    .stream-hero__tools a,.stream-hero__tools button{padding-inline:10px}
+  }
+</style>
+
+<script>
+  let controller: AbortController | undefined;
+  function initStream() {
+    controller?.abort();
+    controller = new AbortController();
+    const { signal } = controller;
+    const hero = document.querySelector<HTMLElement>('[data-stream-hero]');
+    const button = hero?.querySelector<HTMLButtonElement>('[data-stream-toggle]');
+    if (!hero || !button) return;
+    let paused = false;
+    const stream = hero.querySelector<HTMLElement>('[data-stream-images]')!;
+    const pool = JSON.parse(stream.dataset.streamImages!);
+    const step = Number(stream.dataset.streamStep);
+    const cards = [...hero.querySelectorAll<HTMLElement>('[data-stream-index]')];
+    cards.forEach(card => {
+      let index = Number(card.dataset.streamIndex);
+      card.addEventListener('animationiteration', () => {
+        index = (index + step) % pool.length;
+        const image = pool[index];
+        const img = card.querySelector('img')!;
+        const picture = card.querySelector('picture')!;
+        let source = picture.querySelector('source');
+        if(image.avifSrcSet){
+          if(!source){source=document.createElement('source');source.type='image/avif';picture.prepend(source);}
+          source.srcset=image.avifSrcSet;source.sizes=img.sizes;
+        }else source?.remove();
+        img.srcset=image.srcSet;img.src=image.src;img.width=image.width;img.height=image.height;
+        img.alt=image.alt;
+        img.style.objectPosition=image.position||'50% 50%';
+      }, { signal });
+    });
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    const sync = () => {
+      hero.toggleAttribute('data-paused', paused || reduced.matches || document.hidden);
+      button.disabled = reduced.matches;
+      button.setAttribute('aria-pressed', String(paused || reduced.matches));
+      const label = reduced.matches ? 'Bewegung reduziert' : paused ? 'Bewegung fortsetzen' : 'Bewegung pausieren';
+      button.setAttribute('aria-label', label);
+      button.title = label;
+    };
+    button.addEventListener('click', () => { paused = !paused; sync(); }, { signal });
+    reduced.addEventListener('change', sync, { signal });
+    document.addEventListener('visibilitychange', sync, { signal });
+    sync();
+  }
+  initStream();
+  document.addEventListener('astro:page-load', initStream);
+  document.addEventListener('astro:before-swap', () => controller?.abort());
+</script>

@@ -1,0 +1,17 @@
+.zoom-slider{--zoom-card-width:640px;--zoom-card-height:420px;background:var(--ink);color:var(--paper);border-radius:12px;overflow:hidden;min-width:0;outline-offset:-4px}
+.zoom-scene{position:relative;height:clamp(380px,56svh,650px);display:flex;align-items:flex-end;overflow:hidden;touch-action:pan-y;cursor:grab;overscroll-behavior-x:contain}
+.zoom-slider[data-dragging] .zoom-scene{cursor:grabbing}
+.zoom-card{position:relative;display:block;flex:0 0 var(--zoom-card-width);width:var(--zoom-card-width);height:var(--zoom-card-height);transform-origin:left bottom;user-select:none;color:var(--paper)}
+.zoom-slider[data-ready] .zoom-card{position:absolute;bottom:0;left:0}
+.zoom-image-frame{height:100%;width:100%;overflow:hidden;border-right:2px solid var(--ink)}
+.zoom-image-plane,.zoom-image-hover,.zoom-image-plane picture,.zoom-image-plane img{display:block;width:100%;height:100%}
+.zoom-image-plane{transform-origin:center bottom}.zoom-image-hover{transform-origin:center center}.zoom-image-plane img{object-fit:cover}
+.zoom-caption{position:absolute;z-index:2;bottom:calc(100% + 15px);left:0;width:260px;transform-origin:left bottom;opacity:0;pointer-events:none;transition:opacity .2s}
+.zoom-caption h3{font-size:25px;line-height:1.1;letter-spacing:-.04em;font-weight:730}.zoom-caption p{margin-top:7px;font-size:11px;line-height:1.4;color:var(--paper)}
+.zoom-card:is(:hover,:focus-visible){z-index:5}.zoom-card:is(:hover,:focus-visible) .zoom-caption,.zoom-caption--visible{opacity:1}
+.zoom-slider[data-dragging] .zoom-caption{opacity:0}
+.zoom-controls{position:relative;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:88px;padding:18px 24px;background:var(--ink)}
+.zoom-controls>p{font-size:12px;color:var(--silver)}.zoom-pagination{display:flex;align-items:center;gap:20px;font-size:12px}.zoom-pagination span:last-child{color:var(--silver)}
+.zoom-arrows{display:flex;gap:10px}.zoom-arrows button{display:grid;place-items:center;width:46px;height:46px;border:1px solid #ffffff50;border-radius:50%;background:transparent;color:var(--paper)}
+@media(max-width:640px){.zoom-scene{height:clamp(360px,52svh,480px)}.zoom-controls{padding:16px;gap:14px;min-height:80px}.zoom-controls>p{display:none}.zoom-pagination{gap:12px}.zoom-arrows{gap:8px}.zoom-arrows button{width:44px;height:44px}.zoom-caption h3{font-size:21px}.zoom-caption p{font-size:10px;max-width:25ch}}
+@media(prefers-reduced-motion:reduce){.zoom-caption{transition:none}}

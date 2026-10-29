@@ -1,0 +1,45 @@
+---
+import { heroEntries } from '../data/hero-photos';
+const entries = heroEntries.map(({image,href}) => ({href, alt:image.alt, width:image.width,height:image.height,
+  src:image.preview[1].src,srcset:image.preview.map(v=>`${v.src} ${v.width}w`).join(', '),
+  avif:image.avif?.map(v=>`${v.src} ${v.width}w`).join(', ')}));
+---
+<div class="hero-browse" data-hero-browse data-images={JSON.stringify(entries)}>
+  <button type="button" data-photo-direction="-1" aria-label="Vorherige Bilder anzeigen" title="Vorherige Bilder"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7" stroke="currentColor" stroke-width="1.6" /></svg></button>
+  <button type="button" data-photo-direction="1" aria-label="Weitere Bilder anzeigen" title="Weitere Bilder"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="m10 5 7 7-7 7" stroke="currentColor" stroke-width="1.6" /></svg></button>
+</div>
+<style>
+  .hero-browse{position:absolute;left:28px;bottom:24px;z-index:40;display:flex;gap:8px}
+  .hero-browse button{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--paper);box-shadow:0 3px 16px #0000000a}
+  @media(max-width:700px){.hero-browse{left:16px;bottom:20px;gap:6px}.hero-browse button{width:44px;height:44px}}
+</style>
+<script>
+  let controller: AbortController | undefined;
+  function initBrowse(){
+    controller?.abort(); controller=new AbortController();
+    const root=document.querySelector<HTMLElement>('[data-hero-browse]');
+    const hero=root?.closest<HTMLElement>('.hero');
+    if(!root||!hero)return;
+    const images=JSON.parse(root.dataset.images!);
+    const windows=[...hero.querySelectorAll<HTMLAnchorElement>('.hero-window')];
+    let offset=0;
+    root.querySelectorAll<HTMLButtonElement>('button').forEach(button=>button.addEventListener('click',()=>{
+      offset=(offset+Number(button.dataset.photoDirection)*4+images.length)%images.length;
+      windows.forEach((window,index)=>{
+        const image=images[(offset+index)%images.length];
+        const img=window.querySelector('img')!;
+        const picture=window.querySelector('picture')!;
+        let source=picture.querySelector('source');
+        if(image.avif){
+          if(!source){source=document.createElement('source');source.type='image/avif';picture.prepend(source);}
+          source.srcset=image.avif; source.sizes=img.sizes;
+        }else source?.remove();
+        img.srcset=image.srcset;img.src=image.src;img.alt=image.alt;
+        img.width=image.width;img.height=image.height;
+        window.href=image.href;window.setAttribute('aria-label',image.alt);
+      });
+    },{signal:controller!.signal}));
+  }
+  initBrowse(); document.addEventListener('astro:page-load',initBrowse);
+  document.addEventListener('astro:before-swap',()=>controller?.abort());
+</script>

@@ -1,14 +1,23 @@
 ---
-import Base from "../layouts/Base.astro";
-import Stub from "../components/Stub.astro";
+import Base from '../layouts/Base.astro';
+import MediaImage from '../components/MediaImage.astro';
+import {collection,contactEmail} from '../data/portfolio';
+import '../styles/contact-form.css';
 ---
-
-<Base title="Kontakt" description="Ein Formular mit allem, was ich für eine ehrliche Antwort brauche — damit wir nicht acht Nachrichten dafür verbrauchen.">
-  <Stub
-    label="Kontakt"
-    titel="Erzähl mir,<br />worum es geht."
-    lead="Ein Formular mit allem, was ich für eine ehrliche Antwort brauche — damit wir nicht acht Nachrichten dafür verbrauchen."
-    punkte={["Name, E-Mail, optional Telefon","Was brauchst du: Foto, Film, beides, weiß ich noch nicht","Anlass, Wunschtermin, Ort","Budgetrahmen zur Auswahl — der wichtigste Filter der Seite","Freitext: worum geht es","Verfügbarkeitsstatus und Antwortzeit-Versprechen","Alternative Wege: E-Mail, Telefon, Instagram"]}
-    quelle="Sichtbare Labels über jedem Feld, Fehler direkt am Feld, Erfolgsmeldung mit Erwartung. Versand über eigene Route, kein externes Embed."
-  />
+<Base title="Kontakt" description="Du hast eine Idee für Foto, Film oder eine kreative Zusammenarbeit? Erzähle Sandro Mondini von deinem Projekt.">
+  <header class="wrap page-head"><h1>Was hast<br />du im Kopf?</h1></header>
+  <div class="wrap contact-layout"><aside class="contact-aside"><p>Ein Shooting, ein Film oder etwas, das es so noch nicht gibt. Schreib mir von deiner Idee – auch wenn noch nicht alles feststeht.</p><a class="footer-email" href={`mailto:${contactEmail}`}>{contactEmail}</a><button type="button" data-copy-email>E-Mail-Adresse kopieren</button><div class="contact-aside__photo"><MediaImage image={collection('sandro')[2]} sizes="(max-width: 700px) 100vw, 35vw" /></div></aside>
+    <form id="enquiry" class="enquiry" action="/api/kontakt" method="post" data-astro-reload>
+      <div class="field field--full"><label for="name">Wie heißt du?</label><input id="name" name="name" autocomplete="name" required maxlength="100" /></div>
+      <div class="field field--full"><label for="email">Deine E-Mail-Adresse</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="Damit ich dir antworten kann" /></div>
+      <div class="field field--full"><label for="anliegen">Worum geht es?</label><input id="anliegen" name="anliegen" placeholder="Zum Beispiel Hochzeit, Foto, Film oder Zusammenarbeit" required maxlength="150" /></div>
+      <div class="field"><label for="termin">Wann? <span>optional</span></label><input id="termin" name="termin" placeholder="Termin oder Zeitraum" maxlength="100" /></div>
+      <div class="field"><label for="ort">Wo? <span>optional</span></label><input id="ort" name="ort" autocomplete="address-level2" placeholder="Ort oder Region" maxlength="100" /></div>
+      <div class="field field--full"><label for="nachricht">Erzähl mir von deiner Idee.</label><textarea id="nachricht" name="nachricht" rows="5" required maxlength="2500"></textarea></div>
+      <div class="contact-honeypot" aria-hidden="true"><label for="website">Dieses Feld bitte leer lassen</label><input id="website" name="website" tabindex="-1" autocomplete="off" /></div>
+      <p class="form-note field--full">Deine Nachricht wird direkt über diese Website an mich gesendet. Deine Angaben nutze ich, um deine Anfrage zu beantworten. Mehr dazu im <a href="/datenschutz/">Datenschutz</a>.</p>
+      <button type="submit" class="button button--dark"><span data-submit-label>Nachricht senden</span> <span aria-hidden="true">↗</span></button>
+      <section id="form-status" class="form-status" tabindex="-1" role="status" aria-live="polite" aria-atomic="true" hidden><h3></h3><p></p></section>
+    </form>
+  </div>
 </Base>

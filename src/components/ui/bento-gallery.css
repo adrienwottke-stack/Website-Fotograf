@@ -1,0 +1,28 @@
+.bento4{position:relative;min-width:0;outline-offset:-3px}
+.bento4-window{width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;border-radius:12px;touch-action:pan-y;overscroll-behavior-x:contain;cursor:grab}
+.bento4[data-ready] .bento4-window{overflow:hidden}.bento4-window::-webkit-scrollbar{display:none}.bento4--dragging .bento4-window{cursor:grabbing}
+.bento4-strip{width:max-content;touch-action:pan-y}
+.bento4-grid{display:grid;width:max-content;grid-template-columns:repeat(7,clamp(210px,22vw,310px));grid-template-rows:repeat(2,clamp(190px,20vw,280px));gap:16px}
+.bento4-card{display:block;position:relative;overflow:hidden;width:100%;height:100%;padding:0;border-radius:12px;background:var(--paper);text-align:left;color:var(--paper);user-select:none}
+.bento4-card--0{grid-column:1/span 2;grid-row:1/span 2}.bento4-card--1{grid-column:3;grid-row:1}.bento4-card--2{grid-column:3;grid-row:2}.bento4-card--3{grid-column:4;grid-row:1/span 2}.bento4-card--4{grid-column:5;grid-row:1}.bento4-card--5{grid-column:5;grid-row:2}.bento4-card--6{grid-column:6/span 2;grid-row:1/span 2}
+.bento4-photo,.bento4-photo img{display:block;width:100%;height:100%}.bento4-photo img{object-fit:cover}
+.bento4-caption{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:24px;background:linear-gradient(transparent 35%,#000000b0);opacity:0;transition:opacity .3s;pointer-events:none}
+.bento4-title{font-family:var(--display);font-size:clamp(26px,3.3vw,48px);letter-spacing:-.05em;font-weight:740;line-height:1.05;transform:translateY(8px);transition:transform .3s}
+.bento4-desc{font-size:12px;line-height:1.4;margin-top:8px;max-width:28ch}
+.bento4-open{position:absolute;right:20px;top:20px;opacity:0;transition:opacity .3s}
+.bento4-card:is(:hover,:focus-visible) .bento4-caption,.bento4-card:is(:hover,:focus-visible) .bento4-open{opacity:1}.bento4-card:is(:hover,:focus-visible) .bento4-title{transform:none}
+.bento4-controls{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:24px}
+.bento4-controls>p{font-size:13px;color:var(--muted);white-space:nowrap}
+.bento4-progress{height:2px;width:clamp(100px,22vw,300px);background:var(--line);overflow:hidden}.bento4-progress span{display:block;width:100%;height:100%;background:var(--ink);transform-origin:left}
+.bento4-arrows{display:flex;gap:10px}.bento4-arrows button{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);border-radius:50%;background:var(--paper)}.bento4-arrows button:disabled{opacity:.3;cursor:default}
+.bento4-modal{width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;padding:72px 26px 30px;border:0;background:#2a2f33f5;color:var(--paper);overflow:hidden}
+.bento4-modal[open]{display:flex;align-items:center;justify-content:center}.bento4-modal::backdrop{background:#000c}
+.bento4-modal__figure{margin:0;width:min(1100px,92vw);height:100%;display:flex;flex-direction:column;gap:20px}
+.bento4-modal__figure>.bento4-photo{flex:1;min-height:0}.bento4-modal__figure>.bento4-photo img{object-fit:contain}
+.bento4-modal figcaption{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-shrink:0;min-height:52px}.bento4-modal h3{font-size:28px}.bento4-modal figcaption p{font-size:12px;margin-top:6px}
+.bento4-modal figcaption a{display:inline-flex;align-items:center;gap:16px;min-height:44px;border-bottom:1px solid currentColor;font-size:14px;font-weight:600}
+.bento4-modal__close{position:absolute;right:24px;top:18px;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--paper);color:var(--ink)}
+@media(hover:none),(pointer:coarse){.bento4-caption,.bento4-open{opacity:1}.bento4-title{transform:none}}
+@media(max-width:600px){.bento4-grid{grid-template-columns:repeat(7,210px);grid-template-rows:repeat(2,190px);gap:12px}.bento4-caption{padding:18px}.bento4-title{font-size:30px}.bento4-desc{font-size:11px}.bento4-controls{gap:18px;margin-top:20px}.bento4-controls>p{display:none}.bento4-progress{width:120px}.bento4-arrows button{width:44px;height:44px}.bento4-modal{padding:74px 16px 20px}.bento4-modal__figure{width:100%;gap:16px}.bento4-modal figcaption{align-items:flex-start;flex-direction:column;gap:10px}.bento4-modal h3{font-size:25px}.bento4-modal figcaption p{font-size:11px}.bento4-modal figcaption a{font-size:13px}.bento4-modal__close{right:16px;top:16px}}
+@media(prefers-reduced-motion:reduce){.bento4-caption,.bento4-title,.bento4-open{transition:none}}
+@media(max-width:600px){.bento4-caption,.bento4-open{opacity:1}.bento4-title{transform:none}}

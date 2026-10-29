@@ -1,14 +1,16 @@
 ---
-import Base from "../layouts/Base.astro";
-import Stub from "../components/Stub.astro";
+import Base from '../layouts/Base.astro';
 ---
-
-<Base title="Datenschutz" description="Was mit deinen Daten passiert, wenn du das Formular nutzt.">
-  <Stub
-    label="Rechtliches"
-    titel="Datenschutz."
-    lead="Was mit deinen Daten passiert, wenn du das Formular nutzt."
-    punkte={["Verarbeitung der Formulardaten","Hosting und Server-Logs","Keine Google-Dienste, keine externen Schriften","Keine Cookies, kein Banner nötig","Deine Rechte nach DSGVO"]}
-    quelle="Schriften werden selbst gehostet und es sind keine Drittanbieter eingebunden — deshalb ist kein Cookie-Banner erforderlich."
-  />
+<Base title="Datenschutz – Entwurf" description="Datenschutzinformationen zum lokalen Websiteentwurf von Sandro Mondini.">
+  <article class="wrap legal">
+    <h1>Datenschutz.</h1>
+    <p class="status-note">Lokaler Gestaltungsentwurf. Die endgültige Datenschutzerklärung wird auf das bestätigte Hosting und die tatsächlich eingesetzten Dienste abgestimmt.</p>
+    <h2>Dieser Entwurf</h2>
+    <p>Schriften, Fotos und Filme werden lokal ausgeliefert. Filme werden erst nach einer Abspielaktion geladen. Es sind keine Analyse- oder Werbedienste eingebunden.</p>
+    <h2>Kontaktformular und E-Mail</h2>
+    <p>Wenn du das Kontaktformular absendest, werden dein Name, deine E-Mail-Adresse, dein Anliegen, deine Nachricht und freiwillige Angaben zu Termin und Ort an den Website-Server übermittelt. Bei eingerichtetem Mailversand leitet dieser deine Anfrage per E-Mail an Sandro weiter. Die Angaben dienen der Bearbeitung und Beantwortung deiner Anfrage. Alternativ kannst du Sandro direkt per E-Mail schreiben.</p>
+    <p>Zum Schutz vor wiederholten Anfragen verwendet der Formularserver vorübergehend einen Hash der anfragenden IP-Adresse und der Anfrage. Diese Einträge bleiben höchstens 15 Minuten im Arbeitsspeicher. Die Formularanwendung speichert keine Anfragen in einer eigenen Datenbank.</p>
+    <h2>Vor Veröffentlichung</h2>
+    <p>Der Versandzugang ist im lokalen Entwurf noch nicht eingerichtet. Angaben zum verantwortlichen Betreiber, Hosting, Mailanbieter, zu Serverprotokollen, Rechtsgrundlagen, Aufbewahrung und Betroffenenrechten werden vor Veröffentlichung anhand der tatsächlich eingesetzten Dienste ergänzt.</p>
+  </article>
 </Base>

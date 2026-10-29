@@ -1,0 +1,7 @@
+---
+import PortfolioGallery from '../../../components/PortfolioGallery.astro';
+import {themes,film} from '../../../data/portfolio';
+export function getStaticPaths(){return themes.map((theme,index)=>({params:{slug:theme.slug},props:{theme,next:themes[(index+1)%themes.length]}}));}
+const {theme,next}=Astro.props;
+---
+<PortfolioGallery name={theme.name} subtitle={theme.subtitle} description={theme.description} cover={theme.cover} images={theme.images} backHref="/#themen" backLabel="Alle Themen" next={{name:next.name,href:`/arbeiten/themen/${next.slug}`,cover:next.cover}} movie={theme.slug==='hochzeiten'?film('hochzeit'):undefined} themeSlug={theme.slug} />

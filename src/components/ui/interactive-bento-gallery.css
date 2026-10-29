@@ -1,0 +1,38 @@
+.bento-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(8,clamp(48px,4.4vw,72px));gap:14px;grid-template-areas:"people cars cars events" "people cars cars events" "people cars cars events" "people wedding wedding events" "meet wedding wedding animals" "meet wedding wedding animals" "meet travel travel animals" "meet travel travel animals"}
+.bento-card{position:relative;min-width:0;min-height:0;border-radius:var(--radius);isolation:isolate;background:var(--paper)}
+.bento-card__open{position:relative;display:block;overflow:hidden;width:100%;height:100%;padding:0;border-radius:inherit;text-align:left;background:transparent;color:var(--paper)}
+.bento-photo{display:block;width:100%;height:100%}
+.bento-photo img{width:100%;height:100%;object-fit:cover}
+.bento-card__caption{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:22px;background:linear-gradient(transparent 35%,#00000099);pointer-events:none}
+.bento-card__title{font-family:var(--display);font-size:clamp(22px,2.6vw,40px);font-weight:730;letter-spacing:-.045em;line-height:1.05}
+.bento-card__desc{font-size:12px;line-height:1.4;max-width:25ch;margin-top:8px;color:#fff}
+.bento-card__expand{position:absolute;right:15px;bottom:19px;opacity:0;transform:translate(-3px,3px);transition:opacity .2s,transform .2s}
+.bento-card__open:hover .bento-card__expand,.bento-card__open:focus-visible .bento-card__expand{opacity:1;transform:none}
+.bento-card__grip{position:absolute;right:10px;top:10px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#00000035;color:#fff;touch-action:none;cursor:grab}
+.bento-card__grip:active{cursor:grabbing}
+.bento-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.bento-dialog{width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;padding:24px 36px;border:0;background:var(--paper);color:var(--ink);overflow:hidden}
+.bento-dialog::backdrop{background:#2a2f33db}
+.bento-dialog__heading{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.bento-dialog__heading h3{font-size:30px}
+.bento-dialog__heading p{font-size:13px;margin-top:5px}
+.bento-icon{display:grid;place-items:center;width:48px;height:48px;flex-shrink:0;border:1px solid var(--line);border-radius:50%;background:var(--paper)}
+.bento-dialog__stage{position:relative;display:flex;align-items:center;justify-content:center;height:calc(100dvh - 260px);margin-top:20px}
+.bento-dialog__image{width:100%;height:100%;max-width:1100px;pointer-events:none}
+.bento-dialog__image .bento-photo img{object-fit:contain;filter:none}
+.bento-dialog__prev,.bento-dialog__next{position:absolute;z-index:2;top:50%;transform:translateY(-50%)}
+.bento-dialog__prev{left:0}.bento-dialog__next{right:0}
+.bento-dialog__theme{display:inline-flex;align-items:center;gap:18px;min-height:44px;font-size:14px;font-weight:650;border-bottom:1px solid var(--ink);margin-top:12px}
+.bento-dock-wrap{position:absolute;inset-inline:16px;bottom:20px;display:flex;justify-content:center;pointer-events:none}
+.bento-dock{max-width:100%;padding:0 12px 12px;border:1px solid var(--line);border-radius:18px;background:var(--butter);box-shadow:0 8px 30px #2a2f3315;pointer-events:auto}
+.bento-dock__tools{display:flex;align-items:center;justify-content:center;position:relative}
+.bento-dock__tools button{display:grid;place-items:center;min-width:44px;height:40px;background:transparent}
+.bento-dock__tools button:last-child{position:absolute;right:-4px}
+.bento-dock__handle{cursor:grab;touch-action:none}
+.bento-dock__photos{display:flex;gap:8px}
+.bento-dock__photos button{display:block;width:52px;height:52px;padding:0;border-radius:8px;background:transparent}
+.bento-dock__photos img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.bento-dock__photos button[aria-pressed="true"]{outline:3px solid var(--ink);outline-offset:3px}
+@media(max-width:900px){.bento-grid{gap:10px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(8,80px);grid-template-areas:"people cars" "people cars" "events wedding" "events wedding" "meet animals" "meet animals" "travel travel" "travel travel"}.bento-card__title{font-size:29px}}
+@media(max-width:600px){.bento-grid{gap:10px;grid-template-rows:repeat(8,84px)}.bento-card__caption{padding:14px 12px}.bento-card__title{font-size:24px}.bento-card__desc{font-size:10px;margin-top:6px;line-height:1.4}.bento-card__grip{right:6px;top:6px;width:40px;height:40px}.bento-dialog{padding:18px 16px}.bento-dialog__heading h3{font-size:25px}.bento-dialog__heading p{font-size:11px;max-width:28ch}.bento-dialog__stage{height:calc(100dvh - 300px);margin-top:24px}.bento-dialog__prev{left:-8px}.bento-dialog__next{right:-8px}.bento-dialog__stage>.bento-icon{width:40px;height:40px}.bento-dialog__theme{font-size:13px;margin-top:18px}.bento-dock{padding:0 8px 12px}.bento-dock__photos{gap:2px}.bento-dock__photos button{width:44px;height:44px}.bento-dock-wrap{inset-inline:12px;bottom:max(16px,env(safe-area-inset-bottom))}}
+@media(prefers-reduced-motion:reduce){.bento-card__expand{transition:none}}

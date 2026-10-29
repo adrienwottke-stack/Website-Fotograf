@@ -1,0 +1,43 @@
+---
+import MediaImage from './MediaImage.astro';
+import { first } from '../data/portfolio';
+import background from '../data/hero-two.generated.json';
+import '../styles/hero-two.css';
+
+const windows = [
+  { key: 'fahrzeuge', label: 'Fahrzeuge', position: '50% 50%' },
+  { key: 'people', label: 'People', position: '50% 35%' },
+  { key: 'events', label: 'Events', position: '50% 40%' },
+  { key: 'hochzeiten', label: 'Hochzeiten', position: '50% 40%' },
+];
+const srcset = (variants: typeof background.landscape) => variants.map(v => `${v.src} ${v.width}w`).join(', ');
+---
+<section class="hero-two" aria-labelledby="hero-two-name">
+  <picture class="hero-two__landscape">
+    <source media="(max-width: 700px)" srcset={srcset(background.portrait)} sizes="calc(100vw - 20px)" width={background.portrait[0].width} height={background.portrait[0].height} />
+    <img src={background.landscape[1].src} srcset={srcset(background.landscape)} sizes="calc(100vw - 36px)" width={background.landscape[1].width} height={background.landscape[1].height} alt={background.alt} loading="eager" fetchpriority="high" decoding="sync" />
+  </picture>
+  <div class="hero-two__shade" aria-hidden="true"></div>
+
+  <div class="hero-two__intro">
+    <p class="hero-two__kicker">Fotografie, Film & eine eigene Perspektive.</p>
+    <h1 id="hero-two-name">Sandro<br />Mondini.</h1>
+    <p class="hero-two__description">Für Menschen, Marken und Momente.<br />Und für die Ideen, die wir noch nicht kennen.</p>
+    <div class="hero-two__actions">
+      <a class="button" href="/#themen">Arbeiten entdecken <span aria-hidden="true">↗</span></a>
+      <a class="hero-two__contact" href="/kontakt">Projekt anfragen <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <nav class="hero-two__windows" aria-label="Fotografische Themen entdecken">
+    {windows.map(window => (
+      <a class:list={['hero-two__window', `hero-two__window--${window.key}`]} href={`/arbeiten/themen/${window.key}`}>
+        <MediaImage image={first(window.key)} eager sizes="(max-width: 700px) 43vw, (max-width: 1000px) 19vw, 15vw" position={window.position} />
+        <span class="hero-two__window-label">{window.label}<span aria-hidden="true">↗</span></span>
+      </a>
+    ))}
+  </nav>
+
+  <a class="hero-two__notch" href="#hero-two-themen"><span>Mehr Perspektiven entdecken</span><span aria-hidden="true">↓</span></a>
+  <a class="hero-two__landscape-link" href="/arbeiten/themen/reisen">Unterwegs mit offenen Augen <span aria-hidden="true">↗</span></a>
+</section>

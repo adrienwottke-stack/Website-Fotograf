@@ -1,52 +1,13 @@
-# Arbeiten Page Overrides
+# Arbeiten – Ergänzung zum Master vom 29.10.2026
 
-> **PROJECT:** Sandro Mondini
-> **Generated:** 2026-08-18 12:50:08
-> **Page Type:** Landing / Marketing
+Eine Übersicht mit den Ansichten Themen, Projekte und Filme. Die Auswahl steht als `ansicht` in der URL. Sieben Themenfenster bilden die Bildwelten, vier Projektseiten zeigen konkrete Serien. Vier Filme behalten ihre native Ausrichtung und öffnen erst nach Auswahl einen Player.
 
-> ⚠️ **IMPORTANT:** Rules in this file **override** the Master file (`design-system/MASTER.md`).
-> Only deviations from the Master are documented here. For all other rules, refer to the Master.
+Die Themengalerien verwenden abwechslungsreiche Größen und Originalseitenverhältnisse. Großansichten laden erst beim Öffnen. Projektseiten ergänzen nur belegte Texte und Medien; fehlende Angaben zu Rollen/Jahren werden intern vermerkt. Die Farben und die Typografie folgen vollständig dem aktuellen Master.
 
----
+## Themen- und Projektunterseiten: Scrollgalerien
 
-## Page-Specific Rules
+Adriens neue Richtung vom 29.10.2026: Bildführung nach der Projektansicht von [Justin Bettman](https://www.justinbettman.com/projects/bafta-tea-party), mit einem bildfüllenden Hintergrund aus Sandros eigener Serie. Diese Referenz ist Adriens aktuelle Anweisung und kein nachträglich unterstellter Kundenfavorit.
 
-### Layout Overrides
+Gemeinsame Vorlage für alle elf Unterseiten: großes Einstiegsbild und Titel, feststehender fotografischer Hintergrund mit zurückhaltender Mondini-Wortmarke, danach ein zwölfspaltig komponierter Bildfluss mit schmaleren und breiteren Zweiergruppen sowie Einzelbildern. Vordergrundbilder erhalten ihr Seitenverhältnis, eckige Kanten und keine zusätzlichen Kartenrahmen. Warme Schrift auf dem abgedunkelten Hintergrund. Der Themenwechsel am Ende zeigt nach Adriens Folgefeedback ausschließlich den nächsten Namen groß in Weiß auf dem vorhandenen Hintergrund; der Name ist der Link. Mobil eine Spalte in derselben Bildreihenfolge. Normales vertikales Scrollen, ohne automatische Bewegung oder Scrollsteuerung.
 
-- **Max Width:** 1200px (standard)
-- **Layout:** Full-width sections, centered content
-- **Sections:** Hero (Name/Role) > Project Grid (Masonry) > About/Philosophy > Contact
-
-### Spacing Overrides
-
-- No overrides — use Master spacing
-
-### Typography Overrides
-
-- No overrides — use Master typography
-
-### Color Overrides
-
-- **Strategy:** Neutral background (let work shine). Text: Black/White. Accent: Minimal.
-
-### Component Overrides
-
-- Avoid: Desktop-first causing mobile issues
-- Avoid: Large blocking CSS files
-- Avoid: Unoptimized full-size images
-
----
-
-## Page-Specific Components
-
-- No unique components for this page
-
----
-
-## Recommendations
-
-- Effects: Film grain overlay, VHS tracking effect, polaroid shake, fade-in transitions, light leak animations
-- Responsive: Start with mobile styles then add breakpoints
-- Performance: Inline critical CSS defer non-critical
-- Performance: Use appropriate size and format (WebP)
-- CTA Placement: Project Card Hover + Footer Contact
+Alle vorhandenen, der jeweiligen Sammlung zugeordneten Webbilder bleiben direkt im Seiteninhalt erreichbar. Responsive Inhaltsgrößen bis 1200px; separate Großdateien und Filme erst nach Auswahl. Neue Originalexporte oder eine Erweiterung auf den gesamten Drive-Bestand waren nicht Teil dieser Layoutiteration.

@@ -1,0 +1,14 @@
+---
+import type { Photo } from '../data/portfolio';
+interface Props { image: Photo; sizes?: string; eager?: boolean; priority?: boolean; role?: 'preview'|'display'|'editorial'; class?: string; alt?: string; position?: string }
+const { image, sizes='(max-width: 700px) 100vw, 50vw', eager=false, priority=false, role='preview', class:className='', alt=image.alt, position='50% 50%' }=Astro.props;
+// Large files for the lightbox stay on demand, including in the editorial layout.
+const editorial=image.display.filter(x=>x.width<=1200 && x.src!==image.large.src);
+const variants=role==='display'?image.display:role==='editorial'&&editorial.length?editorial:image.preview;
+const srcset=variants.map(x=>`${x.src} ${x.width}w`).join(', ');
+const fallback=variants[Math.min(1,variants.length-1)];
+---
+<picture class:list={['media-image',className]} style={`--image-color:${image.color};--image-position:${position}`}>
+  {image.avif?.length && <source type="image/avif" media={role==='editorial'?'(max-width: 900px)':undefined} srcset={image.avif.map(x=>`${x.src} ${x.width}w`).join(', ')} sizes={sizes} />}
+  <img src={fallback.src} srcset={srcset} sizes={sizes} width={image.width} height={image.height} alt={alt} loading={eager?'eager':'lazy'} fetchpriority={priority?'high':'auto'} decoding={priority?'sync':'async'} />
+</picture>

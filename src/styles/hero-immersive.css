@@ -1,0 +1,23 @@
+/* Shared first viewport: only photography and the comparison controls. */
+.hero.hero--immersive{position:relative;max-width:none;height:100svh;min-height:420px;padding:0;overflow:hidden;background:var(--paper)}
+.hero.hero--immersive .hero-stage{height:100%;width:100%;overflow:hidden}
+.hero.hero--immersive .hero-window__tag{display:none}
+.hero.hero--immersive .hero-window{border-radius:5px;box-shadow:0 16px 35px #2a2f3320}
+.hero.hero--immersive .hero-window--auto{left:-5%;top:4%;width:40%;height:96%;--tilt:-7deg}
+.hero.hero--immersive .hero-window--people{left:auto;right:-5%;top:-6%;width:34%;height:100%;--tilt:7deg}
+.hero.hero--immersive .hero-window--event{left:32%;right:auto;top:-7%;width:39%;height:54%;--tilt:-4deg}
+.hero.hero--immersive .hero-window--wedding{left:37%;right:auto;top:48%;width:29%;height:69%;--tilt:6deg}
+.hero.hero--immersive .image-trail__image{width:min(var(--trail-width),32vw)}
+.hero.hero--immersive [data-trail-active] .hero-window{opacity:.25;pointer-events:none}
+.hero-idle-name{position:absolute;left:50%;top:50%;z-index:20;transform:translate(-50%,calc(-50% + 8px));opacity:0;pointer-events:none;text-align:center;color:var(--paper);font-family:var(--display);font-size:clamp(82px,12vw,184px);font-weight:780;line-height:.88;letter-spacing:-.065em;text-shadow:0 3px 24px #00000055;transition:opacity .4s ease,transform .4s var(--ease)}
+.hero-idle-name span{display:block}
+.hero.hero--immersive [data-trail-idle] .hero-idle-name{opacity:1;transform:translate(-50%,-50%)}
+.hero.hero--immersive [data-trail-idle] .hero-window{opacity:1;pointer-events:auto}
+#entdecken{scroll-margin-top:0;background:var(--paper)}
+@media(max-width:700px){
+  .hero.hero--immersive [data-trail-active] .hero-window{opacity:1;pointer-events:auto}
+  .hero.hero--immersive .hero-window--auto{left:-15%;top:0;width:69%;height:58%;--tilt:-9deg}
+  .hero.hero--immersive .hero-window--people{right:-12%;top:3%;width:60%;height:62%;--tilt:9deg}
+  .hero.hero--immersive .hero-window--event{left:-12%;top:59%;width:76%;height:43%;--tilt:5deg}
+  .hero.hero--immersive .hero-window--wedding{left:57%;top:66%;width:48%;height:41%;--tilt:-7deg}
+}

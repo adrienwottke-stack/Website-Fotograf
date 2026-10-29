@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import MediaImage from './MediaImage.astro';
+import PhotoGallery from './PhotoGallery.astro';
+import FilmCard from './FilmCard.astro';
+import type { Photo, Film } from '../data/portfolio';
+import '../styles/portfolio-gallery.css';
+
+interface Props {
+  name:string;
+  subtitle:string;
+  description:string;
+  cover:Photo;
+  images:Photo[];
+  backHref:string;
+  backLabel:string;
+  next:{name:string;href:string;cover:Photo};
+  movie?:Film;
+  tags?:string[];
+  themeSlug?:string;
+}
+const {name,subtitle,description,cover,images,backHref,backLabel,next,movie,tags=[],themeSlug}=Astro.props;
+const nextLabel=themeSlug?'Nächstes Thema':'Nächstes Projekt';
+---
+<Base title={name} description={description} gallery>
+  <div class="portfolio-backdrop" aria-hidden="true">
+    <MediaImage image={cover} role="editorial" sizes="100vw" eager priority alt="" position={themeSlug==='people'?'50% 35%':'50% 50%'} />
+    <span class="portfolio-backdrop__name">Mondini</span>
+  </div>
+  <header class="portfolio-hero">
+    <a class="portfolio-back" href={backHref}><span aria-hidden="true">←</span> {backLabel}</a>
+    <div class="portfolio-hero__title">
+      <h1>{name}</h1>
+      <div class="portfolio-hero__bottom"><p>{subtitle}</p><a href="#bilder" class="portfolio-scroll">{images.length} Fotografien <span aria-hidden="true">↓</span></a></div>
+    </div>
+  </header>
+  <section id="bilder" class="portfolio-content" aria-label={`Fotografien: ${name}`}>
+    <div class="portfolio-intro"><p>{description}</p>{tags.length>0&&<ul aria-label="Projektbereiche">{tags.map(tag=><li>{tag}</li>)}</ul>}</div>
+    <PhotoGallery images={images} name={`Bildstrecke ${name}`} layout="story" />
+  </section>
+  {movie&&<section class="portfolio-film" aria-label="Film zur Bildstrecke"><div><h2>Auch in Bewegung.</h2><p>{movie.title}</p></div><FilmCard film={movie} /></section>}
+  <section id="naechstes-thema" class="portfolio-outro" aria-label={nextLabel}>
+    <a class="portfolio-next" href={next.href} aria-label={`${nextLabel}: ${next.name}`}>
+      <div class="portfolio-next__preview"><MediaImage image={next.cover} sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1200px) 58vw, 680px" alt="" /></div>
+      <div class="portfolio-next__copy">
+        <span class="portfolio-next__label">{nextLabel}<span aria-hidden="true">↗</span></span>
+        <h2>{next.name}</h2>
+      </div>
+    </a>
+  </section>
+</Base>

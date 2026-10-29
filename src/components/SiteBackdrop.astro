@@ -1,0 +1,11 @@
+---
+import background from '../data/site-backdrop.generated.json';
+import '../styles/site-bildraum.css';
+const srcset = (variants: typeof background.landscape) => variants.map(image => `${image.src} ${image.width}w`).join(', ');
+---
+<div class="site-backdrop" aria-hidden="true">
+  <picture>
+    <source media="(max-width: 700px)" srcset={srcset(background.portrait)} sizes="100vw" width={background.portrait[0].width} height={background.portrait[0].height} />
+    <img src={background.landscape[0].src} srcset={srcset(background.landscape)} sizes="100vw" width={background.landscape[0].width} height={background.landscape[0].height} alt="" loading="eager" fetchpriority="auto" decoding="async" />
+  </picture>
+</div>

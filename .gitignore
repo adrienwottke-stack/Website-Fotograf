@@ -12,3 +12,21 @@ sanity/node_modules/
 sanity/dist/
 sanity/.env
 sanity/.sanity/
+
+# Lokale Materialanalyse und Quelldokumente
+/analyse/
+
+# Private Originale und lokale Medienverarbeitung
+/.cache/
+
+# Lokale Verträge, Deployment-Verknüpfung und Zugangsdaten
+/vertraege/
+/.vercel/
+.env
+.env.*
+!.env.example
+
+# Mailzugang bleibt lokal; nur die leere Vorlage wird versioniert.
+.env
+.env.*
+!.env.example

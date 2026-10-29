@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroTwo from '../components/HeroTwo.astro';
+import MediaImage from '../components/MediaImage.astro';
+import ThemeWindows from '../components/ThemeWindows.astro';
+import FilmCard from '../components/FilmCard.astro';
+import ProjectSection from '../components/ProjectSection.astro';
+import ContactBanner from '../components/ContactBanner.astro';
+import { first, collection, films, services } from '../data/portfolio';
+---
+<Base title="Sandro Mondini – Foto & Film" description="Foto, Film und Content Creation mit Sandro Mondini. Entdecke Menschen, Fahrzeuge, Events, Hochzeiten und eigene Perspektiven.">
+  <div class="hero-two-page" data-hero-two-page>
+    <HeroTwo />
+    <section id="hero-two-themen" class="section theme-section section--butter">
+      <div class="wrap"><div class="section-heading"><h2>Worauf hast<br />du einen Blick?</h2><p>Menschen. Motoren. Mittendrin.<br />Such dir eine Welt aus.</p></div><ThemeWindows /></div>
+    </section>
+    <section class="section section--dark">
+      <div class="wrap"><div class="section-heading"><div class="film-heading"><h2>Und dann kommt<br />Bewegung rein.</h2><p>Kurze Formate. Längere Geschichten.<br />Vier Filme, vier ganz unterschiedliche Welten.</p></div><a class="text-link" href="/#filme">Filmarbeiten ansehen <span aria-hidden="true">↗</span></a></div><div class="film-stage">{films.map(f=><FilmCard film={f} />)}</div></div>
+    </section>
+    <ProjectSection />
+    <section class="section section--butter"><div class="wrap"><div class="section-heading"><h2>Was wir zusammen<br />machen können.</h2><p>Eine Idee, ein ganzer Dreh oder Unterstützung für dein Team.</p></div><div class="service-list">{services.map(service=><a class="service-row" href={`/leistungen#${service.id}`}><h3>{service.name}</h3><p>{service.text}</p><span aria-hidden="true">↗</span></a>)}</div></div></section>
+    <section class="section about-teaser"><div class="wrap about-teaser__inner"><div class="about-images"><div class="about-portrait"><MediaImage image={first('sandro')} sizes="(max-width: 700px) 65vw, 30vw" /></div><div class="about-work"><MediaImage image={collection('sandro')[1]} sizes="(max-width: 700px) 65vw, 30vw" /></div></div><div class="about-teaser__copy"><h2>Hey.<br />Ich bin Sandro.</h2><p>Technik, Medien und kreative Ideen haben mich schon immer begeistert. Aus den ersten Projekten mit Freunden wurde mein eigener Weg mit Foto und Film.</p><a class="text-link" href="/ueber-mich">Meine Geschichte <span aria-hidden="true">↗</span></a></div></div></section>
+    <ContactBanner />
+  </div>
+</Base>

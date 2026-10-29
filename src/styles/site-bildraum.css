@@ -1,0 +1,288 @@
+/* Whole-site background study. Only the dedicated preview build adds this marker. */
+html:has(body[data-bildraum]) {
+  scroll-padding-top: 24px;
+}
+
+body[data-bildraum] {
+  --scene-gutter: clamp(18px, 3.5vw, 64px);
+  --scene-gap: clamp(24px, 3vw, 48px);
+  --scene-radius: 28px;
+  --scene-surface: #fffdf6;
+  isolation: isolate;
+  background: #373a30;
+}
+
+body[data-bildraum] .site-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #373a30;
+}
+
+body[data-bildraum] .site-backdrop picture,
+body[data-bildraum] .site-backdrop img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body[data-bildraum] .site-backdrop img {
+  object-fit: cover;
+  object-position: 46% 50%;
+}
+
+body[data-bildraum] .site-backdrop::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, rgb(42 47 51 / 15%), rgb(42 47 51 / 38%));
+  content: '';
+}
+
+/* The photographic heroes retain their existing full-viewport composition. */
+body[data-bildraum] #entdecken,
+body[data-bildraum] > .site-header {
+  width: calc(100% - var(--scene-gutter) * 2);
+  max-width: 1600px;
+  margin: var(--scene-gap) auto;
+  border: 1px solid rgb(255 253 246 / 65%);
+  border-radius: 22px;
+  background: var(--scene-surface);
+}
+
+body[data-bildraum] #entdecken .site-header {
+  height: 86px;
+  padding-inline: clamp(24px, 3.5vw, 64px);
+}
+
+body[data-bildraum] > .site-header {
+  height: 86px;
+  padding-inline: clamp(24px, 3.5vw, 64px);
+}
+
+body[data-bildraum] main > :is(.section, .section--dark, .section--butter, .contact-banner, .wrap),
+body[data-bildraum] > .site-footer {
+  width: calc(100% - var(--scene-gutter) * 2);
+  max-width: 1600px;
+  margin: var(--scene-gap) auto;
+  border: 1px solid rgb(255 253 246 / 40%);
+  border-radius: var(--scene-radius);
+  background: var(--scene-surface);
+}
+
+body[data-bildraum] main > .section--butter {
+  background: var(--butter);
+}
+
+body[data-bildraum] main > .section--dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+body[data-bildraum] main > .contact-banner {
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
+
+body[data-bildraum] main > .wrap:not(.page-head):not(.gallery-hero):not(.about-head):not(.project-head) {
+  padding-block: clamp(32px, 5vw, 80px);
+}
+
+/* Photographic grids sit on the shared background, with small readable captions. */
+body[data-bildraum] main > .theme-section,
+body[data-bildraum] main > .section:has(.case-grid),
+body[data-bildraum] main > .about-teaser,
+body[data-bildraum] main > .work-panels,
+body[data-bildraum] main > .wrap:has(> .photo-gallery),
+body[data-bildraum] main > .wrap:has(> .project-cover),
+body[data-bildraum] main > .wrap:has(> .work-image) {
+  border: 0;
+  background: transparent;
+}
+
+body[data-bildraum] main > .theme-section,
+body[data-bildraum] main > .section:has(.case-grid),
+body[data-bildraum] main > .about-teaser {
+  padding-block: 0;
+}
+
+body[data-bildraum] :is(.theme-section, .section:has(.case-grid)) > .wrap {
+  padding-inline: 0;
+}
+
+body[data-bildraum] :is(.theme-section, .section:has(.case-grid)) .section-heading {
+  padding: clamp(28px, 4.5vw, 64px);
+  margin-bottom: 34px;
+  border-radius: var(--scene-radius);
+  background: var(--scene-surface);
+}
+
+body[data-bildraum] .theme-window,
+body[data-bildraum] .case-card {
+  padding: 9px;
+  border: 1px solid rgb(255 253 246 / 65%);
+  border-radius: 21px;
+  background: var(--scene-surface);
+  box-shadow: 0 14px 36px rgb(16 23 19 / 15%);
+}
+
+body[data-bildraum] .theme-window__caption {
+  margin-top: 12px;
+  padding: 3px 10px 12px;
+}
+
+body[data-bildraum] .case-card__caption {
+  padding: 12px 10px 9px;
+}
+
+body[data-bildraum] .theme-window__caption h3 {
+  font-size: clamp(24px, 2.5vw, 38px);
+}
+
+body[data-bildraum] :is(.theme-window, .case-card, .gallery-image):focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 5px;
+}
+
+body[data-bildraum] .about-teaser__inner {
+  padding-inline: clamp(12px, 2vw, 32px);
+}
+
+body[data-bildraum] .about-teaser__copy {
+  padding: clamp(28px, 4vw, 58px);
+  border-radius: var(--scene-radius);
+  background: var(--scene-surface);
+}
+
+body[data-bildraum] .work-tabs {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  background: var(--scene-surface);
+}
+
+body[data-bildraum] .work-films {
+  padding: clamp(24px, 4vw, 64px);
+  border-radius: var(--scene-radius);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+body[data-bildraum] .gallery-footer {
+  padding: 26px;
+  border-radius: 20px;
+  background: var(--scene-surface);
+}
+
+body[data-bildraum] .service-detail:last-child {
+  border-bottom: 0;
+}
+
+body[data-bildraum] .next-project {
+  padding: clamp(28px, 4vw, 64px);
+  border: 0;
+  border-radius: 22px;
+  background: var(--scene-surface);
+}
+
+@media (max-width: 1000px) and (min-width: 701px) {
+  body[data-bildraum] #entdecken .site-header,
+  body[data-bildraum] > .site-header {
+    padding-inline: 22px;
+    gap: 18px;
+  }
+
+  body[data-bildraum] .desktop-nav {
+    gap: 20px;
+    font-size: 12px;
+  }
+
+  body[data-bildraum] .header-contact {
+    gap: 14px;
+    padding-inline: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  body[data-bildraum] {
+    --scene-gutter: 12px;
+    --scene-gap: 20px;
+    --scene-radius: 22px;
+  }
+
+  body[data-bildraum] .site-backdrop img {
+    object-position: 50% 50%;
+  }
+
+  body[data-bildraum] #entdecken .site-header,
+  body[data-bildraum] > .site-header {
+    height: 74px;
+    padding-inline: 18px;
+    gap: 12px;
+  }
+
+  body[data-bildraum] .theme-window,
+  body[data-bildraum] .case-card {
+    padding: 6px;
+    border-radius: 16px;
+  }
+
+  body[data-bildraum] .page-head h1 {
+    font-size: clamp(54px, 16vw, 75px);
+  }
+
+  body[data-bildraum] .theme-window__photo,
+  body[data-bildraum] .case-card__image {
+    border-radius: 11px;
+  }
+
+  body[data-bildraum] .theme-window__caption {
+    margin-top: 8px;
+    padding: 3px 6px 9px;
+  }
+
+  body[data-bildraum] .theme-window__caption h3 {
+    font-size: clamp(19px, 5.3vw, 30px);
+  }
+
+  body[data-bildraum] .theme-window__caption > span {
+    font-size: 10px;
+  }
+
+  body[data-bildraum] .case-card__caption {
+    padding-inline: 5px;
+  }
+
+  body[data-bildraum] .case-card__caption h3 {
+    font-size: 25px;
+  }
+
+  body[data-bildraum] .about-teaser__inner {
+    padding-inline: 6px;
+  }
+
+  body[data-bildraum] .about-teaser__copy h2 {
+    font-size: 58px;
+  }
+
+  body[data-bildraum] .work-tabs {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  body[data-bildraum] .work-tabs a {
+    padding-inline: 12px;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  body[data-bildraum] .gallery-footer {
+    padding: 20px;
+  }
+
+  body[data-bildraum] .contact-banner h2 {
+    font-size: 20vw;
+  }
+}

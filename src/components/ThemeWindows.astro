@@ -1,0 +1,14 @@
+---
+import { themes } from '../data/portfolio';
+import MediaImage from './MediaImage.astro';
+const { compact=false }=Astro.props;
+---
+<div class:list={['theme-windows',{'theme-windows--compact':compact}]}>
+  {themes.map((theme,i)=><a class={`theme-window theme-window--${i}`} href={`/arbeiten/themen/${theme.slug}`} data-window-link={theme.slug}>
+    <div class="theme-window__photo" data-shared-image={theme.slug} transition:name={`theme-${theme.slug}`}>
+      <MediaImage image={theme.cover} sizes="(max-width: 700px) 47vw, (max-width: 1000px) 30vw, 25vw" position={theme.slug==='people'?'50% 35%':'50% 50%'} />
+      <span class="window-open" aria-hidden="true">↗</span>
+    </div>
+    <div class="theme-window__caption"><h3>{theme.name}</h3><span>{theme.note}</span></div>
+  </a>)}
+</div>

@@ -1,138 +1,61 @@
 ---
-import { site, verfuegbarkeit } from '../data/site';
-
-const jahr = new Date().getFullYear();
+import { contactEmail } from '../data/portfolio';
+import { House, Images, PanelsTopLeft, Clapperboard, UserRound, Mail } from 'lucide-react';
+const home=['/','/hero-2','/hero-2/'].includes(Astro.url.pathname)?'':'/';
+const leftLinks = [
+  { href:'/',label:'Start',icon:House },
+  { href:`${home}#themen`,label:'Themen',icon:Images },
+  { href:`${home}#projekte`,label:'Projekte',icon:PanelsTopLeft },
+];
+const rightLinks = [
+  { href:'/leistungen',label:'Leistungen',icon:Clapperboard },
+  { href:'/ueber-mich',label:'Über mich',icon:UserRound },
+  { href:'/kontakt',label:'Kontakt',icon:Mail },
+];
+const year = new Date().getFullYear();
 ---
-
-<footer class="ft">
-  <section class="ft__cta">
-    <div class="wrap ft__cta-in">
-      <div>
-        <p class="label label--orange">Projekt im Kopf?</p>
-        <h2 class="ft__h">Erzähl mir einfach,<br />worum es geht.</h2>
-        <p class="ft__stat">
-          <span class="ft__dot" aria-hidden="true"></span>
-          {verfuegbarkeit.lang} {verfuegbarkeit.antwortzeit}.
-        </p>
-      </div>
-      <a href="/kontakt" class="btn ft__btn">
-        Schreib mir <span class="arw" aria-hidden="true">&rarr;</span>
+<footer id="seitenabschluss" class="site-footer site-footer--quiet">
+  <div class="wrap quiet-footer">
+    <div class="quiet-footer__row">
+      <nav class="quiet-footer__nav" aria-label="Themen und Projekte im Footer">
+        {leftLinks.map(link => {const Icon=link.icon;return <a href={link.href}><Icon size={17} strokeWidth={1.6} aria-hidden="true" /><span>{link.label}</span></a>;})}
+      </nav>
+      <a class="quiet-footer__brand" href="/" aria-label="Sandro Mondini, Startseite"><span>Sandro</span><span>Mondini.</span></a>
+      <nav class="quiet-footer__nav" aria-label="Leistungen und Kontakt im Footer">
+        {rightLinks.map(link => {const Icon=link.icon;return <a href={link.href}><Icon size={17} strokeWidth={1.6} aria-hidden="true" /><span>{link.label}</span></a>;})}
+      </nav>
+    </div>
+    <div class="quiet-footer__socials">
+      <a href="https://www.instagram.com/sandro_mondini/" target="_blank" rel="noopener noreferrer" aria-label="Sandro Mondini auf Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor"/></svg>
       </a>
+      <a href={`mailto:${contactEmail}`} aria-label="E-Mail an Sandro Mondini" title="E-Mail"><Mail size={19} strokeWidth={1.7} aria-hidden="true" /></a>
     </div>
-  </section>
-
-  <div class="wrap">
-    <div class="ft__grid">
-      <div class="ft__col">
-        <p class="ft__lbl">Seiten</p>
-        <a href="/arbeiten">Arbeiten</a>
-        <a href="/leistungen">Leistungen</a>
-        <a href="/ablauf">Ablauf &amp; FAQ</a>
-        <a href="/ueber-mich">Über mich</a>
-        <a href="/journal">Journal</a>
-      </div>
-
-      <div class="ft__col">
-        <p class="ft__lbl">Kontakt</p>
-        <a href={`mailto:${site.mail}`}>{site.mail}</a>
-        <a href={site.instagram} rel="me noopener" target="_blank">Instagram</a>
-        <a href={site.youtube} rel="me noopener" target="_blank">YouTube</a>
-      </div>
-
-      <div class="ft__col">
-        <p class="ft__lbl">Rechtliches</p>
-        <a href="/impressum">Impressum</a>
-        <a href="/datenschutz">Datenschutz</a>
-      </div>
-
-      <div class="ft__col">
-        <p class="ft__lbl">Wo</p>
-        <p class="ft__muted">{site.region}<br />und Umgebung</p>
-      </div>
+    <div class="quiet-footer__legal">
+      <p>© {year} Sandro Mondini</p>
+      <nav aria-label="Rechtliche Informationen"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a></nav>
     </div>
-
-    <p class="ft__base">
-      <span>&copy; {jahr} {site.name}</span>
-      <span>Gemacht in der {site.region}.</span>
-    </p>
+    <p class="quiet-footer__status">Gestaltungsentwurf</p>
   </div>
 </footer>
 
 <style>
-  .ft { background: var(--creme); }
-
-  .ft__cta {
-    background: var(--sand);
-    border-radius: var(--r-l) var(--r-l) 0 0;
-    padding-block: var(--section);
-  }
-
-  .ft__cta-in {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--s-6);
-  }
-
-  .ft__h { font-size: var(--t-2xl); }
-
-  .ft__stat {
-    display: flex;
-    align-items: center;
-    gap: 0.6em;
-    margin-top: var(--s-3);
-    font-size: var(--t-sm);
-    color: var(--ink-soft);
-  }
-
-  .ft__dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--gruen);
-    box-shadow: 0 0 0 3px rgba(47, 122, 62, 0.18);
-    flex: none;
-  }
-
-  .ft__btn { font-size: var(--t-base); padding: 1em 2em; }
-
-  .ft__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: var(--s-6);
-    padding-block: var(--s-12) var(--s-8);
-  }
-
-  .ft__col { display: grid; gap: 0.55rem; align-content: start; }
-
-  .ft__lbl {
-    font-family: var(--font-mono);
-    font-size: var(--t-label);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 0.35rem;
-  }
-
-  .ft__col a {
-    font-size: var(--t-sm);
-    font-weight: 600;
-    color: var(--ink-soft);
-    justify-self: start;
-    transition: color 220ms var(--ease);
-  }
-  .ft__col a:hover { color: var(--orange-tief); }
-
-  .ft__muted { font-size: var(--t-sm); color: var(--ink-soft); }
-
-  .ft__base {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--s-2) var(--s-4);
-    justify-content: space-between;
-    padding: var(--s-4) 0 var(--s-6);
-    border-top: 1px solid var(--linie);
-    font-size: var(--t-sm);
-    color: var(--ink-soft);
-  }
+  .site-footer.site-footer--quiet{padding-block:clamp(80px,8vw,120px) 42px;background:var(--paper);color:var(--ink);border:0;border-radius:0}
+  .quiet-footer{max-width:1440px}
+  .quiet-footer__row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(28px,4.5vw,68px);max-width:1200px;margin-inline:auto}
+  .quiet-footer__nav{display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .quiet-footer__nav a{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;white-space:nowrap;font-size:13px;font-weight:400}
+  .quiet-footer__nav a:hover span{text-decoration:underline;text-underline-offset:5px}
+  .quiet-footer__brand{display:block;min-height:52px;font-family:var(--display);font-size:28px;font-weight:740;line-height:.94;letter-spacing:-.065em;text-align:center}
+  .quiet-footer__brand span{display:block}
+  .quiet-footer__socials{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:48px}
+  .quiet-footer__socials a{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--paper);transition:background .2s,color .2s}
+  .quiet-footer__socials a:hover{background:var(--yellow);color:var(--ink)}
+  .quiet-footer__legal{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 28px;margin-top:26px;color:var(--muted);font-size:11px}
+  .quiet-footer__legal nav{display:flex;gap:22px}
+  .quiet-footer__legal a{display:inline-flex;align-items:center;min-height:44px}
+  .quiet-footer__legal a:hover{text-decoration:underline;text-underline-offset:4px}
+  .quiet-footer__status{text-align:center;color:var(--muted);font-size:10px;margin-top:4px}
+  @media(max-width:1000px){.quiet-footer__row{grid-template-columns:1fr;gap:24px}.quiet-footer__brand{grid-row:1}.quiet-footer__nav{justify-content:center;gap:32px}.quiet-footer__socials{margin-top:32px}}
+  @media(max-width:600px){.site-footer.site-footer--quiet{padding-block:72px 28px}.quiet-footer__row{gap:16px}.quiet-footer__brand{font-size:29px;margin-bottom:12px}.quiet-footer__nav{gap:22px}.quiet-footer__nav a{font-size:11px;gap:6px}.quiet-footer__nav svg{width:15px;height:15px}.quiet-footer__legal{gap:0 20px;margin-top:24px}.quiet-footer__legal p{width:100%;text-align:center}.quiet-footer__status{margin-top:4px}}
 </style>

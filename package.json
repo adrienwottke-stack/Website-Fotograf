@@ -6,15 +6,36 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "build:vercel": "astro build --config astro.vercel.config.mjs",
+    "preview": "astro preview",
+    "start": "node --env-file-if-exists=.env dist/server/entry.mjs",
+    "test:contact": "node --test tests/contact.test.mjs",
+    "media:select": "node scripts/select-media.mjs",
+    "media:export": "node scripts/export-media.mjs"
   },
   "dependencies": {
+    "@astrojs/node": "^9.5.5",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/vercel": "8.2.11",
     "@fontsource-variable/archivo": "^5.3.0",
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",
     "@fontsource-variable/fraunces": "^5.3.0",
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@fontsource-variable/newsreader": "^5.3.0",
     "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
-    "astro": "^5.18.2"
+    "astro": "^5.18.2",
+    "framer-motion": "^14.7.1",
+    "gsap": "^3.15.0",
+    "lucide-react": "^1.64.0",
+    "nodemailer": "^10.3.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "mailparser": "^3.14.1",
+    "smtp-server": "^3.21.3"
   }
 }

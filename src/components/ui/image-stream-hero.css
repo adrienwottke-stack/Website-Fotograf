@@ -1,0 +1,10 @@
+.image-stream{position:relative;overflow:hidden}
+.image-stream__projection{position:absolute;inset:0;pointer-events:none}
+.image-stream__space{position:absolute;inset:0;transform-style:preserve-3d}
+.image-stream__card{position:absolute;overflow:hidden;backface-visibility:hidden;animation-timing-function:linear;animation-iteration-count:infinite;background:var(--butter)}
+.image-stream__card picture,.image-stream__card img{display:block;width:100%;height:100%}
+.image-stream__card img{object-fit:cover}
+.image-stream__card[data-stream-dormant]{display:none}
+.stream-hero[data-paused] .image-stream__card{animation-play-state:paused}
+.stream-hero:has(a:focus-visible) .image-stream__card{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.stream-hero .image-stream__card{animation-play-state:paused}}
