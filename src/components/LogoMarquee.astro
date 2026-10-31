@@ -1,0 +1,43 @@
+---
+import { logos } from '../data/logos.generated.json';
+import '../styles/logo-marquee.css';
+---
+<section class="logo-marquee" data-logo-marquee aria-label="Kunden, Creator und Projekte">
+  <div class="logo-marquee__heading">
+    <h2>Kunden, Creator &amp; Projekte.</h2>
+    <button class="logo-marquee__pause" type="button" aria-label="Logo-Animation pausieren" aria-pressed="false" data-logo-pause>
+      <svg class="logo-marquee__pause-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" /></svg>
+      <svg class="logo-marquee__play-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5z" fill="currentColor" /></svg>
+      <span data-logo-pause-label>Pause</span>
+    </button>
+  </div>
+  <div class="logo-marquee__viewport">
+    <div class="logo-marquee__track">
+      {[0, 1].map(copy => <ul class="logo-marquee__group" aria-hidden={copy === 1 ? 'true' : undefined}>
+        {logos.map(logo => <li class:list={['logo-marquee__item', { 'logo-marquee__item--dark': logo.dark }]} style={`--logo-width:${logo.variants[0].width}px`}>
+          <img src={logo.variants[0].src} srcset={logo.variants.map(variant => `${variant.src} ${variant.density}x`).join(', ')} width={logo.variants[0].width} height={logo.variants[0].height} alt={copy === 0 ? logo.name : ''} loading="lazy" decoding="async" />
+        </li>)}
+      </ul>)}
+    </div>
+  </div>
+</section>
+<script>
+  let controller: AbortController | undefined;
+  function initLogoMarquee() {
+    controller?.abort();
+    controller = new AbortController();
+    document.querySelectorAll<HTMLElement>('[data-logo-marquee]').forEach(root => {
+      const button = root.querySelector<HTMLButtonElement>('[data-logo-pause]');
+      button?.addEventListener('click', () => {
+        const paused = root.dataset.paused !== 'true';
+        root.dataset.paused = String(paused);
+        button.setAttribute('aria-pressed', String(paused));
+        button.setAttribute('aria-label', paused ? 'Logo-Animation fortsetzen' : 'Logo-Animation pausieren');
+        root.querySelector('[data-logo-pause-label]')!.textContent = paused ? 'Weiter' : 'Pause';
+      }, { signal: controller!.signal });
+    });
+  }
+  initLogoMarquee();
+  document.addEventListener('astro:page-load', initLogoMarquee);
+  document.addEventListener('astro:before-swap', () => controller?.abort());
+</script>

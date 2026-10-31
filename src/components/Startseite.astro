@@ -3,6 +3,7 @@ import MediaImage from './MediaImage.astro';
 import ThemeShowcase from './ThemeShowcase.astro';
 import FilmSection from './FilmSection.astro';
 import ProjectSection from './ProjectSection.astro';
+import LogoMarquee from './LogoMarquee.astro';
 import ContactBanner from './ContactBanner.astro';
 import Header from './Header.astro';
 import HeroControls from './HeroControls.astro';
@@ -13,6 +14,7 @@ import '../styles/hero-immersive.css';
 import { ImageTrail } from './ui/image-trail';
 import '../styles/hero-trail.css';
 import { first, collection, services } from '../data/portfolio';
+const heroBackdrop = collection('sandro')[2];
 const trailPhotos = heroPhotos;
 const trailImages = trailPhotos.map(image => image.preview.find(variant => variant.width >= 600)?.src ?? image.preview.at(-1)!.src);
 const trailSources = trailPhotos.map(image => ({
@@ -24,15 +26,16 @@ const { heroVariant = 'trail' } = Astro.props;
 ---
 {heroVariant === 'stream' ? <HeroStream /> : (
 <section class="hero hero--trail hero--immersive" data-hero aria-labelledby="hero-name">
+  <div class="hero-backdrop" aria-hidden="true"><MediaImage image={heroBackdrop} eager priority role="display" sizes="100vw" alt="" position="48% 46%" /></div>
   <HeroControls />
   <div class="hero-stage" data-hero-trail-stage>
     <ImageTrail client:media="(min-width: 701px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)" images={trailImages} sources={trailSources} imageWidth={280} imageHeight={360} threshold={80} duration={2.6} />
     <h1 class="hero-accessible-title" id="hero-name">Sandro Mondini – Foto und Film</h1>
-    <div class="hero-idle-name" aria-hidden="true"><span>Sandro</span><span>Mondini.</span></div>
-    <a href="/arbeiten/themen/fahrzeuge" class="hero-window hero-window--auto" aria-label="Fahrzeugfotografie entdecken"><MediaImage image={first('fahrzeuge')} eager priority sizes="(max-width: 700px) 69vw, 40vw" /><span class="hero-window__tag">Fahrzeuge <span aria-hidden="true">↗</span></span></a>
-    <a href="/arbeiten/themen/people" class="hero-window hero-window--people" aria-label="People-Fotografie entdecken"><MediaImage image={first('people')} eager sizes="(max-width: 700px) 60vw, 34vw" position="50% 35%" /><span class="hero-window__tag">People <span aria-hidden="true">↗</span></span></a>
-    <a href="/arbeiten/themen/events" class="hero-window hero-window--event" aria-label="Eventbegleitungen entdecken"><MediaImage image={first('events')} eager sizes="(max-width: 700px) 76vw, 39vw" position="50% 45%" /><span class="hero-window__tag">Events <span aria-hidden="true">↗</span></span></a>
-    <a href="/arbeiten/themen/hochzeiten" class="hero-window hero-window--wedding" aria-label="Hochzeitsfotografie entdecken"><MediaImage image={first('hochzeiten')} eager sizes="(max-width: 700px) 48vw, 29vw" /><span class="hero-window__tag">Hochzeiten <span aria-hidden="true">↗</span></span></a>
+    <div class="hero-idle-name" aria-hidden="true"><span class="hero-idle-name__line">Sandro</span><span class="hero-idle-name__line">Mondini<span class="hero-idle-name__dot">.</span></span><p class="hero-idle-name__words">Kreativ. Echt. Eindrucksvoll.</p></div>
+    <a href="/arbeiten/themen/fahrzeuge" class="hero-window hero-window--auto" aria-label="Fahrzeugfotografie entdecken"><MediaImage image={first('fahrzeuge')} eager sizes="(max-width: 700px) 54vw, 40vw" /><span class="hero-window__tag">Fahrzeuge <span aria-hidden="true">↗</span></span></a>
+    <a href="/arbeiten/themen/people" class="hero-window hero-window--people" aria-label="People-Fotografie entdecken"><MediaImage image={first('people')} eager sizes="(max-width: 700px) 45vw, 34vw" position="50% 35%" /><span class="hero-window__tag">People <span aria-hidden="true">↗</span></span></a>
+    <a href="/arbeiten/themen/events" class="hero-window hero-window--event" aria-label="Eventbegleitungen entdecken"><MediaImage image={first('events')} eager sizes="(max-width: 700px) 58vw, 39vw" position="50% 45%" /><span class="hero-window__tag">Events <span aria-hidden="true">↗</span></span></a>
+    <a href="/arbeiten/themen/hochzeiten" class="hero-window hero-window--wedding" aria-label="Hochzeitsfotografie entdecken"><MediaImage image={first('hochzeiten')} eager sizes="(max-width: 700px) 42vw, 29vw" /><span class="hero-window__tag">Hochzeiten <span aria-hidden="true">↗</span></span></a>
   </div>
   <HeroPhotoBrowse />
 </section>
@@ -40,6 +43,7 @@ const { heroVariant = 'trail' } = Astro.props;
 <div id="entdecken"><Header /></div>
 <ThemeShowcase />
 <FilmSection />
+<LogoMarquee />
 <ProjectSection />
 <section class="section section--butter"><div class="wrap"><div class="section-heading"><h2>Was wir zusammen<br />machen können.</h2><p>Eine Idee, ein ganzer Dreh oder Unterstützung für dein Team.</p></div><div class="service-list">{services.map(service=><a class="service-row" href={`/leistungen#${service.id}`}><h3>{service.name}</h3><p>{service.text}</p><span aria-hidden="true">↗</span></a>)}</div></div></section>
 <section id="sandro" class="section about-teaser window-personal"><div class="wrap about-teaser__inner"><div class="about-images"><div class="about-portrait"><MediaImage image={first('sandro')} sizes="(max-width: 700px) 70vw, (max-width: 1000px) 60vw, 31vw" /></div><div class="about-work"><MediaImage image={collection('sandro')[1]} sizes="(max-width: 700px) 66vw, (max-width: 1000px) 50vw, 27vw" /></div></div><div class="about-teaser__copy window-dark window-contour"><h2>Hey.<br />Ich bin<br />Sandro.</h2><p>Technik, Medien und kreative Ideen haben mich schon immer begeistert. Aus den ersten Projekten mit Freunden wurde mein eigener Weg mit Foto und Film.</p><a class="text-link" href="/ueber-mich">Meine Geschichte <span aria-hidden="true">↗</span></a></div></div></section>

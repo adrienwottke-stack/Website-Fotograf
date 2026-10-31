@@ -1,0 +1,214 @@
+{
+  "logos": [
+    {
+      "key": "heidrich",
+      "name": "Autohaus Heidrich",
+      "dark": false,
+      "variants": [
+        {
+          "src": "/media/logo-heidrich-f8185aed88-1x.webp",
+          "width": 220,
+          "height": 81,
+          "bytes": 16138,
+          "density": 1
+        },
+        {
+          "src": "/media/logo-heidrich-f8185aed88-2x.webp",
+          "width": 440,
+          "height": 162,
+          "bytes": 38162,
+          "density": 2
+        }
+      ]
+    },
+    {
+      "key": "kxxma",
+      "name": "KXXMA",
+      "dark": false,
+      "variants": [
+        {
+          "src": "/media/logo-kxxma-dc70a562b2-1x.webp",
+          "width": 200,
+          "height": 49,
+          "bytes": 2986,
+          "density": 1
+        },
+        {
+          "src": "/media/logo-kxxma-dc70a562b2-2x.webp",
+          "width": 400,
+          "height": 98,
+          "bytes": 5942,
+          "density": 2
+        }
+      ]
+    },
+    {
+      "key": "green-eyes",
+      "name": "Green Eyes Media",
+      "dark": true,
+      "variants": [
+        {
+          "src": "/media/logo-green-eyes-bf52422003-1x.webp",
+          "width": 148,
+          "height": 90,
+          "bytes": 7790,
+          "density": 1
+        },
+        {
+          "src": "/media/logo-green-eyes-bf52422003-2x.webp",
+          "width": 296,
+          "height": 180,
+          "bytes": 26082,
+          "density": 2
+        }
+      ]
+    },
+    {
+      "key": "kekila",
+      "name": "Kekila",
+      "dark": false,
+      "variants": [
+        {
+          "src": "/media/logo-kekila-a9b2c986d5-1x.webp",
+          "width": 121,
+          "height": 90,
+          "bytes": 9116,
+          "density": 1
+        },
+        {
+          "src": "/media/logo-kekila-a9b2c986d5-2x.webp",
+          "width": 242,
+          "height": 180,
+          "bytes": 20452,
+          "density": 2
+        }
+      ]
+    },
+    {
+      "key": "jamina",
+      "name": "Jamina1404",
+      "dark": false,
+      "variants": [
+        {
+          "src": "/media/logo-jamina-154eae199d-1x.webp",
+          "width": 180,
+          "height": 32,
+          "bytes": 2684,
+          "density": 1
+        },
+        {
+          "src": "/media/logo-jamina-154eae199d-2x.webp",
+          "width": 360,
+          "height": 64,
+          "bytes": 5342,
+          "density": 2
+        }
+      ]
+    },
+    {
+      "key": "zixspeed",
+      "name": "Zixspeed Racing Team",
+      "dark": false,
+      "variants": [
+        {
+          "src": "/media/logo-zixspeed-39ccc52046-1x.webp",
+          "width": 230,
+          "height": 30,
+          "bytes": 8334,
+          "density": 1
+        },
+        {
+          "src": "/media/logo-zixspeed-39ccc52046-2x.webp",
+          "width": 460,
+          "height": 60,
+          "bytes": 19068,
+          "density": 2
+        }
+      ]
+    },
+    {
+      "key": "schalla-balla",
+      "name": "Schalla Balla",
+      "dark": false,
+      "variants": [
+        {
+          "src": "/media/logo-schalla-balla-879f68fd53-1x.webp",
+          "width": 88,
+          "height": 90,
+          "bytes": 8768,
+          "density": 1
+        },
+        {
+          "src": "/media/logo-schalla-balla-879f68fd53-2x.webp",
+          "width": 177,
+          "height": 180,
+          "bytes": 21374,
+          "density": 2
+        }
+      ]
+    },
+    {
+      "key": "schamo",
+      "name": "Schamo Beachparty",
+      "dark": false,
+      "variants": [
+        {
+          "src": "/media/logo-schamo-9f89a27a33-1x.webp",
+          "width": 155,
+          "height": 90,
+          "bytes": 9584,
+          "density": 1
+        },
+        {
+          "src": "/media/logo-schamo-9f89a27a33-2x.webp",
+          "width": 310,
+          "height": 180,
+          "bytes": 22722,
+          "density": 2
+        }
+      ]
+    },
+    {
+      "key": "lounge-oderwitz",
+      "name": "Lounge Oderwitz",
+      "dark": false,
+      "variants": [
+        {
+          "src": "/media/logo-lounge-oderwitz-b7d240c926-1x.webp",
+          "width": 61,
+          "height": 90,
+          "bytes": 3388,
+          "density": 1
+        },
+        {
+          "src": "/media/logo-lounge-oderwitz-b7d240c926-2x.webp",
+          "width": 122,
+          "height": 180,
+          "bytes": 9060,
+          "density": 2
+        }
+      ]
+    },
+    {
+      "key": "motorsport",
+      "name": "Motorsport-Signet",
+      "dark": false,
+      "variants": [
+        {
+          "src": "/media/logo-motorsport-c62a759d87-1x.webp",
+          "width": 79,
+          "height": 90,
+          "bytes": 3224,
+          "density": 1
+        },
+        {
+          "src": "/media/logo-motorsport-c62a759d87-2x.webp",
+          "width": 158,
+          "height": 180,
+          "bytes": 7446,
+          "density": 2
+        }
+      ]
+    }
+  ]
+}

@@ -21,8 +21,9 @@ const positions=[
     const portrait=image.height>image.width;
     const column=single?(portrait?'3 / span 8':'1 / -1'):slot.column;
     const size=single?(portrait?'65vw':'96vw'):slot.size;
+    const compactSize=`${Number((parseFloat(size)*.75).toFixed(2))}vw`;
     return <a class:list={['gallery-image',{'gallery-image--wide':image.width>image.height,'gallery-image--feature':layout==='grid'&&(i===3||i===8)}]} style={layout==='story'?`--story-column:${column};--story-row:${Math.floor(i/8)*5+slot.row};--story-offset:${single?'0px':slot.offset}`:undefined} href={image.display.at(-1)!.src} data-photo data-large={image.large.src} data-caption={image.alt} data-width={image.large.width} data-height={image.large.height} data-astro-reload aria-label={`${image.alt} – vergrößern`}>
-      <MediaImage image={image} role={layout==='story'?'editorial':'preview'} sizes={layout==='story'?`(max-width: 700px) 94vw, ${size}`:'(max-width: 700px) 100vw, 48vw'} />
+      <MediaImage image={image} role={layout==='story'?'editorial':'preview'} sizes={layout==='story'?`(max-width: 700px) 70.5vw, ${compactSize}`:'(max-width: 700px) 100vw, 48vw'} />
       <span class="gallery-enlarge" aria-hidden="true">↗</span>
     </a>;
   })}
