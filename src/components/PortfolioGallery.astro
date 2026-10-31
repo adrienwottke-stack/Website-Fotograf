@@ -3,6 +3,8 @@ import Base from '../layouts/Base.astro';
 import MediaImage from './MediaImage.astro';
 import PhotoGallery from './PhotoGallery.astro';
 import FilmCard from './FilmCard.astro';
+import CutoutImage from './CutoutImage.astro';
+import '../styles/cutout-experiments.css';
 import type { Photo, Film } from '../data/portfolio';
 import '../styles/portfolio-gallery.css';
 
@@ -21,16 +23,18 @@ interface Props {
 }
 const {name,subtitle,description,cover,images,backHref,backLabel,next,movie,tags=[],themeSlug}=Astro.props;
 const nextLabel=themeSlug?'Nächstes Thema':'Nächstes Projekt';
+const hasKartCutout=!themeSlug && name==='Zixspeedracing';
 ---
 <Base title={name} description={description} gallery>
   <div class="portfolio-backdrop" aria-hidden="true">
     <MediaImage image={cover} role="editorial" sizes="100vw" eager priority alt="" position={themeSlug==='people'?'50% 35%':'50% 50%'} />
     <span class="portfolio-backdrop__name">Mondini</span>
   </div>
-  <header class="portfolio-hero">
+  <header class:list={['portfolio-hero',{'portfolio-hero--cutout':hasKartCutout}]}>
     <a class="portfolio-back" href={backHref}><span aria-hidden="true">←</span> {backLabel}</a>
+    {hasKartCutout && <div class="portfolio-hero__cutout" aria-hidden="true"><CutoutImage name="kart" sizes="(max-width: 700px) 90vw, 55vw" eager alt="" /></div>}
     <div class="portfolio-hero__title">
-      <h1>{name}</h1>
+      <h1>{hasKartCutout?<><span>Zixspeed</span><span>racing</span></>:name}</h1>
       <div class="portfolio-hero__bottom"><p>{subtitle}</p><a href="#bilder" class="portfolio-scroll">{images.length} Fotografien <span aria-hidden="true">↓</span></a></div>
     </div>
   </header>

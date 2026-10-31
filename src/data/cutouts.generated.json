@@ -1,0 +1,173 @@
+{
+  "cutouts": {
+    "sandroPortrait": {
+      "width": 1126,
+      "height": 2056,
+      "alt": "Sandro im grünen Hemd",
+      "variants": [
+        {
+          "src": "/media/cutout-sandroPortrait-6000892a2f80-360.webp",
+          "width": 360,
+          "height": 657,
+          "bytes": 46014
+        },
+        {
+          "src": "/media/cutout-sandroPortrait-6000892a2f80-600.webp",
+          "width": 600,
+          "height": 1096,
+          "bytes": 111316
+        },
+        {
+          "src": "/media/cutout-sandroPortrait-6000892a2f80-900.webp",
+          "width": 900,
+          "height": 1643,
+          "bytes": 226364
+        }
+      ]
+    },
+    "sandroCamera": {
+      "width": 1232,
+      "height": 1310,
+      "alt": "Sandro mit Kamera und Gimbal",
+      "variants": [
+        {
+          "src": "/media/cutout-sandroCamera-873a3a4a8d5a-360.webp",
+          "width": 360,
+          "height": 383,
+          "bytes": 28312
+        },
+        {
+          "src": "/media/cutout-sandroCamera-873a3a4a8d5a-600.webp",
+          "width": 600,
+          "height": 638,
+          "bytes": 52178
+        },
+        {
+          "src": "/media/cutout-sandroCamera-873a3a4a8d5a-900.webp",
+          "width": 900,
+          "height": 957,
+          "bytes": 87232
+        }
+      ]
+    },
+    "sandroFull": {
+      "width": 520,
+      "height": 1449,
+      "alt": "Sandro steht mit seiner Kamera",
+      "variants": [
+        {
+          "src": "/media/cutout-sandroFull-f0606f0b9476-360.webp",
+          "width": 360,
+          "height": 1003,
+          "bytes": 55130
+        },
+        {
+          "src": "/media/cutout-sandroFull-f0606f0b9476-520.webp",
+          "width": 520,
+          "height": 1449,
+          "bytes": 79562
+        }
+      ]
+    },
+    "audi": {
+      "width": 658,
+      "height": 344,
+      "alt": "Schwarzer Audi Kombi",
+      "variants": [
+        {
+          "src": "/media/cutout-audi-bcc0de1990d1-360.webp",
+          "width": 360,
+          "height": 188,
+          "bytes": 18802
+        },
+        {
+          "src": "/media/cutout-audi-bcc0de1990d1-600.webp",
+          "width": 600,
+          "height": 314,
+          "bytes": 38600
+        },
+        {
+          "src": "/media/cutout-audi-bcc0de1990d1-658.webp",
+          "width": 658,
+          "height": 344,
+          "bytes": 38460
+        }
+      ]
+    },
+    "kart": {
+      "width": 648,
+      "height": 281,
+      "alt": "Rotes Kart mit Fahrer",
+      "variants": [
+        {
+          "src": "/media/cutout-kart-483b878ef175-360.webp",
+          "width": 360,
+          "height": 156,
+          "bytes": 19754
+        },
+        {
+          "src": "/media/cutout-kart-483b878ef175-600.webp",
+          "width": 600,
+          "height": 260,
+          "bytes": 38914
+        },
+        {
+          "src": "/media/cutout-kart-483b878ef175-648.webp",
+          "width": 648,
+          "height": 281,
+          "bytes": 33252
+        }
+      ]
+    },
+    "supra": {
+      "width": 1329,
+      "height": 632,
+      "alt": "Weißer Toyota Supra",
+      "variants": [
+        {
+          "src": "/media/cutout-supra-b576a752a1ed-360.webp",
+          "width": 360,
+          "height": 171,
+          "bytes": 16368
+        },
+        {
+          "src": "/media/cutout-supra-b576a752a1ed-600.webp",
+          "width": 600,
+          "height": 285,
+          "bytes": 32684
+        },
+        {
+          "src": "/media/cutout-supra-b576a752a1ed-900.webp",
+          "width": 900,
+          "height": 428,
+          "bytes": 57912
+        }
+      ]
+    },
+    "bmw": {
+      "width": 1258,
+      "height": 620,
+      "alt": "Goldener BMW",
+      "variants": [
+        {
+          "src": "/media/cutout-bmw-ca544675f963-360.webp",
+          "width": 360,
+          "height": 177,
+          "bytes": 21190
+        },
+        {
+          "src": "/media/cutout-bmw-ca544675f963-600.webp",
+          "width": 600,
+          "height": 296,
+          "bytes": 45458
+        },
+        {
+          "src": "/media/cutout-bmw-ca544675f963-900.webp",
+          "width": 900,
+          "height": 444,
+          "bytes": 85242
+        }
+      ]
+    }
+  }
+}

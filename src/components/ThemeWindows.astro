@@ -1,6 +1,8 @@
 ---
 import { themes } from '../data/portfolio';
 import MediaImage from './MediaImage.astro';
+import CutoutImage from './CutoutImage.astro';
+import '../styles/cutout-experiments.css';
 import backdrop from '../data/theme-backdrop.generated.json';
 import '../styles/theme-scene.css';
 interface Props { compact?: boolean; heading?: boolean }
@@ -17,11 +19,12 @@ const sources = (variants: typeof backdrop.landscape) => variants.map(image => `
   <div class="wrap theme-scene__content">
     {heading && <div class="theme-scene__heading"><h2>Worauf hast<br />du einen Blick?</h2><p>Menschen. Motoren. Mittendrin.<br />Such dir eine Welt aus.</p></div>}
     <div class="theme-scene__windows">
-      {themes.map(theme => <a class={`theme-scene__window theme-scene__window--${theme.slug}`} href={`/arbeiten/themen/${theme.slug}`} data-window-link={theme.slug} aria-label={`${theme.name} – ${theme.note}`}>
+      {themes.map(theme => <a id={`thema-${theme.slug}`} class:list={['theme-scene__window',`theme-scene__window--${theme.slug}`,{'theme-scene__window--cutout':theme.slug==='fahrzeuge'}]} href={`/arbeiten/themen/${theme.slug}`} data-window-link={theme.slug} aria-label={`${theme.name} – ${theme.note}`}>
         <div class="theme-scene__photo" data-shared-image={theme.slug} transition:name={`theme-${theme.slug}`}>
           <MediaImage image={theme.cover} sizes="(max-width: 700px) 82vw, (max-width: 1000px) 40vw, 23vw" />
           <h3>{theme.name}</h3>
         </div>
+        {theme.slug==='fahrzeuge' && <div class="theme-scene__cutout" aria-hidden="true"><CutoutImage name="supra" sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 31vw" alt="" /></div>}
       </a>)}
     </div>
   </div>
