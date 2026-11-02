@@ -3,28 +3,22 @@ import MediaImage from './MediaImage.astro';
 import type { Photo } from '../data/portfolio';
 interface Props { images:Photo[]; name:string; layout?:'grid'|'story' }
 const { images,name,layout='grid' }=Astro.props;
-const positions=[
-  {column:'1 / span 5',row:1,offset:'7vw',size:'41vw'},
-  {column:'6 / span 7',row:1,offset:'0px',size:'57vw'},
-  {column:'2 / span 10',row:2,offset:'0px',size:'81vw'},
-  {column:'1 / span 7',row:3,offset:'0px',size:'57vw'},
-  {column:'8 / span 5',row:3,offset:'10vw',size:'41vw'},
-  {column:'1 / -1',row:4,offset:'0px',size:'96vw'},
-  {column:'1 / span 5',row:5,offset:'0px',size:'41vw'},
-  {column:'6 / span 7',row:5,offset:'8vw',size:'57vw'},
-];
+// Proportional columns align upper/lower edges without cropping the photographs.
+const rows=Array.from({length:Math.ceil(images.length/3)},(_,row)=>images.slice(row*3,row*3+3));
+const ratio=(image:Photo)=>image.width/image.height;
+// Keep the track weights above one in total: a lone 0.67fr track would
+// otherwise occupy only two thirds of its already height-limited row.
+const columns=(row:Photo[])=>{
+  const total=row.reduce((sum,image)=>sum+ratio(image),0);
+  return row.map(image=>`minmax(0, ${100*ratio(image)/total}fr)`).join(' ');
+};
+const imageSizes=(image:Photo)=>`(max-width: 700px) ${ratio(image)>1?'94':'46'}vw, (max-width: 1100px) ${ratio(image)>1?'44':'30'}vw, ${ratio(image)>1?'540':'360'}px`;
 ---
 <div class:list={['photo-gallery',{'photo-gallery--story':layout==='story'}]} data-gallery aria-label={name}>
-  {images.map((image,i)=>{
-    const slot=positions[i%positions.length];
-    const single=i%8===2||i%8===5||i===images.length-1&&[0,3,6].includes(i%8);
-    const portrait=image.height>image.width;
-    const column=single?(portrait?'3 / span 8':'1 / -1'):slot.column;
-    const size=single?(portrait?'65vw':'96vw'):slot.size;
-    const compactSize=`${Number((parseFloat(size)*.75).toFixed(2))}vw`;
-    return <a class:list={['gallery-image',{'gallery-image--wide':image.width>image.height,'gallery-image--feature':layout==='grid'&&(i===3||i===8)}]} style={layout==='story'?`--story-column:${column};--story-row:${Math.floor(i/8)*5+slot.row};--story-offset:${single?'0px':slot.offset}`:undefined} href={image.display.at(-1)!.src} data-photo data-large={image.large.src} data-caption={image.alt} data-width={image.large.width} data-height={image.large.height} data-astro-reload aria-label={`${image.alt} – vergrößern`}>
-      <MediaImage image={image} role={layout==='story'?'editorial':'preview'} sizes={layout==='story'?`(max-width: 700px) 70.5vw, ${compactSize}`:'(max-width: 700px) 100vw, 48vw'} />
+  {rows.map((row,rowIndex)=><div class="photo-gallery__row" style={`--row-ratio:${row.reduce((sum,image)=>sum+ratio(image),0)};--row-gaps:${row.length-1};grid-template-columns:${columns(row)};${row.length<3?'--row-max-height:360px;':''}`}>
+    {row.map((image,index)=><a class:list={['gallery-image',{'gallery-image--wide':image.width>image.height}]} style={`--photo-ratio:${ratio(image)}`} href={image.large.src} data-photo data-large={image.large.src} data-caption={image.alt} data-width={image.large.width} data-height={image.large.height} data-astro-reload aria-label={`${image.alt} – vergrößern`}>
+      <MediaImage image={image} role="preview" sizes={imageSizes(image)} eager={rowIndex===0&&index<3} />
       <span class="gallery-enlarge" aria-hidden="true">↗</span>
-    </a>;
-  })}
+    </a>)}
+  </div>)}
 </div>

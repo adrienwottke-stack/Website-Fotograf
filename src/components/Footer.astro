@@ -1,6 +1,8 @@
 ---
 import { contactEmail } from '../data/portfolio';
 import { House, Images, PanelsTopLeft, Clapperboard, UserRound, Mail } from 'lucide-react';
+interface Props { pilot?: boolean }
+const { pilot = false } = Astro.props;
 const home=['/','/hero-2','/hero-2/'].includes(Astro.url.pathname)?'':'/';
 const leftLinks = [
   { href:'/',label:'Start',icon:House },
@@ -14,7 +16,7 @@ const rightLinks = [
 ];
 const year = new Date().getFullYear();
 ---
-<footer id="seitenabschluss" class="site-footer site-footer--quiet">
+<footer id="seitenabschluss" class:list={['site-footer', 'site-footer--quiet', { 'site-footer--pilot': pilot }]}>
   <div class="wrap quiet-footer">
     <div class="quiet-footer__row">
       <nav class="quiet-footer__nav" aria-label="Themen und Projekte im Footer">

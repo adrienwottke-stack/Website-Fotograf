@@ -10,15 +10,15 @@ const cover = (project: typeof projects[number]) => project.slug === 'kxxma' ? p
   {projects.map(project => (
     <a class="project-index__item" href={`/arbeiten/${project.slug}`} aria-label={`${project.name}: Projekt ansehen`}>
       <div class="project-index__image">
-        <MediaImage image={cover(project)} role="editorial" sizes="(max-width: 700px) 100vw, 50vw" position={focus[project.slug]} />
+        <MediaImage image={cover(project)} role="editorial" sizes="(max-width: 700px) 100vw, 80vw" position={focus[project.slug]} />
       </div>
       <div class="project-index__caption">
-        <h3 class="project-index__roll">
-          <span>{project.name}</span><span class="project-index__copy" aria-hidden="true">{project.name}</span>
+        <h3 class="project-index__title">
+          {project.slug === 'zixspeedracing' ? <>Zixspeed<wbr />racing</> : project.name}
         </h3>
         <p class="project-index__category">{project.category}</p>
         <span class="project-index__open">
-          <span class="project-index__roll"><span>Projekt ansehen</span><span class="project-index__copy" aria-hidden="true">Projekt ansehen</span></span>
+          <span>Projekt ansehen</span>
           <span class="project-index__arrow" aria-hidden="true">↗</span>
         </span>
       </div>

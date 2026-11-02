@@ -2,42 +2,69 @@
 import { logos } from '../data/logos.generated.json';
 import '../styles/logo-marquee.css';
 ---
-<section class="logo-marquee" data-logo-marquee aria-label="Kunden, Creator und Projekte">
-  <div class="logo-marquee__heading">
-    <h2>Kunden, Creator &amp; Projekte.</h2>
-    <button class="logo-marquee__pause" type="button" aria-label="Logo-Animation pausieren" aria-pressed="false" data-logo-pause>
-      <svg class="logo-marquee__pause-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" /></svg>
-      <svg class="logo-marquee__play-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5z" fill="currentColor" /></svg>
-      <span data-logo-pause-label>Pause</span>
-    </button>
-  </div>
-  <div class="logo-marquee__viewport">
-    <div class="logo-marquee__track">
-      {[0, 1].map(copy => <ul class="logo-marquee__group" aria-hidden={copy === 1 ? 'true' : undefined}>
-        {logos.map(logo => <li class:list={['logo-marquee__item', { 'logo-marquee__item--dark': logo.dark }]} style={`--logo-width:${logo.variants[0].width}px`}>
-          <img src={logo.variants[0].src} srcset={logo.variants.map(variant => `${variant.src} ${variant.density}x`).join(', ')} width={logo.variants[0].width} height={logo.variants[0].height} alt={copy === 0 ? logo.name : ''} loading="lazy" decoding="async" />
-        </li>)}
-      </ul>)}
+<section class="logo-marquee" data-logo-marquee aria-labelledby="logo-title">
+  <div class="logo-marquee__heading"><h2 id="logo-title">Kunden, Creator &amp; Projekte.</h2></div>
+  <div class="logo-marquee__row">
+    <button class="logo-marquee__arrow" type="button" data-logo-prev aria-label="Ein Logo zurück" disabled><span aria-hidden="true">←</span></button>
+    <div class="logo-marquee__viewport" tabindex="0" role="region" aria-label="Logos, mit Pfeiltasten oder den Schaltflächen durchsehen">
+      <ul class="logo-marquee__track">{logos.map(logo=><li class:list={['logo-marquee__item',{'logo-marquee__item--dark':logo.dark}]}><img src={logo.variants[0].src} srcset={logo.variants.map(v=>`${v.src} ${v.density}x`).join(', ')} width={logo.variants[0].width} height={logo.variants[0].height} alt={logo.name} loading="lazy" decoding="async" /></li>)}</ul>
     </div>
+    <button class="logo-marquee__arrow" type="button" data-logo-next aria-label="Ein Logo weiter"><span aria-hidden="true">→</span></button>
   </div>
 </section>
 <script>
-  let controller: AbortController | undefined;
-  function initLogoMarquee() {
+  let controller: AbortController;
+
+  function initLogos() {
     controller?.abort();
     controller = new AbortController();
+    const { signal } = controller;
+
     document.querySelectorAll<HTMLElement>('[data-logo-marquee]').forEach(root => {
-      const button = root.querySelector<HTMLButtonElement>('[data-logo-pause]');
-      button?.addEventListener('click', () => {
-        const paused = root.dataset.paused !== 'true';
-        root.dataset.paused = String(paused);
-        button.setAttribute('aria-pressed', String(paused));
-        button.setAttribute('aria-label', paused ? 'Logo-Animation fortsetzen' : 'Logo-Animation pausieren');
-        root.querySelector('[data-logo-pause-label]')!.textContent = paused ? 'Weiter' : 'Pause';
-      }, { signal: controller!.signal });
+      const viewport = root.querySelector<HTMLElement>('.logo-marquee__viewport')!;
+      const track = root.querySelector<HTMLElement>('.logo-marquee__track')!;
+      const item = root.querySelector<HTMLElement>('.logo-marquee__item')!;
+      const previous = root.querySelector<HTMLButtonElement>('[data-logo-prev]')!;
+      const next = root.querySelector<HTMLButtonElement>('[data-logo-next]')!;
+      let requestedLeft: number | null = null;
+      const maxScroll = () => Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+      const updateControls = () => {
+        previous.disabled = viewport.scrollLeft <= 1;
+        next.disabled = viewport.scrollLeft >= maxScroll() - 1;
+      };
+      const step = (direction: number) => {
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        // Accumulate rapid clicks against the requested position while scrolling.
+        const left = Math.min(maxScroll(), Math.max(0,
+          (requestedLeft ?? viewport.scrollLeft) + direction * (item.getBoundingClientRect().width + gap)));
+        requestedLeft = left;
+        viewport.scrollTo({ left, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+        updateControls();
+      };
+
+      previous.addEventListener('click', () => step(-1), { signal });
+      next.addEventListener('click', () => step(1), { signal });
+      viewport.addEventListener('keydown', event => {
+        if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+          event.preventDefault();
+          step(event.key === 'ArrowRight' ? 1 : -1);
+        }
+      }, { signal });
+      viewport.addEventListener('scroll', () => {
+        if (requestedLeft !== null && Math.abs(viewport.scrollLeft - requestedLeft) <= 1) requestedLeft = null;
+        updateControls();
+      }, { signal, passive: true });
+      const cancelRequest = () => { requestedLeft = null; };
+      viewport.addEventListener('pointerdown', cancelRequest, { signal, passive: true });
+      viewport.addEventListener('wheel', cancelRequest, { signal, passive: true });
+      const resizeObserver = new ResizeObserver(() => { requestedLeft = null; updateControls(); });
+      resizeObserver.observe(viewport);
+      signal.addEventListener('abort', () => resizeObserver.disconnect(), { once: true });
+      updateControls();
     });
   }
-  initLogoMarquee();
-  document.addEventListener('astro:page-load', initLogoMarquee);
+
+  initLogos();
+  document.addEventListener('astro:page-load', initLogos);
   document.addEventListener('astro:before-swap', () => controller?.abort());
 </script>

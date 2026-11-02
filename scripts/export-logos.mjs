@@ -8,7 +8,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 // Private originals are downloaded with the authenticated Drive connector.
 // Alternative colour versions represent the same mark and are not repeated.
 const selection = [
-  { id: '1C795EFCBkzrG9VV6KgMFGdqELeS7sYP3', ext: 'jpg', key: 'heidrich', name: 'Autohaus Heidrich', background: [255, 255, 255], width: 220 },
+  { id: '1C795EFCBkzrG9VV6KgMFGdqELeS7sYP3', ext: 'jpg', key: 'heidrich', name: 'Autohaus Heidrich', background: [255, 255, 255], keepBackground: true, width: 220 },
   { id: '1z5kgRfxlb1rd479aZqbzKMVoXLiBPUhg', ext: 'png', key: 'kxxma', name: 'KXXMA', width: 200 },
   { id: '1YrUctqrpIp9K6sR6H9Zj-guSOWQvyxUr', ext: 'png', key: 'green-eyes', name: 'Green Eyes Media', dark: true, width: 150 },
   { id: '1FM1TCg6u5lqGdtWHgp0xkfrvBoW3blzb', ext: 'png', key: 'kekila', name: 'Kekila', width: 138 },
@@ -45,15 +45,17 @@ function clearExterior(data, width, height, background) {
 }
 
 const logos = [];
-for (const entry of selection) {
+const only = process.argv.find(arg => arg.startsWith('--only='))?.split('=')[1];
+if (only && !selection.some(entry => entry.key === only)) throw new Error('Unknown logo selection');
+for (const entry of selection.filter(entry => !only || entry.key === only)) {
   const source = path.join(root, '.cache/logo-originals', `${entry.id}.${entry.ext}`);
   const bytes = await fs.readFile(source);
   let prepared = await sharp(bytes).rotate().toColourspace('srgb')
     .resize({ width: 1200, height: 1200, fit: 'inside', withoutEnlargement: true })
     .ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-  if (entry.background) clearExterior(prepared.data, prepared.info.width, prepared.info.height, entry.background);
+  if (entry.background && !entry.keepBackground) clearExterior(prepared.data, prepared.info.width, prepared.info.height, entry.background);
   const trimmed = await sharp(prepared.data, { raw: prepared.info }).trim({ threshold: 8 }).png().toBuffer();
-  const hash = crypto.createHash('sha256').update(bytes).update('logo-lossless-v1').digest('hex').slice(0, 10);
+  const hash = crypto.createHash('sha256').update(bytes).update(entry.keepBackground ? 'logo-original-white-v2' : 'logo-lossless-v1').digest('hex').slice(0, 10);
   const variants = [];
   for (const density of [1, 2]) {
     const output = await sharp(trimmed).resize({ width: entry.width * density, height: 90 * density, fit: 'inside', withoutEnlargement: true })
@@ -64,10 +66,11 @@ for (const entry of selection) {
   }
   logos.push({ key: entry.key, name: entry.name, dark: entry.dark ?? false, variants });
 }
-await fs.writeFile(path.join(root, 'src/data/logos.generated.json'), JSON.stringify({ logos }, null, 2) + '\n');
-await fs.mkdir(path.join(root, 'analyse/2026-10-31-update'), { recursive: true });
-await fs.writeFile(path.join(root, 'analyse/2026-10-31-update/logo-export.json'), JSON.stringify({
+const merged = only ? JSON.parse(await fs.readFile(path.join(root, 'src/data/logos.generated.json'), 'utf8')).logos.map(logo => logos.find(item => item.key === logo.key) ?? logo) : logos;
+await fs.writeFile(path.join(root, 'src/data/logos.generated.json'), JSON.stringify({ logos: merged }, null, 2) + '\n');
+await fs.mkdir(path.join(root, 'analyse/feedback-runde-01/implementation/AP-08'), { recursive: true });
+await fs.writeFile(path.join(root, 'analyse/feedback-runde-01/implementation/AP-08/logo-export.json'), JSON.stringify({
   exportedAt: new Date().toISOString(), selection, logos,
-  note: '10 different supplied marks. Fullface is an unidentified motorsport signet; no client attribution is inferred. Logos retain original colours. JPEG exterior backgrounds removed, transparent padding trimmed; final WebP encoding lossless.'
+  note: 'Supplied marks retain original colours. Heidrich keeps its supplied white ground to preserve enclosed shapes on the white logo strip. Only selected originals are re-exported when --only is set. Lossless WebP, originals private.'
 }, null, 2) + '\n');
 console.log(JSON.stringify({ marks: logos.length, variants: logos.length * 2, bytes: logos.reduce((total, logo) => total + logo.variants.reduce((sum, v) => sum + v.bytes, 0), 0) }));

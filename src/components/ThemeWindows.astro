@@ -3,29 +3,47 @@ import { themes } from '../data/portfolio';
 import MediaImage from './MediaImage.astro';
 import CutoutImage from './CutoutImage.astro';
 import '../styles/cutout-experiments.css';
-import backdrop from '../data/theme-backdrop.generated.json';
 import '../styles/theme-scene.css';
 interface Props { compact?: boolean; heading?: boolean }
 const { compact = false, heading = false } = Astro.props;
-const sources = (variants: typeof backdrop.landscape) => variants.map(image => `${image.src} ${image.width}w`).join(', ');
+// Native cover proportions create two justified rows; mobile reflows the same links.
+const rows = [themes.slice(0, 3), themes.slice(3)];
+const accents: Partial<Record<string, 'supra' | 'bmw'>> = {
+  fahrzeuge: 'supra',
+  autotreffen: 'bmw',
+};
+const imageSizes = (slug: string) => slug === 'events'
+  ? 'auto, (max-width: 900px) calc(100vw - 44px), (max-width: 1100px) 42vw, 510px'
+  : 'auto, (max-width: 900px) calc(50vw - 28px), (max-width: 1100px) 20vw, 240px';
 ---
 <section id={heading ? 'themen' : undefined} class:list={['theme-scene', { 'theme-scene--compact': compact }]} aria-label="Fotografische Themen">
-  <div class="theme-scene__backdrop" aria-hidden="true">
-    <picture>
-      <source media="(max-width: 700px)" srcset={sources(backdrop.portrait)} sizes="100vw" width={backdrop.portrait[0].width} height={backdrop.portrait[0].height} />
-      <img src={backdrop.landscape[0].src} srcset={sources(backdrop.landscape)} sizes="100vw" width={backdrop.landscape[0].width} height={backdrop.landscape[0].height} alt="" loading="lazy" decoding="async" />
-    </picture>
-  </div>
   <div class="wrap theme-scene__content">
-    {heading && <div class="theme-scene__heading"><h2>Worauf hast<br />du einen Blick?</h2><p>Menschen. Motoren. Mittendrin.<br />Such dir eine Welt aus.</p></div>}
+    {heading && <div class="theme-scene__heading">
+      <div class="theme-scene__title">
+        <p class="theme-scene__label">Fotografie</p>
+        <h2>Menschen, Fahrzeuge und Momente.</h2>
+      </div>
+      <p>Von Porträts über Events bis zu Autos: Hier findest du eine Auswahl meiner Fotos, nach Themen geordnet. Klick dich rein und schau dir an, was dich interessiert.</p>
+    </div>}
+    {!heading && <h2 class="theme-scene__label theme-scene__label--compact">Fotografie</h2>}
     <div class="theme-scene__windows">
-      {themes.map(theme => <a id={`thema-${theme.slug}`} class:list={['theme-scene__window',`theme-scene__window--${theme.slug}`,{'theme-scene__window--cutout':theme.slug==='fahrzeuge'}]} href={`/arbeiten/themen/${theme.slug}`} data-window-link={theme.slug} aria-label={`${theme.name} – ${theme.note}`}>
-        <div class="theme-scene__photo" data-shared-image={theme.slug} transition:name={`theme-${theme.slug}`}>
-          <MediaImage image={theme.cover} sizes="(max-width: 700px) 82vw, (max-width: 1000px) 40vw, 23vw" />
-          <h3>{theme.name}</h3>
-        </div>
-        {theme.slug==='fahrzeuge' && <div class="theme-scene__cutout" aria-hidden="true"><CutoutImage name="supra" sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 31vw" alt="" /></div>}
-      </a>)}
+      {rows.map(row => <div class="theme-scene__row" style={`grid-template-columns:${row.map(theme => `${theme.cover.width / theme.cover.height}fr`).join(' ')}`}>
+        {row.map(theme => <a
+          id={`thema-${theme.slug}`}
+          class:list={['theme-scene__window', `theme-scene__window--${theme.slug}`, { 'theme-scene__window--cutout': Boolean(accents[theme.slug]) }]}
+          href={`/arbeiten/themen/${theme.slug}`}
+          data-window-link={theme.slug}
+          aria-label={`${theme.name} – ${theme.note}`}
+        >
+          <div class="theme-scene__photo" data-shared-image={theme.slug} transition:name={`theme-${theme.slug}`}>
+            <MediaImage image={theme.cover} sizes={imageSizes(theme.slug)} />
+            <h3>{theme.name}</h3>
+          </div>
+          {accents[theme.slug] && <div class="theme-scene__cutout" aria-hidden="true">
+            <CutoutImage name={accents[theme.slug]!} sizes="auto, (max-width: 900px) calc(46vw - 26px), (max-width: 1100px) 19vw, 226px" alt="" />
+          </div>}
+        </a>)}
+      </div>)}
     </div>
   </div>
 </section>

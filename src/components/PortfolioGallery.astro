@@ -1,10 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
+import Middlepage from './Middlepage.astro';
 import MediaImage from './MediaImage.astro';
 import PhotoGallery from './PhotoGallery.astro';
 import FilmCard from './FilmCard.astro';
 import CutoutImage from './CutoutImage.astro';
-import '../styles/cutout-experiments.css';
 import type { Photo, Film } from '../data/portfolio';
 import '../styles/portfolio-gallery.css';
 
@@ -13,6 +13,9 @@ interface Props {
   subtitle:string;
   description:string;
   cover:Photo;
+  backdrop?:Photo;
+  backdropMode?:'fixed'|'scroll';
+  backdropPosition?:string;
   images:Photo[];
   backHref:string;
   backLabel:string;
@@ -21,35 +24,36 @@ interface Props {
   tags?:string[];
   themeSlug?:string;
 }
-const {name,subtitle,description,cover,images,backHref,backLabel,next,movie,tags=[],themeSlug}=Astro.props;
+const {name,subtitle,description,cover,backdrop=cover,backdropMode='fixed',backdropPosition='50% 50%',images,backHref,backLabel,next,movie,tags=[],themeSlug}=Astro.props;
 const nextLabel=themeSlug?'Nächstes Thema':'Nächstes Projekt';
 const hasKartCutout=!themeSlug && name==='Zixspeedracing';
 ---
 <Base title={name} description={description} gallery>
-  <div class="portfolio-backdrop" aria-hidden="true">
-    <MediaImage image={cover} role="editorial" sizes="100vw" eager priority alt="" position={themeSlug==='people'?'50% 35%':'50% 50%'} />
-    <span class="portfolio-backdrop__name">Mondini</span>
+  <div class:list={['portfolio-backdrop', {'portfolio-backdrop--scroll':backdropMode==='scroll'}]} aria-hidden="true">
+    <MediaImage image={backdrop} role="editorial" sizes="100vw" eager priority alt="" position={backdropPosition} />
   </div>
-  <header class:list={['portfolio-hero',{'portfolio-hero--cutout':hasKartCutout}]}>
-    <a class="portfolio-back" href={backHref}><span aria-hidden="true">←</span> {backLabel}</a>
-    {hasKartCutout && <div class="portfolio-hero__cutout" aria-hidden="true"><CutoutImage name="kart" sizes="(max-width: 700px) 90vw, 55vw" eager alt="" /></div>}
-    <div class="portfolio-hero__title">
-      <h1>{hasKartCutout?<><span>Zixspeed</span><span>racing</span></>:name}</h1>
-      <div class="portfolio-hero__bottom"><p>{subtitle}</p><a href="#bilder" class="portfolio-scroll">{images.length} Fotografien <span aria-hidden="true">↓</span></a></div>
-    </div>
-  </header>
-  <section id="bilder" class="portfolio-content" aria-label={`Fotografien: ${name}`}>
-    <div class="portfolio-intro"><p>{description}</p>{tags.length>0&&<ul aria-label="Projektbereiche">{tags.map(tag=><li>{tag}</li>)}</ul>}</div>
-    <PhotoGallery images={images} name={`Bildstrecke ${name}`} layout="story" />
-  </section>
-  {movie&&<section class="portfolio-film" aria-label="Film zur Bildstrecke"><div><h2>Auch in Bewegung.</h2><p>{movie.title}</p></div><FilmCard film={movie} /></section>}
-  <section id="naechstes-thema" class="portfolio-outro" aria-label={nextLabel}>
-    <a class="portfolio-next" href={next.href} aria-label={`${nextLabel}: ${next.name}`}>
-      <div class="portfolio-next__preview"><MediaImage image={next.cover} sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1200px) 58vw, 680px" alt="" /></div>
-      <div class="portfolio-next__copy">
-        <span class="portfolio-next__label">{nextLabel}<span aria-hidden="true">↗</span></span>
-        <h2>{next.name}</h2>
+  <Middlepage enabled gallery>
+    <header class:list={['portfolio-hero',{'portfolio-hero--cutout':hasKartCutout}]}>
+      <a class="portfolio-back" href={backHref}><span aria-hidden="true">←</span> {backLabel}</a>
+      <div class="portfolio-hero__title">
+        <h1>{name}</h1>
+        <div class="portfolio-hero__bottom"><p>{subtitle}</p><a href="#bilder" class="portfolio-scroll">{images.length} Fotografien <span aria-hidden="true">↓</span></a></div>
       </div>
-    </a>
-  </section>
+      {hasKartCutout && <div class="portfolio-hero__cutout" aria-hidden="true"><CutoutImage name="kart" sizes="(max-width: 700px) 32vw, 240px" alt="" eager /></div>}
+    </header>
+    <section id="bilder" class="portfolio-content" aria-label={`Fotografien: ${name}`}>
+      <div class="portfolio-intro"><p>{description}</p>{tags.length>0&&<ul aria-label="Projektbereiche">{tags.map(tag=><li>{tag}</li>)}</ul>}</div>
+      <PhotoGallery images={images} name={`Bildstrecke ${name}`} layout="story" />
+    </section>
+    {movie&&<section class="portfolio-film" aria-label="Film zur Bildstrecke"><div><h2>Der Film dazu.</h2><p>{movie.title}</p></div><FilmCard film={movie} /></section>}
+    <section id="naechstes-thema" class="portfolio-outro" aria-label={nextLabel}>
+      <a class="portfolio-next" href={next.href} aria-label={`${nextLabel}: ${next.name}`}>
+        <div class="portfolio-next__preview"><MediaImage image={next.cover} sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1100px) 40vw, 480px" alt="" /></div>
+        <div class="portfolio-next__copy">
+          <span class="portfolio-next__label">{nextLabel}<span aria-hidden="true">↗</span></span>
+          <h2>{next.name}</h2>
+        </div>
+      </a>
+    </section>
+  </Middlepage>
 </Base>

@@ -1,20 +1,23 @@
 import { collection } from './portfolio';
 
-// Curated from existing exports of Sandro's Drive originals, interleaving
-// different subjects rather than repeating a cover image on each side.
-const picks: [string, number][] = [
-  ['fahrzeuge',0],['people',0],['events',0],['hochzeiten',0],
-  ['reisen',0],['tiere',0],['fahrzeuge',2],['events',1],
-  ['people',1],['hochzeiten',7],['autotreffen',5],['zixspeed',0],
-  ['kekila',1],['fahrzeuge',3],['tiere',1],['reisen',2],
-  ['people',5],['hochzeiten',1],['heidrich',2],['events',4],
-  ['autotreffen',7],['reisen',3],['fahrzeuge',5],['tiere',3],
-  ['people',7],['zixspeed',7],['hochzeiten',4],['kekila',5],
-  ['heidrich',7],['events',5],['reisen',1],['fahrzeuge',9],
+// AP-02 proposal: fourteen existing web photographs, two per theme.
+// This is the complete pool, not fourteen fully visible images at once.
+const picks: [string, number, string][] = [
+  ['fahrzeuge', 0, 'Fahrzeuge'], ['people', 0, 'People'],
+  ['events', 0, 'Events'], ['hochzeiten', 0, 'Hochzeiten'],
+  ['autotreffen', 0, 'Autotreffen'], ['tiere', 0, 'Tiere'],
+  ['reisen', 0, 'Reisen'], ['fahrzeuge', 2, 'Fahrzeuge'],
+  ['people', 5, 'People'], ['events', 1, 'Events'],
+  ['hochzeiten', 7, 'Hochzeiten'], ['autotreffen', 5, 'Autotreffen'],
+  ['tiere', 3, 'Tiere'], ['reisen', 2, 'Reisen'],
 ];
-const projectLinks: Record<string,string> = {heidrich:'autohaus-heidrich',zixspeed:'zixspeedracing',kekila:'kekila'};
-export const heroEntries = picks.map(([key,index]) => ({
-  image: collection(key)[index],
-  href: projectLinks[key] ? `/arbeiten/${projectLinks[key]}` : `/arbeiten/themen/${key}`,
+
+export const heroEntries = picks.map(([themeSlug, index, themeName]) => ({
+  image: collection(themeSlug)[index],
+  href: `/arbeiten/themen/${themeSlug}`,
+  themeSlug,
+  themeName,
 }));
+
+// Compatibility for the historical hero's import.
 export const heroPhotos = heroEntries.map(entry => entry.image);

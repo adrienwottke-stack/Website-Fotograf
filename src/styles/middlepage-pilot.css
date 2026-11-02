@@ -1,0 +1,157 @@
+/* Shared window and colour roles, extended from the AP-01 pilot. */
+body[data-middlepage] {
+  --window-white: #fff;
+  --window-forest: #294b3d;
+  --window-beige: #e8e0ce;
+  --window-edge: rgb(41 75 61 / 22%);
+  --middlepage-gutter: clamp(32px, 8vw, 160px);
+  --middlepage-radius: 40px;
+  isolation: isolate;
+  background: #f7f7f3;
+}
+
+.pilot-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: #f7f7f3;
+}
+.pilot-backdrop > svg { display: block; }
+
+body[data-middlepage] .middlepage {
+  position: relative;
+  width: calc(100% - var(--middlepage-gutter) * 2);
+  max-width: 1520px;
+  margin: 42px auto 64px;
+  overflow: clip;
+  border: 1px solid rgb(255 255 255 / 90%);
+  border-radius: var(--middlepage-radius);
+  background: var(--window-white);
+  color: var(--ink);
+  box-shadow: 0 0 0 1px var(--window-edge), 0 0 0 7px rgb(255 255 255 / 30%), 0 22px 65px rgb(23 39 29 / 9%);
+}
+
+body[data-middlepage='home'] .middlepage #entdecken {
+  border-bottom: 1px solid var(--window-edge);
+  background: var(--window-white);
+}
+body[data-middlepage='home'] .middlepage .site-header {
+  padding-inline: clamp(24px, 3.5vw, 64px);
+}
+body[data-middlepage] .middlepage .wrap {
+  --gutter: clamp(24px, 3.5vw, 64px);
+}
+body[data-middlepage='home'] .middlepage .theme-scene {
+  background: var(--window-white);
+  color: var(--ink);
+}
+body[data-middlepage='home'] .middlepage .theme-scene__backdrop { display: none; }
+body[data-middlepage='home'] .middlepage .theme-scene__heading h2 { color: var(--window-forest); }
+body[data-middlepage='home'] .middlepage .theme-scene__window:focus-visible {
+  outline-color: var(--window-forest);
+}
+/* Contours recur at section boundaries and in the existing personal card. */
+body[data-middlepage='home'] .middlepage .project-section__header {
+  padding-block: 28px 24px;
+  border-top: 1px solid var(--window-edge);
+  border-bottom: 1px solid var(--window-edge);
+}
+body[data-middlepage='home'] .middlepage .project-section { background: var(--window-white); }
+body[data-middlepage='home'] .middlepage .section--butter {
+  background: var(--window-beige);
+}
+body[data-middlepage='home'] .middlepage .service-row {
+  border-color: var(--window-edge);
+}
+body[data-middlepage='home'] .middlepage .service-row h3 { color: var(--window-forest); }
+body[data-middlepage='home'] .middlepage .window-personal {
+  background: var(--window-white);
+  border-top: 1px solid var(--window-edge);
+}
+body[data-middlepage='home'] .middlepage .window-personal .about-teaser__inner {
+  gap: clamp(36px, 4vw, 70px);
+}
+body[data-middlepage='home'] .middlepage .about-teaser__copy {
+  --window-radius: 32px;
+  --window-pad: clamp(28px, 3.5vw, 54px);
+  background: var(--window-forest);
+  color: var(--window-white);
+}
+body[data-middlepage='home'] .middlepage .about-teaser__copy::after {
+  inset: -8px;
+  border-color: var(--window-edge);
+  border-radius: 40px;
+}
+body[data-middlepage='home'] .middlepage .about-teaser__copy h2 {
+  font-size: clamp(60px, 6.1vw, 104px);
+}
+body[data-middlepage='home'] .middlepage .about-portrait::before { background: var(--window-beige); }
+
+body[data-middlepage] .site-footer.site-footer--pilot {
+  position: relative;
+  background: var(--window-white);
+  color: var(--ink);
+  border-top: 1px solid rgb(41 75 61 / 12%);
+}
+body[data-middlepage] .site-footer--pilot .quiet-footer__socials a:hover {
+  background: var(--window-forest);
+  color: var(--window-white);
+}
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  body[data-middlepage] { --middlepage-gutter: 32px; }
+  body[data-middlepage='home'] .middlepage .site-header { gap: 20px; padding-inline: 24px; }
+  body[data-middlepage='home'] .middlepage .desktop-nav { gap: 20px; font-size: 12px; }
+  body[data-middlepage='home'] .middlepage .header-contact { padding-inline: 16px; gap: 12px; }
+}
+
+@media (max-width: 700px) {
+  body[data-middlepage] { --middlepage-gutter: 0px; --middlepage-radius: 0px; background: var(--window-white); }
+  .pilot-backdrop { display: none; }
+  body[data-middlepage] .middlepage {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  body[data-middlepage] .middlepage .wrap { --gutter: 22px; }
+  body[data-middlepage='home'] .middlepage .site-header { padding-inline: 22px; }
+  body[data-middlepage='home'] .middlepage .about-teaser__copy { --window-radius: 24px; --window-pad: 26px; }
+  body[data-middlepage='home'] .middlepage .about-teaser__copy::after { inset: -6px; border-radius: 30px; }
+  body[data-middlepage='home'] .middlepage .about-teaser__copy h2 { font-size: clamp(60px, 14vw, 91px); }
+}
+body[data-middlepage='page'] .middlepage{margin-top:16px}
+body[data-middlepage='page'] .editorial-page{background:#fff}
+body[data-middlepage='page'] .page-head{padding-top:clamp(36px,5vw,80px)}
+body[data-middlepage] .desktop-nav>a{transition:transform .18s ease}
+body[data-middlepage='home'] .home-services{padding-block:clamp(40px,5vw,72px)}
+body[data-middlepage='home'] .home-services .section-heading{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  justify-content:stretch;
+  justify-items:center;
+  gap:16px;
+  margin-bottom:0;
+  text-align:center;
+}
+body[data-middlepage='home'] .home-services .section-heading h2{font-size:clamp(38px,4.8vw,64px)}
+body[data-middlepage='home'] .home-services .section-heading>p{max-width:44ch;font-size:16px}
+body[data-middlepage='home'] .home-services .service-list{margin-top:28px}
+body[data-middlepage='home'] .home-services .service-row{
+  grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr) 32px;
+  gap:24px;
+  padding-block:22px;
+}
+body[data-middlepage='home'] .home-services .service-row h3{font-size:clamp(28px,3vw,42px)}
+body[data-middlepage='home'] .home-services .service-row p{font-size:16px;max-width:48ch}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){body[data-middlepage] .desktop-nav>a:hover{transform:scale(1.05)}}
+@media(max-width:700px){
+  body[data-middlepage='page'] .middlepage{margin:0}
+  body[data-middlepage='home'] .home-services .service-row{grid-template-columns:minmax(0,1fr) 30px;gap:12px 15px;padding-block:20px}
+  body[data-middlepage='home'] .home-services .section-heading h2{font-size:38px}
+}
+@media(prefers-reduced-motion:reduce){body[data-middlepage] .desktop-nav>a{transition:none}}

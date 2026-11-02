@@ -1,0 +1,6 @@
+---
+// Shared document-scrolling content window, used across the website.
+interface Props { enabled?: boolean; gallery?: boolean }
+const { enabled = false, gallery = false } = Astro.props;
+---
+{enabled ? <div class:list={['middlepage', { 'middlepage--gallery': gallery }]}><slot /></div> : <slot />}

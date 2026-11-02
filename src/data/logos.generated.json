@@ -6,17 +6,17 @@
       "dark": false,
       "variants": [
         {
-          "src": "/media/logo-heidrich-f8185aed88-1x.webp",
+          "src": "/media/logo-heidrich-eafb03ac14-1x.webp",
           "width": 220,
           "height": 81,
-          "bytes": 16138,
+          "bytes": 12006,
           "density": 1
         },
         {
-          "src": "/media/logo-heidrich-f8185aed88-2x.webp",
+          "src": "/media/logo-heidrich-eafb03ac14-2x.webp",
           "width": 440,
           "height": 162,
-          "bytes": 38162,
+          "bytes": 29118,
           "density": 2
         }
       ]
