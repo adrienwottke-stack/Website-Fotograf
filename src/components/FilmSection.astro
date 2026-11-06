@@ -1,20 +1,9 @@
 ---
-import { films } from '../data/portfolio';
-import posters from '../data/film-section.generated.json';
+import { film, mainFilmKeys } from '../data/portfolio';
+import FilmCard from './FilmCard.astro';
 import '../styles/film-section.css';
-const orderedFilms = ['zixspeed','kxxma','kekila','hochzeit'].map(key => films.find(f => f.key === key)!).filter(Boolean);
-const duration = (s:number) => `${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;
-const poster = (f:typeof films[number]) => f.key==='zixspeed' ? posters.zixspeed[0].src : f.poster;
 ---
 <section id="filme" class="film-section" aria-labelledby="film-section-title">
   <header class="film-section__heading wrap"><h2 id="film-section-title">Film.</h2><p>Events, Motorsport, Social Content und Hochzeiten.<br />Hier siehst du eine Auswahl meiner Filme.</p></header>
-  <div class="film-showcase wrap">{orderedFilms.map(f => (
-    <button type="button" class:list={['film-showcase__film',{'film-showcase__film--wide':f.width>f.height}]} data-film data-src={f.src} data-title={f.title} data-poster={poster(f)} data-width={f.width} data-height={f.height} aria-haspopup="dialog" aria-label={`${f.title} abspielen, ${duration(f.duration)}`}>
-      <span class="film-showcase__frame" style={`aspect-ratio:${f.width}/${f.height}`}>
-        <img src={poster(f)} srcset={f.key==='zixspeed'?posters.zixspeed.map(v=>`${v.src} ${v.width}w`).join(', '):undefined} sizes="(max-width:700px) calc((100vw - 60px) / 2), (max-width:1250px) 36vw, 467px" alt="" width={f.width} height={f.height} loading="lazy" decoding="async" />
-        <span class="film-showcase__play" aria-hidden="true">▶</span><span class="film-showcase__duration">{duration(f.duration)}</span>
-      </span>
-      <span class="film-showcase__caption"><strong>{f.title}</strong><span>{f.description}</span></span>
-    </button>
-  ))}</div>
+  <div class="film-showcase film-grid film-grid--main wrap">{mainFilmKeys.map(key => <FilmCard film={film(key)} />)}</div>
 </section>

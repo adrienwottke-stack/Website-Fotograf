@@ -1,18 +1,29 @@
-/* Straight, manually opened films in their original aspect ratios. */
-.film-section{background:#fff;color:var(--ink);scroll-margin-top:28px}
-.film-section__heading{display:flex;align-items:center;justify-content:space-between;gap:28px;padding-block:32px;background:var(--yellow);border-block:1px solid var(--window-edge,var(--line))}
+/* Shared native-ratio cards; the same curated pool appears on Start and Arbeiten. */
+.film-section{background:var(--window-white,#fff);color:var(--ink);scroll-margin-top:28px}
+.film-section__heading{display:flex;align-items:center;justify-content:space-between;gap:28px;padding-block:32px;background:var(--yellow);color:#2a2f33;border-block:1px solid var(--window-edge,var(--line))}
 .film-section__heading h2{font-size:clamp(48px,6vw,88px)}
 .film-section__heading p{max-width:40ch;font-size:14px;line-height:1.6}
-.film-showcase{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:38px 26px;padding-block:38px 56px;max-width:1050px}
-.film-showcase__film{--film-preview-width:205px;display:flex;flex-direction:column;align-items:center;width:100%;min-width:0;background:transparent;text-align:left;padding:0}
-.film-showcase__frame{position:relative;display:block;overflow:hidden;max-width:100%;width:var(--film-preview-width);border:1px solid var(--window-edge,var(--line));border-radius:16px;background:var(--ink)}
-.film-showcase__film--wide{--film-preview-width:100%}
-.film-showcase__frame img{width:100%;height:100%;object-fit:contain}
-.film-showcase__play{position:absolute;inset:50% auto auto 50%;display:grid;place-items:center;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--yellow);color:var(--ink);box-shadow:0 3px 18px #0003}
-.film-showcase__duration{position:absolute;bottom:9px;right:9px;border-radius:6px;padding:3px 7px;background:#fff;color:var(--ink);font-size:11px}
-.film-showcase__caption{display:flex;flex-direction:column;width:var(--film-preview-width);max-width:100%;gap:5px;margin-top:13px}
-.film-showcase__caption strong{font-family:var(--display);font-size:21px;font-weight:700;line-height:1.15;letter-spacing:-.03em;overflow-wrap:anywhere}
-.film-showcase__caption>span{font-size:12px;line-height:1.6;color:var(--muted)}
-.film-showcase__film:focus-visible{outline-color:var(--window-forest,#294b3d);border-radius:16px}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){.film-showcase__play{transition:transform .2s}.film-showcase__film:hover .film-showcase__play{transform:translate(-50%,-50%) scale(1.1)}}
-@media(max-width:700px){.film-section__heading{display:block;padding-block:24px}.film-section__heading p{margin-top:12px;font-size:13px}.film-showcase{gap:28px 16px;padding-block:26px 36px}.film-showcase__film{--film-preview-width:145px}.film-showcase__film--wide{--film-preview-width:100%}.film-showcase__frame{border-radius:11px}.film-showcase__caption strong{font-size:18px}.film-showcase__caption>span{font-size:12px}.film-showcase__play{width:44px;height:44px}}
+.film-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:38px 26px}
+.film-showcase{padding-block:38px 56px}
+.work-films .film-grid{padding-block:38px 56px}
+.film-grid>.film-card{grid-column:auto;grid-row:auto;align-self:start;margin:0;max-width:none;color:inherit}
+.film-grid .film-card__poster{width:100%;aspect-ratio:var(--film-ratio);border:1px solid var(--window-edge,var(--line));border-radius:16px}
+.film-grid .film-card__poster>img{display:block;object-fit:contain}
+.film-grid .film-card__caption>strong{font-size:clamp(19px,2vw,25px);overflow-wrap:anywhere}
+.film-grid .film-card__caption>span{font-size:13px;line-height:1.6}
+.film-card .play-icon{padding:0;width:48px;height:48px;background:var(--yellow);color:#2a2f33;box-shadow:0 3px 18px #0003}
+.film-card .play-icon svg{display:block}
+.film-card:focus-visible{outline:3px solid var(--yellow);outline-offset:5px;border-radius:16px}
+html[data-review-films='six'] .film-grid--main{grid-template-columns:repeat(6,minmax(0,1fr));gap:26px 16px}
+html[data-review-films='six'] .film-grid--main .film-card__caption>strong{font-size:19px}
+@media(max-width:1100px){html[data-review-films='six'] .film-grid--main{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){
+  .film-section__heading{display:block;padding-block:24px}
+  .film-section__heading p{margin-top:12px;font-size:13px}
+  .film-grid,html[data-review-films='six'] .film-grid--main{grid-template-columns:minmax(0,1fr);gap:32px}
+  .film-showcase,.work-films .film-grid{padding-block:26px 36px}
+  .film-grid>.film-card{width:100%;max-width:360px;justify-self:center}
+  .film-grid .film-card__poster{border-radius:12px}
+  .film-grid .film-card__caption>strong,html[data-review-films='six'] .film-grid--main .film-card__caption>strong{font-size:23px}
+}
+@media(prefers-reduced-motion:reduce){.film-card .film-card__poster>img{transition:none;transform:none}}

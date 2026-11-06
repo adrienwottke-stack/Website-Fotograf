@@ -1,16 +1,18 @@
 ---
 import MediaImage from './MediaImage.astro';
-import { projects } from '../data/portfolio';
+import { featuredProjects, type Project } from '../data/portfolio';
 import '../styles/project-index.css';
+interface Props { items?: Project[]; overview?: boolean }
+const { items = featuredProjects, overview = false } = Astro.props;
 const focus: Record<string, string> = { 'autohaus-heidrich': '50% 50%', kekila: '50% 35%', zixspeedracing: '50% 50%', kxxma: '50% 50%' };
 // Use an existing landscape photograph for the wider stage tile.
-const cover = (project: typeof projects[number]) => project.slug === 'kxxma' ? project.images.find(image => image.width > image.height) ?? project.cover : project.cover;
+const cover = (project: Project) => !overview && project.slug === 'kxxma' ? project.images.find(image => image.width > image.height) ?? project.cover : project.cover;
 ---
-<div class="project-index" data-project-index>
-  {projects.map(project => (
+<div class:list={['project-index', {'project-index--overview': overview}]} data-project-index>
+  {items.map(project => (
     <a class="project-index__item" href={`/arbeiten/${project.slug}`} aria-label={`${project.name}: Projekt ansehen`}>
       <div class="project-index__image">
-        <MediaImage image={cover(project)} role="editorial" sizes="(max-width: 700px) 100vw, 80vw" position={focus[project.slug]} />
+        <MediaImage image={cover(project)} role="editorial" sizes={overview ? '(max-width: 700px) 85vw, (max-width: 1100px) 40vw, 27vw' : '(max-width: 700px) 100vw, 80vw'} position={focus[project.slug]} />
       </div>
       <div class="project-index__caption">
         <h3 class="project-index__title">

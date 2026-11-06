@@ -5,6 +5,17 @@ export function initContactForm(form: HTMLFormElement, signal: AbortSignal) {
   const heading = status.querySelector<HTMLElement>('h3')!;
   const message = status.querySelector<HTMLElement>('p')!;
   const project = new URL(location.href).searchParams.get('projekt');
+  const note = form.querySelector<HTMLTextAreaElement>('[name="nachricht"]')!;
+  const validateNote = () => {
+    const length = note.value.trim().length;
+    note.setCustomValidity(length < 30
+      ? 'Erzähl mir bitte etwas mehr von deiner Idee: mindestens 30 Zeichen ohne Leerzeichen am Anfang und Ende.'
+      : length > 2500 ? 'Bitte kürze deine Nachricht auf höchstens 2500 Zeichen.' : '');
+  };
+  note.addEventListener('input', validateNote, { signal });
+  note.addEventListener('change', validateNote, { signal });
+  form.addEventListener('reset', () => note.setCustomValidity(''), { signal });
+  validateNote();
   if (project) form.querySelector<HTMLInputElement>('[name="anliegen"]')!.value = project.slice(0, 150);
   let pending = false;
   let lastPayload = '';
@@ -21,6 +32,7 @@ export function initContactForm(form: HTMLFormElement, signal: AbortSignal) {
 
   form.addEventListener('submit', async event => {
     event.preventDefault();
+    validateNote();
     if (pending || !form.reportValidity()) return;
     const payload = JSON.stringify(Object.fromEntries(new FormData(form)));
     if (payload !== lastPayload) { requestId = crypto.randomUUID(); lastPayload = payload; }

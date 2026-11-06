@@ -1,0 +1,45 @@
+---
+import MediaImage from './MediaImage.astro';
+import CutoutImage from './CutoutImage.astro';
+import type { Photo } from '../data/portfolio';
+interface Choice { key: string; image?: Photo; cutout?: 'sandroPortrait'; position?: string }
+interface Props { group: 'story' | 'about'; choices: Choice[]; sizes: string; eager?: boolean }
+const { group, choices, sizes, eager = false } = Astro.props;
+---
+<div class="review-photo" data-review-photo={group}>
+  <div data-review-photo-active>
+    <div {...{[`data-${group}-variant`]: 'portrait'}}>
+      {choices[0].cutout ? <CutoutImage name={choices[0].cutout} sizes={sizes} eager={eager} /> : <MediaImage image={choices[0].image!} role="display" sizes={sizes} eager={eager} position={choices[0].position} />}
+    </div>
+  </div>
+  {choices.map(choice => <template data-review-photo-template={choice.key}>
+    <div {...{[`data-${group}-variant`]: choice.key}}>
+      {choice.cutout ? <CutoutImage name={choice.cutout} sizes={sizes} eager={eager} /> : <MediaImage image={choice.image!} role="display" sizes={sizes} eager={eager} position={choice.position} />}
+    </div>
+  </template>)}
+</div>
+<script>
+  let observer: MutationObserver | undefined;
+  function initReviewPhotos() {
+    observer?.disconnect();
+    const hosts = [...document.querySelectorAll<HTMLElement>('[data-review-photo]')];
+    const sync = () => hosts.forEach(host => {
+      const group = host.dataset.reviewPhoto!;
+      const active = host.querySelector<HTMLElement>('[data-review-photo-active]')!;
+      const requested = document.documentElement.getAttribute(`data-review-${group}`) || 'portrait';
+      const template = [...host.querySelectorAll<HTMLTemplateElement>('template')].find(item => item.dataset.reviewPhotoTemplate === requested);
+      if (!template || active.firstElementChild?.getAttribute(`data-${group}-variant`) === requested) return;
+      // Inert templates keep unselected photographs out of the loading queue.
+      active.replaceChildren(template.content.cloneNode(true));
+    });
+    sync();
+    observer = new MutationObserver(sync);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-review-story', 'data-review-about'] });
+  }
+  initReviewPhotos();
+  document.addEventListener('astro:page-load', initReviewPhotos);
+  document.addEventListener('astro:before-swap', () => observer?.disconnect());
+</script>
+<style>
+  .review-photo, [data-review-photo-active], [data-story-variant], [data-about-variant] { width:100%; height:100%; }
+</style>

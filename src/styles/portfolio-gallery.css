@@ -141,3 +141,48 @@
   .portfolio-next__copy { gap: 4px; }
   .portfolio-next h2 { font-size: clamp(36px, 10vw, 56px); }
 }
+/* AP03: media counts, explicit work groups, and native film proportions. */
+.portfolio-media-links{display:flex;flex-wrap:wrap;gap:8px 20px}
+.portfolio-intro__text{max-width:64ch;font-size:clamp(15px,1.25vw,18px);line-height:1.65}
+.portfolio-intro__text p+p{margin-top:1em}
+.portfolio-work>header{margin-bottom:24px;max-width:64ch}
+.portfolio-work>header h2{font-size:clamp(30px,4vw,48px)}
+.portfolio-work>header h3{font-size:clamp(26px,3vw,36px)}
+.portfolio-work>header p{margin-top:10px;font-size:15px;line-height:1.6}
+.portfolio-film{display:block;scroll-margin-top:24px}
+.portfolio-film>h2{margin-bottom:30px}
+.portfolio-film__grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.portfolio-film__grid>.portfolio-work{min-width:0}
+.portfolio-film .film-grid .film-card{width:100%;max-width:none;margin:0;align-self:start;grid-column:auto;grid-row:auto}
+.portfolio-film .film-grid .film-card__poster{aspect-ratio:var(--film-ratio)}
+.portfolio-film__grid--weddings{align-items:start}
+.portfolio-film__grid .portfolio-work .film-card__caption>strong{font-size:20px}
+html[data-review-tone='dark'] .portfolio-film{color:var(--review-text)}
+@media(max-width:700px){
+ .portfolio-film__grid,.portfolio-film__grid--weddings{grid-template-columns:minmax(0,1fr)}
+ .portfolio-film .film-grid .film-card{max-width:360px;margin-inline:auto}
+ .portfolio-media-links{gap:8px 18px}
+}
+/* Keep the short next to the two trailers at a comparable visual height. */
+.portfolio-film .film-grid.portfolio-film__grid--weddings{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.32fr)}
+@media(max-width:700px){.portfolio-film .film-grid.portfolio-film__grid--weddings{grid-template-columns:minmax(0,1fr)}}
+
+/* Customer collections alternate photo sections and native-format films in one
+   lightbox scope. Theme galleries retain their separate film section. */
+.portfolio-sequence{display:flex;flex-direction:column;gap:clamp(28px,4vw,52px);max-width:1080px;margin-inline:auto}
+.portfolio-sequence__photos,.portfolio-sequence__films{min-width:0;scroll-margin-top:24px}
+.portfolio-sequence__work-heading{max-width:64ch;margin-bottom:24px}
+.portfolio-sequence__work-heading h2,.portfolio-sequence__films h2{font-size:clamp(30px,4vw,48px)}
+.portfolio-sequence__work-heading p{margin-top:10px;line-height:1.6}
+.portfolio-sequence__continuation{margin-bottom:18px;font-weight:650}
+.portfolio-sequence__films{padding:clamp(24px,3vw,36px);border:1px solid var(--window-edge,var(--line));border-radius:20px;background:var(--window-beige,#e8e0ce);color:var(--ink)}
+.portfolio-sequence__films>h2{margin-bottom:24px}
+.portfolio-sequence .portfolio-sequence__film-grid{grid-template-columns:repeat(var(--sequence-film-columns),minmax(0,1fr));max-width:calc(var(--sequence-film-columns)*var(--sequence-film-width) + (var(--sequence-film-columns) - 1)*26px);margin-inline:auto}
+.portfolio-sequence__film-grid>.portfolio-work{min-width:0}
+.portfolio-sequence .film-card{margin:0;grid-column:auto;grid-row:auto;align-self:start}
+.portfolio-sequence .film-card__poster{aspect-ratio:var(--film-ratio)}
+.portfolio-sequence__film-grid .portfolio-work h2{font-size:clamp(26px,3vw,36px)}
+@media(max-width:700px){
+ .portfolio-sequence .portfolio-sequence__film-grid{grid-template-columns:minmax(0,1fr);max-width:360px}
+ .portfolio-sequence__films{padding:18px;border-radius:14px}
+}

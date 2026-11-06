@@ -1,6 +1,5 @@
-/* AP-05: native photo formats form two compact, justified rows on the white
-   Middlepage. Column proportions come from the existing cover metadata.
-   Raster, dimensions and always-visible desktop labels are our draft choice. */
+/* R2: shared portrait columns, Events spans two and receives the permitted
+   narrow cover crop. The other six covers retain their native proportions. */
 .theme-scene {
   --theme-gap: 12px;
   --theme-forest: var(--window-forest, #294b3d);
@@ -59,9 +58,27 @@
 }
 .theme-scene__row {
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--theme-gap);
   align-items: start;
 }
+.theme-scene__window--events { grid-column: span 2; }
+.theme-scene__row:first-child { align-items:stretch; }
+.theme-scene__window--events .theme-scene__photo .media-image,
+.theme-scene__window--events .theme-scene__photo img { height:100%; object-fit:cover; }
+.theme-scene__window--events .theme-scene__photo { position:absolute; inset:0; aspect-ratio:auto; }
+.theme-scene__decorations {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  max-width:1000px;
+  margin:24px auto 0;
+  padding-inline:8px;
+  pointer-events:none;
+}
+.theme-scene__decoration { width:22%; max-width:210px; filter:drop-shadow(0 7px 6px #0003); }
+.theme-scene__decoration--left { transform:rotate(-5deg); }
+.theme-scene__decoration--right { transform:rotate(4deg); }
 .theme-scene__window {
   position: relative;
   display: block;
@@ -131,6 +148,10 @@
   .theme-scene__windows { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .theme-scene__row { display: contents; }
   .theme-scene__window--events { grid-column: 1 / -1; }
+  .theme-scene__window--events .theme-scene__photo { position:relative; inset:auto; height:auto; }
+  .theme-scene__window--events .theme-scene__photo .media-image,
+  .theme-scene__window--events .theme-scene__photo img { height:auto; }
+  .theme-scene__decoration { width:34%; }
   .theme-scene__photo h3 { top: 12px; left: 12px; font-size: clamp(16px, 3.8cqw, 22px); }
   .theme-scene__window,
   .theme-scene__window:hover { transform: none; transition: none; }

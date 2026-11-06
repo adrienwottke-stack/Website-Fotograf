@@ -31,6 +31,7 @@ const year = new Date().getFullYear();
       <a href="https://www.instagram.com/sandro_mondini/" target="_blank" rel="noopener noreferrer" aria-label="Sandro Mondini auf Instagram" title="Instagram">
         <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor"/></svg>
       </a>
+      <a class="quiet-footer__contact" href="/kontakt#enquiry">Lass uns sprechen</a>
       <a href={`mailto:${contactEmail}`} aria-label="E-Mail an Sandro Mondini" title="E-Mail"><Mail size={19} strokeWidth={1.7} aria-hidden="true" /></a>
     </div>
     <div class="quiet-footer__legal">
@@ -51,7 +52,10 @@ const year = new Date().getFullYear();
   .quiet-footer__brand{display:block;min-height:52px;font-family:var(--display);font-size:28px;font-weight:740;line-height:.94;letter-spacing:-.065em;text-align:center}
   .quiet-footer__brand span{display:block}
   .quiet-footer__socials{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:48px}
-  .quiet-footer__socials a{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--paper);transition:background .2s,color .2s}
+  .quiet-footer__socials a{display:grid;place-items:center;flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);transition:background .2s,color .2s}
+  .quiet-footer__socials .quiet-footer__contact{width:auto;min-height:48px;padding:0 20px;border-radius:12px;font-size:15px;font-weight:750;line-height:1.2;background:var(--yellow);color:var(--review-accent-ink,var(--ink))}
+  .quiet-footer__socials .quiet-footer__contact:hover{background:var(--ink);color:var(--paper)}
+  .quiet-footer__socials a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
   .quiet-footer__socials a:hover{background:var(--yellow);color:var(--ink)}
   .quiet-footer__legal{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 28px;margin-top:26px;color:var(--muted);font-size:11px}
   .quiet-footer__legal nav{display:flex;gap:22px}

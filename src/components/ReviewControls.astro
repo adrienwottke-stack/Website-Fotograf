@@ -1,0 +1,25 @@
+---
+const groups = [
+  { key: 'tone', label: 'Farbwelt', options: [['light', 'Hell'], ['dark', 'Dunkel']] },
+  { key: 'films', label: 'Filmraster', options: [['three', '3 Spalten'], ['six', '6 Spalten']] },
+  { key: 'story', label: 'Startseite · Sandro', options: [['portrait', 'Portrait'], ['camera', 'Kamera']] },
+  { key: 'about', label: 'Über mich · Bild', options: [['portrait', 'Portrait'], ['camera', 'Kamera'], ['gimbal', 'Gimbal']] },
+];
+---
+<aside class="review-controls" aria-label="Entwurf vergleichen" data-review-controls>
+  <div class="review-controls__bar">
+    <button type="button" class="review-controls__toggle" aria-expanded="false" aria-controls="review-options" data-review-toggle>Entwurf vergleichen <span aria-hidden="true">＋</span></button>
+    <span class="review-controls__hint">Vorschau</span>
+  </div>
+  <div id="review-options" class="review-controls__options" hidden>
+    <p>Wähle eine Ansicht zum Vergleichen. Die Auswahl bleibt für diese Vorschau erhalten.</p>
+    <div class="review-controls__fields">
+      {groups.map(group => <label for={`review-${group.key}`}><span>{group.label}</span><select id={`review-${group.key}`} data-review-choice={group.key}>{group.options.map(([value, label]) => <option value={value}>{label}</option>)}</select></label>)}
+    </div>
+    <div class="review-controls__actions">
+      <button type="button" data-review-reset>Auswahl zurücksetzen</button>
+      <button type="button" data-review-minimize>Vergleich einklappen ↑</button>
+    </div>
+    <p class="review-controls__status" aria-live="polite" data-review-status></p>
+  </div>
+</aside>

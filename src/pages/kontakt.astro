@@ -6,7 +6,7 @@ import '../styles/contact-form.css';
 ---
 <Base title="Kontakt" description="Du hast eine Idee für Foto, Film oder eine kreative Zusammenarbeit? Erzähle Sandro Mondini von deinem Projekt.">
   <div class="editorial-page editorial-page--contact">
-  <header class="wrap page-head page-head--split window-contact-head"><h1>Was hast<br />du im Kopf?</h1><p class="lead">Ein Shooting, ein Film oder etwas, das es so noch nicht gibt. Schreib mir von deiner Idee – auch wenn noch nicht alles feststeht.</p></header>
+  <header class="wrap page-head page-head--split window-contact-head"><h1>Was hast<br />du im Kopf?</h1><p class="lead">Ein Shooting, ein Film oder etwas, das es so noch nicht gibt. Schreib mir von deiner Idee. Dabei muss noch nicht alles feststehen.</p></header>
   <div class="wrap contact-layout window-contact-layout"><aside class="contact-aside"><a class="footer-email" href={`mailto:${contactEmail}`}>{contactEmail}</a><button type="button" data-copy-email>E-Mail-Adresse kopieren</button><div class="contact-aside__photo"><MediaImage image={collection('sandro')[2]} sizes="(max-width: 700px) 100vw, 35vw" /></div></aside>
     <form id="enquiry" class="enquiry" action="/api/kontakt" method="post" data-astro-reload>
       <div class="field field--full"><label for="name">Wie heißt du?</label><input id="name" name="name" autocomplete="name" required maxlength="100" /></div>
@@ -14,7 +14,7 @@ import '../styles/contact-form.css';
       <div class="field field--full"><label for="anliegen">Worum geht es?</label><input id="anliegen" name="anliegen" placeholder="Zum Beispiel Hochzeit, Foto, Film oder Zusammenarbeit" required maxlength="150" /></div>
       <div class="field"><label for="termin">Wann? <span>optional</span></label><input id="termin" name="termin" placeholder="Termin oder Zeitraum" maxlength="100" /></div>
       <div class="field"><label for="ort">Wo? <span>optional</span></label><input id="ort" name="ort" autocomplete="address-level2" placeholder="Ort oder Region" maxlength="100" /></div>
-      <div class="field field--full"><label for="nachricht">Erzähl mir von deiner Idee.</label><textarea id="nachricht" name="nachricht" rows="5" required maxlength="2500"></textarea></div>
+      <div class="field field--full"><label for="nachricht">Erzähl mir von deiner Idee.</label><textarea id="nachricht" name="nachricht" rows="5" required minlength="30" maxlength="2500" aria-describedby="nachricht-hint"></textarea><p id="nachricht-hint" class="field-hint">Mindestens 30, höchstens 2500 Zeichen. Leerzeichen am Anfang und Ende zählen nicht mit.</p></div>
       <div class="contact-honeypot" aria-hidden="true"><label for="website">Dieses Feld bitte leer lassen</label><input id="website" name="website" tabindex="-1" autocomplete="off" /></div>
       <p class="form-note field--full">Deine Nachricht wird direkt über diese Website an mich gesendet. Deine Angaben nutze ich, um deine Anfrage zu beantworten. Mehr dazu im <a href="/datenschutz/">Datenschutz</a>.</p>
       <button type="submit" class="button button--dark"><span data-submit-label>Nachricht senden</span> <span aria-hidden="true">↗</span></button>

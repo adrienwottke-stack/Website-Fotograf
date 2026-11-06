@@ -4,12 +4,14 @@ import '@fontsource-variable/plus-jakarta-sans';
 import '../styles/global.css';
 import '../styles/editorial-windows.css';
 import '../styles/middlepage-pilot.css';
+import '../styles/review-variants.css';
 import { ClientRouter } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MediaOverlay from '../components/MediaOverlay.astro';
 import SiteBackdrop from '../components/SiteBackdrop.astro';
 import Middlepage from '../components/Middlepage.astro';
+import ReviewControls from '../components/ReviewControls.astro';
 interface Props { title:string; description:string; gallery?:boolean }
 const {title,description,gallery=false}=Astro.props;
 const immersive = ['/', '/hero-2', '/hero-2/'].includes(Astro.url.pathname);
@@ -20,6 +22,26 @@ const fullTitle=title==='Sandro Mondini – Foto & Film'?title:`${title} | Sandr
 <html lang="de">
   <head>
     <meta charset="utf-8" />
+    <script is:inline>
+      // Set colour and content choices before the first painted frame. The
+      // bundled controller reuses this state throughout Astro navigation.
+      (() => {
+        // Astro keeps this object and the controller's listeners across swaps.
+        if (window.__mondiniReview) return;
+        const root = document.documentElement;
+        const enabled = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) || new URLSearchParams(location.search).get('vergleich') === '1';
+        const defaults = { tone: 'light', films: 'three', story: 'portrait', about: 'portrait', expanded: false };
+        const allowed = { tone: ['light', 'dark'], films: ['three', 'six'], story: ['portrait', 'camera'], about: ['portrait', 'camera', 'gimbal'] };
+        let saved = {};
+        try { saved = JSON.parse(sessionStorage.getItem('mondini-review-v1') || '{}') || {}; } catch {}
+        const state = { ...defaults };
+        for (const key of Object.keys(allowed)) if (allowed[key].includes(saved[key])) state[key] = saved[key];
+        state.expanded = saved.expanded === true;
+        window.__mondiniReview = { enabled, state };
+        if (enabled) root.setAttribute('data-review-enabled', '');
+        for (const key of Object.keys(allowed)) root.setAttribute('data-review-' + key, enabled ? state[key] : defaults[key]);
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="robots" content="noindex, nofollow" />
@@ -33,6 +55,7 @@ const fullTitle=title==='Sandro Mondini – Foto & Film'?title:`${title} | Sandr
     <ClientRouter fallback="none" />
   </head>
   <body class:list={{'portfolio-page':gallery}} data-middlepage={windowKind}>
+    <ReviewControls />
     {!gallery && <SiteBackdrop variant="drawn" />}
     <a class="skip-link" href="#inhalt">Zum Inhalt</a>
     {!immersive && <Header />}
@@ -40,5 +63,6 @@ const fullTitle=title==='Sandro Mondini – Foto & Film'?title:`${title} | Sandr
     <Footer pilot />
     <MediaOverlay />
     <script>import '../scripts/site';</script>
+    <script>import '../scripts/review-controls';</script>
   </body>
 </html>

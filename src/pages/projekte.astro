@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectIndex from '../components/ProjectIndex.astro';
+import { projects } from '../data/portfolio';
+---
+<Base title="Projekte" description="Kunden und Projekte von Sandro Mondini: Fotografie, Filme und Social Media Content in zehn Sammlungen.">
+  <header class="wrap customer-overview__heading">
+    <h1>Projekte.</h1>
+    <p>Fotografie, Filme und Social Media Content.<br />Hier findest du meine Arbeiten nach Kunden.<br />Vielleicht starten wir bald dein nächstes Projekt zusammen.</p>
+  </header>
+  <section class="customer-overview__surface" aria-label="Alle Kunden und Projekte">
+    <ProjectIndex items={projects} overview />
+  </section>
+</Base>

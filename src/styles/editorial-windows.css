@@ -24,6 +24,8 @@
 .window-about-head h1 { font-size:clamp(68px,8.3vw,128px); line-height:.95; }
 .window-about-head .lead { font-size:18px; }
 .window-about-head .about-head__portrait { height:clamp(500px,47vw,710px); transform:none; margin:50px 0 0; border-radius:var(--window-radius); }
+.window-about-head .about-head__portrait:has([data-about-variant='gimbal']) { height:auto; aspect-ratio:3/2; align-self:center; }
+.window-about-head .about-head__portrait [data-about-variant='gimbal'] img { object-fit:contain; }
 .window-biography { grid-template-columns:.85fr 1.15fr; gap:6vw; padding-block:30px 90px; align-items:start; }
 .window-biography h2 { font-size:clamp(38px,4.4vw,68px); padding-top:36px; }
 .window-biography .biography-text { font-size:17px; line-height:1.85; }

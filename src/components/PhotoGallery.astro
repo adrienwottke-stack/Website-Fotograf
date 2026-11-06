@@ -1,8 +1,9 @@
 ---
 import MediaImage from './MediaImage.astro';
 import type { Photo } from '../data/portfolio';
-interface Props { images:Photo[]; name:string; layout?:'grid'|'story' }
-const { images,name,layout='grid' }=Astro.props;
+interface Props { images:Photo[]; name:string; layout?:'grid'|'story'; contained?:boolean }
+// A mixed customer sequence owns one shared lightbox scope across all chunks.
+const { images,name,layout='grid',contained=false }=Astro.props;
 // Proportional columns align upper/lower edges without cropping the photographs.
 const rows=Array.from({length:Math.ceil(images.length/3)},(_,row)=>images.slice(row*3,row*3+3));
 const ratio=(image:Photo)=>image.width/image.height;
@@ -14,7 +15,7 @@ const columns=(row:Photo[])=>{
 };
 const imageSizes=(image:Photo)=>`(max-width: 700px) ${ratio(image)>1?'94':'46'}vw, (max-width: 1100px) ${ratio(image)>1?'44':'30'}vw, ${ratio(image)>1?'540':'360'}px`;
 ---
-<div class:list={['photo-gallery',{'photo-gallery--story':layout==='story'}]} data-gallery aria-label={name}>
+<div class:list={['photo-gallery',{'photo-gallery--story':layout==='story'}]} data-gallery={contained?undefined:''} aria-label={name}>
   {rows.map((row,rowIndex)=><div class="photo-gallery__row" style={`--row-ratio:${row.reduce((sum,image)=>sum+ratio(image),0)};--row-gaps:${row.length-1};grid-template-columns:${columns(row)};${row.length<3?'--row-max-height:360px;':''}`}>
     {row.map((image,index)=><a class:list={['gallery-image',{'gallery-image--wide':image.width>image.height}]} style={`--photo-ratio:${ratio(image)}`} href={image.large.src} data-photo data-large={image.large.src} data-caption={image.alt} data-width={image.large.width} data-height={image.large.height} data-astro-reload aria-label={`${image.alt} – vergrößern`}>
       <MediaImage image={image} role="preview" sizes={imageSizes(image)} eager={rowIndex===0&&index<3} />
@@ -22,3 +23,13 @@ const imageSizes=(image:Photo)=>`(max-width: 700px) ${ratio(image)>1?'94':'46'}v
     </a>)}
   </div>)}
 </div>
+<style>
+  /* Keep incomplete desktop rows on the common centre line. The images and
+     lightbox sources retain their native ratios; no photo crop is involved. */
+  .photo-gallery__row { margin-inline:auto; }
+  @media (max-width:700px) {
+    .photo-gallery--story { justify-content:center; }
+    .photo-gallery--story::after { display:none; }
+    .photo-gallery--story .photo-gallery__row > .gallery-image { flex-grow:0; }
+  }
+</style>

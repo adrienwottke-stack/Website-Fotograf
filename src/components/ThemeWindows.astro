@@ -6,12 +6,8 @@ import '../styles/cutout-experiments.css';
 import '../styles/theme-scene.css';
 interface Props { compact?: boolean; heading?: boolean }
 const { compact = false, heading = false } = Astro.props;
-// Native cover proportions create two justified rows; mobile reflows the same links.
+// One shared four-column measure aligns the portrait edges across both rows.
 const rows = [themes.slice(0, 3), themes.slice(3)];
-const accents: Partial<Record<string, 'supra' | 'bmw'>> = {
-  fahrzeuge: 'supra',
-  autotreffen: 'bmw',
-};
 const imageSizes = (slug: string) => slug === 'events'
   ? 'auto, (max-width: 900px) calc(100vw - 44px), (max-width: 1100px) 42vw, 510px'
   : 'auto, (max-width: 900px) calc(50vw - 28px), (max-width: 1100px) 20vw, 240px';
@@ -27,10 +23,10 @@ const imageSizes = (slug: string) => slug === 'events'
     </div>}
     {!heading && <h2 class="theme-scene__label theme-scene__label--compact">Fotografie</h2>}
     <div class="theme-scene__windows">
-      {rows.map(row => <div class="theme-scene__row" style={`grid-template-columns:${row.map(theme => `${theme.cover.width / theme.cover.height}fr`).join(' ')}`}>
+      {rows.map(row => <div class="theme-scene__row">
         {row.map(theme => <a
           id={`thema-${theme.slug}`}
-          class:list={['theme-scene__window', `theme-scene__window--${theme.slug}`, { 'theme-scene__window--cutout': Boolean(accents[theme.slug]) }]}
+          class:list={['theme-scene__window', `theme-scene__window--${theme.slug}`]}
           href={`/arbeiten/themen/${theme.slug}`}
           data-window-link={theme.slug}
           aria-label={`${theme.name} – ${theme.note}`}
@@ -39,11 +35,12 @@ const imageSizes = (slug: string) => slug === 'events'
             <MediaImage image={theme.cover} sizes={imageSizes(theme.slug)} />
             <h3>{theme.name}</h3>
           </div>
-          {accents[theme.slug] && <div class="theme-scene__cutout" aria-hidden="true">
-            <CutoutImage name={accents[theme.slug]!} sizes="auto, (max-width: 900px) calc(46vw - 26px), (max-width: 1100px) 19vw, 226px" alt="" />
-          </div>}
         </a>)}
       </div>)}
+    </div>
+    <div class="theme-scene__decorations" aria-hidden="true">
+      <div class="theme-scene__decoration theme-scene__decoration--left"><CutoutImage name="supra" sizes="(max-width: 700px) 34vw, 210px" alt="" /></div>
+      <div class="theme-scene__decoration theme-scene__decoration--right"><CutoutImage name="bmw" sizes="(max-width: 700px) 34vw, 210px" alt="" /></div>
     </div>
   </div>
 </section>

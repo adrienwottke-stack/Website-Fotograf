@@ -1,4 +1,4 @@
-import { collection } from './portfolio';
+import { collection, photo } from './portfolio';
 
 // AP-02 proposal: fourteen existing web photographs, two per theme.
 // This is the complete pool, not fourteen fully visible images at once.
@@ -13,7 +13,12 @@ const picks: [string, number, string][] = [
 ];
 
 export const heroEntries = picks.map(([themeSlug, index, themeName]) => ({
-  image: collection(themeSlug)[index],
+  // R2 replaces exactly the two landscape slots; all other ring picks stay put.
+  image: themeSlug === 'events' && index === 0
+    ? photo('1rL5il04tynMaFDDKgwjFBSfhUpKxgL7g')
+    : themeSlug === 'fahrzeuge' && index === 2
+      ? photo('10Jclk9w74rC7aEzIkqp8MzJ7r7Dl0Ny5')
+      : collection(themeSlug)[index],
   href: `/arbeiten/themen/${themeSlug}`,
   themeSlug,
   themeName,

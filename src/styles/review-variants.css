@@ -1,0 +1,88 @@
+/* Preview controls stay in document flow, including on narrow screens. */
+.review-controls { display:none; }
+html[data-review-enabled] .review-controls { display:block; position:relative; z-index:2; background:#fffdf6; color:#2a2f33; color-scheme:light; border-bottom:1px solid #b9c2c6; font-size:13px; }
+.review-controls__bar { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:6px clamp(16px,3vw,40px); }
+.review-controls button,.review-controls select { min-height:44px; border:1px solid #9a9e9b; border-radius:8px; background:#fffdf6; color:#2a2f33; padding:10px 14px; font-size:14px; line-height:1.4; }
+.review-controls__toggle { display:flex; align-items:center; gap:24px; font-weight:650; }
+.review-controls__hint { font-size:12px; }
+.review-controls__options { padding:12px clamp(16px,3vw,40px) 18px; }
+.review-controls__fields { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin-top:16px; }
+.review-controls label { display:flex; flex-direction:column; gap:6px; }
+.review-controls select { width:100%; }
+.review-controls__actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+.review-controls__status { min-height:1.6em; margin-top:10px; }
+.review-controls :is(button,select):focus-visible { outline:3px solid #294b3d; outline-offset:3px; }
+.review-controls button:hover { background:#fff1c9; }
+@media(max-width:700px) { .review-controls__fields { grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; } .review-controls__hint { display:none; } }
+@media(max-width:360px) { .review-controls__fields { grid-template-columns:1fr; } }
+@media print { html[data-review-enabled] .review-controls { display:none; } }
+
+/* Gallery headers are normally absolute at the top of the page. In review
+   mode they follow the controls, so both remain usable when expanded. */
+html[data-review-enabled] .portfolio-page .site-header { position:relative; inset:auto; }
+html[data-review-enabled] .portfolio-page main { padding-top:0; }
+
+/* Separate surface, text and accent roles. Photos, posters and logo pixels
+   retain their source appearance; existing light logo plates remain light. */
+html[data-review-tone='dark'] {
+  color-scheme:dark;
+  --paper:#202729;
+  --butter:#2c3434;
+  --ink:#f4f1e7;
+  --muted:#bcc5c2;
+  --line:rgb(221 232 224 / 26%);
+  --review-canvas:#171c1e;
+  --review-surface:#202729;
+  --review-raised:#2c3434;
+  --review-text:#f4f1e7;
+  --review-accent-ink:#2a2f33;
+}
+html[data-review-tone='dark'] body[data-middlepage] {
+  --window-white:var(--review-surface);
+  --window-beige:var(--review-raised);
+  --window-forest:#294b3d;
+  --window-edge:rgb(221 232 224 / 26%);
+  background:var(--review-canvas);
+  color:var(--review-text);
+}
+html[data-review-tone='dark'] .pilot-backdrop { background:var(--review-canvas); }
+html[data-review-tone='dark'] .pilot-backdrop svg { opacity:.7; }
+html[data-review-tone='dark'] body[data-middlepage] .middlepage { border-color:var(--window-edge); box-shadow:0 0 0 1px var(--window-edge),0 22px 65px #0003; }
+html[data-review-tone='dark'] body[data-middlepage] :is(.editorial-page,.film-section,.project-section,.project-section__header,.portfolio-content,.logo-marquee) { background:var(--review-surface); color:var(--review-text); }
+html[data-review-tone='dark'] body[data-middlepage='home'] .middlepage :is(.theme-scene__heading h2,.theme-scene__label,.service-row h3) { color:#c8dccc; }
+html[data-review-tone='dark'] .theme-scene { --theme-forest:#c8dccc; }
+html[data-review-tone='dark'] :is(.section--dark,.window-dark,.window-quote,.work-films) { background:#172120; color:var(--review-text); }
+html[data-review-tone='dark'] body[data-middlepage='home'] .middlepage .about-teaser__copy { background:#294b3d; color:var(--review-text); }
+html[data-review-tone='dark'] :is(.window-dark .page-kicker,.window-dark .text-link) { color:var(--review-text); }
+html[data-review-tone='dark'] :is(.button,.header-contact,.film-showcase__play,.film-section__heading,.film-play,.play-icon,.gallery-enlarge,.skip-link) { color:var(--review-accent-ink); }
+html[data-review-tone='dark'] :is(.button--dark,.header-contact) { background:var(--yellow); color:var(--review-accent-ink); }
+html[data-review-tone='dark'] .button--outline { background:transparent; color:var(--review-text); }
+html[data-review-tone='dark'] :is(.button,.header-contact):hover { background:var(--review-text); color:var(--review-accent-ink); }
+html[data-review-tone='dark'] :is(.button,.header-contact):focus-visible { outline-color:var(--yellow); }
+html[data-review-tone='dark'] .gallery-enlarge { background:var(--yellow); }
+html[data-review-tone='dark'] :is(.theme-scene__photo,.project-index__item) { background:var(--review-canvas); }
+html[data-review-tone='dark'] .film-showcase__duration { color:var(--review-accent-ink); }
+html[data-review-tone='dark'] .film-showcase__frame { background:#171c1e; }
+html[data-review-tone='dark'] .media-dialog { color:var(--review-text); }
+html[data-review-tone='dark'] .menu-dialog { color:var(--review-text); }
+html[data-review-tone='dark'] .menu-dialog::backdrop { background:#171c1ef5; }
+html[data-review-tone='dark'] .window-contour::after { border-color:var(--line); }
+html[data-review-tone='dark'] .work-tabs a[aria-current='true'] { background:var(--yellow); color:var(--review-accent-ink); }
+html[data-review-tone='dark'] .quiet-footer__socials a { background:var(--review-text); color:var(--review-accent-ink); }
+html[data-review-tone='dark'] .quiet-footer__socials .quiet-footer__contact { background:var(--yellow); color:var(--review-accent-ink); }
+html[data-review-tone='dark'] body[data-middlepage] .quiet-footer__socials a:hover { background:var(--yellow); color:var(--review-accent-ink); }
+html[data-review-tone='dark'] body[data-middlepage] .quiet-footer__socials .quiet-footer__contact:hover { background:var(--review-text); color:var(--review-accent-ink); }
+html[data-review-tone='dark'] .theme-scene__window:focus-visible,
+html[data-review-tone='dark'] .film-showcase__film:focus-visible,
+html[data-review-tone='dark'] .photo-gallery--story .gallery-image:focus-visible { outline-color:var(--yellow); }
+html[data-review-tone='dark'] .logo-marquee__item--dark { background:#2a2f33; }
+html[data-review-tone='dark'] .logo-marquee__arrow { color:var(--review-text); }
+html[data-review-tone='dark'] .logo-marquee__arrow:hover:not(:disabled) { background:var(--review-raised); }
+html[data-review-tone='dark'] .logo-marquee__arrow:focus-visible,html[data-review-tone='dark'] .logo-marquee__viewport:focus-visible { outline-color:var(--yellow); }
+html[data-review-tone='dark'] .portfolio-page[data-middlepage] { background:var(--review-canvas); }
+html[data-review-tone='dark'] .portfolio-page main { background:var(--review-surface); }
+html[data-review-tone='dark'] .portfolio-page .site-header { color:var(--review-text); }
+html[data-review-tone='dark'] .portfolio-page .header-contact { background:var(--yellow); color:var(--review-accent-ink); }
+html[data-review-tone='dark'] .portfolio-backdrop { background:var(--review-canvas); }
+html[data-review-tone='dark'] .portfolio-backdrop--scroll::after { background:linear-gradient(180deg,rgb(22 29 27 / 28%),rgb(22 29 27 / 48%) 55%,var(--review-canvas) 100%); }
+html[data-review-tone='dark'] ::selection { background:var(--yellow); color:var(--review-accent-ink); }

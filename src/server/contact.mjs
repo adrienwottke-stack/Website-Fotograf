@@ -60,6 +60,9 @@ function validate(data) {
     }
   }
   if (!emailPattern.test(fields.email)) throw new FormError(422, 'Bitte gib eine gültige E-Mail-Adresse ein.');
+  if (fields.nachricht.length < 30) {
+    throw new FormError(422, 'Erzähl mir bitte etwas mehr von deiner Idee: mindestens 30 Zeichen ohne Leerzeichen am Anfang und Ende.');
+  }
   if (fields.website) throw new FormError(400, 'Die Anfrage konnte nicht gesendet werden.');
   return fields;
 }

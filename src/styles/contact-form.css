@@ -1,4 +1,5 @@
 .contact-honeypot { display: none; }
+.enquiry .field-hint { margin: 0; font-size: 13px; line-height: 1.5; color: var(--muted); }
 .enquiry > .button { grid-column: 1 / -1; }
 .enquiry .button:disabled { cursor: wait; opacity: .65; }
 .form-status {
