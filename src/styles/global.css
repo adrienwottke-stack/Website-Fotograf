@@ -169,11 +169,11 @@ a,button{
   width:48px;
   height:48px;
   flex-shrink:0;
+  padding:0;
   border:1px solid currentColor;
   border-radius:50%;
   background:transparent;
-  font-size:29px;
-  line-height:1
+  line-height:0
 }
 .skip-link{
   position:fixed;
@@ -1096,14 +1096,7 @@ main:focus{
   align-items:center;
   min-height:44px
 }
-.faq-list summary:after{
-  content:'+';
-  font-size:25px;
-  font-weight:400
-}
-.faq-list details[open] summary:after{
-  content:'−'
-}
+.faq-list details[open] .control-icon__plus-stem{opacity:0}
 .faq-list details p{
   font-size:14px;
   margin-top:20px

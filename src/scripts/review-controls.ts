@@ -20,8 +20,6 @@ if (review && !review.initialized) {
     const panel = document.querySelector<HTMLElement>('[data-review-controls]');
     if (!panel) return;
     panel.querySelector('[data-review-toggle]')?.setAttribute('aria-expanded', String(review.state.expanded));
-    const symbol = panel.querySelector('[data-review-toggle] span');
-    if (symbol) symbol.textContent = review.state.expanded ? '−' : '＋';
     const options = panel.querySelector<HTMLElement>('#review-options');
     if (options) options.hidden = !review.state.expanded;
     panel.querySelectorAll<HTMLSelectElement>('[data-review-choice]').forEach(select => { select.value = review.state[select.dataset.reviewChoice as Choice]; });

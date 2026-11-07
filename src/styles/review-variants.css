@@ -4,6 +4,8 @@ html[data-review-enabled] .review-controls { display:block; position:relative; z
 .review-controls__bar { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:6px clamp(16px,3vw,40px); }
 .review-controls button,.review-controls select { min-height:44px; border:1px solid #9a9e9b; border-radius:8px; background:#fffdf6; color:#2a2f33; padding:10px 14px; font-size:14px; line-height:1.4; }
 .review-controls__toggle { display:flex; align-items:center; gap:24px; font-weight:650; }
+.review-controls__toggle[aria-expanded='true'] .control-icon__plus-stem { opacity:0; }
+.review-controls__actions button { display:inline-flex; align-items:center; justify-content:center; gap:8px; }
 .review-controls__hint { font-size:12px; }
 .review-controls__options { padding:12px clamp(16px,3vw,40px) 18px; }
 .review-controls__fields { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin-top:16px; }

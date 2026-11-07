@@ -1,15 +1,16 @@
 ---
 import { logos } from '../data/logos.generated.json';
+import ControlIcon from './ControlIcon.astro';
 import '../styles/logo-marquee.css';
 ---
 <section class="logo-marquee" data-logo-marquee aria-labelledby="logo-title">
   <div class="logo-marquee__heading"><h2 id="logo-title">Kunden, Creator &amp; Projekte.</h2></div>
   <div class="logo-marquee__row">
-    <button class="logo-marquee__arrow" type="button" data-logo-prev aria-label="Ein Logo zurück" disabled><span aria-hidden="true">←</span></button>
+    <button class="logo-marquee__arrow" type="button" data-logo-prev aria-label="Ein Logo zurück" disabled><ControlIcon name="left" size={28} /></button>
     <div class="logo-marquee__viewport" tabindex="0" role="region" aria-label="Logos, mit Pfeiltasten oder den Schaltflächen durchsehen">
       <ul class="logo-marquee__track">{logos.map(logo=><li class:list={['logo-marquee__item',{'logo-marquee__item--dark':logo.dark}]}><img src={logo.variants[0].src} srcset={logo.variants.map(v=>`${v.src} ${v.density}x`).join(', ')} width={logo.variants[0].width} height={logo.variants[0].height} alt={logo.name} loading="lazy" decoding="async" /></li>)}</ul>
     </div>
-    <button class="logo-marquee__arrow" type="button" data-logo-next aria-label="Ein Logo weiter"><span aria-hidden="true">→</span></button>
+    <button class="logo-marquee__arrow" type="button" data-logo-next aria-label="Ein Logo weiter"><ControlIcon name="right" size={28} /></button>
   </div>
 </section>
 <script>

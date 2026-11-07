@@ -1,0 +1,22 @@
+---
+interface Props {
+  name:'close'|'left'|'right'|'up-right'|'up'|'plus';
+  size?:number;
+}
+const {name,size=24}=Astro.props;
+const paths={
+  close:'M6 6l12 12M18 6 6 18',
+  left:'M19 12H5m6-6-6 6 6 6',
+  right:'M5 12h14m-6-6 6 6-6 6',
+  'up-right':'M6 18 18 6M6 6h12v12',
+  up:'M12 19V5m-6 6 6-6 6 6',
+  plus:'M5 12h14',
+};
+---
+<svg class="control-icon" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d={paths[name]} />
+  {name==='plus'&&<path class="control-icon__plus-stem" d="M12 5v14" />}
+</svg>
+<style>
+  .control-icon{display:block;flex-shrink:0;pointer-events:none}
+</style>
