@@ -9,13 +9,13 @@ export interface Film { id: string; key: string; title: string; description: str
 export const photos = generated.photos as Record<string, Photo>;
 export const collections = generated.collections as Record<string, string[]>;
 export const films = generated.films as Film[];
+export const excludedAnimalIds = new Set(['1DONW1U_MzB70tH8IfPUpS2BwGiVE23es', '1UI85atQM3gtsPTn1Y6xK5atAQM8-ym6W']);
 export const photo = (id: string) => photos[id];
-export const collection = (key: string) => collections[key].map(photo);
+export const collection = (key: string) => collections[key].filter(id => !excludedAnimalIds.has(id)).map(photo);
 export const first = (key: string) => collection(key)[0];
 export const film = (key: string) => films.find(f => f.key === key)!;
 
 const curatedPeopleIds = ["1XpXigQVcsMNC2XFNH8ZbzLsSDWJ4iBkh", "1FKRwC-Laq21vAe-DfvIbTVIGX43J_QKC", "19C_dkzDoPpoodBEI4h_mEMvnVLuaxGxO", "14UDWX8QULotiOOAqv_cE1n9HSUdJoeb6", "1aQFlo4zRBXToKvYNYchwbYzoCYhUN7xO", "1-HMPKCz6ZvFVPOSZl5L6UOZ9nSPs3xTy", "12m-dv9jGQxJsNu3RDJRUYlwMkgknpMZ_", "1fQu9PFB46S96rXpq2RakOzYz7XGfp4f7", "1AAb9_JvA1poP6LQ8ktshIdkPDyXQPSgI", "1DWazbTW3If6GScxAKLflxu-cmin6f3Q_", "1mQeziG3XKC3MkJ5_VlROedeBD6f_qERg", "1BFV_TJ5AFp2EC3i1QpAW6TJLtEjrQOaK", "1t-cZCSsIs2BtliD1Yat6F_YLotP8Yv-G", "1m2ZhsGeQF_rOMAtgORSfsaQ10OGwsnNo"];
-const excludedAnimalIds = new Set(['1DONW1U_MzB70tH8IfPUpS2BwGiVE23es', '1UI85atQM3gtsPTn1Y6xK5atAQM8-ym6W']);
 const peopleBackdrop = photo("1AAb9_JvA1poP6LQ8ktshIdkPDyXQPSgI");
 // Only the theme's reading order changes; its cover, scenery and Hero sources
 // continue to use the untouched generated collection.
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     {title:'Culture Day',description:'Fotografische Begleitung des Culture Day in Berlin 2025.',filmKeys:[],imageIds:collections.greeneyes},
   ] },
   { slug:'autohaus-heidrich', name:'Autohaus Heidrich', title:'Fahrzeuge im richtigen Licht.', category:'Fahrzeugfotografie', description:'Fahrzeugfotografie für Autohaus Heidrich: unterschiedliche Modelle, Perspektiven und Umgebungen. Die Auswahl zeigt Fahrzeuge auf der Straße, in der Landschaft und vor Architektur.', cover:first('heidrich'), images:collection('heidrich'), filmKey:null, filmKeys:[], tags:['Fahrzeugfotografie','Automotive'], related:'fahrzeuge' },
-  { slug:'kekila', name:'Kekila', title:'Menschen. Produkte. Geschichten.', category:'Fotografie und Social Media Content', description:kekilaIntro+'\n'+kekilaFilms, descriptionParagraphs:[kekilaIntro,kekilaFilms], cover:first('kekila'), images:collection('kekila'), filmKey:'kekila', filmKeys:['kekila','kekila-lagerregal','kekila-lager-container-weg','kekila-marmeladenwettbewerb'], tags:['Fotografie','Kurzvideo','Social Media Content'], related:'people' },
+  { slug:'kekila', name:'Kekila', title:'Menschen. Produkte. Geschichten.', category:'Fotografie und Social Media Content', description:kekilaIntro+' '+kekilaFilms, cover:first('kekila'), images:collection('kekila'), filmKey:'kekila', filmKeys:['kekila','kekila-lagerregal','kekila-lager-container-weg','kekila-marmeladenwettbewerb'], tags:['Fotografie','Kurzvideo','Social Media Content'], related:'people' },
   { slug:'zixspeedracing', name:'Zixspeedracing', title:'Kartsport. Nah am Geschehen.', category:'Motorsportfotografie und Film', description:'Fotos und Filme rund um Zixspeedracing: Fahrten, Vorbereitungen und Momente mit dem Team. Die Begleitung verbindet das Geschehen auf der Strecke mit Einblicken ins Training und den Kartsport.', cover:first('zixspeed'), images:collection('zixspeed'), filmKey:'zixspeed', filmKeys:['zixspeed-lohsa','zixspeed'], tags:['Motorsportfotografie','Kurzfilm','Short'], related:'fahrzeuge' },
   { slug:'lounge-oderwitz', name:'Lounge Oderwitz', title:'Partys. Menschen. Musik.', category:'Eventfilm und Social Media Content', description:'Eventfilme und Social Media Content aus der Lounge Oderwitz. Kurze Filme halten die Musik, die Menschen und die Atmosphäre unterschiedlicher Veranstaltungen fest.', cover:filmCover('lounge-jakobimarkt'), images:[], filmKey:'lounge-jakobimarkt', filmKeys:['lounge-80er-90er','lounge-jakobimarkt','lounge-hausparty','lounge-tekknowitz'], tags:['Eventfilm','Shorts','Social Media Content'], related:'events' },
   { slug:'nohand-mtb', name:'NoHand MTB', title:'Auf dem Bike. Mitten im Geschehen.', category:'Mountainbike-Fotografie und Short', description:'Foto- und Videobegleitung rund um den Mountainbike-YouTuber und Influencer NoHand MTB. Sprünge, Training und Momente mit dem Publikum geben Einblicke ins Mountainbike-Umfeld, auch bei den Dirtmasters.', cover:photo('1hBXDIyXdx0jjdEFVahsTfQSPLSSY9svZ'), images:collection('nohand'), filmKey:'nohand-wheelie', filmKeys:['nohand-wheelie'], tags:['Mountainbike','Fotografie','Short','Influencer Begleitung'], related:'people' },

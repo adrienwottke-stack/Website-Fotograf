@@ -4,10 +4,10 @@ import FilmCard from './FilmCard.astro';
 import type {Photo,Film,Project} from '../data/portfolio';
 interface Props { images:Photo[]; movies:Film[]; name:string; works?:Project['works'] }
 const {images,movies,name,works=[]}=Astro.props;
-type Item={image?:Photo;movie?:Film;ratio:number;work?:NonNullable<Project['works']>[number]};
+type Item={image?:Photo;movie?:Film;ratio:number};
 const items:Item[]=[];
-const addPhoto=(image:Photo)=>items.push({image,ratio:image.width/image.height,work:works.find(work=>work.imageIds.includes(image.id))});
-const addFilm=(movie:Film)=>items.push({movie,ratio:movie.width/movie.height,work:works.find(work=>work.filmKeys.includes(movie.key))});
+const addPhoto=(image:Photo)=>items.push({image,ratio:image.width/image.height});
+const addFilm=(movie:Film)=>items.push({movie,ratio:movie.width/movie.height});
 // Keep each source's order and distribute the films through the photographs.
 // New items automatically participate without page-specific grid positions.
 if(images.length&&movies.length&&!works.length){
@@ -18,29 +18,37 @@ if(images.length&&movies.length&&!works.length){
     if(index<filmParts)movies.slice(Math.round(index*movies.length/filmParts),Math.round((index+1)*movies.length/filmParts)).forEach(addFilm);
   }
 }else{images.forEach(addPhoto);movies.forEach(addFilm);}
-const rows:Item[][]=[];
-for(const item of items){
-  const row=rows[rows.length-1];
-  const rowLimit=!images.length&&movies.length===4?4:3;
-  if(!row||row.length===rowLimit||row[0].work!==item.work)rows.push([item]);
-  else row.push(item);
-}
-const lastRow=rows[rows.length-1],previousRow=rows[rows.length-2];
-if(lastRow?.length===1&&previousRow?.length===3&&lastRow[0].work===previousRow[0].work){lastRow.unshift(previousRow.pop()!);}
+const rowLimit=!images.length&&movies.length===4?4:3;
+const groupRows=(entries:Item[]):Item[][]=>{
+  const grouped:Item[][]=[];
+  for(const item of entries){
+    const row=grouped[grouped.length-1];
+    if(!row||row.length===rowLimit)grouped.push([item]);
+    else row.push(item);
+  }
+  const lastRow=grouped[grouped.length-1],previousRow=grouped[grouped.length-2];
+  if(lastRow?.length===1&&previousRow?.length===3){lastRow.unshift(previousRow.pop()!);}
+  return grouped;
+};
+const tailIsPortrait=items.length>0&&items[items.length-1].ratio<1;
+const lastOtherOrientation=items.findLastIndex(item=>(item.ratio<1)!==tailIsPortrait);
+const tailItems=items.slice(lastOtherOrientation+1);
+const separateRestRows=lastOtherOrientation>=0&&tailItems.length>0&&(tailIsPortrait||tailItems.length<=2);
+// Compose the prefix and final run separately with the existing quantities,
+// so count balancing cannot mix a final portrait run with a landscape.
+const rows=separateRestRows?[...groupRows(items.slice(0,lastOtherOrientation+1)),...groupRows(tailItems)]:groupRows(items);
 // Film-only collections use the same sheet: pairs of tall posters, one wide film.
 const mobilePair=(index:number)=>{
-  if(items[index].ratio>.85)return undefined;
-  let start=index;while(start>0&&items[start-1].ratio<=.85&&items[start-1].work===items[index].work)start--;
+  if(items[index].ratio>=1)return undefined;
+  let start=index;while(start>0&&items[start-1].ratio<1)start--;
   const partner=(index-start)%2===1?items[index-1]:items[index+1];
-  return partner&&partner.ratio<=.85&&partner.work===items[index].work?Math.min(items[index].ratio,partner.ratio):undefined;
+  return partner&&partner.ratio<1?Math.min(items[index].ratio,partner.ratio):undefined;
 };
 ---
 <div class="media-gallery" data-gallery aria-label={`Fotos und Filme: ${name}`}>
-  {rows.map(row=><>
-    {row[0].work&&items.find(item=>item.work===row[0].work)===row[0]&&<header class="media-gallery__work"><h2>{row[0].work.title}</h2><p>{row[0].work.description}</p></header>}
-    <div class="media-gallery__row" style={`grid-template-columns:${row.map(item=>`minmax(0,${100*item.ratio/row.reduce((sum,entry)=>sum+entry.ratio,0)}fr)`).join(' ')};--media-row-ratio:${row.reduce((sum,item)=>sum+item.ratio,0)};--media-row-gaps:${row.length-1}`}>
-    {row.map(item=><article id={item.image&&item.image===images[0]?'bilder':item.movie&&item.movie===movies[0]?'projekt-filme':undefined} class:list={['media-gallery__item',{'media-gallery__item--paired':mobilePair(items.indexOf(item)),'media-gallery__item--film':!!item.movie}]} style={`--mobile-preview-ratio:${mobilePair(items.indexOf(item))??item.ratio}`}>
-      {item.image?<GalleryPhoto image={item.image} sizes={`(max-width: 700px) ${mobilePair(items.indexOf(item))?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)'}, (max-width: 1280px) ${(78*item.ratio/row.reduce((sum,entry)=>sum+entry.ratio,0)).toFixed(2)}vw, ${Math.round(1080*item.ratio/row.reduce((sum,entry)=>sum+entry.ratio,0))}px`} eager={items.indexOf(item)<3} />:<FilmCard film={item.movie!} />}
+  {rows.map((row,rowIndex)=><div class:list={['media-gallery__row',{'media-gallery__row--wide-tail':rowIndex===rows.length-1&&row.length<=2&&row.every(item=>item.ratio>=1)}]} style={`grid-template-columns:${row.map(item=>`minmax(0,${100*item.ratio/row.reduce((sum,entry)=>sum+entry.ratio,0)}fr)`).join(' ')};--media-row-ratio:${row.reduce((sum,item)=>sum+item.ratio,0)};--media-row-gaps:${row.length-1}`}>
+    {row.map(item=><article id={item.image&&item.image===images[0]?'bilder':item.movie&&item.movie===movies[0]?'projekt-filme':undefined} class:list={['media-gallery__item',{'media-gallery__item--paired':mobilePair(items.indexOf(item)),'media-gallery__item--portrait':item.ratio<1,'media-gallery__item--film':!!item.movie}]} style={`--mobile-preview-ratio:${mobilePair(items.indexOf(item))??item.ratio}`}>
+      {item.image?<GalleryPhoto image={item.image} sizes={`(max-width: 700px) ${item.ratio<1?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)'}, (max-width: 1280px) ${(78*item.ratio/row.reduce((sum,entry)=>sum+entry.ratio,0)).toFixed(2)}vw, ${Math.round(1080*item.ratio/row.reduce((sum,entry)=>sum+entry.ratio,0))}px`} eager={items.indexOf(item)<3} />:<FilmCard film={item.movie!} />}
     </article>)}
-  </div></>)}
+  </div>)}
 </div>

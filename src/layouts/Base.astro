@@ -23,22 +23,26 @@ const fullTitle=title==='Sandro Mondini – Foto & Film'?title:`${title} | Sandr
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <script is:inline>
+    <script is:inline data-astro-rerun>
       // Set colour and content choices before the first painted frame. The
       // bundled controller reuses this state throughout Astro navigation.
       (() => {
         // Astro keeps this object and the controller's listeners across swaps.
-        if (window.__mondiniReview) return;
         const root = document.documentElement;
-        const enabled = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) || new URLSearchParams(location.search).get('vergleich') === '1';
+        const params = new URLSearchParams(location.search);
+        const existing = window.__mondiniReview;
+        const enabled = existing?.enabled || ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) || params.get('vergleich') === '1';
         const defaults = { tone: 'light', films: 'three', story: 'portrait', about: 'portrait', expanded: false };
         const allowed = { tone: ['light', 'dark'], films: ['three', 'six'], story: ['portrait', 'sony-full', 'sony-cutout', 'camera'], about: ['portrait', 'sony-full', 'sony-cutout', 'camera', 'gimbal'] };
         let saved = {};
-        try { saved = JSON.parse(sessionStorage.getItem('mondini-review-v1') || '{}') || {}; } catch {}
+        try { saved = existing?.state || JSON.parse(sessionStorage.getItem('mondini-review-v1') || '{}') || {}; } catch {}
         const state = { ...defaults };
         for (const key of Object.keys(allowed)) if (allowed[key].includes(saved[key])) state[key] = saved[key];
         state.expanded = saved.expanded === true;
-        window.__mondiniReview = { enabled, state };
+        for (const key of Object.keys(allowed)) if (allowed[key].includes(params.get(key))) state[key] = params.get(key);
+        if (params.get('vergleich') === '1') state.expanded = true;
+        if (existing) { existing.enabled = enabled; existing.state = state; }
+        else window.__mondiniReview = { enabled, state };
         if (enabled) root.setAttribute('data-review-enabled', '');
         for (const key of Object.keys(allowed)) root.setAttribute('data-review-' + key, enabled ? state[key] : defaults[key]);
       })();

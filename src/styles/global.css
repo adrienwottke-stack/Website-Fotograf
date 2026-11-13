@@ -203,9 +203,7 @@ main:focus{
   z-index:20
 }
 .wordmark{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
+  display:inline-block;
   font-family:var(--display);
   font-size:22px;
   line-height:1.1;
@@ -213,24 +211,15 @@ main:focus{
   letter-spacing:-.06em;
   white-space:nowrap
 }
-.wordmark-dot{
-  width:9px;
-  height:9px;
-  flex-shrink:0;
-  border-radius:0;
-  background:var(--yellow);
-  align-self:flex-end;
-  margin-bottom:3px
-}
 .brand-terminal{white-space:nowrap}
 .brand-terminal::after{
   content:'';
   display:inline-block;
-  width:max(6px,.13em);
-  height:max(6px,.13em);
-  margin-left:.08em;
+  width:.4090909091em;
+  height:.4090909091em;
+  margin-left:.3181818182em;
   background:var(--yellow);
-  vertical-align:baseline
+  vertical-align:-.0909090909em
 }
 .desktop-nav{
   display:flex;

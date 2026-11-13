@@ -21,13 +21,25 @@ const compose=(items:Photo[]):Photo[][]=>{
   return [...head,...(tail===8?[...four(remaining.slice(0,4)),...four(remaining.slice(4))]:four(remaining))];
 };
 const composed=composition!=='classic';
-const rows=composed?compose(images):triples(images);
+const composeRows=(items:Photo[])=>{
+  const grouped=composed?compose(items):triples(items);
+  // Keep established four-portrait rows, but do not squeeze an arbitrarily
+  // long portrait run into one row when the tail heuristic returns five.
+  return grouped.flatMap(row=>row.length>4&&row.every(image=>ratio(image)<1)?triples(row):[row]);
+};
+// Partition the final orientation run before composition. Landscapes use a
+// full-width rest row; any length of portrait run continues from the left.
+const tailIsPortrait=images.length>0&&ratio(images[images.length-1])<1;
+const lastOtherOrientation=images.findLastIndex(image=>(ratio(image)<1)!==tailIsPortrait);
+const tailItems=images.slice(lastOtherOrientation+1);
+const separateRestRows=lastOtherOrientation>=0&&tailItems.length>0&&(tailIsPortrait||tailItems.length<=2);
+const rows=separateRestRows?[...composeRows(images.slice(0,lastOtherOrientation+1)),...composeRows(tailItems)]:composeRows(images);
 const mobilePair=(image:Photo)=>{
   const index=images.indexOf(image);
-  if(ratio(image)>.85)return undefined;
-  let start=index;while(start>0&&ratio(images[start-1])<=.85)start--;
+  if(ratio(image)>=1)return undefined;
+  let start=index;while(start>0&&ratio(images[start-1])<1)start--;
   const partner=(index-start)%2===1?images[index-1]:images[index+1];
-  return partner&&ratio(partner)<=.85?Math.min(ratio(image),ratio(partner)):undefined;
+  return partner&&ratio(partner)<1?Math.min(ratio(image),ratio(partner)):undefined;
 };
 // Keep the track weights above one in total: a lone 0.67fr track would
 // otherwise occupy only two thirds of its already height-limited row.
@@ -36,22 +48,21 @@ const columns=(row:Photo[])=>{
   return row.map(image=>`minmax(0, ${100*ratio(image)/total}fr)`).join(' ');
 };
 const imageSizes=(image:Photo,row:Photo[],eager:boolean)=>{
-  if(!composed)return `(max-width: 700px) ${mobilePair(image)?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)'}, (max-width: 1100px) ${ratio(image)>1?'44':'30'}vw, ${ratio(image)>1?'540':'360'}px`;
   const share=ratio(image)/row.reduce((sum,item)=>sum+ratio(item),0);
+  const wideRestRow=row===rows[rows.length-1]&&row.length<=2&&row.every(item=>ratio(item)>=1);
+  if(!composed&&wideRestRow)return `(max-width: 700px) calc(100vw - 44px), (max-width: 1280px) ${(78*share).toFixed(2)}vw, ${(1080*share).toFixed(0)}px`;
+  if(!composed)return `(max-width: 700px) ${ratio(image)<1?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)'}, (max-width: 1100px) ${ratio(image)>1?'44':'30'}vw, ${ratio(image)>1?'540':'360'}px`;
   // Native lazy sizing with an explicit fallback for each mobile tile.
-  const mobile=mobilePair(image)?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)';
+  const mobile=ratio(image)<1?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)';
   return `${eager?'':'auto, '}(max-width: 700px) ${mobile}, (max-width: 1280px) ${(78*share).toFixed(2)}vw, ${(1080*share).toFixed(0)}px`;
 };
 ---
 <div class:list={['photo-gallery',{'photo-gallery--story':layout==='story','photo-gallery--composed':composed}]} data-gallery={contained?undefined:''} data-photo-composition={composition} aria-label={name}>
-  {rows.map((row,rowIndex)=><div class="photo-gallery__row" data-row-count={row.length} style={`--row-ratio:${row.reduce((sum,image)=>sum+ratio(image),0)};--row-gaps:${row.length-1};grid-template-columns:${columns(row)};${!composed&&row.length<3?'--row-max-height:360px;':''}`}>
-    {row.map((image,index)=><div class:list={['photo-gallery__item',{'photo-gallery__item--paired':mobilePair(image)}]} style={`--mobile-preview-ratio:${mobilePair(image)??ratio(image)}`}><GalleryPhoto image={image} sizes={imageSizes(image,row,rowIndex===0&&index<3)} eager={rowIndex===0&&index<3} /></div>)}
+  {rows.map((row,rowIndex)=><div class:list={['photo-gallery__row',{'photo-gallery__row--portraits':row.every(image=>ratio(image)<1),'photo-gallery__row--wide-tail':rowIndex===rows.length-1&&row.length<=2&&row.every(image=>ratio(image)>=1)}]} data-row-count={row.length} style={`--row-ratio:${row.reduce((sum,image)=>sum+ratio(image),0)};--row-gaps:${row.length-1};grid-template-columns:${columns(row)};${!composed&&row.length<3?'--row-max-height:360px;':''}`}>
+    {row.map((image,index)=><div class:list={['photo-gallery__item',{'photo-gallery__item--paired':mobilePair(image),'photo-gallery__item--portrait':ratio(image)<1}]} style={`--mobile-preview-ratio:${mobilePair(image)??ratio(image)}`}><GalleryPhoto image={image} sizes={imageSizes(image,row,rowIndex===0&&index<3)} eager={rowIndex===0&&index<3} /></div>)}
   </div>)}
 </div>
 <style>
-  /* Keep incomplete desktop rows on the common centre line. The images and
-     lightbox sources retain their native ratios; no photo crop is involved. */
-  .photo-gallery__row { margin-inline:auto; }
   @media (max-width:700px) {
     .photo-gallery--story::after { display:none; }
   }

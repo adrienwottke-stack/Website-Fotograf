@@ -82,6 +82,8 @@
 .photo-gallery--story { display: flex; flex-direction: column; gap: var(--gallery-gap); width: 100%; max-width: 1080px; margin-inline: auto; }
 .photo-gallery__row { display: grid; align-self: flex-start; align-items: start; gap: var(--gallery-gap); width: min(100%, calc(var(--row-ratio) * var(--row-max-height, 10000px) + var(--row-gaps) * var(--gallery-gap))); }
 .photo-gallery--composed .photo-gallery__row { width:100%; }
+.photo-gallery .photo-gallery__row--portraits { width:min(100%,calc(var(--row-ratio)*360px + var(--row-gaps)*var(--gallery-gap))); }
+.photo-gallery .photo-gallery__row--wide-tail { width:100%; }
 .photo-gallery--story .gallery-image {
   display: block;
   width: 100%;
@@ -221,7 +223,8 @@ html[data-review-tone='dark'] .portfolio-film{color:var(--review-text)}
 /* One photographic sheet for customer photos and films. The poster itself
    reserves its measured raster height; no second aspect-ratio box is added. */
 .media-gallery{display:flex;flex-direction:column;gap:var(--gallery-gap);max-width:1080px;margin-inline:auto}
-.media-gallery__row{display:grid;align-items:start;gap:var(--gallery-gap);width:min(100%,calc(var(--media-row-ratio)*480px + var(--media-row-gaps)*var(--gallery-gap)));margin-inline:auto}
+.media-gallery__row{display:grid;align-items:start;gap:var(--gallery-gap);width:min(100%,calc(var(--media-row-ratio)*480px + var(--media-row-gaps)*var(--gallery-gap)));margin-inline:0}
+.media-gallery__row--wide-tail{width:100%}
 .media-gallery__item,.photo-gallery__item{min-width:0;scroll-margin-top:24px}
 .media-gallery .gallery-image,.photo-gallery__item .gallery-image{width:100%;margin:0;border-radius:3px;background:transparent}
 .media-gallery .gallery-image .media-image,.photo-gallery__item .media-image{display:block;width:100%;height:auto;background:transparent}
@@ -241,7 +244,7 @@ html[data-review-tone='dark'] .portfolio-film{color:var(--review-text)}
  .photo-gallery--story .photo-gallery__row,.media-gallery__row{display:contents}
  .photo-gallery__item,.media-gallery__item{grid-column:1/-1}
  .media-gallery__work{grid-column:1/-1}
- .photo-gallery__item--paired,.media-gallery__item--paired{grid-column:auto}
+ .photo-gallery__item--paired,.media-gallery__item--paired,.photo-gallery__item--portrait,.media-gallery__item--portrait{grid-column:auto}
  .photo-gallery--story .gallery-image{width:100%;max-width:100%;aspect-ratio:auto}
  .photo-gallery--story .media-image,.photo-gallery--story .media-image img{height:auto}
  .photo-gallery__item--paired .gallery-image,.media-gallery__item--paired .gallery-image,.media-gallery__item--paired .film-card__poster{aspect-ratio:var(--mobile-preview-ratio)!important}

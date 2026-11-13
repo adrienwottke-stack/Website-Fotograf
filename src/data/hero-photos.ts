@@ -18,7 +18,9 @@ export const heroEntries = picks.map(([themeSlug, index, themeName]) => ({
     ? photo('1rL5il04tynMaFDDKgwjFBSfhUpKxgL7g')
     : themeSlug === 'fahrzeuge' && index === 2
       ? photo('10Jclk9w74rC7aEzIkqp8MzJ7r7Dl0Ny5')
-      : collection(themeSlug)[index],
+      : themeSlug === 'tiere'
+        ? photo(index === 0 ? '16FRzPDaHcg5ZoQGs5EhmfhO28FGZ0SeV' : '1AorsqPNBaIjYfez8WHl6bDF4KEI3IuqQ')
+        : collection(themeSlug)[index],
   href: `/arbeiten/themen/${themeSlug}`,
   themeSlug,
   themeName,

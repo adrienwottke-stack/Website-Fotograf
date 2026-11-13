@@ -8,7 +8,8 @@ import sharp from 'sharp';
 // Bounded R3 export: two supplied photographs and two frames from private originals.
 // No downloads, video re-encoding, collection reset, or analysis proxy inputs.
 const root = fileURLToPath(new URL('../', import.meta.url));
-const reportDir = path.join(root, 'analyse/feedback-runde-03/implementation/AP03');
+const schamoOnly = process.argv.includes('--schamo-only');
+const reportDir = path.join(root, schamoOnly ? 'analyse/feedback-runde-03/nacharbeit-2026-11-13/umsetzung-bilder-marke' : 'analyse/feedback-runde-03/implementation/AP03');
 const manifestFile = path.join(root, 'src/data/media.generated.json');
 await fs.mkdir(reportDir, { recursive: true });
 const data = JSON.parse(await fs.readFile(manifestFile, 'utf8'));
@@ -45,7 +46,7 @@ async function entry(id, source, prefix, alt, kind) {
 for (const spec of [
   { id: '1kmuuEZaYkfyci0Z7Nh4YAlKgjsxPlZHJ', name: '7IV03333.jpg', alt: 'Sandro Mondini im blauen Polo zwischen blühenden Büschen, mit Pilotenbrille und Blick nach vorne' },
   { id: '1t5AGjwM4lwBSObAkSa9cLW93t_qbNmx5', name: 'GAP00189.jpg', alt: 'Sandro Mondini frontal mit Kamera vor einem Sony-Stand bei einer Veranstaltung' },
-]) {
+].filter(() => !schamoOnly)) {
   const relative = `.cache/drive-originals/${spec.id}.jpg`;
   const source = path.join(root, relative), bytes = await fs.readFile(source), hash = sha256(bytes);
   report.photos.push({ ...await entry(spec.id, source, hash.slice(0, 14), spec.alt), name: spec.name, source: relative, sourceBytes: bytes.length, sourceSha256: hash });
@@ -53,9 +54,9 @@ for (const spec of [
 
 const completed = JSON.parse(await fs.readFile(path.join(root, 'analyse/feedback-runde-02/agents/analyst-a/preparation/completed-manifest.json'), 'utf8'));
 for (const spec of [
-  { key: 'schamo-aftermovie', id: '1IxjY4DEImgV30DG0bJdTAup8NOORVZDQ', seconds: 3.8, alt: 'Tanzende Gäste bei der Schamo Beach Party' },
+  { key: 'schamo-aftermovie', id: '1IxjY4DEImgV30DG0bJdTAup8NOORVZDQ', seconds: 25, alt: 'Tanzende Gäste mit erhobenen Armen bei der Schamo Beach Party' },
   { key: 'jamina-aperol', id: '19Ydlm9RYGLSRa3u-Tp6gN9_YQLSZT0ac', seconds: 2.7, alt: 'Jamina und eine rothaarige Sängerin posieren vor dem Aperol-Schriftzug am Ostra Beach' },
-]) {
+].filter(spec => !schamoOnly || spec.key === 'schamo-aftermovie')) {
   const relative = `.cache/feedback-runde-02/project-originals/${spec.id}.mp4`;
   const source = path.join(root, relative), bytes = await fs.readFile(source), hash = sha256(bytes);
   const expected = completed.files.find(file => file.id === spec.id);

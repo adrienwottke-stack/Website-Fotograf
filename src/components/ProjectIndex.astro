@@ -1,7 +1,6 @@
 ---
 import MediaImage from './MediaImage.astro';
 import { featuredProjects, type Project } from '../data/portfolio';
-import schallaStills from '../data/layout-schalla-stills.json';
 import '../styles/project-index.css';
 interface Props { items?: Project[]; overview?: boolean }
 const { items = featuredProjects, overview = false } = Astro.props;
@@ -9,15 +8,12 @@ const focus: Record<string, string> = { 'autohaus-heidrich': '50% 50%', kekila: 
 // Use an existing landscape photograph for the wider stage tile.
 const cover = (project: Project) => !overview && project.slug === 'kxxma' ? project.images.find(image => image.width > image.height) ?? project.cover : project.cover;
 ---
-<div class:list={['project-index', {'project-index--overview': overview}]} data-project-index>
-  {items.map((project,index) => (
-    <a class:list={['project-index__item',{'project-index__item--closing':overview&&items.length%3===1&&index===items.length-1&&project.slug===schallaStills.projectSlug}]} href={`/arbeiten/${project.slug}`} aria-label={`${project.name}: Projekt ansehen`}>
+<div id={overview?'projekte':undefined} class:list={['project-index', {'project-index--overview': overview}]} data-project-index>
+  {items.map(project => (
+    <a class="project-index__item" href={`/arbeiten/${project.slug}`} aria-label={`${project.name}: Projekt ansehen`}>
       <div class="project-index__image project-index__cover">
         <MediaImage image={cover(project)} role="editorial" sizes={overview ? '(max-width: 700px) 85vw, (max-width: 1100px) 40vw, 27vw' : '(max-width: 700px) 100vw, 80vw'} position={focus[project.slug]} />
       </div>
-      {overview&&items.length%3===1&&index===items.length-1&&project.slug===schallaStills.projectSlug&&<div class="project-index__stills" aria-hidden="true">
-        {schallaStills.frames.map(frame=><img src={frame.variants[1].src} srcset={frame.variants.map(variant=>`${variant.src} ${variant.width}w`).join(', ')} sizes="(max-width: 700px) 29vw, (max-width: 1100px) 0px, 30vw" width={frame.width} height={frame.height} alt="" loading="lazy" decoding="async" />)}
-      </div>}
       <div class="project-index__caption">
         <h3 class="project-index__title">
           {project.slug === 'zixspeedracing' ? <>Zixspeed<wbr />racing</> : project.name}

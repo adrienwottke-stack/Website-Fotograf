@@ -12434,59 +12434,59 @@
       "id": "film-poster-schamo-aftermovie",
       "width": 1920,
       "height": 1080,
-      "alt": "Tanzende Gäste bei der Schamo Beach Party",
-      "color": "#9d83a3",
+      "alt": "Tanzende Gäste mit erhobenen Armen bei der Schamo Beach Party",
+      "color": "#843e6d",
       "preview": [
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-360.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-360.webp",
           "width": 360,
           "height": 203,
-          "bytes": 6272
+          "bytes": 14616
         },
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-600.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-600.webp",
           "width": 600,
           "height": 338,
-          "bytes": 11910
+          "bytes": 29192
         },
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-900.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-900.webp",
           "width": 900,
           "height": 506,
-          "bytes": 18736
+          "bytes": 47910
         }
       ],
       "display": [
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-600.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-600.webp",
           "width": 600,
           "height": 338,
-          "bytes": 11910
+          "bytes": 29192
         },
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-900.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-900.webp",
           "width": 900,
           "height": 506,
-          "bytes": 18736
+          "bytes": 47910
         },
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-1200.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-1200.webp",
           "width": 1200,
           "height": 675,
-          "bytes": 26282
+          "bytes": 66390
         },
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-1600.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-1600.webp",
           "width": 1600,
           "height": 900,
-          "bytes": 37566
+          "bytes": 90912
         }
       ],
       "large": {
-        "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-1600.webp",
+        "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-1600.webp",
         "width": 1600,
         "height": 900,
-        "bytes": 37566
+        "bytes": 90912
       },
       "kind": "film-poster"
     },
@@ -13082,7 +13082,7 @@
       "duration": 151.04,
       "width": 1280,
       "height": 720,
-      "poster": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-600.webp",
+      "poster": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-600.webp",
       "src": "/media/r2-film-schamo-aftermovie-07e605d04f.mp4",
       "bytes": 53501901,
       "coverId": "film-poster-schamo-aftermovie"

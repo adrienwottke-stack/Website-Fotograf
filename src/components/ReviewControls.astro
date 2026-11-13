@@ -6,14 +6,18 @@ const groups = [
   { key: 'story', label: 'Startseite · Sandro', options: [['portrait', 'Porträt · bisher'], ['sony-full', 'Sony · ganz'], ['sony-cutout', 'Sony · Cutout'], ['camera', 'Kamera · bisher']] },
   { key: 'about', label: 'Über mich · Bild', options: [['portrait', 'Porträt · bisher'], ['sony-full', 'Sony · ganz'], ['sony-cutout', 'Sony · Cutout'], ['camera', 'Kamera · bisher'], ['gimbal', 'Gimbal · bisher']] },
 ];
+const portraitTarget = Astro.url.pathname === '/' ? '/' : '/ueber-mich';
+const portraitAnchor = portraitTarget === '/' ? 'sandro' : 'bildvergleich';
+const portraits = [['portrait', 'Bisheriges Porträt'], ['sony-full', 'Sony · Ganzbild'], ['sony-cutout', 'Sony · Freisteller (Entwurf)']];
 ---
 <aside class="review-controls" aria-label="Entwurf vergleichen" data-review-controls>
   <div class="review-controls__bar">
-    <button type="button" class="review-controls__toggle" aria-expanded="false" aria-controls="review-options" data-review-toggle>Entwurf vergleichen <ControlIcon name="plus" size={18} /></button>
+    <button type="button" class="review-controls__toggle" aria-expanded="false" aria-controls="review-options" data-review-toggle>Bildvergleich · drei Ansichten <ControlIcon name="plus" size={18} /></button>
     <span class="review-controls__hint">Vorschau</span>
   </div>
   <div id="review-options" class="review-controls__options" hidden>
-    <p>Wähle eine Ansicht zum Vergleichen. Die Auswahl bleibt für diese Vorschau erhalten.</p>
+    <p>Öffne eine der drei Bildvarianten direkt. Der Freisteller ist ein Entwurf; die endgültige Bildwahl bleibt offen.</p>
+    <nav class="review-controls__portraits" aria-label="Bildvariante direkt öffnen">{portraits.map(([key,label])=><a data-review-portrait={key} href={`${portraitTarget}?vergleich=1&story=${key}&about=${key}#${portraitAnchor}`}>{label}</a>)}</nav>
     <div class="review-controls__fields">
       {groups.map(group => <label for={`review-${group.key}`}><span>{group.label}</span><select id={`review-${group.key}`} data-review-choice={group.key}>{group.options.map(([value, label]) => <option value={value}>{label}</option>)}</select></label>)}
     </div>

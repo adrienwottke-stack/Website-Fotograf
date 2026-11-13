@@ -15,6 +15,11 @@ if (review && !review.initialized) {
     keys.forEach(key => root.setAttribute(`data-review-${key}`, review.enabled ? review.state[key] : defaults[key]));
   };
   const save = () => { try { sessionStorage.setItem('mondini-review-v1', JSON.stringify(review.state)); } catch {} };
+  const readQuery = (url: URL) => {
+    const params = url.searchParams;
+    if (params.get('vergleich') === '1') { review.enabled = true; review.state.expanded = true; }
+    keys.forEach(key => { const value = params.get(key); if (value && allowed[key].includes(value)) review.state[key] = value; });
+  };
   const sync = () => {
     apply(document.documentElement);
     const panel = document.querySelector<HTMLElement>('[data-review-controls]');
@@ -23,6 +28,11 @@ if (review && !review.initialized) {
     const options = panel.querySelector<HTMLElement>('#review-options');
     if (options) options.hidden = !review.state.expanded;
     panel.querySelectorAll<HTMLSelectElement>('[data-review-choice]').forEach(select => { select.value = review.state[select.dataset.reviewChoice as Choice]; });
+    panel.querySelectorAll<HTMLAnchorElement>('[data-review-portrait]').forEach(link => {
+      const group = location.pathname === '/' ? 'story' : 'about';
+      if (link.dataset.reviewPortrait === review.state[group]) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', review.enabled && review.state.tone === 'dark' ? '#171c1e' : '#FFFDF6');
   };
   // One delegated set of listeners survives body replacement without duplicates.
@@ -50,9 +60,12 @@ if (review && !review.initialized) {
     if (event.key === 'Escape' && review.state.expanded && (event.target as Element)?.closest('[data-review-controls]')) { event.preventDefault(); collapse(); }
   });
   document.addEventListener('astro:before-swap', event => {
-    const incoming = (event as Event & { newDocument: Document }).newDocument;
+    const swap = event as Event & { newDocument: Document; to: URL };
+    if (swap.to) readQuery(swap.to);
+    const incoming = swap.newDocument;
     apply(incoming.documentElement);
   });
-  document.addEventListener('astro:page-load', sync);
+  document.addEventListener('astro:page-load', () => { readQuery(new URL(location.href)); sync(); });
+  readQuery(new URL(location.href));
   sync();
 }
