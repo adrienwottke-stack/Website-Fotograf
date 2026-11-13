@@ -2,16 +2,17 @@
 import MediaImage from './MediaImage.astro';
 import CutoutImage from './CutoutImage.astro';
 import type { Photo } from '../data/portfolio';
-interface Choice { key: string; image?: Photo; cutout?: 'sandroPortrait'; position?: string }
+import { cutouts } from '../data/cutouts.generated.json';
+interface Choice { key: string; image?: Photo; cutout?: keyof typeof cutouts; position?: string }
 interface Props { group: 'story' | 'about'; choices: Choice[]; sizes: string; eager?: boolean }
 const { group, choices, sizes, eager = false } = Astro.props;
 ---
 <div class="review-photo" data-review-photo={group}>
-  <div data-review-photo-active>
-    <div {...{[`data-${group}-variant`]: 'portrait'}}>
-      {choices[0].cutout ? <CutoutImage name={choices[0].cutout} sizes={sizes} eager={eager} /> : <MediaImage image={choices[0].image!} role="display" sizes={sizes} eager={eager} position={choices[0].position} />}
-    </div>
-  </div>
+  <!-- Only the selected template becomes a live image, including on reload. -->
+  <div data-review-photo-active></div>
+  <noscript>
+    {choices[0].cutout ? <CutoutImage name={choices[0].cutout} sizes={sizes} eager={eager} /> : <MediaImage image={choices[0].image!} role="display" sizes={sizes} eager={eager} position={choices[0].position} />}
+  </noscript>
   {choices.map(choice => <template data-review-photo-template={choice.key}>
     <div {...{[`data-${group}-variant`]: choice.key}}>
       {choice.cutout ? <CutoutImage name={choice.cutout} sizes={sizes} eager={eager} /> : <MediaImage image={choice.image!} role="display" sizes={sizes} eager={eager} position={choice.position} />}
@@ -42,4 +43,5 @@ const { group, choices, sizes, eager = false } = Astro.props;
 </script>
 <style>
   .review-photo, [data-review-photo-active], [data-story-variant], [data-about-variant] { width:100%; height:100%; }
+  [data-review-photo-active]:empty { display:none; }
 </style>

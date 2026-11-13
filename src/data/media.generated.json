@@ -11207,59 +11207,59 @@
       "id": "film-poster-jamina-aperol",
       "width": 2160,
       "height": 3840,
-      "alt": "Jamina: Aperol Sunday Vibes · Ostra Beach",
-      "color": "#252a28",
+      "alt": "Jamina und eine rothaarige Sängerin posieren vor dem Aperol-Schriftzug am Ostra Beach",
+      "color": "#a88573",
       "preview": [
         {
-          "src": "/media/r2-poster-jamina-aperol-b15e473132-360.webp",
+          "src": "/media/r3-poster-jamina-aperol-b15e473132-2.7s-360.webp",
           "width": 360,
           "height": 640,
-          "bytes": 24206
+          "bytes": 35548
         },
         {
-          "src": "/media/r2-poster-jamina-aperol-b15e473132-600.webp",
+          "src": "/media/r3-poster-jamina-aperol-b15e473132-2.7s-600.webp",
           "width": 600,
           "height": 1067,
-          "bytes": 45518
+          "bytes": 68566
         },
         {
-          "src": "/media/r2-poster-jamina-aperol-b15e473132-900.webp",
+          "src": "/media/r3-poster-jamina-aperol-b15e473132-2.7s-900.webp",
           "width": 900,
           "height": 1600,
-          "bytes": 74118
+          "bytes": 108752
         }
       ],
       "display": [
         {
-          "src": "/media/r2-poster-jamina-aperol-b15e473132-600.webp",
+          "src": "/media/r3-poster-jamina-aperol-b15e473132-2.7s-600.webp",
           "width": 600,
           "height": 1067,
-          "bytes": 45518
+          "bytes": 68566
         },
         {
-          "src": "/media/r2-poster-jamina-aperol-b15e473132-900.webp",
+          "src": "/media/r3-poster-jamina-aperol-b15e473132-2.7s-900.webp",
           "width": 900,
           "height": 1600,
-          "bytes": 74118
+          "bytes": 108752
         },
         {
-          "src": "/media/r2-poster-jamina-aperol-b15e473132-1200.webp",
+          "src": "/media/r3-poster-jamina-aperol-b15e473132-2.7s-1200.webp",
           "width": 1200,
           "height": 2133,
-          "bytes": 102974
+          "bytes": 148744
         },
         {
-          "src": "/media/r2-poster-jamina-aperol-b15e473132-1350.webp",
+          "src": "/media/r3-poster-jamina-aperol-b15e473132-2.7s-1350.webp",
           "width": 1350,
           "height": 2400,
-          "bytes": 119102
+          "bytes": 170970
         }
       ],
       "large": {
-        "src": "/media/r2-poster-jamina-aperol-b15e473132-1350.webp",
+        "src": "/media/r3-poster-jamina-aperol-b15e473132-2.7s-1350.webp",
         "width": 1350,
         "height": 2400,
-        "bytes": 119102
+        "bytes": 170970
       },
       "kind": "film-poster"
     },
@@ -12434,76 +12434,179 @@
       "id": "film-poster-schamo-aftermovie",
       "width": 1920,
       "height": 1080,
-      "alt": "Schamo Beach Party: 10 Jahre · Aftermovie",
-      "color": "#252a28",
+      "alt": "Tanzende Gäste bei der Schamo Beach Party",
+      "color": "#9d83a3",
       "preview": [
         {
-          "src": "/media/r2-poster-schamo-aftermovie-07e605d04f-360.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-360.webp",
           "width": 360,
           "height": 203,
-          "bytes": 5870,
-          "sha256": "252aba51a147b8057bca8620a7971a7c4556767e13b7440a19b4b046467d8efd"
+          "bytes": 6272
         },
         {
-          "src": "/media/r2-poster-schamo-aftermovie-07e605d04f-600.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-600.webp",
           "width": 600,
           "height": 338,
-          "bytes": 10950,
-          "sha256": "cba7f616863ac6e98b47167fc15859f5957e2ebcf07153f1258c333311d80ccd"
+          "bytes": 11910
         },
         {
-          "src": "/media/r2-poster-schamo-aftermovie-07e605d04f-900.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-900.webp",
           "width": 900,
           "height": 506,
-          "bytes": 16980,
-          "sha256": "689bb466b85e519801d987e278fce09cdc5df0fa3e35b9ced9b9ae11b6a8990a"
+          "bytes": 18736
         }
       ],
       "display": [
         {
-          "src": "/media/r2-poster-schamo-aftermovie-07e605d04f-600.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-600.webp",
           "width": 600,
           "height": 338,
-          "bytes": 10950,
-          "sha256": "cba7f616863ac6e98b47167fc15859f5957e2ebcf07153f1258c333311d80ccd"
+          "bytes": 11910
         },
         {
-          "src": "/media/r2-poster-schamo-aftermovie-07e605d04f-900.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-900.webp",
           "width": 900,
           "height": 506,
-          "bytes": 16980,
-          "sha256": "689bb466b85e519801d987e278fce09cdc5df0fa3e35b9ced9b9ae11b6a8990a"
+          "bytes": 18736
         },
         {
-          "src": "/media/r2-poster-schamo-aftermovie-07e605d04f-1200.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-1200.webp",
           "width": 1200,
           "height": 675,
-          "bytes": 23722,
-          "sha256": "1eb33c23dc017f044a8846903aa75c574bf8251775d7ad753f4397557f341ae4"
+          "bytes": 26282
         },
         {
-          "src": "/media/r2-poster-schamo-aftermovie-07e605d04f-1600.webp",
+          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-1600.webp",
           "width": 1600,
           "height": 900,
-          "bytes": 33948,
-          "sha256": "a7101c5e43fe382770218636b04bb180d17d96d20bd1ef70a54a1c40631913bf"
-        },
-        {
-          "src": "/media/r2-poster-schamo-aftermovie-07e605d04f-1920.webp",
-          "width": 1920,
-          "height": 1080,
-          "bytes": 44136,
-          "sha256": "e73b5cf7ee183c8d021be17051b73da35caff45e5291c44f29dff10793f31ddd"
+          "bytes": 37566
         }
       ],
       "large": {
-        "src": "/media/r2-poster-schamo-aftermovie-07e605d04f-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 44136,
-        "sha256": "e73b5cf7ee183c8d021be17051b73da35caff45e5291c44f29dff10793f31ddd"
+        "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 37566
       },
       "kind": "film-poster"
+    },
+    "1kmuuEZaYkfyci0Z7Nh4YAlKgjsxPlZHJ": {
+      "id": "1kmuuEZaYkfyci0Z7Nh4YAlKgjsxPlZHJ",
+      "width": 4672,
+      "height": 7008,
+      "alt": "Sandro Mondini im blauen Polo zwischen blühenden Büschen, mit Pilotenbrille und Blick nach vorne",
+      "color": "#40423e",
+      "preview": [
+        {
+          "src": "/media/r3-33116fdd281d89-360.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 37958
+        },
+        {
+          "src": "/media/r3-33116fdd281d89-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 83270
+        },
+        {
+          "src": "/media/r3-33116fdd281d89-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 147754
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/r3-33116fdd281d89-600.webp",
+          "width": 600,
+          "height": 900,
+          "bytes": 83270
+        },
+        {
+          "src": "/media/r3-33116fdd281d89-900.webp",
+          "width": 900,
+          "height": 1350,
+          "bytes": 147754
+        },
+        {
+          "src": "/media/r3-33116fdd281d89-1200.webp",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 229368
+        },
+        {
+          "src": "/media/r3-33116fdd281d89-1600.webp",
+          "width": 1600,
+          "height": 2400,
+          "bytes": 344126
+        }
+      ],
+      "large": {
+        "src": "/media/r3-33116fdd281d89-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 344126
+      }
+    },
+    "1t5AGjwM4lwBSObAkSa9cLW93t_qbNmx5": {
+      "id": "1t5AGjwM4lwBSObAkSa9cLW93t_qbNmx5",
+      "width": 4437,
+      "height": 6681,
+      "alt": "Sandro Mondini frontal mit Kamera vor einem Sony-Stand bei einer Veranstaltung",
+      "color": "#383b39",
+      "preview": [
+        {
+          "src": "/media/r3-da5dd6d95b803d-360.webp",
+          "width": 360,
+          "height": 543,
+          "bytes": 22056
+        },
+        {
+          "src": "/media/r3-da5dd6d95b803d-600.webp",
+          "width": 600,
+          "height": 904,
+          "bytes": 41278
+        },
+        {
+          "src": "/media/r3-da5dd6d95b803d-900.webp",
+          "width": 900,
+          "height": 1355,
+          "bytes": 67986
+        }
+      ],
+      "display": [
+        {
+          "src": "/media/r3-da5dd6d95b803d-600.webp",
+          "width": 600,
+          "height": 904,
+          "bytes": 41278
+        },
+        {
+          "src": "/media/r3-da5dd6d95b803d-900.webp",
+          "width": 900,
+          "height": 1355,
+          "bytes": 67986
+        },
+        {
+          "src": "/media/r3-da5dd6d95b803d-1200.webp",
+          "width": 1200,
+          "height": 1807,
+          "bytes": 97868
+        },
+        {
+          "src": "/media/r3-da5dd6d95b803d-1594.webp",
+          "width": 1594,
+          "height": 2400,
+          "bytes": 146180
+        }
+      ],
+      "large": {
+        "src": "/media/r3-da5dd6d95b803d-1594.webp",
+        "width": 1594,
+        "height": 2400,
+        "bytes": 146180
+      }
     }
   },
   "collections": {
@@ -12784,7 +12887,7 @@
       "duration": 30.825333,
       "width": 720,
       "height": 1280,
-      "poster": "/media/r2-poster-jamina-aperol-b15e473132-600.webp",
+      "poster": "/media/r3-poster-jamina-aperol-b15e473132-2.7s-600.webp",
       "src": "/media/r2-film-jamina-aperol-b15e473132.mp4",
       "bytes": 14647008,
       "coverId": "film-poster-jamina-aperol"
@@ -12979,7 +13082,7 @@
       "duration": 151.04,
       "width": 1280,
       "height": 720,
-      "poster": "/media/r2-poster-schamo-aftermovie-07e605d04f-600.webp",
+      "poster": "/media/r3-poster-schamo-aftermovie-07e605d04f-3.8s-600.webp",
       "src": "/media/r2-film-schamo-aftermovie-07e605d04f.mp4",
       "bytes": 53501901,
       "coverId": "film-poster-schamo-aftermovie"

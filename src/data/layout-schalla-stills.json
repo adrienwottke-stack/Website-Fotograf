@@ -1,0 +1,86 @@
+{
+  "projectSlug": "schalla-balla",
+  "frames": [
+    {
+      "alt": "Publikum unter gelben Laserstrahlen beim Schalla Balla Open Air",
+      "width": 1080,
+      "height": 1920,
+      "variants": [
+        {
+          "src": "/media/layout-schalla-1-cdd6fb0dcd-240.webp",
+          "width": 240,
+          "height": 427
+        },
+        {
+          "src": "/media/layout-schalla-1-f3a55331d9-360.webp",
+          "width": 360,
+          "height": 640
+        },
+        {
+          "src": "/media/layout-schalla-1-80b117f5de-600.webp",
+          "width": 600,
+          "height": 1067
+        },
+        {
+          "src": "/media/layout-schalla-1-c44a2a2418-900.webp",
+          "width": 900,
+          "height": 1600
+        }
+      ]
+    },
+    {
+      "alt": "Lichttechnik und Bühnenlicht beim Schalla Balla Open Air",
+      "width": 1080,
+      "height": 1920,
+      "variants": [
+        {
+          "src": "/media/layout-schalla-2-cb3f0193a9-240.webp",
+          "width": 240,
+          "height": 427
+        },
+        {
+          "src": "/media/layout-schalla-2-688294f70b-360.webp",
+          "width": 360,
+          "height": 640
+        },
+        {
+          "src": "/media/layout-schalla-2-74bc27efd2-600.webp",
+          "width": 600,
+          "height": 1067
+        },
+        {
+          "src": "/media/layout-schalla-2-0229bdb9bb-900.webp",
+          "width": 900,
+          "height": 1600
+        }
+      ]
+    },
+    {
+      "alt": "DJ am Pult beim Schalla Balla Open Air",
+      "width": 1080,
+      "height": 1920,
+      "variants": [
+        {
+          "src": "/media/layout-schalla-3-f6e8272eb7-240.webp",
+          "width": 240,
+          "height": 427
+        },
+        {
+          "src": "/media/layout-schalla-3-f15cc031af-360.webp",
+          "width": 360,
+          "height": 640
+        },
+        {
+          "src": "/media/layout-schalla-3-837fd77601-600.webp",
+          "width": 600,
+          "height": 1067
+        },
+        {
+          "src": "/media/layout-schalla-3-851628a407-900.webp",
+          "width": 900,
+          "height": 1600
+        }
+      ]
+    }
+  ]
+}

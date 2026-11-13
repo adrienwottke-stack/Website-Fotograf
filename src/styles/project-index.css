@@ -33,6 +33,16 @@
 .project-index--overview .project-index__caption{padding:20px}
 .project-index--overview .project-index__caption h3{font-size:clamp(25px,2.8vw,40px);line-height:1.06}
 .project-index--overview .project-index__category{font-size:12px}
+.project-index__stills{display:none}
+/* Three actual, native-ratio moments from one Schalla film, one project link. */
+@media(min-width:1101px){
+ .project-index--overview .project-index__item--closing{grid-column:1/-1;aspect-ratio:27/16}
+ .project-index__item--closing .project-index__cover{display:none}
+ .project-index__item--closing .project-index__stills{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+ .project-index__stills img{display:block;width:100%;height:100%;object-fit:contain}
+ .project-index--overview .project-index__item--closing .project-index__caption{padding:clamp(24px,3vw,48px)}
+ .project-index--overview .project-index__item--closing .project-index__caption h3{font-size:clamp(38px,4vw,62px)}
+}
 @media(max-width:1100px){.project-index--overview{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){
  .project-section__title-link{padding:12px;gap:8px}
@@ -42,4 +52,10 @@
  .project-index--overview{grid-template-columns:minmax(0,1fr);gap:14px;padding:10px}
  .project-index--overview .project-index__item{aspect-ratio:4/5}
  .project-index--overview .project-index__caption h3{font-size:34px}
+ .project-index--overview .project-index__item--closing{aspect-ratio:auto}
+ .project-index__item--closing .project-index__cover{display:none}
+ .project-index__item--closing::after{display:none}
+ .project-index__item--closing .project-index__stills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}
+ .project-index__stills img{display:block;width:100%;height:auto}
+ .project-index__item--closing .project-index__caption{position:relative;padding:22px}
 }

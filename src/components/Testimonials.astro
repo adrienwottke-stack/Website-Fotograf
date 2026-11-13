@@ -1,0 +1,30 @@
+---
+import entries from '../data/testimonials.json';
+interface Testimonial { name: string; stars: number; quote?: string }
+// The editing tool will supply genuine, approved entries here. An empty data
+// source intentionally renders no public section or placeholder reviews.
+const testimonials = (entries as Testimonial[]).filter(entry =>
+  typeof entry.name === 'string' && entry.name.trim().length > 0 &&
+  Number.isInteger(entry.stars) && entry.stars >= 1 && entry.stars <= 5
+);
+---
+{testimonials.length > 0 && <section class="testimonials section" aria-labelledby="testimonials-title">
+  <div class="wrap">
+    <h2 id="testimonials-title">Stimmen zur Zusammenarbeit.</h2>
+    <div class="testimonials__list">{testimonials.map(entry => <figure>
+      <p class="testimonials__stars" aria-label={`${entry.stars} von 5 Sternen`}><span aria-hidden="true">{'★'.repeat(entry.stars)}<span class="testimonials__unfilled">{'☆'.repeat(5-entry.stars)}</span></span></p>
+      {entry.quote?.trim() && <blockquote>{entry.quote}</blockquote>}
+      <figcaption>{entry.name}</figcaption>
+    </figure>)}</div>
+  </div>
+</section>}
+<style>
+  .testimonials { background:var(--window-beige,#e8e0ce); color:var(--ink); }
+  h2 { max-width:20ch; margin-bottom:32px; font-size:clamp(30px,4vw,54px); line-height:1.1; }
+  .testimonials__list { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:32px; }
+  figure { margin:0; min-width:0; }
+  .testimonials__stars { font-size:23px; letter-spacing:.1em; margin-bottom:16px; }
+  .testimonials__unfilled { opacity:.45; }
+  blockquote { margin:0 0 18px; max-width:50ch; font-size:clamp(17px,1.6vw,22px); line-height:1.6; overflow-wrap:anywhere; }
+  figcaption { font-weight:650; overflow-wrap:anywhere; }
+</style>

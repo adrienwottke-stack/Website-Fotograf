@@ -1,27 +1,51 @@
 ---
-import MediaImage from './MediaImage.astro';
-import ControlIcon from './ControlIcon.astro';
+import GalleryPhoto from './GalleryPhoto.astro';
 import type { Photo } from '../data/portfolio';
-interface Props { images:Photo[]; name:string; layout?:'grid'|'story'; contained?:boolean }
+interface Props { images:Photo[]; name:string; layout?:'grid'|'story'; contained?:boolean; composition?:'classic'|'balanced'|'tail' }
 // A mixed customer sequence owns one shared lightbox scope across all chunks.
-const { images,name,layout='grid',contained=false }=Astro.props;
+const { images,name,layout='grid',contained=false,composition='classic' }=Astro.props;
 // Proportional columns align upper/lower edges without cropping the photographs.
-const rows=Array.from({length:Math.ceil(images.length/3)},(_,row)=>images.slice(row*3,row*3+3));
 const ratio=(image:Photo)=>image.width/image.height;
+const triples=(items:Photo[])=>Array.from({length:Math.ceil(items.length/3)},(_,row)=>items.slice(row*3,row*3+3));
+// Four mostly horizontal motifs read as two pairs. Portrait-heavy fours can
+// share a single edge-to-edge row without creating an isolated last image.
+const four=(items:Photo[])=>items.reduce((sum,image)=>sum+ratio(image),0)>5?[items.slice(0,2),items.slice(2)]:[items];
+const compose=(items:Photo[]):Photo[][]=>{
+  if(items.length===4)return four(items);
+  if(items.length===7)return [items.slice(0,3),items.slice(3)];
+  // Rebalance only the tail of the longer theme sequences. In particular the
+  // requested first Autotreffen row keeps all three of its original positions.
+  const tail=items.length%3===1?4:items.length%3===2?Math.min(8,items.length):0;
+  if(!tail)return triples(items);
+  const head=triples(items.slice(0,-tail)),remaining=items.slice(-tail);
+  return [...head,...(tail===8?[...four(remaining.slice(0,4)),...four(remaining.slice(4))]:four(remaining))];
+};
+const composed=composition!=='classic';
+const rows=composed?compose(images):triples(images);
+const mobilePair=(image:Photo)=>{
+  const index=images.indexOf(image);
+  if(ratio(image)>.85)return undefined;
+  let start=index;while(start>0&&ratio(images[start-1])<=.85)start--;
+  const partner=(index-start)%2===1?images[index-1]:images[index+1];
+  return partner&&ratio(partner)<=.85?Math.min(ratio(image),ratio(partner)):undefined;
+};
 // Keep the track weights above one in total: a lone 0.67fr track would
 // otherwise occupy only two thirds of its already height-limited row.
 const columns=(row:Photo[])=>{
   const total=row.reduce((sum,image)=>sum+ratio(image),0);
   return row.map(image=>`minmax(0, ${100*ratio(image)/total}fr)`).join(' ');
 };
-const imageSizes=(image:Photo)=>`(max-width: 700px) ${ratio(image)>1?'94':'46'}vw, (max-width: 1100px) ${ratio(image)>1?'44':'30'}vw, ${ratio(image)>1?'540':'360'}px`;
+const imageSizes=(image:Photo,row:Photo[],eager:boolean)=>{
+  if(!composed)return `(max-width: 700px) ${mobilePair(image)?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)'}, (max-width: 1100px) ${ratio(image)>1?'44':'30'}vw, ${ratio(image)>1?'540':'360'}px`;
+  const share=ratio(image)/row.reduce((sum,item)=>sum+ratio(item),0);
+  // Native lazy sizing with an explicit fallback for each mobile tile.
+  const mobile=mobilePair(image)?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)';
+  return `${eager?'':'auto, '}(max-width: 700px) ${mobile}, (max-width: 1280px) ${(78*share).toFixed(2)}vw, ${(1080*share).toFixed(0)}px`;
+};
 ---
-<div class:list={['photo-gallery',{'photo-gallery--story':layout==='story'}]} data-gallery={contained?undefined:''} aria-label={name}>
-  {rows.map((row,rowIndex)=><div class="photo-gallery__row" style={`--row-ratio:${row.reduce((sum,image)=>sum+ratio(image),0)};--row-gaps:${row.length-1};grid-template-columns:${columns(row)};${row.length<3?'--row-max-height:360px;':''}`}>
-    {row.map((image,index)=><a class:list={['gallery-image',{'gallery-image--wide':image.width>image.height}]} style={`--photo-ratio:${ratio(image)}`} href={image.large.src} data-photo data-large={image.large.src} data-caption={image.alt} data-width={image.large.width} data-height={image.large.height} data-astro-reload aria-label={`${image.alt} – vergrößern`}>
-      <MediaImage image={image} role="preview" sizes={imageSizes(image)} eager={rowIndex===0&&index<3} />
-      <span class="gallery-enlarge" aria-hidden="true"><ControlIcon name="up-right" size={20} /></span>
-    </a>)}
+<div class:list={['photo-gallery',{'photo-gallery--story':layout==='story','photo-gallery--composed':composed}]} data-gallery={contained?undefined:''} data-photo-composition={composition} aria-label={name}>
+  {rows.map((row,rowIndex)=><div class="photo-gallery__row" data-row-count={row.length} style={`--row-ratio:${row.reduce((sum,image)=>sum+ratio(image),0)};--row-gaps:${row.length-1};grid-template-columns:${columns(row)};${!composed&&row.length<3?'--row-max-height:360px;':''}`}>
+    {row.map((image,index)=><div class:list={['photo-gallery__item',{'photo-gallery__item--paired':mobilePair(image)}]} style={`--mobile-preview-ratio:${mobilePair(image)??ratio(image)}`}><GalleryPhoto image={image} sizes={imageSizes(image,row,rowIndex===0&&index<3)} eager={rowIndex===0&&index<3} /></div>)}
   </div>)}
 </div>
 <style>
@@ -29,8 +53,6 @@ const imageSizes=(image:Photo)=>`(max-width: 700px) ${ratio(image)>1?'94':'46'}v
      lightbox sources retain their native ratios; no photo crop is involved. */
   .photo-gallery__row { margin-inline:auto; }
   @media (max-width:700px) {
-    .photo-gallery--story { justify-content:center; }
     .photo-gallery--story::after { display:none; }
-    .photo-gallery--story .photo-gallery__row > .gallery-image { flex-grow:0; }
   }
 </style>

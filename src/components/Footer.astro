@@ -22,7 +22,7 @@ const year = new Date().getFullYear();
       <nav class="quiet-footer__nav" aria-label="Themen und Projekte im Footer">
         {leftLinks.map(link => {const Icon=link.icon;return <a href={link.href}><Icon size={17} strokeWidth={1.6} aria-hidden="true" /><span>{link.label}</span></a>;})}
       </nav>
-      <a class="quiet-footer__brand" href="/" aria-label="Sandro Mondini, Startseite"><span>Sandro</span><span>Mondini.</span></a>
+      <a class="quiet-footer__brand" href="/" aria-label="Sandro Mondini, Startseite"><span>Sandro</span><span class="brand-terminal">Mondini</span></a>
       <nav class="quiet-footer__nav" aria-label="Leistungen und Kontakt im Footer">
         {rightLinks.map(link => {const Icon=link.icon;return <a href={link.href}><Icon size={17} strokeWidth={1.6} aria-hidden="true" /><span>{link.label}</span></a>;})}
       </nav>

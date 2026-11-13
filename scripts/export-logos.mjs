@@ -15,12 +15,12 @@ const selection = [
   { id: '1DycU9UP8hxise_2AxBGd_9_V7aMoJq_K', ext: 'png', key: 'jamina', name: 'Jamina1404', width: 180 },
   { id: '1Mhc5o_aKxoBQzU5TUsHr89GvTPaSkiFL', ext: 'png', key: 'zixspeed', name: 'Zixspeed Racing Team', width: 230 },
   { id: '1MqYGgav-23gEkpuFgBx98EAVhTV3bvJR', ext: 'png', key: 'schalla-balla', name: 'Schalla Balla', width: 108 },
-  { id: '1j9oB0HiTL_i5_eTn6KR6o84Bmap9mrNG', ext: 'jpg', key: 'schamo', name: 'Schamo Beachparty', background: [40, 39, 37], width: 165 },
+  { id: '1j9oB0HiTL_i5_eTn6KR6o84Bmap9mrNG', ext: 'jpg', key: 'schamo', name: 'Schamo Beachparty', keepBackground: true, keepCanvas: true, width: 165 },
   { id: '1O6C_w3_JuiwGDWhvuKrLfaJIS9geEjaK', ext: 'png', key: 'lounge-oderwitz', name: 'Lounge Oderwitz', width: 104 },
   { id: '1rml6AxtWaN3Q6-JtRdObCJKvqJ8_Y__k', ext: 'png', key: 'motorsport', name: 'Motorsport-Signet', width: 86 },
 ];
 
-// Remove only the connected exterior background in the two supplied JPEGs.
+// Only marks explicitly requesting background removal use the exterior flood fill.
 // Transparent artwork keeps its original RGB colour and alpha channel.
 function clearExterior(data, width, height, background) {
   const visited = new Uint8Array(width * height);
@@ -45,7 +45,9 @@ function clearExterior(data, width, height, background) {
 }
 
 const logos = [];
-const only = process.argv.find(arg => arg.startsWith('--only='))?.split('=')[1];
+const onlyArg = process.argv.find(arg => arg.startsWith('--only='))?.split('=')[1] ?? process.argv[process.argv.indexOf('--only') + 1];
+const only = process.argv.some(arg => arg === '--only' || arg.startsWith('--only=')) ? onlyArg?.toLowerCase() : undefined;
+if (process.argv.some(arg => arg === '--only' || arg.startsWith('--only=')) && !only) throw new Error('Missing logo selection');
 if (only && !selection.some(entry => entry.key === only)) throw new Error('Unknown logo selection');
 for (const entry of selection.filter(entry => !only || entry.key === only)) {
   const source = path.join(root, '.cache/logo-originals', `${entry.id}.${entry.ext}`);
@@ -54,8 +56,9 @@ for (const entry of selection.filter(entry => !only || entry.key === only)) {
     .resize({ width: 1200, height: 1200, fit: 'inside', withoutEnlargement: true })
     .ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   if (entry.background && !entry.keepBackground) clearExterior(prepared.data, prepared.info.width, prepared.info.height, entry.background);
-  const trimmed = await sharp(prepared.data, { raw: prepared.info }).trim({ threshold: 8 }).png().toBuffer();
-  const hash = crypto.createHash('sha256').update(bytes).update(entry.keepBackground ? 'logo-original-white-v2' : 'logo-lossless-v1').digest('hex').slice(0, 10);
+  const artwork = sharp(prepared.data, { raw: prepared.info });
+  const trimmed = await (entry.keepCanvas ? artwork : artwork.trim({ threshold: 8 })).png().toBuffer();
+  const hash = crypto.createHash('sha256').update(bytes).update(entry.keepCanvas ? 'logo-original-canvas-v3' : entry.keepBackground ? 'logo-original-white-v2' : 'logo-lossless-v1').digest('hex').slice(0, 10);
   const variants = [];
   for (const density of [1, 2]) {
     const output = await sharp(trimmed).resize({ width: entry.width * density, height: 90 * density, fit: 'inside', withoutEnlargement: true })
@@ -68,9 +71,10 @@ for (const entry of selection.filter(entry => !only || entry.key === only)) {
 }
 const merged = only ? JSON.parse(await fs.readFile(path.join(root, 'src/data/logos.generated.json'), 'utf8')).logos.map(logo => logos.find(item => item.key === logo.key) ?? logo) : logos;
 await fs.writeFile(path.join(root, 'src/data/logos.generated.json'), JSON.stringify({ logos: merged }, null, 2) + '\n');
-await fs.mkdir(path.join(root, 'analyse/feedback-runde-01/implementation/AP-08'), { recursive: true });
-await fs.writeFile(path.join(root, 'analyse/feedback-runde-01/implementation/AP-08/logo-export.json'), JSON.stringify({
+const reportDirectory = path.join(root, 'analyse/feedback-runde-03/implementation/AP03');
+await fs.mkdir(reportDirectory, { recursive: true });
+await fs.writeFile(path.join(reportDirectory, 'logo-export.json'), JSON.stringify({
   exportedAt: new Date().toISOString(), selection, logos,
-  note: 'Supplied marks retain original colours. Heidrich keeps its supplied white ground to preserve enclosed shapes on the white logo strip. Only selected originals are re-exported when --only is set. Lossless WebP, originals private.'
+  note: 'Supplied marks retain original colours. Schamo retains the complete supplied JPG canvas and its opaque dark background, without trimming or background removal. Heidrich keeps its supplied white ground. Only selected originals are re-exported when --only is set. Lossless WebP, originals private.'
 }, null, 2) + '\n');
 console.log(JSON.stringify({ marks: logos.length, variants: logos.length * 2, bytes: logos.reduce((total, logo) => total + logo.variants.reduce((sum, v) => sum + v.bytes, 0), 0) }));

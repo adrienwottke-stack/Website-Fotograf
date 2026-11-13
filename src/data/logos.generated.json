@@ -153,17 +153,17 @@
       "dark": false,
       "variants": [
         {
-          "src": "/media/logo-schamo-9f89a27a33-1x.webp",
-          "width": 155,
+          "src": "/media/logo-schamo-1f9b5fa97e-1x.webp",
+          "width": 146,
           "height": 90,
-          "bytes": 9584,
+          "bytes": 7196,
           "density": 1
         },
         {
-          "src": "/media/logo-schamo-9f89a27a33-2x.webp",
-          "width": 310,
+          "src": "/media/logo-schamo-1f9b5fa97e-2x.webp",
+          "width": 293,
           "height": 180,
-          "bytes": 22722,
+          "bytes": 17892,
           "density": 2
         }
       ]

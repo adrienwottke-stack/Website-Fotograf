@@ -12,6 +12,7 @@ import MediaOverlay from '../components/MediaOverlay.astro';
 import SiteBackdrop from '../components/SiteBackdrop.astro';
 import Middlepage from '../components/Middlepage.astro';
 import ReviewControls from '../components/ReviewControls.astro';
+import BackToTop from '../components/BackToTop.astro';
 interface Props { title:string; description:string; gallery?:boolean }
 const {title,description,gallery=false}=Astro.props;
 const immersive = ['/', '/hero-2', '/hero-2/'].includes(Astro.url.pathname);
@@ -31,7 +32,7 @@ const fullTitle=title==='Sandro Mondini – Foto & Film'?title:`${title} | Sandr
         const root = document.documentElement;
         const enabled = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) || new URLSearchParams(location.search).get('vergleich') === '1';
         const defaults = { tone: 'light', films: 'three', story: 'portrait', about: 'portrait', expanded: false };
-        const allowed = { tone: ['light', 'dark'], films: ['three', 'six'], story: ['portrait', 'camera'], about: ['portrait', 'camera', 'gimbal'] };
+        const allowed = { tone: ['light', 'dark'], films: ['three', 'six'], story: ['portrait', 'sony-full', 'sony-cutout', 'camera'], about: ['portrait', 'sony-full', 'sony-cutout', 'camera', 'gimbal'] };
         let saved = {};
         try { saved = JSON.parse(sessionStorage.getItem('mondini-review-v1') || '{}') || {}; } catch {}
         const state = { ...defaults };
@@ -61,8 +62,13 @@ const fullTitle=title==='Sandro Mondini – Foto & Film'?title:`${title} | Sandr
     {!immersive && <Header />}
     <main id="inhalt" tabindex="-1" transition:animate="none"><Middlepage enabled={!immersive && !gallery}><slot /></Middlepage></main>
     <Footer pilot />
+    <BackToTop />
     <MediaOverlay />
     <script>import '../scripts/site';</script>
     <script>import '../scripts/review-controls';</script>
   </body>
 </html>
+
+<style is:global>
+  html { color-scheme:light; }
+</style>

@@ -4,8 +4,9 @@ import Middlepage from './Middlepage.astro';
 import MediaImage from './MediaImage.astro';
 import PhotoGallery from './PhotoGallery.astro';
 import FilmCard from './FilmCard.astro';
-import CutoutImage from './CutoutImage.astro';
-import { photo, film, type Photo, type Film, type Project } from '../data/portfolio';
+
+import MediaGallery from './MediaGallery.astro';
+import { type Photo, type Film, type Project } from '../data/portfolio';
 import '../styles/portfolio-gallery.css';
 
 interface Props {
@@ -29,54 +30,26 @@ interface Props {
 }
 const {name,subtitle,description,descriptionParagraphs=[description],cover,backdrop=cover,backdropMode='fixed',backdropPosition='50% 50%',images,backHref,backLabel,next,movies=[],filmHeading='Filme',works=[],tags=[],themeSlug}=Astro.props;
 const nextLabel=themeSlug?'Nächstes Thema':'Nächstes Projekt';
-const hasKartCutout=!themeSlug && name==='Zixspeedracing';
-const grouped = works.length > 0;
-const mixedCustomer = !themeSlug && images.length > 0 && movies.length > 0;
-// Split only customer collections. Keep source order, balanced photo sections,
-// and every film; sparse photo collections get two-film interludes when needed.
-const photoPartCount = Math.min(movies.length + 1, Math.max(2, Math.floor(images.length / 3)));
-const filmPartCount = Math.min(movies.length, photoPartCount);
-const sequence = mixedCustomer ? Array.from({length:photoPartCount}, (_,index) => ({
-  images: images.slice(Math.round(index * images.length / photoPartCount), Math.round((index + 1) * images.length / photoPartCount)),
-  movies: index < filmPartCount ? movies.slice(Math.round(index * movies.length / filmPartCount), Math.round((index + 1) * movies.length / filmPartCount)) : [],
-})) : [];
-const photoWork = works.find(work => work.imageIds.length > 0);
-const movieWork = (movie:Film) => works.find(work => work.filmKeys.includes(movie.key));
+const photoComposition = ['tiere','events','reisen','autotreffen'].includes(themeSlug ?? '') ? 'tail' : 'classic';
+const filmLayout = movies.length===1 ? (movies[0].width>movies[0].height?'landscape':'portrait') : movies.length===4 ? 'four' : movies.length===2 ? 'pair' : 'standard';
 ---
 <Base title={name} description={description} gallery>
   <div class:list={['portfolio-backdrop', {'portfolio-backdrop--scroll':backdropMode==='scroll'}]} aria-hidden="true">
     <MediaImage image={backdrop} role="editorial" sizes="100vw" eager priority alt="" position={backdropPosition} />
   </div>
   <Middlepage enabled gallery>
-    <header class:list={['portfolio-hero',{'portfolio-hero--cutout':hasKartCutout}]}>
+    <header class="portfolio-hero">
       <a class="portfolio-back" href={backHref}><span aria-hidden="true">←</span> {backLabel}</a>
       <div class="portfolio-hero__title">
         <h1>{name}</h1>
         <div class="portfolio-hero__bottom"><p>{subtitle}</p><nav class="portfolio-media-links" aria-label="Medien dieser Sammlung">{images.length>0&&<a href="#bilder" class="portfolio-scroll">{images.length} {images.length===1?'Fotografie':'Fotografien'} <span aria-hidden="true">↓</span></a>}{movies.length>0&&<a href="#projekt-filme" class="portfolio-scroll">{movies.length} {movies.length===1?'Film':'Filme'} <span aria-hidden="true">↓</span></a>}</nav></div>
       </div>
-      {hasKartCutout && <div class="portfolio-hero__cutout" aria-hidden="true"><CutoutImage name="kart" sizes="(max-width: 700px) 32vw, 240px" alt="" eager /></div>}
     </header>
     <div class="portfolio-content">
       <div class="portfolio-intro"><div class="portfolio-intro__text">{descriptionParagraphs.map(paragraph=><p>{paragraph}</p>)}</div>{tags.length>0&&<ul aria-label="Projektbereiche">{tags.map(tag=><li>{tag}</li>)}</ul>}</div>
-      {mixedCustomer ? <div class="portfolio-sequence" data-gallery aria-label={`Fotos und Filme: ${name}`}>
-        {sequence.map((part,index)=><>
-          <section id={index===0?'bilder':undefined} class="portfolio-sequence__photos" aria-label={photoWork?`${photoWork.title}: Fotografien, Abschnitt ${index+1}`:`Fotografien: ${name}, Abschnitt ${index+1}`}>
-            {photoWork&&(index===0?<header class="portfolio-sequence__work-heading"><h2>{photoWork.title}</h2><p>{photoWork.description}</p></header>:<p class="portfolio-sequence__continuation">Weitere Fotografien: {photoWork.title}</p>)}
-            <PhotoGallery images={part.images} name={`Bildstrecke ${name}`} layout="story" contained />
-          </section>
-          {part.movies.length>0&&<section id={index===0?'projekt-filme':undefined} class="portfolio-sequence__films" aria-label={`${name}: ${index===0?filmHeading:'Weitere Filme'}`}>
-            {!grouped&&<h2>{index===0?filmHeading:'Weitere Filme'}</h2>}
-            <div class="film-grid portfolio-sequence__film-grid" style={`--sequence-film-columns:${part.movies.length};--sequence-film-width:${part.movies.some(movie=>movie.width>movie.height)?600:300}px`}>
-              {part.movies.map(movie=>{const work=movieWork(movie);return work?<article class="portfolio-work"><header><h2>{work.title}</h2><p>{work.description}</p></header><FilmCard film={movie} /></article>:<FilmCard film={movie} />})}
-            </div>
-          </section>}
-        </>)}
-      </div> : <>
-        {!grouped&&images.length>0&&<section id="bilder" aria-label={`Fotografien: ${name}`}><PhotoGallery images={images} name={`Bildstrecke ${name}`} layout="story" /></section>}
-        {grouped&&works.filter(work=>work.imageIds.length>0).map(work=><section id="bilder" class="portfolio-work" aria-label={work.title}><header><h2>{work.title}</h2><p>{work.description}</p></header><PhotoGallery images={work.imageIds.map(photo)} name={`${name}: ${work.title}`} layout="story" /></section>)}
-      </>}
+      {!themeSlug?<MediaGallery images={images} movies={movies} name={name} works={works} />:images.length>0&&<section id="bilder" aria-label={`Fotografien: ${name}`}><PhotoGallery images={images} name={`Bildstrecke ${name}`} layout="story" composition={photoComposition} /></section>}
     </div>
-    {!mixedCustomer&&movies.length>0&&<section id="projekt-filme" class="portfolio-film" aria-labelledby="portfolio-film-heading"><h2 id="portfolio-film-heading">{filmHeading}</h2><div class:list={['film-grid','portfolio-film__grid',{'portfolio-film__grid--weddings':themeSlug==='hochzeiten'}]}>{grouped?works.filter(work=>work.filmKeys.length>0).map(work=><article class="portfolio-work"><header><h3>{work.title}</h3><p>{work.description}</p></header>{work.filmKeys.map(key=><FilmCard film={film(key)} />)}</article>):movies.map(movie=><FilmCard film={movie} />)}</div></section>}
+    {themeSlug&&movies.length>0&&<section id="projekt-filme" class="portfolio-film" aria-labelledby="portfolio-film-heading"><h2 id="portfolio-film-heading">{filmHeading}</h2><div class:list={['film-grid','portfolio-film__grid',`portfolio-film__grid--${filmLayout}`,{'portfolio-film__grid--weddings':themeSlug==='hochzeiten'}]}>{movies.map(movie=><FilmCard film={movie} />)}</div></section>}
     <section id="naechstes-thema" class="portfolio-outro" aria-label={nextLabel}>
       <a class="portfolio-next" href={next.href} aria-label={`${nextLabel}: ${next.name}`}>
         <div class="portfolio-next__preview"><MediaImage image={next.cover} sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1100px) 40vw, 480px" alt="" /></div>

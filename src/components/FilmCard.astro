@@ -4,9 +4,16 @@ import '../styles/film-section.css';
 interface Props { film:Film; featured?:boolean }
 const { film,featured=false }=Astro.props;
 const posterVariants=film.coverId?photo(film.coverId).preview:undefined;
+// The four original posters predate registered responsive poster variants.
+// Use their measured raster sizes to reserve the preview before it decodes.
+const legacyPosterSizes:Record<string,{width:number;height:number}>={
+  kxxma:{width:563,height:1000},kekila:{width:563,height:1000},
+  zixspeed:{width:800,height:338},hochzeit:{width:563,height:1000},
+};
+const posterSize=posterVariants?.find(variant=>variant.src===film.poster)??legacyPosterSizes[film.key]??film;
 const duration=`${Math.floor(film.duration/60)}:${String(Math.floor(film.duration%60)).padStart(2,'0')}`;
 ---
 <button type="button" class:list={['film-card',{'film-card--wide':film.width>film.height,'film-card--featured':featured}]} data-film data-src={film.src} data-title={film.title} data-poster={film.poster} data-width={film.width} data-height={film.height} aria-haspopup="dialog" aria-label={`${film.title}: ${film.description}. Film abspielen, ${duration}`}>
-  <span class="film-card__poster" style={`--film-ratio:${film.width}/${film.height};aspect-ratio:${film.width}/${film.height}`}><img src={film.poster} srcset={posterVariants?.map(variant=>`${variant.src} ${variant.width}w`).join(', ')} sizes="(max-width: 700px) 85vw, 28vw" alt="" loading="lazy" decoding="async" width={film.width} height={film.height} /><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M8 5 19 12 8 19Z" fill="currentColor" /></svg></span><span class="film-duration">{duration}</span></span>
+  <span class="film-card__poster" style={`--film-ratio:${film.width}/${film.height};aspect-ratio:auto`}><img src={film.poster} srcset={posterVariants?.map(variant=>`${variant.src} ${variant.width}w`).join(', ')} sizes="(max-width: 700px) 85vw, 28vw" alt="" loading="lazy" decoding="async" width={posterSize.width} height={posterSize.height} /><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M8 5 19 12 8 19Z" fill="currentColor" /></svg></span><span class="film-duration">{duration}</span></span>
   <span class="film-card__caption"><strong>{film.title}</strong><span>{film.description}</span></span>
 </button>

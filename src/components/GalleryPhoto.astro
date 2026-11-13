@@ -1,0 +1,11 @@
+---
+import MediaImage from './MediaImage.astro';
+import ControlIcon from './ControlIcon.astro';
+import type { Photo } from '../data/portfolio';
+interface Props { image:Photo; sizes:string; eager?:boolean }
+const {image,sizes,eager=false}=Astro.props;
+---
+<a class:list={['gallery-image',{'gallery-image--wide':image.width>image.height}]} style={`--photo-ratio:${image.width/image.height}`} href={image.large.src} data-photo data-large={image.large.src} data-caption={image.alt} data-width={image.large.width} data-height={image.large.height} data-astro-reload aria-label={`${image.alt} – vergrößern`}>
+  <MediaImage image={image} role="preview" sizes={sizes} eager={eager} />
+  <span class="gallery-enlarge" aria-hidden="true"><ControlIcon name="up-right" size={20} /></span>
+</a>

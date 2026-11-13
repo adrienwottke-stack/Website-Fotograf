@@ -168,6 +168,25 @@
           "bytes": 85242
         }
       ]
+    },
+    "sonyFront": {
+      "width": 520,
+      "height": 1503,
+      "alt": "Sandro Mondini mit Kamera, frontal aufgenommen beim Sony-Event",
+      "variants": [
+        {
+          "src": "/media/cutout-sony-front-fa76ec4e9e18-360.webp",
+          "width": 360,
+          "height": 1041,
+          "bytes": 70610
+        },
+        {
+          "src": "/media/cutout-sony-front-fa76ec4e9e18-520.webp",
+          "width": 520,
+          "height": 1503,
+          "bytes": 117106
+        }
+      ]
     }
   }
 }

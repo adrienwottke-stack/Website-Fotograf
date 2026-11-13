@@ -7,8 +7,11 @@
 .film-showcase{padding-block:38px 56px}
 .work-films .film-grid{padding-block:38px 56px}
 .film-grid>.film-card{grid-column:auto;grid-row:auto;align-self:start;margin:0;max-width:none;color:inherit}
-.film-grid .film-card__poster{width:100%;aspect-ratio:var(--film-ratio);border:1px solid var(--window-edge,var(--line));border-radius:16px}
-.film-grid .film-card__poster>img{display:block;object-fit:contain}
+.film-grid .film-card__poster{width:100%;aspect-ratio:var(--film-ratio);border-radius:16px}
+/* The preview owns its raster ratio, including responsive rounding. A second
+   fixed film-ratio box and an inside border would add dark contain gutters. */
+.film-card .film-card__poster{border:0;background:transparent}
+button.film-card .film-card__poster>img,button.film-card:hover .film-card__poster>img{display:block;width:100%;height:auto;object-fit:contain;transform:none}
 .film-grid .film-card__caption>strong{font-size:clamp(19px,2vw,25px);overflow-wrap:anywhere}
 .film-grid .film-card__caption>span{font-size:13px;line-height:1.6}
 .film-card .play-icon{padding:0;width:48px;height:48px;background:var(--yellow);color:#2a2f33;box-shadow:0 3px 18px #0003}

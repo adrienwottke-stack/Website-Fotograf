@@ -6,7 +6,7 @@ type Review = { enabled: boolean; state: ReviewState; initialized?: boolean };
 declare global { interface Window { __mondiniReview?: Review } }
 const defaults: ReviewState = { tone: 'light', films: 'three', story: 'portrait', about: 'portrait', expanded: false };
 const keys: Choice[] = ['tone', 'films', 'story', 'about'];
-const allowed: Record<Choice, string[]> = { tone: ['light', 'dark'], films: ['three', 'six'], story: ['portrait', 'camera'], about: ['portrait', 'camera', 'gimbal'] };
+const allowed: Record<Choice, string[]> = { tone: ['light', 'dark'], films: ['three', 'six'], story: ['portrait', 'sony-full', 'sony-cutout', 'camera'], about: ['portrait', 'sony-full', 'sony-cutout', 'camera', 'gimbal'] };
 const review = window.__mondiniReview;
 if (review && !review.initialized) {
   review.initialized = true;

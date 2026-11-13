@@ -1,7 +1,6 @@
 ---
 import { themes } from '../data/portfolio';
 import MediaImage from './MediaImage.astro';
-import CutoutImage from './CutoutImage.astro';
 import '../styles/cutout-experiments.css';
 import '../styles/theme-scene.css';
 interface Props { compact?: boolean; heading?: boolean }
@@ -37,10 +36,6 @@ const imageSizes = (slug: string) => slug === 'events'
           </div>
         </a>)}
       </div>)}
-    </div>
-    <div class="theme-scene__decorations" aria-hidden="true">
-      <div class="theme-scene__decoration theme-scene__decoration--left"><CutoutImage name="supra" sizes="(max-width: 700px) 34vw, 210px" alt="" /></div>
-      <div class="theme-scene__decoration theme-scene__decoration--right"><CutoutImage name="bmw" sizes="(max-width: 700px) 34vw, 210px" alt="" /></div>
     </div>
   </div>
 </section>

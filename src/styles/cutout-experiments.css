@@ -27,6 +27,9 @@
 .window-personal.about-teaser--cutout [data-story-variant='camera'] { border-radius:32px; overflow:hidden; }
 .window-personal.about-teaser--cutout [data-story-variant='camera'] .media-image,
 .window-personal.about-teaser--cutout [data-story-variant='camera'] img { width:100%; height:100%; object-fit:cover; object-position:50% 50%; }
+.window-personal.about-teaser--cutout .about-portrait:has([data-story-variant='sony-full']) { height:auto; aspect-ratio:4437/6681; border-radius:32px; }
+.window-personal.about-teaser--cutout .about-portrait:has([data-story-variant='sony-full'])::before { display:none; }
+.window-personal.about-teaser--cutout [data-story-variant='sony-full'] :is(.media-image,img) { width:100%; height:100%; object-fit:contain; background:transparent; }
 .portfolio-hero.portfolio-hero--cutout { position:relative; isolation:isolate; overflow:hidden; background:var(--ink); }
 .portfolio-hero__cutout {
   position:absolute;
