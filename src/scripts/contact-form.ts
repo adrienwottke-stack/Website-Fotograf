@@ -6,6 +6,14 @@ export function initContactForm(form: HTMLFormElement, signal: AbortSignal) {
   const message = status.querySelector<HTMLElement>('p')!;
   const project = new URL(location.href).searchParams.get('projekt');
   const note = form.querySelector<HTMLTextAreaElement>('[name="nachricht"]')!;
+  const shortFields = ['name', 'anliegen'].map(name => form.querySelector<HTMLInputElement>(`[name="${name}"]`)!);
+  const validateShortFields = () => shortFields.forEach(field => field.setCustomValidity(
+    field.value.trim() ? '' : field.name === 'name' ? 'Bitte gib deinen Namen ein.' : 'Bitte beschreibe kurz dein Anliegen.'
+  ));
+  shortFields.forEach(field => {
+    field.addEventListener('input', validateShortFields, { signal });
+    field.addEventListener('change', validateShortFields, { signal });
+  });
   const validateNote = () => {
     const length = note.value.trim().length;
     note.setCustomValidity(length < 30
@@ -14,7 +22,7 @@ export function initContactForm(form: HTMLFormElement, signal: AbortSignal) {
   };
   note.addEventListener('input', validateNote, { signal });
   note.addEventListener('change', validateNote, { signal });
-  form.addEventListener('reset', () => note.setCustomValidity(''), { signal });
+  form.addEventListener('reset', () => { note.setCustomValidity(''); shortFields.forEach(field => field.setCustomValidity('')); }, { signal });
   validateNote();
   if (project) form.querySelector<HTMLInputElement>('[name="anliegen"]')!.value = project.slice(0, 150);
   let pending = false;
@@ -32,6 +40,7 @@ export function initContactForm(form: HTMLFormElement, signal: AbortSignal) {
 
   form.addEventListener('submit', async event => {
     event.preventDefault();
+    validateShortFields();
     validateNote();
     if (pending || !form.reportValidity()) return;
     const payload = JSON.stringify(Object.fromEntries(new FormData(form)));

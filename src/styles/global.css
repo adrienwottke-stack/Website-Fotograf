@@ -651,6 +651,9 @@ main:focus{
   font-size:23px;
   line-height:1.2
 }
+.hero-two-page .film-stage .film-card__caption>strong{
+  overflow-wrap:anywhere
+}
 .film-card__caption>span{
   display:block;
   font-size:11px;

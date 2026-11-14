@@ -23,11 +23,11 @@ const images = heroEntries.map(({ image, href, themeSlug, themeName }) => ({
 </section>
 
 <noscript><style is:inline>
-  .stream-hero { height:auto; }
-  .stream-hero .hero-ring { height:auto; min-height:0; }
-  .stream-hero .hero-ring__projection { perspective:none; }
-  .stream-hero .hero-ring__space { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:18px; transform:none; padding:20px; }
-  .stream-hero .hero-ring__card { position:static; width:100%; height:240px; transform:none; opacity:1; visibility:visible; pointer-events:auto; }
+  .stream-hero { height:auto; min-height:0; display:block; }
+  .stream-hero .hero-ring { height:auto; min-height:0; margin-top:28px; }
+  .stream-hero .hero-ring__projection { position:static; perspective:none; container-type:normal; }
+  .stream-hero .hero-ring__space { position:static; display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:18px; transform:none; padding:20px; }
+  .stream-hero .hero-ring__card { position:static; width:100%; height:auto; aspect-ratio:9/16; transform:none; opacity:1; visibility:visible; pointer-events:auto; }
   .stream-hero .hero-ring-controls { display:none; }
 </style></noscript>
 
