@@ -1682,6 +1682,11 @@ main:focus{
     grid-column:1/-1;
     grid-row:2
   }
+  /* This retained hero variant now includes several landscape films. Each
+     needs its own row instead of sharing the original single featured slot. */
+  .hero-two-page .film-stage > .film-card--wide{
+    grid-row:auto
+  }
   .film-card--wide .film-card__poster{
     aspect-ratio:16/9
   }

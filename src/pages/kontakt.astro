@@ -11,7 +11,7 @@ import '../styles/contact-form.css';
     <form id="enquiry" class="enquiry" action="/api/kontakt" method="post" data-astro-reload>
       <div class="field field--full"><label for="name">Wie heißt du?</label><input id="name" name="name" autocomplete="name" required maxlength="100" /></div>
       <div class="field field--full"><label for="email">Deine E-Mail-Adresse</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="Damit ich dir antworten kann" /></div>
-      <div class="field field--full"><label for="anliegen">Worum geht es?</label><input id="anliegen" name="anliegen" placeholder="Zum Beispiel Hochzeit, Foto, Film oder Zusammenarbeit" required maxlength="150" /></div>
+      <div class="field field--full"><label for="anliegen">Worum geht es?</label><input id="anliegen" name="anliegen" placeholder="Hochzeit, Foto oder Film" required maxlength="150" /></div>
       <div class="field"><label for="termin">Wann? <span>optional</span></label><input id="termin" name="termin" placeholder="Termin oder Zeitraum" maxlength="100" /></div>
       <div class="field"><label for="ort">Wo? <span>optional</span></label><input id="ort" name="ort" autocomplete="address-level2" placeholder="Ort oder Region" maxlength="100" /></div>
       <div class="field field--full"><label for="nachricht">Erzähl mir von deiner Idee.</label><textarea id="nachricht" name="nachricht" rows="5" required minlength="30" maxlength="2500" aria-describedby="nachricht-hint"></textarea><p id="nachricht-hint" class="field-hint">Mindestens 30, höchstens 2500 Zeichen. Leerzeichen am Anfang und Ende zählen nicht mit.</p></div>
