@@ -22,6 +22,11 @@
 .window-about-head { grid-template-columns:1.1fr .9fr; gap:5vw; padding-block:80px 110px; align-items:start; }
 .window-about-head__copy { z-index:1; min-width:0; }
 .window-about-head h1 { font-size:clamp(68px,8.3vw,128px); line-height:.95; }
+/* Archivo's large initial glyphs have a visible left side-bearing. Match
+   their ink edge to the small kicker/body copy, relative to the font size. */
+.window-about-head__copy>h1,
+.window-service__copy>h2,
+.window-personal .about-teaser__copy>h2 { margin-inline-start:-.06em; }
 .window-about-head .lead { font-size:18px; }
 .window-about-head .about-head__portrait { height:clamp(500px,47vw,710px); transform:none; margin:-10px 0 0; border-radius:var(--window-radius); }
 .window-about-head .about-head__portrait:has([data-about-variant='gimbal']) { height:auto; aspect-ratio:3/2; align-self:center; }
