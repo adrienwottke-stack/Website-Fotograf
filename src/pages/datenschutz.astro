@@ -1,16 +1,36 @@
 ---
 import Base from '../layouts/Base.astro';
+import { provider, hosting, legalUpdated } from '../data/legal';
 ---
-<Base title="Datenschutz – Entwurf" description="Datenschutzinformationen zum lokalen Websiteentwurf von Sandro Mondini.">
+<Base title="Datenschutz" description="Datenschutzinformationen zur Website von Sandro Mondini, Foto und Film.">
   <article class="wrap legal">
     <h1>Datenschutz.</h1>
-    <p class="status-note">Lokaler Gestaltungsentwurf. Die endgültige Datenschutzerklärung wird auf das bestätigte Hosting und die tatsächlich eingesetzten Dienste abgestimmt.</p>
-    <h2>Dieser Entwurf</h2>
-    <p>Schriften, Fotos und Filme werden lokal ausgeliefert. Filme werden erst nach einer Abspielaktion geladen. Es sind keine Analyse- oder Werbedienste eingebunden.</p>
+    <p>Hier erfährst du, welche Daten beim Besuch dieser Website verarbeitet werden und welche Rechte du hast. Kurz gesagt: keine Cookies, kein Tracking, keine Werbung.</p>
+
+    <h2>Verantwortlich</h2>
+    <p>{provider.name}<br />{provider.street}<br />{provider.city}<br />E-Mail: <a href={`mailto:${provider.email}`}>{provider.email}</a></p>
+
+    <h2>Hosting und Server-Logfiles</h2>
+    <p>Diese Website wird bei {hosting.name}, {hosting.address}, gehostet. Beim Aufruf einer Seite verarbeitet der Hoster technisch notwendige Daten, die dein Browser automatisch übermittelt: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Referrer, Browser und Betriebssystem. Das ist nötig, um die Website sicher und stabil auszuliefern (Art. 6 Abs. 1 lit. f DSGVO). Die Logdaten werden nur kurzzeitig gespeichert und nicht mit anderen Daten zusammengeführt.</p>
+    <p>{hosting.name} sitzt in den USA und ist unter dem EU-US Data Privacy Framework zertifiziert, auf dessen Grundlage die EU-Kommission ein angemessenes Datenschutzniveau festgestellt hat (Art. 45 DSGVO). Weitere Informationen: <a href={hosting.privacyUrl} rel="noopener noreferrer" target="_blank">Datenschutzerklärung von Vercel</a>.</p>
+
+    <h2>Schriften, Fotos und Filme</h2>
+    <p>Schriften, Fotos und Filme werden direkt von dieser Website ausgeliefert. Es werden keine externen Schrift- oder Videodienste wie Google Fonts oder YouTube eingebunden. Filme werden erst geladen, wenn du sie abspielst.</p>
+
     <h2>Kontaktformular und E-Mail</h2>
-    <p>Wenn du das Kontaktformular absendest, werden dein Name, deine E-Mail-Adresse, dein Anliegen, deine Nachricht und freiwillige Angaben zu Termin und Ort an den Website-Server übermittelt. Bei eingerichtetem Mailversand leitet dieser deine Anfrage per E-Mail an Sandro weiter. Die Angaben dienen der Bearbeitung und Beantwortung deiner Anfrage. Alternativ kannst du Sandro direkt per E-Mail schreiben.</p>
-    <p>Zum Schutz vor wiederholten Anfragen verwendet der Formularserver vorübergehend einen Hash der anfragenden IP-Adresse und der Anfrage. Diese Einträge bleiben höchstens 15 Minuten im Arbeitsspeicher. Die Formularanwendung speichert keine Anfragen in einer eigenen Datenbank.</p>
-    <h2>Vor Veröffentlichung</h2>
-    <p>Der Versandzugang ist im lokalen Entwurf noch nicht eingerichtet. Angaben zum verantwortlichen Betreiber, Hosting, Mailanbieter, zu Serverprotokollen, Rechtsgrundlagen, Aufbewahrung und Betroffenenrechten werden vor Veröffentlichung anhand der tatsächlich eingesetzten Dienste ergänzt.</p>
+    <p>Wenn du mir über das Kontaktformular schreibst, werden dein Name, deine E-Mail-Adresse, dein Anliegen, deine Nachricht und freiwillige Angaben zu Termin und Ort an den Websiteserver übermittelt und von dort per E-Mail an mein Postfach weitergeleitet. Schreibst du mir direkt per E-Mail, verarbeite ich die Angaben aus deiner Mail.</p>
+    <p>Ich nutze diese Daten ausschließlich, um deine Anfrage zu beantworten und ein mögliches Projekt mit dir abzustimmen (Art. 6 Abs. 1 lit. b DSGVO, sonst lit. f DSGVO). Die Website selbst speichert Anfragen nicht in einer Datenbank. Zum Schutz vor Spam und doppelten Anfragen verwendet der Server für höchstens 15 Minuten einen pseudonymisierten Prüfwert (Hash) der IP-Adresse. Deine Nachricht liegt danach in meinem E-Mail-Postfach bei Apple (iCloud Mail) und wird gelöscht, sobald sie für die Anfrage und mögliche gesetzliche Aufbewahrungspflichten nicht mehr benötigt wird.</p>
+
+    <h2>Cookies und lokale Speicherung</h2>
+    <p>Diese Website setzt keine Cookies und verwendet keine Analyse- oder Marketingdienste. Darum gibt es auch kein Cookie-Banner.</p>
+
+    <h2>Links zu anderen Diensten</h2>
+    <p>Links, zum Beispiel zu Instagram, sind einfache Verweise. Erst wenn du einen solchen Link anklickst, verlässt du diese Website, und es gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
+
+    <h2>Deine Rechte</h2>
+    <p>Du hast das Recht auf Auskunft über deine bei mir gespeicherten Daten sowie auf Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit (Art. 15 bis 20 DSGVO). Soweit die Verarbeitung auf berechtigtem Interesse beruht, kannst du ihr widersprechen (Art. 21 DSGVO). Schreib mir dazu einfach eine E-Mail.</p>
+    <p>Außerdem kannst du dich bei einer Datenschutzaufsichtsbehörde beschweren, zum Beispiel bei der Sächsischen Datenschutz- und Transparenzbeauftragten.</p>
+
+    <p class="legal-updated">Stand: {legalUpdated}</p>
   </article>
 </Base>

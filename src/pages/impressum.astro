@@ -1,5 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
-import {contactEmail} from '../data/portfolio';
+import { provider } from '../data/legal';
 ---
-<Base title="Impressum – Entwurf" description="Entwurfsstand der Anbieterinformationen für die Website von Sandro Mondini."><article class="wrap legal"><h1>Impressum.</h1><p class="status-note">Lokaler Gestaltungsentwurf. Die vollständigen Anbieterangaben werden vor einer Veröffentlichung bestätigt und ergänzt.</p><h2>Kontakt</h2><p>Sandro Mondini<br /><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p><h2>Noch zu vervollständigen</h2><p>Die für den tatsächlichen Betrieb erforderlichen Anbieter- und gegebenenfalls Registerangaben werden anhand der bestätigten Daten eingetragen.</p><p><a href="/kontakt">Zum Kontakt</a></p></article></Base>
+<Base title="Impressum" description="Anbieterkennzeichnung der Website von Sandro Mondini, Foto und Film.">
+  <article class="wrap legal">
+    <h1>Impressum.</h1>
+    <h2>Angaben gemäß § 5 DDG</h2>
+    <p>{provider.name}<br />Foto und Film<br />{provider.street}<br />{provider.city}<br />{provider.country}</p>
+    <h2>Kontakt</h2>
+    <p>E-Mail: <a href={`mailto:${provider.email}`}>{provider.email}</a><br />Kontaktformular: <a href="/kontakt">über diese Website</a></p>
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>{provider.name}<br />{provider.street}<br />{provider.city}</p>
+    <h2>Haftung für Inhalte</h2>
+    <p>Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine Gewähr übernehmen. Als Diensteanbieter bin ich für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
+    <h2>Haftung für Links</h2>
+    <p>Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Bei Bekanntwerden von Rechtsverletzungen entferne ich derartige Links umgehend.</p>
+    <h2>Urheberrecht</h2>
+    <p>Alle Fotos, Filme und Texte auf dieser Website sind urheberrechtlich geschützt. Eine Verwendung, Vervielfältigung oder Bearbeitung außerhalb der Grenzen des Urheberrechts bedarf meiner vorherigen schriftlichen Zustimmung. Auf einzelnen Aufnahmen abgebildete Personen, Marken und Veranstaltungen gehören ihren jeweiligen Rechteinhabern.</p>
+  </article>
+</Base>

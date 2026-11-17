@@ -15,9 +15,10 @@ export type ImageStreamHeroProps = {
 // No React hydration, timer, pointer-follow effect or media dialog.
 export function ImageStreamHero({ images, id = 'hero-bildring' }: ImageStreamHeroProps) {
   const step = images.length ? 360 / images.length : 0;
-  // The ring uses one portrait preview format; gallery sources keep their
-  // original dimensions and are only cropped within these small previews.
-  const photoRatio = 9 / 16;
+  // R4 (Sandro, 17.11.): one slightly upright 4:5 preview format instead of the
+  // phone-like 9:16. Gallery sources keep their original dimensions and are only
+  // cropped within these small previews.
+  const photoRatio = 4 / 5;
   return <div id={id} className="hero-ring" data-hero-ring data-ring-total={images.length}
     style={{ '--ring-max-photo-ratio': photoRatio } as React.CSSProperties}
     role="region" aria-roledescription="Karussell" aria-label="Fotografische Themen" tabIndex={0}>

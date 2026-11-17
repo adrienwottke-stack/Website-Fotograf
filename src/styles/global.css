@@ -212,14 +212,14 @@ main:focus{
   white-space:nowrap
 }
 .brand-terminal{white-space:nowrap}
-.brand-terminal::after{
-  content:'';
+/* Logo-Punkt (BrandDot.astro): ein Leerzeichen Abstand, auf der Grundlinie, überall gleiche Proportion. */
+.brand-dot{font-style:normal;white-space:nowrap}
+.brand-dot__square{
   display:inline-block;
   width:.4090909091em;
   height:.4090909091em;
-  margin-left:.3181818182em;
   background:var(--yellow);
-  vertical-align:-.0909090909em
+  vertical-align:baseline
 }
 .desktop-nav{
   display:flex;
@@ -1290,6 +1290,11 @@ main:focus{
 }
 .legal p{
   max-width:700px
+}
+.legal .legal-updated{
+  margin-top:48px;
+  font-size:14px;
+  opacity:.7
 }
 .legal .status-note{
   background:var(--butter);

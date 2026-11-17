@@ -1,4 +1,5 @@
 ---
+import BrandDot from './BrandDot.astro';
 import { ImageStreamHero } from './ui/image-stream-hero';
 import { heroEntries } from '../data/hero-photos';
 import HeroPhotoBrowse from './HeroPhotoBrowse.astro';
@@ -14,7 +15,7 @@ const images = heroEntries.map(({ image, href, themeSlug, themeName }) => ({
 ---
 <section class="stream-hero" aria-labelledby="stream-name" data-stream-hero>
   <header class="stream-hero__identity">
-    <h1 id="stream-name" class="stream-hero__name"><span>Sandro</span> <span class="brand-terminal">Mondini</span></h1>
+    <h1 id="stream-name" class="stream-hero__name"><span>Sandro</span> <span class="brand-terminal">Mondini<BrandDot /></span></h1>
     <p>Foto und Film.</p>
   </header>
   <ImageStreamHero images={images} />
@@ -27,7 +28,7 @@ const images = heroEntries.map(({ image, href, themeSlug, themeName }) => ({
   .stream-hero .hero-ring { height:auto; min-height:0; margin-top:28px; }
   .stream-hero .hero-ring__projection { position:static; perspective:none; container-type:normal; }
   .stream-hero .hero-ring__space { position:static; display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:18px; transform:none; padding:20px; }
-  .stream-hero .hero-ring__card { position:static; width:100%; height:auto; aspect-ratio:9/16; transform:none; opacity:1; visibility:visible; pointer-events:auto; }
+  .stream-hero .hero-ring__card { position:static; width:100%; height:auto; aspect-ratio:4/5; transform:none; opacity:1; visibility:visible; pointer-events:auto; }
   .stream-hero .hero-ring-controls { display:none; }
 </style></noscript>
 
