@@ -80,10 +80,12 @@
 .portfolio-intro ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; max-width: 280px; list-style: none; padding: 0; margin: 0; }
 .portfolio-intro li { border: 1px solid var(--window-edge, #b9c2c6); padding: 7px 11px; border-radius: 24px; font-size: 11px; }
 .photo-gallery--story { display: flex; flex-direction: column; gap: var(--gallery-gap); width: 100%; max-width: 1080px; margin-inline: auto; }
-.photo-gallery__row { display: grid; align-self: flex-start; align-items: start; gap: var(--gallery-gap); width: min(100%, calc(var(--row-ratio) * var(--row-max-height, 10000px) + var(--row-gaps) * var(--gallery-gap))); }
-.photo-gallery--composed .photo-gallery__row { width:100%; }
-.photo-gallery .photo-gallery__row--portraits { width:min(100%,calc(var(--row-ratio)*360px + var(--row-gaps)*var(--gallery-gap))); }
-.photo-gallery .photo-gallery__row--wide-tail { width:100%; }
+/* R4: Blocksatz-Reihen (src/lib/justified-rows.ts). Volle Reihen von Rand zu Rand,
+   eine einzelne letzte Vorschau links, zu kurze Reihen (z. B. zwei Hochformat-Filme) mittig. */
+.photo-gallery__row, .media-gallery__row { display: grid; align-items: start; gap: var(--gallery-gap); width: 100%; }
+.photo-gallery__row--loose, .media-gallery__row--loose { width: var(--row-width); margin-inline: 0 auto; }
+.photo-gallery__row--capped, .media-gallery__row--capped { width: var(--row-width); margin-inline: auto; }
+.media-gallery__row--films-start { margin-top: clamp(12px, 2vw, 28px); }
 .photo-gallery--story .gallery-image {
   display: block;
   width: 100%;
@@ -223,8 +225,6 @@ html[data-review-tone='dark'] .portfolio-film{color:var(--review-text)}
 /* One photographic sheet for customer photos and films. The poster itself
    reserves its measured raster height; no second aspect-ratio box is added. */
 .media-gallery{display:flex;flex-direction:column;gap:var(--gallery-gap);max-width:1080px;margin-inline:auto}
-.media-gallery__row{display:grid;align-items:start;gap:var(--gallery-gap);width:min(100%,calc(var(--media-row-ratio)*480px + var(--media-row-gaps)*var(--gallery-gap)));margin-inline:0}
-.media-gallery__row--wide-tail{width:100%}
 .media-gallery__item,.photo-gallery__item{min-width:0;scroll-margin-top:24px}
 .media-gallery .gallery-image,.photo-gallery__item .gallery-image{width:100%;margin:0;border-radius:3px;background:transparent}
 .media-gallery .gallery-image .media-image,.photo-gallery__item .media-image{display:block;width:100%;height:auto;background:transparent}
@@ -254,3 +254,5 @@ html[data-review-tone='dark'] .portfolio-film{color:var(--review-text)}
  .media-gallery .film-card__caption>strong{font-size:18px}
  .media-gallery__work{margin-bottom:14px}
 }
+/* R4: Auf dem Handy beginnen die Filme immer in einer neuen Zeile, nach allen Fotos. */
+@media (max-width: 700px) { .media-gallery__row--films-start > .media-gallery__item:first-child { grid-column-start: 1; } }

@@ -4,51 +4,28 @@ import FilmCard from './FilmCard.astro';
 import type {Photo,Film,Project} from '../data/portfolio';
 interface Props { images:Photo[]; movies:Film[]; name:string; works?:Project['works'] }
 const {images,movies,name,works=[]}=Astro.props;
+import {justifyRows} from '../lib/justified-rows';
 type Item={image?:Photo;movie?:Film;ratio:number};
-const items:Item[]=[];
-const addPhoto=(image:Photo)=>items.push({image,ratio:image.width/image.height});
-const addFilm=(movie:Film)=>items.push({movie,ratio:movie.width/movie.height});
-// Keep each source's order and distribute the films through the photographs.
-// New items automatically participate without page-specific grid positions.
-if(images.length&&movies.length&&!works.length){
-  const parts=Math.min(movies.length+1,Math.max(2,Math.floor(images.length/3)));
-  const filmParts=Math.min(movies.length,parts);
-  for(let index=0;index<parts;index++){
-    images.slice(Math.round(index*images.length/parts),Math.round((index+1)*images.length/parts)).forEach(addPhoto);
-    if(index<filmParts)movies.slice(Math.round(index*movies.length/filmParts),Math.round((index+1)*movies.length/filmParts)).forEach(addFilm);
-  }
-}else{images.forEach(addPhoto);movies.forEach(addFilm);}
-const rowLimit=!images.length&&movies.length===4?4:3;
-const groupRows=(entries:Item[]):Item[][]=>{
-  const grouped:Item[][]=[];
-  for(const item of entries){
-    const row=grouped[grouped.length-1];
-    if(!row||row.length===rowLimit)grouped.push([item]);
-    else row.push(item);
-  }
-  const lastRow=grouped[grouped.length-1],previousRow=grouped[grouped.length-2];
-  if(lastRow?.length===1&&previousRow?.length===3){lastRow.unshift(previousRow.pop()!);}
-  return grouped;
-};
-const tailIsPortrait=items.length>0&&items[items.length-1].ratio<1;
-const lastOtherOrientation=items.findLastIndex(item=>(item.ratio<1)!==tailIsPortrait);
-const tailItems=items.slice(lastOtherOrientation+1);
-const separateRestRows=lastOtherOrientation>=0&&tailItems.length>0&&(tailIsPortrait||tailItems.length<=2);
-// Compose the prefix and final run separately with the existing quantities,
-// so count balancing cannot mix a final portrait run with a landscape.
-const rows=separateRestRows?[...groupRows(items.slice(0,lastOtherOrientation+1)),...groupRows(tailItems)]:groupRows(items);
+// R4 (Sandro 18.11.): erst alle Fotos, Filme immer zuletzt, auch wenn später
+// neue Bilder dazukommen. Beide Teile als Blocksatz-Reihen von Rand zu Rand.
+const photoItems:Item[]=images.map(image=>({image,ratio:image.width/image.height}));
+const filmItems:Item[]=movies.map(movie=>({movie,ratio:movie.width/movie.height}));
+const items:Item[]=[...photoItems,...filmItems];
+const rows=[...justifyRows(photoItems,item=>item.ratio),...justifyRows(filmItems,item=>item.ratio,{target:2.3,maxPerRow:4})];
+const firstFilmRow=rows.findIndex(row=>row.items.some(item=>item.movie));
 // Film-only collections use the same sheet: pairs of tall posters, one wide film.
 const mobilePair=(index:number)=>{
   if(items[index].ratio>=1)return undefined;
-  let start=index;while(start>0&&items[start-1].ratio<1)start--;
+  let start=index;
+  while(start>0&&items[start-1].ratio<1&&!!items[start-1].movie===!!items[index].movie)start--;
   const partner=(index-start)%2===1?items[index-1]:items[index+1];
-  return partner&&partner.ratio<1?Math.min(items[index].ratio,partner.ratio):undefined;
+  return partner&&partner.ratio<1&&!!partner.movie===!!items[index].movie?Math.min(items[index].ratio,partner.ratio):undefined;
 };
 ---
 <div class="media-gallery" data-gallery aria-label={`Fotos und Filme: ${name}`}>
-  {rows.map((row,rowIndex)=><div class:list={['media-gallery__row',{'media-gallery__row--wide-tail':rowIndex===rows.length-1&&row.length<=2&&row.every(item=>item.ratio>=1)}]} style={`grid-template-columns:${row.map(item=>`minmax(0,${100*item.ratio/row.reduce((sum,entry)=>sum+entry.ratio,0)}fr)`).join(' ')};--media-row-ratio:${row.reduce((sum,item)=>sum+item.ratio,0)};--media-row-gaps:${row.length-1}`}>
-    {row.map(item=><article id={item.image&&item.image===images[0]?'bilder':item.movie&&item.movie===movies[0]?'projekt-filme':undefined} class:list={['media-gallery__item',{'media-gallery__item--paired':mobilePair(items.indexOf(item)),'media-gallery__item--portrait':item.ratio<1,'media-gallery__item--film':!!item.movie}]} style={`--mobile-preview-ratio:${mobilePair(items.indexOf(item))??item.ratio}`}>
-      {item.image?<GalleryPhoto image={item.image} sizes={`(max-width: 700px) ${item.ratio<1?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)'}, (max-width: 1280px) ${(78*item.ratio/row.reduce((sum,entry)=>sum+entry.ratio,0)).toFixed(2)}vw, ${Math.round(1080*item.ratio/row.reduce((sum,entry)=>sum+entry.ratio,0))}px`} eager={items.indexOf(item)<3} />:<FilmCard film={item.movie!} />}
+  {rows.map((row,rowIndex)=><div class:list={['media-gallery__row',`media-gallery__row--${row.fit}`,{'media-gallery__row--films-start':rowIndex===firstFilmRow&&rowIndex>0}]} style={`grid-template-columns:${row.items.map(item=>`minmax(0,${100*item.ratio/row.ratio}fr)`).join(' ')};--row-width:${row.width.toFixed(3)}%`}>
+    {row.items.map(item=><article id={item.image&&item.image===images[0]?'bilder':item.movie&&item.movie===movies[0]?'projekt-filme':undefined} class:list={['media-gallery__item',{'media-gallery__item--paired':mobilePair(items.indexOf(item)),'media-gallery__item--portrait':item.ratio<1,'media-gallery__item--film':!!item.movie}]} style={`--mobile-preview-ratio:${mobilePair(items.indexOf(item))??item.ratio}`}>
+      {item.image?<GalleryPhoto image={item.image} sizes={`(max-width: 700px) ${item.ratio<1?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)'}, (max-width: 1280px) ${(78*item.ratio/row.ratio*row.width/100).toFixed(2)}vw, ${Math.round(1080*item.ratio/row.ratio*row.width/100)}px`} eager={items.indexOf(item)<3} />:<FilmCard film={item.movie!} />}
     </article>)}
   </div>)}
 </div>
