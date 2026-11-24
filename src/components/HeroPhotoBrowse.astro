@@ -2,7 +2,7 @@
 import { heroEntries } from '../data/hero-photos';
 import ControlIcon from './ControlIcon.astro';
 interface Props { mode?: 'trail' | 'ring'; total?: number; firstTheme?: string; firstHref?: string }
-const { mode = 'trail', total = 14, firstTheme = 'Fahrzeuge', firstHref = '/arbeiten/themen/fahrzeuge' } = Astro.props;
+const { mode = 'trail', total = heroEntries.length, firstTheme = 'Fahrzeuge', firstHref = '/arbeiten/themen/fahrzeuge' } = Astro.props;
 const entries = heroEntries.map(({image,href}) => ({href, alt:image.alt, width:image.width,height:image.height,
   src:image.preview[1].src,srcset:image.preview.map(v=>`${v.src} ${v.width}w`).join(', '),
   avif:image.avif?.map(v=>`${v.src} ${v.width}w`).join(', ')}));
