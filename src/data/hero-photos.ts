@@ -1,14 +1,14 @@
 import { collection, photo } from './portfolio';
 
-// Two photographs per theme, plus the corner building in Reisen.
+// Two photographs per theme.
 const picks: [string, number, string][] = [
   ['fahrzeuge', 0, 'Fahrzeuge'], ['people', 0, 'People'],
   ['events', 0, 'Events'], ['hochzeiten', 0, 'Hochzeiten'],
   ['autotreffen', 0, 'Autotreffen'], ['tiere', 0, 'Tiere'],
-  ['reisen', 0, 'Reisen'], ['fahrzeuge', 2, 'Fahrzeuge'],
+  ['reisen', 1, 'Reisen'], ['fahrzeuge', 2, 'Fahrzeuge'],
   ['people', 5, 'People'], ['events', 1, 'Events'],
   ['hochzeiten', 7, 'Hochzeiten'], ['autotreffen', 5, 'Autotreffen'],
-  ['tiere', 3, 'Tiere'], ['reisen', 3, 'Reisen'], ['reisen', 1, 'Reisen'],
+  ['tiere', 3, 'Tiere'], ['reisen', 3, 'Reisen'],
 ];
 
 export const heroEntries = picks.map(([themeSlug, index, themeName]) => ({
