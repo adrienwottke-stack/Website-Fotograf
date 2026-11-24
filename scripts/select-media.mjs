@@ -8,7 +8,7 @@ const groups = [
   ['hochzeiten', 'Hochzeit Foto', ['7IV07743.jpg','7IV07816.jpg','7IV09423.jpg','7IV08422.jpg','7IV08001.jpg','7IV06837.jpg','7IV06623.jpg','brautpaar-foto-21.jpg','brautpaar-foto-5.jpg','großes-gruppen-foto-3-best.jpg']],
   ['autotreffen', 'Autotreffen', ['7IV05433.jpg','7IV05409.jpg','7IV05474.jpg','7IV05378.jpg','7IV05437.jpg','7IV05536.jpg','7IV04327.jpg','honda-accord-r-euro-ronny-6.jpg']],
   ['tiere', 'Tier Fotografie', ['7IV06175.jpg','7IV04433.jpg','7IV06254.jpg','7IV05954.jpg','7IV05841.jpg','7IV05691.jpg','7IV00257.jpg','7IV04366.jpg']],
-  ['reisen', 'Reisen Fotografie', ['7IV02821.jpg','7IV00436.jpg','A7405847.jpg','A7405784.jpg','7IV00608.jpg','A7405858.jpg','A7405832.jpg','A7405781.jpg']],
+  ['reisen', 'Reisen Fotografie', ['7IV02821.jpg','A7405847.jpg','A7405784.jpg','7IV00436.jpg','7IV00608.jpg','A7405858.jpg','A7405832.jpg','A7405781.jpg']],
   ['heidrich', 'Heidrich', ['7IV00262closer.jpg','7IV01087.jpg','7IV00612.jpg','7IV00572.jpg','7IV01013.jpg','7IV00079closer.jpg','7IV09771closer.jpg','7IV08451.jpg']],
   ['kekila', 'Kekila', ['7IV03850.jpg','7IV04239.jpg','7IV01056.jpg','7IV09944.jpg','7IV05315.jpg','7IV05340.jpg','7IV02632.jpg']],
   ['zixspeed', 'Zixspeed', ['7IV03211.jpg','7IV03418.jpg','7IV03385.jpg','7IV09508closer.jpg','7IV09203closer.jpg','7IV09301.jpg','7IV09080.jpg','7IV04447 2.jpg']],
