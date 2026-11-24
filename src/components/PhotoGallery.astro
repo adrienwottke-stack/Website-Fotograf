@@ -16,15 +16,23 @@ const mobilePair=(image:Photo)=>{
   const partner=(index-start)%2===1?images[index-1]:images[index+1];
   return partner&&ratio(partner)<1?Math.min(ratio(image),ratio(partner)):undefined;
 };
-const imageSizes=(image:Photo,row:(typeof rows)[number],eager:boolean)=>{
+const imageSizes=(image:Photo,row:(typeof rows)[number],eager:boolean,halfWidth:boolean)=>{
   const share=ratio(image)/row.ratio*row.width/100;
-  const mobile=ratio(image)<1?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)';
+  const mobile=halfWidth?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)';
   return `${eager?'':'auto, '}(max-width: 700px) ${mobile}, (max-width: 1280px) ${(78*share).toFixed(2)}vw, ${(1080*share).toFixed(0)}px`;
 };
 ---
 <div class:list={['photo-gallery',{'photo-gallery--story':layout==='story'}]} data-gallery={contained?undefined:''} data-photo-composition={composition} aria-label={name}>
   {rows.map((row,rowIndex)=><div class:list={['photo-gallery__row',`photo-gallery__row--${row.fit}`]} data-row-count={row.items.length} style={`grid-template-columns:${row.items.map(image=>`minmax(0, ${100*ratio(image)/row.ratio}fr)`).join(' ')};--row-width:${row.width.toFixed(3)}%`}>
-    {row.items.map((image,index)=><div class:list={['photo-gallery__item',{'photo-gallery__item--paired':mobilePair(image),'photo-gallery__item--portrait':ratio(image)<1}]} style={`--mobile-preview-ratio:${mobilePair(image)??ratio(image)}`}><GalleryPhoto image={image} sizes={imageSizes(image,row,rowIndex===0&&index<3)} eager={rowIndex===0&&index<3} /></div>)}
+    {row.items.map((image,index)=>{
+      const pairRatio=mobilePair(image);
+      const lastPortrait=rowIndex===rows.length-1&&index===row.items.length-1&&ratio(image)<1;
+      const halfWidth=pairRatio!==undefined||lastPortrait;
+      const eager=rowIndex===0&&index<3;
+      return <div class:list={['photo-gallery__item',{'photo-gallery__item--paired':pairRatio!==undefined,'photo-gallery__item--half-width':halfWidth}]} style={pairRatio===undefined?undefined:`--mobile-preview-ratio:${pairRatio}`}>
+        <GalleryPhoto image={image} sizes={imageSizes(image,row,eager,halfWidth)} eager={eager} />
+      </div>;
+    })}
   </div>)}
 </div>
 <style>

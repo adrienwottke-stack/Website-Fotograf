@@ -856,7 +856,7 @@ main:focus{
   font-size:11px;
   opacity:.7
 }
-.work-panels{
+.work-themes{
   padding-bottom:110px
 }
 .work-panels>.film-stage{
@@ -865,8 +865,7 @@ main:focus{
 .work-films{
   background:var(--ink);
   color:var(--paper);
-  padding:50px 32px;
-  border-radius:var(--radius)
+  padding-block:50px
 }
 .gallery-hero{
   display:grid;
@@ -1837,11 +1836,11 @@ main:focus{
     font-size:12px;
     gap:8px
   }
-  .work-panels{
+  .work-themes{
     padding-bottom:70px
   }
   .work-films{
-    padding:25px 18px
+    padding-block:25px
   }
   .gallery-hero{
     display:flex;

@@ -19,6 +19,7 @@
 .window-personal .about-teaser__copy h2 { font-size:clamp(64px,7.3vw,116px); line-height:.94; letter-spacing:-.055em; }
 .window-personal .about-teaser__copy>p { font-size:16px; line-height:1.7; max-width:38ch; margin-block:30px; }
 .editorial-page { padding-bottom:100px; }
+.editorial-page.editorial-page--flush-end { padding-block-end:0; }
 .window-about-head { grid-template-columns:1.1fr .9fr; gap:5vw; padding-block:80px 110px; align-items:start; }
 .window-about-head__copy { z-index:1; min-width:0; }
 .window-about-head h1 { font-size:clamp(68px,8.3vw,128px); line-height:.95; }
@@ -39,8 +40,8 @@
 .window-biography h2 { font-size:clamp(38px,4.4vw,68px); padding-top:36px; }
 .window-biography .biography-text { font-size:17px; line-height:1.85; }
 .window-work-image { border-radius:var(--window-radius); margin-bottom:62px; }
-.window-quote { background:var(--ink); color:var(--paper); border-radius:var(--window-radius); padding:clamp(34px,6vw,90px); }
-.window-quote blockquote { margin:0; font-family:var(--display); font-size:clamp(36px,5.5vw,80px); font-weight:550; line-height:1.1; letter-spacing:-.045em; }
+.window-quote { background:var(--ink); color:var(--paper); padding-block:clamp(34px,6vw,90px); }
+.window-quote blockquote { margin-block:0; padding-inline:clamp(34px,6vw,90px); font-family:var(--display); font-size:clamp(36px,5.5vw,80px); font-weight:550; line-height:1.1; letter-spacing:-.045em; }
 .window-services-head { padding-block:75px 65px; }
 .window-services-head h1 { font-size:clamp(65px,8.6vw,132px); line-height:.97; }
 .window-service { gap:0; border-top:0; padding-block:48px; }
@@ -74,7 +75,7 @@
   .window-personal .about-teaser__copy h2 { font-size:clamp(66px,11vw,105px); }
   .window-about-head { grid-template-columns:1fr; gap:35px; }
   .window-about-head__copy { margin-right:0; }
-  .window-about-head .about-head__portrait { margin:0 0 0 auto; width:80%; height:auto; aspect-ratio:2/3; }
+  .window-about-head .about-head__portrait { margin:0 auto; width:80%; height:auto; aspect-ratio:2/3; }
   .window-biography { grid-template-columns:1fr; gap:30px; }
   .window-biography h2 { padding-top:0; }
   .window-services-head { grid-template-columns:1fr; gap:30px; }

@@ -2,6 +2,7 @@
 body[data-middlepage] {
   --window-white: #fff;
   --window-forest: #294b3d;
+  --window-on-forest: #fff;
   --window-beige: #e8e0ce;
   --window-edge: rgb(41 75 61 / 22%);
   --middlepage-gutter: clamp(32px, 8vw, 160px);
@@ -76,13 +77,21 @@ body[data-middlepage='home'] .middlepage .window-personal .about-teaser__inner {
 body[data-middlepage='home'] .middlepage .about-teaser__copy {
   --window-radius: 32px;
   --window-pad: clamp(28px, 3.5vw, 54px);
+  --window-contour-offset: 8px;
+}
+body[data-middlepage='home'] .middlepage .about-teaser__copy,
+.editorial-page--about :is(.window-about-head__copy, .biography-text.window-sheet) {
   background: var(--window-forest);
-  color: var(--window-white);
+  color: var(--window-on-forest);
+}
+.editorial-page--about .bio-note {
+  color: inherit;
+  opacity: .8;
 }
 body[data-middlepage='home'] .middlepage .about-teaser__copy::after {
-  inset: -8px;
+  inset: calc(-1 * var(--window-contour-offset));
   border-color: var(--window-edge);
-  border-radius: 40px;
+  border-radius: calc(var(--window-radius) + var(--window-contour-offset));
 }
 body[data-middlepage='home'] .middlepage .about-teaser__copy h2 {
   font-size: clamp(60px, 6.1vw, 104px);
@@ -120,8 +129,7 @@ body[data-middlepage] .site-footer--pilot .quiet-footer__socials a:hover {
   }
   body[data-middlepage] .middlepage .wrap { --gutter: 22px; }
   body[data-middlepage='home'] .middlepage .site-header { padding-inline: 22px; }
-  body[data-middlepage='home'] .middlepage .about-teaser__copy { --window-radius: 24px; --window-pad: 26px; }
-  body[data-middlepage='home'] .middlepage .about-teaser__copy::after { inset: -6px; border-radius: 30px; }
+  body[data-middlepage='home'] .middlepage .about-teaser__copy { --window-radius: 24px; --window-pad: 26px; --window-contour-offset: 6px; }
   body[data-middlepage='home'] .middlepage .about-teaser__copy h2 { font-size: clamp(60px, 14vw, 91px); }
 }
 body[data-middlepage='page'] .middlepage{margin-top:16px}

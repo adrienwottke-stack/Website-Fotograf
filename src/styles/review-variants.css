@@ -46,6 +46,7 @@ html[data-review-tone='dark'] body[data-middlepage] {
   --window-white:var(--review-surface);
   --window-beige:var(--review-raised);
   --window-forest:#294b3d;
+  --window-on-forest:var(--review-text);
   --window-edge:rgb(221 232 224 / 26%);
   background:var(--review-canvas);
   color:var(--review-text);
@@ -57,7 +58,7 @@ html[data-review-tone='dark'] body[data-middlepage] :is(.editorial-page,.film-se
 html[data-review-tone='dark'] body[data-middlepage='home'] .middlepage :is(.theme-scene__heading h2,.theme-scene__label,.service-row h3) { color:#c8dccc; }
 html[data-review-tone='dark'] .theme-scene { --theme-forest:#c8dccc; }
 html[data-review-tone='dark'] :is(.section--dark,.window-dark,.window-quote,.work-films) { background:#172120; color:var(--review-text); }
-html[data-review-tone='dark'] body[data-middlepage='home'] .middlepage .about-teaser__copy { background:#294b3d; color:var(--review-text); }
+html[data-review-tone='dark'] .editorial-page--about .window-about-head__copy { background:var(--window-forest); color:var(--window-on-forest); }
 html[data-review-tone='dark'] :is(.window-dark .page-kicker,.window-dark .text-link) { color:var(--review-text); }
 html[data-review-tone='dark'] :is(.button,.header-contact,.film-showcase__play,.film-section__heading,.film-play,.play-icon,.gallery-enlarge,.skip-link) { color:var(--review-accent-ink); }
 html[data-review-tone='dark'] :is(.button--dark,.header-contact) { background:var(--yellow); color:var(--review-accent-ink); }

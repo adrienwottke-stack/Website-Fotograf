@@ -42,6 +42,19 @@
   filter:drop-shadow(0 22px 16px #0006);
 }
 .portfolio-hero--cutout .portfolio-hero__title { position:relative; z-index:1; }
+@media(width > 900px) {
+  .window-personal.about-teaser--cutout .about-teaser__inner {
+    grid-auto-rows:minmax(clamp(460px,44vw,620px),auto);
+    align-items:stretch;
+  }
+  .window-personal.about-teaser--cutout .about-portrait { position:absolute; inset:0; height:auto; }
+  .window-personal.about-teaser--cutout .about-teaser__copy {
+    display:grid;
+    align-content:center;
+    justify-items:start;
+    margin-block:var(--window-contour-offset);
+  }
+}
 @media(max-width:1000px) {
   .portfolio-hero__cutout { top:26%; right:5%; width:68vw; }
 }

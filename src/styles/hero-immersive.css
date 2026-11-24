@@ -63,7 +63,7 @@
 .stream-hero__identity { position:relative; z-index:2; text-align:center; padding-inline:22px; }
 .stream-hero__name { margin:0; font-family:var(--display); font-size:clamp(64px,8vw,126px); font-weight:780; line-height:.98; letter-spacing:-.06em; }
 .stream-hero__identity p { margin:17px 0 0; font-size:16px; line-height:1.5; }
-.hero-ring { --ring-card-width:clamp(132px,min(13vw,20vh),176px); --ring-photo-height:calc((var(--ring-card-width) - 14px) / var(--ring-max-photo-ratio, .8)); --ring-radius:calc(var(--ring-card-width) * 2.2); position:relative; width:100%; height:100%; min-height:300px; outline-offset:-12px; touch-action:pan-y pinch-zoom; }
+.hero-ring { --ring-photo-ratio:calc(2 / 3); --ring-card-width:clamp(132px,min(13vw,20vh),176px); --ring-radius:calc(var(--ring-card-width) * 2.2); position:relative; width:100%; height:100%; min-height:300px; outline-offset:-12px; touch-action:pan-y pinch-zoom; }
 .hero-ring:focus-visible { outline:2px solid var(--ink); border-radius:20px; }
 .hero-ring__projection { position:absolute; inset:0; perspective:1300px; perspective-origin:50% 42%; }
 .hero-ring__space { position:absolute; inset:0; transform-style:preserve-3d; transform:rotateX(-12deg); }
@@ -71,8 +71,7 @@
   position:absolute;
   left:50%; top:42%;
   display:block;
-  width:calc(var(--ring-photo-height) * var(--ring-photo-ratio) + 14px);
-  height:calc(var(--ring-photo-height) + 14px);
+  width:var(--ring-card-width);
   padding:6px;
   border:1px solid rgba(42,47,51,.15);
   border-radius:9px;
@@ -82,8 +81,8 @@
   transform:translate(-50%,-50%) rotateY(var(--ring-angle)) translateZ(var(--ring-radius)) rotateY(var(--ring-counter-angle)) rotateX(12deg);
   transition:transform 620ms cubic-bezier(.2,.7,.2,1),opacity 420ms ease,border-color 180ms ease;
 }
-.hero-ring__card picture,.hero-ring__card img { display:block; width:100%; height:100%; }
-.hero-ring__card img { object-fit:cover; border-radius:4px; user-select:none; }
+.hero-ring__card picture { display:block; aspect-ratio:var(--ring-photo-ratio); }
+.hero-ring__card img { display:block; width:100%; height:100%; object-fit:cover; border-radius:4px; user-select:none; }
 /* Explicit on the hit targets too: horizontal gestures belong to the ring,
    vertical panning and pinch zoom remain native browser interactions. */
 .hero-ring__card,.hero-ring__card picture,.hero-ring__card img { touch-action:pan-y pinch-zoom; }
@@ -107,10 +106,10 @@
   .stream-hero__name { font-size:clamp(49px,13.5vw,82px); line-height:.95; }
   .stream-hero__name span { display:block; }
   .stream-hero__identity p { margin-top:13px; font-size:14px; }
-  .hero-ring { --ring-card-width:min(78vw,350px); min-height:260px; }
+  .hero-ring { min-height:260px; }
   .hero-ring__projection { perspective:none; container-type:size; }
   .hero-ring__space { transform:none; }
-  .hero-ring__card { --ring-photo-height:min(calc(100cqh - 42px),416px,calc((100vw - 44px) / var(--ring-max-photo-ratio))); top:50%; transform:translate(-50%,-50%); opacity:0; visibility:hidden; pointer-events:none; transition:opacity 200ms ease; padding:6px; }
+  .hero-ring__card { width:min(calc((100cqh - 42px) * var(--ring-photo-ratio) + 14px),calc(100% - 30px),314px); top:50%; transform:translate(-50%,-50%); opacity:0; visibility:hidden; pointer-events:none; transition:opacity 200ms ease; }
   .hero-ring__card[data-active] { opacity:1; visibility:visible; pointer-events:auto; }
   .hero-ring-controls { grid-template-columns:48px minmax(130px,190px) 48px; gap:14px; }
   .hero-ring-controls__arrow { width:48px; height:48px; }

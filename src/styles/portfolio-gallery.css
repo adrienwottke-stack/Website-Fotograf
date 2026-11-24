@@ -244,7 +244,7 @@ html[data-review-tone='dark'] .portfolio-film{color:var(--review-text)}
  .photo-gallery--story .photo-gallery__row,.media-gallery__row{display:contents}
  .photo-gallery__item,.media-gallery__item{grid-column:1/-1}
  .media-gallery__work{grid-column:1/-1}
- .photo-gallery__item--paired,.media-gallery__item--paired,.photo-gallery__item--portrait,.media-gallery__item--portrait{grid-column:auto}
+ .photo-gallery__item--half-width,.media-gallery__item--half-width{grid-column:auto}
  .photo-gallery--story .gallery-image{width:100%;max-width:100%;aspect-ratio:auto}
  .photo-gallery--story .media-image,.photo-gallery--story .media-image img{height:auto}
  .photo-gallery__item--paired .gallery-image,.media-gallery__item--paired .gallery-image,.media-gallery__item--paired .film-card__poster{aspect-ratio:var(--mobile-preview-ratio)!important}

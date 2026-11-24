@@ -24,8 +24,15 @@ const mobilePair=(index:number)=>{
 ---
 <div class="media-gallery" data-gallery aria-label={`Fotos und Filme: ${name}`}>
   {rows.map((row,rowIndex)=><div class:list={['media-gallery__row',`media-gallery__row--${row.fit}`,{'media-gallery__row--films-start':rowIndex===firstFilmRow&&rowIndex>0}]} style={`grid-template-columns:${row.items.map(item=>`minmax(0,${100*item.ratio/row.ratio}fr)`).join(' ')};--row-width:${row.width.toFixed(3)}%`}>
-    {row.items.map(item=><article id={item.image&&item.image===images[0]?'bilder':item.movie&&item.movie===movies[0]?'projekt-filme':undefined} class:list={['media-gallery__item',{'media-gallery__item--paired':mobilePair(items.indexOf(item)),'media-gallery__item--portrait':item.ratio<1,'media-gallery__item--film':!!item.movie}]} style={`--mobile-preview-ratio:${mobilePair(items.indexOf(item))??item.ratio}`}>
-      {item.image?<GalleryPhoto image={item.image} sizes={`(max-width: 700px) ${item.ratio<1?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)'}, (max-width: 1280px) ${(78*item.ratio/row.ratio*row.width/100).toFixed(2)}vw, ${Math.round(1080*item.ratio/row.ratio*row.width/100)}px`} eager={items.indexOf(item)<3} />:<FilmCard film={item.movie!} />}
-    </article>)}
+    {row.items.map(item=>{
+      const index=items.indexOf(item);
+      const pairRatio=mobilePair(index);
+      const lastPortrait=index===items.length-1&&item.ratio<1;
+      const halfWidth=pairRatio!==undefined||lastPortrait;
+      const mobileSize=halfWidth?'calc((100vw - 51px) / 2)':'calc(100vw - 44px)';
+      return <article id={item.image&&item.image===images[0]?'bilder':item.movie&&item.movie===movies[0]?'projekt-filme':undefined} class:list={['media-gallery__item',{'media-gallery__item--paired':pairRatio!==undefined,'media-gallery__item--half-width':halfWidth,'media-gallery__item--film':!!item.movie}]} style={pairRatio===undefined?undefined:`--mobile-preview-ratio:${pairRatio}`}>
+        {item.image?<GalleryPhoto image={item.image} sizes={`(max-width: 700px) ${mobileSize}, (max-width: 1280px) ${(78*item.ratio/row.ratio*row.width/100).toFixed(2)}vw, ${Math.round(1080*item.ratio/row.ratio*row.width/100)}px`} eager={index<3} />:<FilmCard film={item.movie!} />}
+      </article>;
+    })}
   </div>)}
 </div>
