@@ -7,6 +7,7 @@ body[data-middlepage] {
   --window-edge: rgb(41 75 61 / 22%);
   --middlepage-gutter: clamp(32px, 8vw, 160px);
   --middlepage-radius: 40px;
+  --middlepage-shadow-color: rgb(23 39 29 / 9%);
   isolation: isolate;
   background: #f7f7f3;
 }
@@ -27,11 +28,15 @@ body[data-middlepage] .middlepage {
   max-width: 1520px;
   margin: 42px auto 64px;
   overflow: clip;
-  border: 1px solid rgb(255 255 255 / 90%);
   border-radius: var(--middlepage-radius);
   background: var(--window-white);
   color: var(--ink);
-  box-shadow: 0 0 0 1px var(--window-edge), 0 0 0 7px rgb(255 255 255 / 30%), 0 22px 65px rgb(23 39 29 / 9%);
+  box-shadow: 0 0 0 1px var(--window-edge), 0 22px 65px var(--middlepage-shadow-color);
+}
+
+body[data-middlepage] .middlepage:has(> :is(.editorial-page--flush-end, .home-services:last-child, .portfolio-outro:last-child)) {
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
 }
 
 body[data-middlepage='home'] .middlepage #entdecken {

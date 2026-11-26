@@ -21,7 +21,7 @@ interface Props {
   images:Photo[];
   backHref:string;
   backLabel:string;
-  next:{name:string;href:string;cover:Photo};
+  next:{name:string;href:string;cover:Photo;previewPosition?:string};
   movies?:Film[];
   filmHeading?:string;
   works?:Project['works'];
@@ -52,7 +52,7 @@ const filmLayout = movies.length===1 ? (movies[0].width>movies[0].height?'landsc
     {themeSlug&&movies.length>0&&<section id="projekt-filme" class="portfolio-film" aria-labelledby="portfolio-film-heading"><h2 id="portfolio-film-heading">{filmHeading}</h2><div class:list={['film-grid','portfolio-film__grid',`portfolio-film__grid--${filmLayout}`,{'portfolio-film__grid--weddings':themeSlug==='hochzeiten'}]}>{movies.map(movie=><FilmCard film={movie} />)}</div></section>}
     <section id="naechstes-thema" class="portfolio-outro" aria-label={nextLabel}>
       <a class="portfolio-next" href={next.href} aria-label={`${nextLabel}: ${next.name}`}>
-        <div class="portfolio-next__preview"><MediaImage image={next.cover} sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1100px) 40vw, 480px" alt="" /></div>
+        <div class="portfolio-next__preview"><MediaImage image={next.cover} sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1100px) 40vw, 480px" position={next.previewPosition} alt="" /></div>
         <div class="portfolio-next__copy">
           <span class="portfolio-next__label">{nextLabel}<span aria-hidden="true">↗</span></span>
           <h2>{next.name}</h2>

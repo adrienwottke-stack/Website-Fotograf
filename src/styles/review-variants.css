@@ -48,12 +48,12 @@ html[data-review-tone='dark'] body[data-middlepage] {
   --window-forest:#294b3d;
   --window-on-forest:var(--review-text);
   --window-edge:rgb(221 232 224 / 26%);
+  --middlepage-shadow-color:#0003;
   background:var(--review-canvas);
   color:var(--review-text);
 }
 html[data-review-tone='dark'] .pilot-backdrop { background:var(--review-canvas); }
 html[data-review-tone='dark'] .pilot-backdrop svg { opacity:.7; }
-html[data-review-tone='dark'] body[data-middlepage] .middlepage { border-color:var(--window-edge); box-shadow:0 0 0 1px var(--window-edge),0 22px 65px #0003; }
 html[data-review-tone='dark'] body[data-middlepage] :is(.editorial-page,.film-section,.project-section,.project-section__header,.portfolio-content,.logo-marquee) { background:var(--review-surface); color:var(--review-text); }
 html[data-review-tone='dark'] body[data-middlepage='home'] .middlepage :is(.theme-scene__heading h2,.theme-scene__label,.service-row h3) { color:#c8dccc; }
 html[data-review-tone='dark'] .theme-scene { --theme-forest:#c8dccc; }

@@ -11335,60 +11335,53 @@
       "id": "film-poster-schalla-2024",
       "width": 1080,
       "height": 1920,
-      "alt": "Schalla Balla: 15 Jahre · Aftermovie 2024",
-      "color": "#252a28",
+      "alt": "Der DJ von Schalla Balla hebt vor grünen und blauen Lasern die Faust.",
+      "color": "#443728",
       "preview": [
         {
-          "src": "/media/r2-poster-schalla-2024-e0e1e89bc3-360.webp",
+          "src": "/media/poster-schalla-2024-33s-d7c9ca8a2dea-360.webp",
           "width": 360,
           "height": 640,
-          "bytes": 9478,
-          "sha256": "26777f7c20f3d5f683508d323c07303e6a0a9d2a5339aa9fb66bf5abb5d53c33"
+          "bytes": 18418
         },
         {
-          "src": "/media/r2-poster-schalla-2024-e0e1e89bc3-600.webp",
+          "src": "/media/poster-schalla-2024-33s-cb067ac1e568-600.webp",
           "width": 600,
           "height": 1067,
-          "bytes": 16540,
-          "sha256": "f1862c01b3feec2cc18fef79d4e17704a212d072e35692edfc5e4e565a1d0f32"
+          "bytes": 34122
         },
         {
-          "src": "/media/r2-poster-schalla-2024-e0e1e89bc3-900.webp",
+          "src": "/media/poster-schalla-2024-33s-5ac3c71cb9f0-900.webp",
           "width": 900,
           "height": 1600,
-          "bytes": 26542,
-          "sha256": "57ed25c5e5d3932e05d1069dd0216c68c801059827435f300bf85ffc1a161ec2"
+          "bytes": 56490
         }
       ],
       "display": [
         {
-          "src": "/media/r2-poster-schalla-2024-e0e1e89bc3-600.webp",
+          "src": "/media/poster-schalla-2024-33s-cb067ac1e568-600.webp",
           "width": 600,
           "height": 1067,
-          "bytes": 16540,
-          "sha256": "f1862c01b3feec2cc18fef79d4e17704a212d072e35692edfc5e4e565a1d0f32"
+          "bytes": 34122
         },
         {
-          "src": "/media/r2-poster-schalla-2024-e0e1e89bc3-900.webp",
+          "src": "/media/poster-schalla-2024-33s-5ac3c71cb9f0-900.webp",
           "width": 900,
           "height": 1600,
-          "bytes": 26542,
-          "sha256": "57ed25c5e5d3932e05d1069dd0216c68c801059827435f300bf85ffc1a161ec2"
+          "bytes": 56490
         },
         {
-          "src": "/media/r2-poster-schalla-2024-e0e1e89bc3-1080.webp",
+          "src": "/media/poster-schalla-2024-33s-55f69248a437-1080.webp",
           "width": 1080,
           "height": 1920,
-          "bytes": 34210,
-          "sha256": "d510523d611b4b8f967932e1277bd43d26b43235817e557375ce9824fa67924e"
+          "bytes": 76058
         }
       ],
       "large": {
-        "src": "/media/r2-poster-schalla-2024-e0e1e89bc3-1080.webp",
+        "src": "/media/poster-schalla-2024-33s-55f69248a437-1080.webp",
         "width": 1080,
         "height": 1920,
-        "bytes": 34210,
-        "sha256": "d510523d611b4b8f967932e1277bd43d26b43235817e557375ce9824fa67924e"
+        "bytes": 76058
       },
       "kind": "film-poster"
     },
@@ -12434,59 +12427,59 @@
       "id": "film-poster-schamo-aftermovie",
       "width": 1920,
       "height": 1080,
-      "alt": "Tanzende Gäste mit erhobenen Armen bei der Schamo Beach Party",
-      "color": "#843e6d",
+      "alt": "Jubelnder DJ mit erhobenen Händen auf der pink und türkis beleuchteten Bühne der Schamo Beach Party.",
+      "color": "#a063aa",
       "preview": [
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-360.webp",
+          "src": "/media/poster-schamo-aftermovie-97.5s-32ffd896fef4-360.webp",
           "width": 360,
           "height": 203,
-          "bytes": 14616
+          "bytes": 10732
         },
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-600.webp",
+          "src": "/media/poster-schamo-aftermovie-97.5s-4a4af49c435c-600.webp",
           "width": 600,
           "height": 338,
-          "bytes": 29192
+          "bytes": 19690
         },
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-900.webp",
+          "src": "/media/poster-schamo-aftermovie-97.5s-3dec6325f1b4-900.webp",
           "width": 900,
           "height": 506,
-          "bytes": 47910
+          "bytes": 31210
         }
       ],
       "display": [
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-600.webp",
+          "src": "/media/poster-schamo-aftermovie-97.5s-4a4af49c435c-600.webp",
           "width": 600,
           "height": 338,
-          "bytes": 29192
+          "bytes": 19690
         },
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-900.webp",
+          "src": "/media/poster-schamo-aftermovie-97.5s-3dec6325f1b4-900.webp",
           "width": 900,
           "height": 506,
-          "bytes": 47910
+          "bytes": 31210
         },
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-1200.webp",
+          "src": "/media/poster-schamo-aftermovie-97.5s-d729b263924e-1200.webp",
           "width": 1200,
           "height": 675,
-          "bytes": 66390
+          "bytes": 43530
         },
         {
-          "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-1600.webp",
+          "src": "/media/poster-schamo-aftermovie-97.5s-74dc8cf99232-1600.webp",
           "width": 1600,
           "height": 900,
-          "bytes": 90912
+          "bytes": 61416
         }
       ],
       "large": {
-        "src": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-1600.webp",
+        "src": "/media/poster-schamo-aftermovie-97.5s-74dc8cf99232-1600.webp",
         "width": 1600,
         "height": 900,
-        "bytes": 90912
+        "bytes": 61416
       },
       "kind": "film-poster"
     },
@@ -12952,7 +12945,7 @@
       "duration": 47.647604,
       "width": 720,
       "height": 1280,
-      "poster": "/media/r2-poster-schalla-2024-e0e1e89bc3-600.webp",
+      "poster": "/media/poster-schalla-2024-33s-cb067ac1e568-600.webp",
       "src": "/media/r2-film-schalla-2024-e0e1e89bc3.mp4",
       "bytes": 22185183,
       "coverId": "film-poster-schalla-2024"
@@ -13082,7 +13075,7 @@
       "duration": 151.04,
       "width": 1280,
       "height": 720,
-      "poster": "/media/r3-poster-schamo-aftermovie-07e605d04f-25s-600.webp",
+      "poster": "/media/poster-schamo-aftermovie-97.5s-4a4af49c435c-600.webp",
       "src": "/media/r2-film-schamo-aftermovie-07e605d04f.mp4",
       "bytes": 53501901,
       "coverId": "film-poster-schamo-aftermovie"
