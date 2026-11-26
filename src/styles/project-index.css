@@ -29,7 +29,7 @@
 .customer-overview__heading p{max-width:36ch;line-height:1.6}
 .customer-overview__surface{padding:12px;background:var(--window-white,#fff);color:var(--ink)}
 .project-index--overview{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:12px}
-.project-index--overview .project-index__item{min-height:0;aspect-ratio:4/5;border-radius:16px}
+.project-index--overview .project-index__item{min-height:0;aspect-ratio:4/5;border-radius:16px;background:transparent}
 .project-index--overview .project-index__caption{padding:20px}
 .project-index--overview .project-index__caption h3{font-size:clamp(25px,2.8vw,40px);line-height:1.06}
 .project-index--overview .project-index__category{font-size:12px}
