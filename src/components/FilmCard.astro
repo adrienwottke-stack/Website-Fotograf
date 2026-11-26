@@ -19,5 +19,5 @@ const duration=`${Math.floor(film.duration/60)}:${String(Math.floor(film.duratio
 ---
 <button type="button" class:list={['film-card',{'film-card--wide':film.width>film.height,'film-card--featured':featured}]} data-film data-src={film.src} data-title={film.title} data-poster={film.poster} data-width={film.width} data-height={film.height} aria-haspopup="dialog" aria-label={`${film.title}: ${film.description}. Film abspielen, ${duration}`}>
   <span class="film-card__poster" style={`--film-ratio:${film.width}/${film.height};aspect-ratio:auto`}><img src={film.poster} srcset={posterVariants?.map(variant=>`${variant.src} ${variant.width}w`).join(', ')} sizes={`auto, ${sizes}`} alt="" loading="lazy" decoding="async" width={posterSize.width} height={posterSize.height} /><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M8 5 19 12 8 19Z" fill="currentColor" /></svg></span><span class="film-duration">{duration}</span></span>
-  <span class="film-card__caption"><strong>{film.title}</strong><span>{film.description}</span></span>
+  <span class="film-card__caption"><strong>{film.title === 'Zixspeedracing' ? <>Zixspeed<wbr />racing</> : film.title}</strong><span>{film.description}</span></span>
 </button>
