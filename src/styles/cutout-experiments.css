@@ -29,7 +29,15 @@
 .window-personal.about-teaser--cutout [data-story-variant='camera'] img { width:100%; height:100%; object-fit:cover; object-position:50% 50%; }
 .window-personal.about-teaser--cutout .about-portrait:has([data-story-variant='sony-full']) { height:auto; aspect-ratio:4437/6681; border-radius:32px; }
 .window-personal.about-teaser--cutout .about-portrait:has([data-story-variant='sony-full'])::before { display:none; }
-.window-personal.about-teaser--cutout [data-story-variant='sony-full'] :is(.media-image,img) { width:100%; height:100%; object-fit:contain; background:transparent; }
+.window-personal.about-teaser--cutout [data-story-variant='sony-full'] .media-image { width:100%; height:100%; background:transparent; }
+.window-personal.about-teaser--cutout [data-story-variant='sony-full'] img {
+  width:auto;
+  max-width:100%;
+  height:100%;
+  margin-inline:auto;
+  border-radius:32px;
+  object-fit:contain;
+}
 .portfolio-hero.portfolio-hero--cutout { position:relative; isolation:isolate; overflow:hidden; background:var(--ink); }
 .portfolio-hero__cutout {
   position:absolute;
@@ -48,6 +56,7 @@
     align-items:stretch;
   }
   .window-personal.about-teaser--cutout .about-portrait { position:absolute; inset:0; height:auto; }
+  .window-personal.about-teaser--cutout .about-portrait:has([data-story-variant='sony-full']) { aspect-ratio:auto; }
   .window-personal.about-teaser--cutout .about-teaser__copy {
     display:grid;
     align-content:center;
